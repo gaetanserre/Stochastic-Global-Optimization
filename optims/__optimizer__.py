@@ -7,13 +7,14 @@ from typing import Tuple, Callable
 
 
 class Optimizer:
-    def __init__(self, bounds: np.ndarray, **kwargs):
-        self.bounds = bounds
+    def __init__(self, **kwargs):
+        pass
 
     def optimize(
         self, function: Callable, verbose: bool
     ) -> Tuple[Tuple[float, float], np.ndarray, np.ndarray]:
         """
+        function: function to be maximized
         Returns a tuple containing:
             - a tuple containing the best point found and value at this point
             - a numpy array containing the points visited

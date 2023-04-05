@@ -47,11 +47,17 @@ def slope_stop_condition(last_nb_samples, size_slope, max_slope):
 
 
 class AdaLIPO_E(Optimizer):
-    def __init__(self, bounds, max_iter, window_slope=5, max_slope=600):
-        super().__init__(bounds)
+    def __init__(self, bounds, max_iter, window_slope=5, max_slope=700):
+        self.bounds = bounds
         self.max_iter = max_iter
         self.window_slope = window_slope
         self.max_slope = max_slope
+
+    def return_process(self, points, values, nb_samples):
+        points = points[:nb_samples]
+        values = values[:nb_samples]
+        best_idx = np.argmax(values)
+        return (points[best_idx], values[best_idx]), points, values
 
     def optimize(self, function, verbose=False):
         t = 1
@@ -64,8 +70,10 @@ class AdaLIPO_E(Optimizer):
         # We keep track of the last `size_slope` values of nb_samples to compute the slope
         last_nb_samples = deque([1], maxlen=self.window_slope)
 
-        points = X_1.reshape(1, -1)
-        values = np.array([function(X_1)])
+        points = np.zeros((self.max_iter, X_1.shape[0]))
+        values = np.zeros(self.max_iter)
+        points[0] = X_1
+        values[0] = function(X_1)
 
         def k(i):
             """
@@ -82,7 +90,7 @@ class AdaLIPO_E(Optimizer):
             else:
                 return 1 / np.log(t)
 
-        def condition(x, values, k, points):
+        def condition(x, values, k, points, iter):
             """
             Subfunction to check the condition in the loop, depending on the set of values we already have.
             values: set of values of the function we explored (numpy array)
@@ -93,7 +101,7 @@ class AdaLIPO_E(Optimizer):
             max_val = np.max(values)
 
             left_min = np.min(
-                values.reshape(-1) + k * np.linalg.norm(x - points, ord=2, axis=1)
+                values[:iter] + k * np.linalg.norm(x - points[:iter], ord=2, axis=1)
             )
 
             return left_min >= max_val
@@ -107,7 +115,7 @@ class AdaLIPO_E(Optimizer):
                 X_tp1 = Uniform(self.bounds)
                 nb_samples += 1
                 last_nb_samples[-1] = nb_samples
-                points = np.concatenate((points, X_tp1.reshape(1, -1)))
+                points[t] = X_tp1
                 value = function(X_tp1)
             else:
                 # Exploitation
@@ -115,8 +123,8 @@ class AdaLIPO_E(Optimizer):
                     X_tp1 = Uniform(self.bounds)
                     nb_samples += 1
                     last_nb_samples[-1] = nb_samples
-                    if condition(X_tp1, values, k_hat, points):
-                        points = np.concatenate((points, X_tp1.reshape(1, -1)))
+                    if condition(X_tp1, values, k_hat, points, t):
+                        points[t] = X_tp1
                         break
                     elif slope_stop_condition(
                         last_nb_samples, self.window_slope, self.max_slope
@@ -124,11 +132,11 @@ class AdaLIPO_E(Optimizer):
                         print(
                             f"Exponential growth of the number of samples. Stopping the algorithm at iteration {t}."
                         )
-                        return points, values, t
+                        return self.return_process(points, values, t)
                 value = function(X_tp1)
 
-            values = np.concatenate((values, np.array([value])))
-            for i in range(points.shape[0] - 1):
+            values[t] = value
+            for i in range(t):
                 ratios.append(
                     np.abs(value - values[i]) / np.linalg.norm(X_tp1 - points[i], ord=2)
                 )
@@ -144,8 +152,4 @@ class AdaLIPO_E(Optimizer):
                     f"Iteration: {t} Lipschitz constant: {k_hat:.4f} Number of samples: {nb_samples}"
                 )
 
-        # Output
-        best_idx = np.argmax(values)
-        best_point = points[best_idx]
-        best_value = values[best_idx]
-        return (best_point, best_value), points, values
+        return self.return_process(points, values, t)

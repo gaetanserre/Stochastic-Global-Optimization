@@ -18,7 +18,7 @@
 
 #align(center, text(16pt)[
   *Covariance Matrix Adaptation - Evolution Strategy: \
-  An summary*
+  A summary*
 ])
 
 #align(center, text(14pt)[
@@ -41,7 +41,7 @@ to minimize the trade-off between finding a good approximation of the optimum
 and evaluate the objective function as few times as possible.
 In this small paper, we will present the ideas behind CMA-ES.
 For more details, see @hansen_cma_2023.
-In the entirer paper, we will suppose that the objective function is
+Throughout this paper, we will suppose that the objective function is
 to be maximized.
 
 #figure(
@@ -64,23 +64,35 @@ to be maximized.
 = Update the mean<mean>
 In the CMA Evolution Strategy, the $lambda$ points are sampled from a multivariate Gaussian distribution
 which writes:
+
 $ (x^((g))_i)_(1 lt.eq i lt.eq lambda ) dash.wave m^((g)) + sigma^((g)) cal(N)(0, C^((g))), $
+
 where $g$ is the generation number, $m^((g))$ is the mean vector, $sigma^((g))$ is the "overall" standard deviation and
 $C^((g))$ is the covariance matrix. It is equivalent to say that $x^((g))_i dash.wave cal(N)(m^((g)), (sigma^((g)))^2 C^((g)) )$. \
 To update the mean, we begin by selecting the $mu$ best points, i.e. :
+
 $ f(x^((g))_1) gt.eq dots gt.eq f(x^((g))_mu) gt.eq f(x^((g))_(mu+1)) gt.eq dots f(x^((g))_lambda). $
+
 We introduce the index notation $i : lambda$, denoting the index of the $i$-th best point.
 The mean at generation $g+1$ becomes a weighted average of those points:
+
 $ m^((g+1)) = m^((g)) + c_m sum_(i=1)^mu w_i(x_(i : lambda) - m^((g))), $<mean-update>
+
 where:
+
 $ sum_(i=1)^mu w_i = 1, quad w_1 gt.eq dots gt.eq w_mu gt.eq 0, $<weights>
+
 and $c_m$ is a learning rate, usually set to $1$.
 In that case, @mean-update simply becomes:
+
 $ m^((g+1)) = sum_(i=1)^mu w_i x_(i : lambda). $
+
 The choice of the weights is crucial in CMA-ES as they represent the trade-off between
 exploration and exploitation.
 To do so, we define the quantity $mu_"eff"$ as:
+
 $ mu_"eff" = (norm(w)_1 / norm(w)_2)^2 = (sum_(i=1)^mu abs(w_i))^2 / (sum_(i=1)^mu w_i^2) = 1 / (sum_(i=1)^mu w_i^2). $
+
 From @weights, one can easily derive $1 lt.eq mu_"eff" lt.eq mu$, the latter happens when all the weights are equal,
 i.e. $forall 1 lt.eq i lt.eq mu, w_i = 1/mu$.
 $mu_"eff"$ quantize the loss of variance due to the selection of the best points.
@@ -95,16 +107,22 @@ To update the covariance matrix, we need to estimate it using
 the points $(x_i)_(1 lt.eq i lt.eq lambda)$. In this section, we assume $sigma = 1$ for simplicity.
 If $sigma eq.not 1$, one can simply rescale the covariance matrix by $1 / sigma^2$.
 If we have enough sample, one can use the empirical covariance matrix:
+
 $ C_"emp"^((g+1)) = 1 / (lambda - 1) sum_(i=1)^lambda (x_i^((g+1)) - 1/lambda sum_(i=1)^lambda x_i^((g+1)) )
                                                       (x_i^((g+1)) - 1/lambda sum_(i=1)^lambda x_i^((g+1)) )^top. $
+
 A different would be to use the real mean $m^((g+1))$ computed before instead of the empirical mean:
+
 $ C_lambda^((g+1)) =  1 / lambda sum_(i=1)^lambda (x_i^((g+1)) - m^((g+1)) )
                                                         (x_i^((g+1)) - m^((g+1)) )^top. $
+
 Both are unbiaised estimators of the covariance matrix.
 However, they do not influence the search towards the direction of the $mu$ best points.
 To do so, one can use the same _weighted selection_ as in @mean-update:
-$ C^((g+1)) =  sum_(i=1)^mu w_i (x_i^((g+1)) - m^((g+1)) )
+
+$ C_mu^((g+1)) =  sum_(i=1)^mu w_i (x_i^((g+1)) - m^((g+1)) )
                                                         (x_i^((g+1)) - m^((g+1)) )^top. $
+                                                        
 This last estimator tends to reproduce the current best points and thus allows a faster convergence.
 However, this estimation method requires a lot of samples and $mu_"eff"$ must be large enough to be reliable.
 The author suggests another method to estimate $C^((g+1))$ that tackles these two issues, the _rank_-$mu$ method.
