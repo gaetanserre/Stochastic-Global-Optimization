@@ -10,6 +10,8 @@
 #set heading(numbering: "1.")
 #set cite(style: "chicago-author-date")
 #set math.equation(numbering: "(1)")
+
+// Reference style
 #set ref(supplement: it => {
   let fig = it.func()
   if fig == math.equation {
@@ -25,6 +27,11 @@
     }
   }
 })
+
+// Proof environment
+#let proof(content) = {
+  [_Proof._ $space$] + content + align(right, text()[$qed$])
+}
 
 #align(center, text(16pt)[
   *Covariance Matrix Adaptation - Evolution Strategy: \
@@ -143,21 +150,48 @@ As stated before, for @c_mu to be a reliable estimator, one need a lot of sample
 However, evaluate the function is often the main bottleneck of the algorithm. The author suggests to use the _rank_-$mu$ method
 to estimate the covariance matrix. The idea behind this method is to use information of previous generations in the
 estimation of the next one:
+
 $ C^((g+1)) = 1 / (g+1) sum_(i=0)^(g) 1 / sigma^(i)^2 C_mu^((i+1)), $<prev_info>
+
 where $sigma^((i))$ is the step-size at generation $i$.
 In @prev_info, each generation has the same weight in the estimation of the covariance matrix of the next generation.
 A natural idea would be to give more weight to the most recent generations through exponential smoothing:
+
 $ C^((g+1)) = (1 - c_mu) C^((g)) + c_mu 1 / sigma^(g)^2 C_mu^((g+1)), $<exp_smoothing>
+
 where $c_mu lt.eq 1$ is a learning rate. The author suggests that $c_mu approx min(1, mu_"eff"/d^2)$ is a reasonable choice.
 @exp_smoothing can be written as:
-$ C^((g+1)) = (1 - c_mu) C^((g)) + c_mu sum_(i=1)^mu w_i y_#i_lam^((g+1)) y_#i_lam^(g+1)^top, $
-where $y_#i_lam^((g+1)) = ( x_#i_lam^((g+1)) - m^((g)) ) / sigma^((g))$.
 
+$ C^((g+1)) = (1 - c_mu) C^((g)) + c_mu sum_(i=1)^mu w_i y_#i_lam^((g+1)) y_#i_lam^(g+1)^top, $<exp_smoothing2>
+
+where $y_#i_lam^((g+1)) = ( x_#i_lam^((g+1)) - m^((g)) ) / sigma^((g))$.
+This method is so called _rank_-$mu$ as the rank of the sum of the dot products is $min(mu, d)$.
+Finally, the author generalizes @exp_smoothing2 with $lambda$ weights that does not requires to sum
+to $1$ nor being positive:
+
+$ C^((g+1)) = (1 - sum_(i=1)^lambda w_i c_mu) C^((g)) + c_mu sum_(i=1)^lambda w_i y_#i_lam^((g+1)) y_#i_lam^(g+1)^top. $
+
+Usually, $sum_(i=1)^mu w_i = 1 = - sum_(i=mu+1)^lambda w_i$.
+To emphasize the importance of $c_mu$, the author introduce the _backward time horizon_ $Delta g$.
+It represent the number of generations used to encode roughly $63%$ of the information of
+the estimation of the covariance matrix of the next generation. E.g. if $Delta g eq 10$, it means
+that the $10$ last generations are used to compute $63%$ of the information of the covariance matrix
+of the next generation. Indeed, @exp_smoothing can be extended to:
+
+$ C^((g+1)) = (1 - c_mu)^((g+1)) C^((0)) + c_mu sum_(i=0)^g (1 - c_mu)^(g - i) 1/sigma^(i)^2 C_mu^((i+1)). $
+
+Therefore, $Delta g$ is defined by:
+
+$ c_mu sum_(i=g+1 - Delta g)^g (1 - c_mu) approx 0.63 approx 1 - 1/e. $
+
+One can solve this equation to find $Delta g approx 1/c_mu$ (see @annex_delta_g).
+It shows that, the smaller is $c_mu$ the more past generations are used to compute the covariance matrix.
 
 #bibliography("refs.bib")
 
-#pagebreak()
 = Annex
+== $mu_"eff"$<annex_weights>
+#proof([
 Let $w_i = (mu - i + 1) / (sum_(i=1)^mu mu - i + 1)$. Then:
 $ 
 mu_"eff" &= 1 / (sum_(i=1)^mu ((mu - i + 1) / (sum_(i=1)^mu mu - i + 1 ))^2) = 1 / (sum_(i=1)^mu (i / (sum_(i=1)^mu i))^2) \
@@ -166,4 +200,23 @@ mu_"eff" &= 1 / (sum_(i=1)^mu ((mu - i + 1) / (sum_(i=1)^mu mu - i + 1 ))^2) = 1
            &= (3mu (1 + mu)) / (2 (1 + 2mu)) approx ( 3 lambda/2 (1 + lambda/2) ) / (2 (1 + lambda)) \
            &= ((3 lambda^2 + 6lambda) / 2 ) / (4 (1 + lambda)) = (3 lambda (2 + lambda)) / (8 (1 + lambda)) \
            &approx (3 lambda) / 8.
- $<annex_weights>
+ $
+])
+
+== $Delta g$<annex_delta_g>
+#proof([
+$ 
+c_mu sum_(i=g+1 - Delta g)^g (1 - c_mu)^(g - i) &= c_mu ( (1 - c_mu)^(Delta g - 1) + (1 - c_mu)^(Delta g - 2) + dots + (1 - c_mu)^0 ) \
+& = c_mu sum_(i=0)^(Delta g - 1) (1 - c_mu)^i \
+&= c_mu ((1 - c_mu)^0 - (1 - c_mu)^(Delta g)) / (1 - (1 - c_mu)) \
+& = c_mu (1 - (1 - c_mu)^(Delta g)) / c_mu = 1 - (1 - c_mu)^(Delta g).
+ $
+Thus, the problem becomes to find $Delta g$ such that $1 - (1 - c_mu)^(Delta g) approx 0.63 approx & 1 - 1/e$:
+
+$ 
+&1 - (1 - c_mu)^(Delta g) = 1 - 1/e \
+arrow.l.r.double & (1 - c_mu)^(Delta g) = e^(-1) \
+arrow.l.r.double & Delta g ln(1 - c_mu) = -1 \
+arrow.l.r.double & Delta g = -1 / ln(1 - c_mu) approx 1 / c_mu ("using Taylor's expansion of order 1").
+ $
+])

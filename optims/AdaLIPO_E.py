@@ -34,24 +34,25 @@ def Bernoulli(p: float):
         return 0
 
 
-def slope_stop_condition(last_nb_samples, size_slope, max_slope):
-    """
-    Check if the slope of the last `size_slope` points of the the nb_samples vs nb_evaluations curve
-    is greater than max_slope.
-    """
-    if len(last_nb_samples) == size_slope:
-        slope = (last_nb_samples[-1] - last_nb_samples[0]) / (len(last_nb_samples) - 1)
-        return slope > max_slope
-    else:
-        return False
-
-
 class AdaLIPO_E(Optimizer):
-    def __init__(self, bounds, max_iter, window_slope=5, max_slope=700):
+    """
+    This class implements the AdaLIPO_E algorithm.
+    """
+
+    def __init__(self, bounds, max_evals, window_slope=5, max_slope=600):
         self.bounds = bounds
-        self.max_iter = max_iter
+        self.max_evals = max_evals
         self.window_slope = window_slope
         self.max_slope = max_slope
+
+    @staticmethod
+    def slope_stop_condition(last_nb_samples, size_slope, max_slope):
+        """
+        Check if the slope of the last `size_slope` points of the the nb_samples vs nb_evaluations curve
+        is greater than max_slope.
+        """
+        slope = (last_nb_samples[-1] - last_nb_samples[0]) / (len(last_nb_samples) - 1)
+        return slope > max_slope
 
     def return_process(self, points, values, nb_samples):
         points = points[:nb_samples]
@@ -70,8 +71,8 @@ class AdaLIPO_E(Optimizer):
         # We keep track of the last `size_slope` values of nb_samples to compute the slope
         last_nb_samples = deque([1], maxlen=self.window_slope)
 
-        points = np.zeros((self.max_iter, X_1.shape[0]))
-        values = np.zeros(self.max_iter)
+        points = np.zeros((self.max_evals, X_1.shape[0]))
+        values = np.zeros(self.max_evals)
         points[0] = X_1
         values[0] = function(X_1)
 
@@ -108,7 +109,7 @@ class AdaLIPO_E(Optimizer):
 
         # Main loop
         ratios = []
-        while t < self.max_iter:
+        while t < self.max_evals:
             B_tp1 = Bernoulli(p(t))
             if B_tp1 == 1:
                 # Exploration
@@ -126,12 +127,13 @@ class AdaLIPO_E(Optimizer):
                     if condition(X_tp1, values, k_hat, points, t):
                         points[t] = X_tp1
                         break
-                    elif slope_stop_condition(
+                    elif self.slope_stop_condition(
                         last_nb_samples, self.window_slope, self.max_slope
                     ):
-                        print(
-                            f"Exponential growth of the number of samples. Stopping the algorithm at iteration {t}."
-                        )
+                        if verbose:
+                            print(
+                                f"Exponential growth of the number of samples. Stopping the algorithm at iteration {t}."
+                            )
                         return self.return_process(points, values, t)
                 value = function(X_tp1)
 
