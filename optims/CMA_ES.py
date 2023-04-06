@@ -41,8 +41,8 @@ class CMA_ES(Optimizer):
             points[i * self.lambda_ : (i + 1) * self.lambda_] = x
             values[i * self.lambda_ : (i + 1) * self.lambda_] = y
 
-            mean = self.update_mean(mean, x, weights)
             cov = self.update_covariance(x, mean, weights)
+            mean = self.update_mean(mean, x, weights)
 
         best_idx = np.argmax(values)
         return (points[best_idx], values[best_idx]), points, values

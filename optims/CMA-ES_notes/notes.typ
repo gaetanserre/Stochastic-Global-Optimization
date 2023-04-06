@@ -11,8 +11,18 @@
 #set cite(style: "chicago-author-date")
 #set math.equation(numbering: "(1)")
 #set ref(supplement: it => {
-  if it.func() == math.equation {
+  let fig = it.func()
+  if fig == math.equation {
     "Eq."
+  } 
+  
+  else if fig == figure {
+    let kind = it.kind
+    if kind == "algorithm" {
+      "Algorithm"
+    } else {
+      "Figure"
+    }
   }
 })
 
@@ -32,7 +42,7 @@ The _Covariance Matrix Adaptation - Evolution Strategy_ (CMA-ES)
 is a global and black-box optimization algorithm.
 It is a randomized black-box search algorithm as it samples
 evaluation points from a distribution conditionned with the previous parameters.
-This kind of algorithm is detailed in Figure @black-box-search.
+This kind of algorithm is detailed in @black-box-search.
 CMA-ES uses a multivariate Gaussian as the sampling distribution $cal(N)(m, C)$. The authors made
 this choice as, given the variances and covariances between components, the
 normal distribution has the largest entropy in $RR^d$.
@@ -69,14 +79,15 @@ $ (x^((g))_i)_(1 lt.eq i lt.eq lambda ) dash.wave m^((g)) + sigma^((g)) cal(N)(0
 
 where $g$ is the generation number, $m^((g))$ is the mean vector, $sigma^((g))$ is the "overall" standard deviation and
 $C^((g))$ is the covariance matrix. It is equivalent to say that $x^((g))_i dash.wave cal(N)(m^((g)), (sigma^((g)))^2 C^((g)) )$. \
-To update the mean, we begin by selecting the $mu$ best points, i.e. :
+To update the mean, we begin by selecting the $mu$ best points, i.e.:
 
 $ f(x^((g))_1) gt.eq dots gt.eq f(x^((g))_mu) gt.eq f(x^((g))_(mu+1)) gt.eq dots f(x^((g))_lambda). $
 
 We introduce the index notation $i : lambda$, denoting the index of the $i$-th best point.
 The mean at generation $g+1$ becomes a weighted average of those points:
+#let i_lam = $i : lambda$
 
-$ m^((g+1)) = m^((g)) + c_m sum_(i=1)^mu w_i(x_(i : lambda) - m^((g))), $<mean-update>
+$ m^((g+1)) = m^((g)) + c_m sum_(i=1)^mu w_i(x_#i_lam - m^((g))), $<mean-update>
 
 where:
 
@@ -85,7 +96,7 @@ $ sum_(i=1)^mu w_i = 1, quad w_1 gt.eq dots gt.eq w_mu gt.eq 0, $<weights>
 and $c_m$ is a learning rate, usually set to $1$.
 In that case, @mean-update simply becomes:
 
-$ m^((g+1)) = sum_(i=1)^mu w_i x_(i : lambda). $
+$ m^((g+1)) = sum_(i=1)^mu w_i x_#i_lam. $
 
 The choice of the weights is crucial in CMA-ES as they represent the trade-off between
 exploration and exploitation.
@@ -120,14 +131,28 @@ Both are unbiaised estimators of the covariance matrix.
 However, they do not influence the search towards the direction of the $mu$ best points.
 To do so, one can use the same _weighted selection_ as in @mean-update:
 
-$ C_mu^((g+1)) =  sum_(i=1)^mu w_i (x_i^((g+1)) - m^((g+1)) )
-                                                        (x_i^((g+1)) - m^((g+1)) )^top. $
+$ C_mu^((g+1)) =  sum_(i=1)^mu w_i (x_#i_lam^((g+1)) - m^((g)) )
+                                                        (x_#i_lam^((g+1)) - m^((g)) )^top. $<c_mu>
                                                         
 This last estimator tends to reproduce the current best points and thus allows a faster convergence.
 However, this estimation method requires a lot of samples and $mu_"eff"$ must be large enough to be reliable.
 The author suggests another method to estimate $C^((g+1))$ that tackles these two issues, the _rank_-$mu$ method.
 
 == Rank-$mu$ method
+As stated before, for @c_mu to be a reliable estimator, one need a lot of sample, as ideally $mu_"eff" approx lambda/4$~.
+However, evaluate the function is often the main bottleneck of the algorithm. The author suggests to use the _rank_-$mu$ method
+to estimate the covariance matrix. The idea behind this method is to use information of previous generations in the
+estimation of the next one:
+$ C^((g+1)) = 1 / (g+1) sum_(i=0)^(g) 1 / sigma^(i)^2 C_mu^((i+1)), $<prev_info>
+where $sigma^((i))$ is the step-size at generation $i$.
+In @prev_info, each generation has the same weight in the estimation of the covariance matrix of the next generation.
+A natural idea would be to give more weight to the most recent generations through exponential smoothing:
+$ C^((g+1)) = (1 - c_mu) C^((g)) + c_mu 1 / sigma^(g)^2 C_mu^((g+1)), $<exp_smoothing>
+where $c_mu lt.eq 1$ is a learning rate. The author suggests that $c_mu approx min(1, mu_"eff"/d^2)$ is a reasonable choice.
+@exp_smoothing can be written as:
+$ C^((g+1)) = (1 - c_mu) C^((g)) + c_mu sum_(i=1)^mu w_i y_#i_lam^((g+1)) y_#i_lam^(g+1)^top, $
+where $y_#i_lam^((g+1)) = ( x_#i_lam^((g+1)) - m^((g)) ) / sigma^((g))$.
+
 
 #bibliography("refs.bib")
 
