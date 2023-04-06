@@ -142,7 +142,7 @@ $ C_mu^((g+1)) =  sum_(i=1)^mu w_i (x_#i_lam^((g+1)) - m^((g)) )
                                                         (x_#i_lam^((g+1)) - m^((g)) )^top. $<c_mu>
                                                         
 This last estimator tends to reproduce the current best points and thus allows a faster convergence.
-However, this estimation method requires a lot of samples and $mu_"eff"$ must be large enough to be reliable.
+However, this estimation method requires a lot of samples for $mu_"eff"$ must be large enough to be reliable.
 The author suggests another method to estimate $C^((g+1))$ that tackles these two issues, the _rank_-$mu$ method.
 
 == Rank-$mu$ method
@@ -197,7 +197,7 @@ $
 mu_"eff" &= 1 / (sum_(i=1)^mu ((mu - i + 1) / (sum_(i=1)^mu mu - i + 1 ))^2) = 1 / (sum_(i=1)^mu (i / (sum_(i=1)^mu i))^2) \
            &= 1 / (sum_(i=1)^mu i^2 / (mu(mu+1)/2)^2) = 1 / ( (mu(mu+1)(2mu+1)) / (6 (mu(mu+1)/2)^2) ) \
            &= (6 (mu(mu+1)/2)^2) / (mu(mu+1)(2mu+1)) = (3mu (mu^3 + 2mu^2 + mu)) / (2 (2mu^3 + 3mu^2 + mu)) \
-           &= (3mu (1 + mu)) / (2 (1 + 2mu)) approx ( 3 lambda/2 (1 + lambda/2) ) / (2 (1 + lambda)) \
+           &= (3mu (1 + mu)) / (2 (1 + 2mu)) approx ( (3 lambda)/2 (1 + lambda/2) ) / (2 (1 + lambda)) \
            &= ((3 lambda^2 + 6lambda) / 2 ) / (4 (1 + lambda)) = (3 lambda (2 + lambda)) / (8 (1 + lambda)) \
            &approx (3 lambda) / 8.
  $
