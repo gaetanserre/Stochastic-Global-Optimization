@@ -6,9 +6,17 @@
   numbering: "1",
 )
 
-#set par(justify: true)
+#set par(
+  justify: true,
+  first-line-indent: 1em
+)
+
+#set text(font: "CMU Serif")
+
 #set heading(numbering: "1.")
+
 #set cite(style: "chicago-author-date")
+
 #set math.equation(numbering: "(1)")
 
 // Reference style
@@ -16,21 +24,42 @@
   let fig = it.func()
   if fig == math.equation {
     "Eq."
-  } 
+  }
   
   else if fig == figure {
-    let kind = it.kind
-    if kind == "algorithm" {
-      "Algorithm"
-    } else {
-      "Figure"
-    }
+    it.supplement
   }
 })
 
-// Proof environment
-#let proof(content) = {
-  [_Proof._ $space$] + content + align(right, text()[$qed$])
+// Math environment
+
+#let math_block(supplement, counter, name, it) = {
+  counter.step()
+  if name == "" {
+    block([*#supplement #heading_count.display()#counter.display().* ] + emph(it))
+  } else {
+    block([*#supplement #heading_count.display()#counter.display() * (#name). ] + emph(it))
+  }
+}
+
+
+// Counters
+#let heading_count = counter(heading)
+
+#let th_count = counter("theorem")
+#let theorem(name, it) = math_block("Theorem", th_count, name, it)
+
+#let def_count = counter("definition")
+#let definition(name, it) = math_block("Definition", def_count, name, it)
+
+#let lemma_count = counter("lemma")
+#let lemma(name, it) = math_block("Lemma", lemma_count, name, it)
+
+#let prop_count = counter("proposition")
+#let proposition(name, it) = math_block("Proposition", prop_count, name, it)
+
+#let proof(it) = {
+  [_Proof._ $space$] + it + align(right, text()[$qed$])
 }
 
 #align(center, text(16pt)[
@@ -187,9 +216,107 @@ $ c_mu sum_(i=g+1 - Delta g)^g (1 - c_mu) approx 0.63 approx 1 - 1/e. $
 One can solve this equation to find $Delta g approx 1/c_mu$ (see @annex_delta_g).
 It shows that, the smaller is $c_mu$ the more past generations are used to compute the covariance matrix.
 
+== Rank-1 method
+#let o_lam = $1 : lambda$
+In the previous section, we defined a method that uses information of the entire population to update the covariance matrix. The author present the _rank-1_ method that uses only the best point of the population to update the covariance matrix. This method highlights the correlation between generations and the final update rule of CMA-ES uses both _rank_-$mu$ and _rank-1_ methods.
+The idea of the _rank-1_ method is simply to use only the best point to update the covariance matrix in order to increase the likelihood of reproducing this point in the next generation. The update rule is just an adaption of @exp_smoothing2 where only $y_#o_lam^((g+1))$ is used:
+
+$ 
+C^((g+1)) = (1 - sum_(i=1)^lambda w_i c_1) C^((g)) + c_1 y_#o_lam^((g+1)) y_#o_lam^(g+1)^top,
+ $
+ 
+where, according to the author, $c_1 approx 2 / n^2$ is a good choice.
+This method however, discards the sign information of $y_#o_lam^((g+1))$ as
+
+$ y_#o_lam^((g+1)) y_#o_lam^(g+1)^top = -y_#o_lam^((g+1)) (-y_#o_lam^(g+1)^top). $
+
+To reintroduce this information in the estimation of the covariance matrix, the author suggests to build a _evolution path_ $p_c^((g))$:
+$ p_c^((g+1)) = (1 - c_c) p_c^((g)) + sqrt(c_c (2 - c_c) mu_"eff") (sum_(i=1)^mu w_i ( x_i^((g+1)) - m^((g)) )) / sigma^((g)). $
+This represent a exponential smoothing of the sum:
+
+$ sum_(g) (sum_(i=1)^mu w_i ( x_i^((g+1)) - m^((g)) )) / sigma^((g)). $<p_c_update>
+
+We set $p_c^((0)) = 0$ and $sqrt(c_c (2 - c_c) mu_"eff")$ is a normalization
+constant in order to $p_c^((g)) dash.wave y_#o_lam^((g)) dash.wave cal(N)(0, C^((g)))$ (see @annex_p_c).
+The final update rule of the covariance matrix of CMA-ES combine @exp_smoothing2 and @p_c_update:
+
+$  
+C^((g+1)) = (1 underbrace(- c_1 - c_mu sum_(i=1)^lambda w_i, approx 0) ) C^((g)) + c_1 underbrace(p_c^((g+1)) p_c^((g+1))^top, "rank-"1" update") + c_mu underbrace(sum_(i=1)^lambda w_i y_#i_lam^((g+1)) y_#i_lam^(g+1)^top, "rank-"mu" update"),
+ $
+
+where 
+- $c_1 approx 2/n^2$,
+
+- $c_mu approx min(1 - c_1, mu_"eff"/n^2)$,
+
+- $y_#i_lam^((g+1)) = (x_#i_lam^((g+1)) -m^((g)) ) / sigma^((g))$,
+
+- $sum_(i=1)^lambda w_i approx -c_1 / c_mu$.
+
+= Choice of the step-size
+The last parameter to choose is the step-size $sigma^((g))$. The author suggests to control
+the step-size using the evolution of the direction of the steps, represented by $y_#i_lam^((g))$.
+One can dinstinguish three cases:
++ the steps goes in the same direction, meaning that the optimum is likely to be in this direction and increasing the step-size allows to reach the optimum faster;
++ the steps cancel each other, meaning the the optimum is likely to be in the interior of the region "drawn" by the steps, and decreasing the step-size allows to explore that region;
++ the steps follows almost orthogonal directions, meaning that the algorithm follows the contour lines of the objective function and the step-size must be kept constant.
+Theses cases are illustrated in @step-size_evolution-path.
+One way to infer in which case steps are is to use the length of the evolution path $p_sigma^((g))$:
+
+$ 
+p_sigma^((g)) = sum_g (sum_(i=1)^mu w_i ( x_i^((g)) - m^((g-1)) )) / sigma^((g-1)).
+ $
+
+As before, the author used an exponential smoothing to compute $p_sigma^((g))$:
+
+$ 
+p_sigma^((g+1)) = (1 - c_sigma) p_sigma^((g)) + sqrt(c_sigma (2 - c_sigma) mu_"eff") C^(-1/2) (sum_(i=1)^mu w_i ( x_i^((g+1)) - m^((g)) )) / sigma^((g)).
+ $
+
+Using the same reasoning as in @annex_p_c, one can show that, if $p_sigma^((0)) dash.wave cal(N)(0, I)$, $p_sigma^((g)) dash.wave cal(N)(0, I)$. This way, one can compare the length of the path represented by $norm(p_sigma^((g)))$ to its expected value and state on how update $sigma^((g))$.
+The author suggests to update $sigma^((g))$ as follow:
+
+$ sigma^(g+1) = sigma^((g)) exp( c_sigma / d_sigma ( norm(p_sigma^(g+1)) / (EE [ norm(cal(N)(0, I))]) - 1 ) ), $
+where $d_sigma approx 1$ and $EE[norm(cal(N)(0, I))] approx sqrt(d)$.
+The author provide default values for all parameters of CMA-ES, summarized in @default_parameters.
+
+#figure(
+  image("figures/step-size_evolution-path.png"),
+  caption:[_Left_: Steps cancels each other, step-size must be decreased. _Right_: Steps are correlated and goes to the same direction, step-size must be increased. _Middle_: Steps follows almost orthogonal directions, step-size must be kept constant.]
+)<step-size_evolution-path>
+
+
 #bibliography("refs.bib")
 
 = Annex
+
+== Default parameters
+#let br_d_l = $bracket.l.double$
+#let br_d_r = $bracket.r.double$
+#figure(
+  table(
+  columns: (auto, auto),
+  inset: 10pt,
+  align: horizon,
+  [Parameters], [Default value],
+  [$lambda$], [$4 + floor(3 ln d)$],
+  [$mu$], [$ceil(lambda / 2)$],
+  [$w_i'$], [$ln (lambda + 1) / 2 - ln i$, $forall i in #br_d_l 1 dots lambda #br_d_r$],
+  [$mu^(-)_"eff"$], [$(sum_(i = mu+1)^lambda w_i')^2 / (sum_(i = mu+1)^lambda w_i'^2)$],
+  [$alpha_"cov"$], [$2$],
+  [$c_mu$], [$min( 1 - c_1, alpha_"cov" (1/4 + mu_"eff" + 1 / mu_"eff" - 2) / ((n+2)^2 + alpha_"cov" mu_"eff" / 2)) $],
+  [$c_1$], [$alpha_"cov" / ( (n + 1.3)^2 + mu_"eff" )$],
+  [$c_c$], [$(4 + mu_"eff" / n) / (n + 4 + 2mu_"eff" / n)$],
+  [$alpha^(-)_mu$], [$1 + c_1/c_mu$],
+  [$alpha^(-)_(mu_"eff")$], [$1 + (2 mu^(-)_"eff") / (mu_"eff" + 2)$],
+  [$alpha^(-)_"pos def"$], [$(1 - c_1 - c_mu)/d c_mu$],
+  [$w_i$], [$cases( 1 / (sum_j abs(w_j')^+) w_i' &"if" w_i' gt.eq 0 "(sum to 1)", (min(alpha_mu^-, alpha_(mu_"eff")^-, alpha_"pos def"^-) / (sum_j abs(w_j')^-)) &"if" w_i' < 0 ) $],
+  [$c_sigma$], [$( mu_"eff" + 2 ) / ( d + mu_"eff" + 5 )$],
+  [$d_sigma$], [$1 + 2 max(0, sqrt( (mu_"eff" - 1) / (d + 1) ) - 1 )$],
+),
+  caption:[Default parameters of CMA-ES.],
+)<default_parameters>
+
 == $mu_"eff"$<annex_weights>
 #proof([
 Let $w_i = (mu - i + 1) / (sum_(i=1)^mu mu - i + 1)$. Then:
@@ -218,5 +345,21 @@ $
 arrow.l.r.double & (1 - c_mu)^(Delta g) = e^(-1) \
 arrow.l.r.double & Delta g ln(1 - c_mu) = -1 \
 arrow.l.r.double & Delta g = -1 / ln(1 - c_mu) approx 1 / c_mu ("using Taylor's expansion of order 1").
+ $
+])
+
+== $p_c^((g)) dash.wave cal(N)(0, C)$<annex_p_c>
+#proof([
+Under the assumption that $p_c^((g)) dash.wave cal(N)(0, C^((g)))$, we want to prove that $p_c^((g+1)) dash.wave cal(N)(0, C^((g)))$:
+$ 
+p_c^((g+1)) =& (1 - c_c) p_c^((g)) + sqrt(c_c (2 - c_c) mu_"eff") (sum_(i=1)^mu w_i ( x_i^((g+1)) - m^((g)) )) / sigma^((g)) \
+dash.wave& (1 - c_c) cal(N)(0, C^((g))) + sqrt(c_c (2 - c_c) mu_"eff") (sum_(i=1)^mu w_i cal(N)(0, C^((g))) ) \
+dash.wave& cal(N)(0, (1 - c_c)^2 C^((g))) + sqrt(c_c (2 - c_c) mu_"eff") cal(N)(0, sum_(i=1)^mu w_i^2 C^((g)) ) \
+dash.wave& cal(N)(0, (1 - c_c)^2 C^((g))) + sqrt(c_c (2 - c_c) mu_"eff") cal(N)(0, 1/mu_"eff" C^((g)) ) \
+dash.wave& cal(N)(0, (1 - c_c)^2 C^((g))) + sqrt(c_c (2 - c_c) mu_"eff") 1/sqrt(mu_"eff") cal(N)(0, C^((g)) ) \
+dash.wave& cal(N)(0, (1 - c_c)^2 C^((g))) + cal(N)(0, c_c (2 - c_c) C^((g)) ) \
+dash.wave& cal(N)(0, ((1 - c_c)^2 + c_c (2 - c_c)) C^((g))) \
+dash.wave& cal(N)(0, (1 - 2c_c + c_c^2 + 2c_c - c_c^2) C^((g))) \
+dash.wave& cal(N)(0, C^((g))).
  $
 ])
