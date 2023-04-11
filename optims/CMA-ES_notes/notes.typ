@@ -93,7 +93,7 @@ to be maximized.
 #figure(
   align(left, text(style: "italic")[
   For $g$ in $1 dots k$:
-    + Let $d_theta$ a distribution on $cal(X)$ parametrized by $theta$;
+    + Let $d_theta$ a distribution on $RR^d$ parametrized by $theta$;
 
     + Sample $lambda$ points: $(x_i)_(1 lt.eq i lt.eq lambda) dash.wave d_(theta_i)$;
 
@@ -231,7 +231,10 @@ This method however, discards the sign information of $y_#o_lam^((g+1))$ as
 $ y_#o_lam^((g+1)) y_#o_lam^(g+1)^top = -y_#o_lam^((g+1)) (-y_#o_lam^(g+1)^top). $
 
 To reintroduce this information in the estimation of the covariance matrix, the author suggests to build a _evolution path_ $p_c^((g))$:
-$ p_c^((g+1)) = (1 - c_c) p_c^((g)) + sqrt(c_c (2 - c_c) mu_"eff") (sum_(i=1)^mu w_i ( x_i^((g+1)) - m^((g)) )) / sigma^((g)). $
+
+$ p_c^((g+1)) = (1 - c_c) p_c^((g)) + sqrt(c_c (2 - c_c) mu_"eff") (sum_(i=1)^mu w_i ( x_i^((g+1)) - m^((g)) )) / sigma^((g)), $
+
+where $c_c lt.eq 1$.
 This represent a exponential smoothing of the sum:
 
 $ sum_(g) (sum_(i=1)^mu w_i ( x_i^((g+1)) - m^((g)) )) / sigma^((g)). $<p_c_update>
@@ -288,7 +291,7 @@ The author provide default values for all parameters of CMA-ES, summarized in @d
 
 #bibliography("refs.bib")
 
-= Annex
+= Appendix
 
 == Default parameters
 #let br_d_l = $bracket.l.double$
@@ -313,6 +316,7 @@ The author provide default values for all parameters of CMA-ES, summarized in @d
   [$w_i$], [$cases( 1 / (sum_j abs(w_j')^+) w_i' &"if" w_i' gt.eq 0 "(sum to 1)", (min(alpha_mu^-, alpha_(mu_"eff")^-, alpha_"pos def"^-) / (sum_j abs(w_j')^-)) &"if" w_i' < 0 ) $],
   [$c_sigma$], [$( mu_"eff" + 2 ) / ( d + mu_"eff" + 5 )$],
   [$d_sigma$], [$1 + 2 max(0, sqrt( (mu_"eff" - 1) / (d + 1) ) - 1 )$],
+  [$c_m$], [$1$],
 ),
   caption:[Default parameters of CMA-ES.],
 )<default_parameters>

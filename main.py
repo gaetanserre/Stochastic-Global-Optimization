@@ -9,6 +9,7 @@ from benchmark.rastrigin import Rastrigin
 from benchmark.square import Square
 from benchmark.rosenbrock import Rosenbrock
 from benchmark.holder import Holder
+from benchmark.cos import Cos
 
 # Optimizations algorithms
 from optims.PRS import PRS
@@ -28,7 +29,7 @@ def time_it(function, args={}):
 if __name__ == "__main__":
     num_exp = 20
 
-    functions = [Rastrigin(), Rosenbrock(), Holder(), Square()]
+    functions = [Rastrigin(), Rosenbrock(), Holder(), Cos(), Square()]
     bounds = [
         np.array(
             [(-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12)]
@@ -37,13 +38,11 @@ if __name__ == "__main__":
             [
                 (-2.048, 2.048),
                 (-2.048, 2.048),
-                (-2.048, 2.048),
-                (-2.048, 2.048),
-                (-2.048, 2.048),
             ]
         ),
         np.array([(-10, 10), (-10, 10)]),
         np.array([(-10, 10), (-10, 10), (-10, 10), (-10, 10), (-10, 10)]),
+        np.array([(-5, 5), (-5, 5)]),
     ]
 
     optimizers_cls = [PRS, AdaLIPO_E, CMA_ES]
@@ -61,19 +60,20 @@ if __name__ == "__main__":
             elif optimizer_cls == AdaLIPO_E:
                 optimizer = optimizer_cls(bounds[i], max_evals=num_eval)
             elif optimizer_cls == CMA_ES:
+                m_0 = np.random.uniform(bounds[i][:, 0], bounds[i][:, 1])
                 optimizer = optimizer_cls(
                     bounds[i],
-                    np.ones(bounds[i].shape[0]),
+                    m_0,
                     num_generations=num_eval // 100,
                     lambda_=100,
-                    mu=20,
-                    cov_method="scratch",
+                    cov_method="full",
                 )
             else:
                 raise NotImplementedError
 
             times = []
             best_values = []
+            evals = []
 
             for _ in range(num_exp):
                 ret, time = time_it(
@@ -87,6 +87,7 @@ if __name__ == "__main__":
 
                 times.append(time)
                 best_values.append(best_point[1])
+                evals.append(len(values))
             print(
-                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
+                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}. Average num eval: {np.mean(evals):.4f} +- {np.std(evals):.2f}.\n"
             )

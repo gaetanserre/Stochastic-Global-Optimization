@@ -1,0 +1,349 @@
+Optimizer: PRS.
+Function: Rastrigin.
+Time: 0.0311s. Best point found: (array([ 0.12214076,  3.00097422,  0.08553735, -1.14551582,  1.97103575]), -22.500031647484818). Num evals 1000.
+Time: 0.0281s. Best point found: (array([-0.07943568, -0.00295474, -1.43202581,  1.99648984, -1.14128361]), -31.359419839640765). Num evals 1000.
+Time: 0.0281s. Best point found: (array([-2.27034135, -0.03656762, -1.12701028,  0.09879884,  0.14510929]), -26.75502205054832). Num evals 1000.
+Time: 0.0278s. Best point found: (array([ 0.04169363, -4.02917156,  1.057591  ,  1.00651468,  1.98062223]), -23.529071562627784). Num evals 1000.
+Time: 0.0279s. Best point found: (array([-0.17750071, -0.07224041, -1.13330458,  2.16150691,  0.02768207]), -20.787337063929808). Num evals 1000.
+Time: 0.0281s. Best point found: (array([-1.98543885, -0.94338274,  3.05063852,  1.87922298,  0.74897613]), -32.208761130535315). Num evals 1000.
+Time: 0.0279s. Best point found: (array([-0.98527524,  1.95293533,  0.87775895,  1.06590753,  1.01864095]), -11.926988248056382). Num evals 1000.
+Time: 0.0279s. Best point found: (array([ 1.9378358 , -0.06538633, -1.02611912,  0.73122383,  2.85605181]), -30.219607938170448). Num evals 1000.
+Time: 0.0275s. Best point found: (array([-0.05299456,  1.13842329,  1.68975554, -0.90040921, -0.15174433]), -28.88828464210081). Num evals 1000.
+Time: 0.0279s. Best point found: (array([ 0.06019632, -2.8746341 ,  1.02881564,  1.83422219, -1.09347227]), -24.32843856001148). Num evals 1000.
+Time: 0.0277s. Best point found: (array([ 1.08632876,  0.17196859,  0.70472255,  0.96415504, -0.19795888]), -29.249013157117595). Num evals 1000.
+Time: 0.0278s. Best point found: (array([ 1.01896727, -0.4286648 , -3.01965671,  0.02263434, -0.156765  ]), -34.096984566268134). Num evals 1000.
+Time: 0.0280s. Best point found: (array([-0.98292625, -1.98029363, -2.98343446,  1.91284637,  0.85297189]), -23.79765492022669). Num evals 1000.
+Time: 0.0284s. Best point found: (array([-0.05443865, -0.08595647,  0.25044182,  1.08847159,  0.99033182]), -15.793090477792276). Num evals 1000.
+Time: 0.0283s. Best point found: (array([-1.04696239, -0.21723176, -0.16049359,  2.98953826,  0.84973495]), -28.04145260631581). Num evals 1000.
+Time: 0.0379s. Best point found: (array([ 2.0571699 , -0.02124525,  1.15682559,  1.70979998, -1.91754347]), -31.184051001462073). Num evals 1000.
+Time: 0.0330s. Best point found: (array([ 1.72430461, -1.08748672, -0.02615486,  0.96400013,  2.15848916]), -27.776837030997633). Num evals 1000.
+Time: 0.0322s. Best point found: (array([-0.09030955, -3.95880516,  0.03056169,  0.85382568, -1.86016706]), -29.501611642444914). Num evals 1000.
+Time: 0.0396s. Best point found: (array([0.94015572, 1.27957841, 0.98417384, 1.96859329, 0.94567561]), -21.626268503459222). Num evals 1000.
+Time: 0.0385s. Best point found: (array([ 0.81934927, -2.94930461,  1.0511047 , -1.96855172,  1.07991209]), -23.738194812846316). Num evals 1000.
+Average time: 0.0302 +- 0.00s. Average best value: -25.8654 +- 5.46. Average num eval: 1000.0000 +- 0.00.
+
+Function: Rosenbrock.
+Time: 0.0284s. Best point found: (array([0.86706082, 0.74826635]), -0.018917588776394427). Num evals 1000.
+Time: 0.0221s. Best point found: (array([0.98666976, 0.98280696]), -0.008807628289487345). Num evals 1000.
+Time: 0.0265s. Best point found: (array([1.10522507, 1.22384084]), -0.011609805426025611). Num evals 1000.
+Time: 0.0334s. Best point found: (array([0.85196789, 0.71294253]), -0.038571932158644795). Num evals 1000.
+Time: 0.0389s. Best point found: (array([1.07627337, 1.15445384]), -0.007346850225013965). Num evals 1000.
+Time: 0.0297s. Best point found: (array([1.09270284, 1.20883983]), -0.030617348013592866). Num evals 1000.
+Time: 0.0251s. Best point found: (array([1.31859232, 1.75273464]), -0.12123830793968648). Num evals 1000.
+Time: 0.0230s. Best point found: (array([0.80130213, 0.63736311]), -0.04171057201504981). Num evals 1000.
+Time: 0.0230s. Best point found: (array([1.10562134, 1.19588828]), -0.08143536299749893). Num evals 1000.
+Time: 0.0265s. Best point found: (array([1.16776459, 1.35084535]), -0.044602753863752634). Num evals 1000.
+Time: 0.0223s. Best point found: (array([1.11502635, 1.24035051]), -0.014091450512441654). Num evals 1000.
+Time: 0.0256s. Best point found: (array([1.11255563, 1.24112349]), -0.013786643890865952). Num evals 1000.
+Time: 0.0215s. Best point found: (array([1.0830696 , 1.17208122]), -0.006992436648645075). Num evals 1000.
+Time: 0.0222s. Best point found: (array([0.76995634, 0.60140805]), -0.0602736505881295). Num evals 1000.
+Time: 0.0240s. Best point found: (array([0.95397599, 0.92053967]), -0.013079211599534603). Num evals 1000.
+Time: 0.0233s. Best point found: (array([0.9028105 , 0.79639077]), -0.04432516736018669). Num evals 1000.
+Time: 0.0219s. Best point found: (array([1.30361928, 1.69199824]), -0.09769769976399223). Num evals 1000.
+Time: 0.0244s. Best point found: (array([0.96363916, 0.95051133]), -0.04933082542028907). Num evals 1000.
+Time: 0.0231s. Best point found: (array([1.1874756 , 1.39131728]), -0.07041975257816446). Num evals 1000.
+Time: 0.0228s. Best point found: (array([0.99170762, 0.97241834]), -0.012313660275560665). Num evals 1000.
+Average time: 0.0254 +- 0.00s. Average best value: -0.0394 +- 0.03. Average num eval: 1000.0000 +- 0.00.
+
+Function: Holder.
+Time: 0.0146s. Best point found: (array([-7.95150708,  9.53079265]), 18.925868141746363). Num evals 1000.
+Time: 0.0143s. Best point found: (array([ 8.08053394, -9.64395166]), 19.19791259990302). Num evals 1000.
+Time: 0.0132s. Best point found: (array([ 7.88238044, -9.59940614]), 18.877843274262872). Num evals 1000.
+Time: 0.0154s. Best point found: (array([-7.83378416, -9.45324314]), 18.308680684662473). Num evals 1000.
+Time: 0.0139s. Best point found: (array([ 8.05087648, -9.53874309]), 19.052062260552542). Num evals 1000.
+Time: 0.0139s. Best point found: (array([-7.73161579, -9.58079803]), 18.15781708077839). Num evals 1000.
+Time: 0.0146s. Best point found: (array([-8.04661962,  9.62677693]), 19.19341180680308). Num evals 1000.
+Time: 0.0278s. Best point found: (array([8.12042447, 9.70738145]), 19.14675182765388). Num evals 1000.
+Time: 0.0220s. Best point found: (array([-8.09764792,  9.73644005]), 19.1371762219495). Num evals 1000.
+Time: 0.0142s. Best point found: (array([-7.96432429, -9.52626794]), 18.93805957505098). Num evals 1000.
+Time: 0.0149s. Best point found: (array([7.98819716, 9.84455063]), 18.83303897436328). Num evals 1000.
+Time: 0.0135s. Best point found: (array([-7.85636672, -9.70431897]), 18.817240180441672). Num evals 1000.
+Time: 0.0147s. Best point found: (array([-8.26155545, -9.63950968]), 18.772167909225537). Num evals 1000.
+Time: 0.0145s. Best point found: (array([ 7.9300508 , -9.56057361]), 18.947994014953277). Num evals 1000.
+Time: 0.0145s. Best point found: (array([-7.83423461, -9.60197656]), 18.702675218561307). Num evals 1000.
+Time: 0.0135s. Best point found: (array([-8.26616876,  9.70795792]), 18.736658296993415). Num evals 1000.
+Time: 0.0141s. Best point found: (array([ 8.12969787, -9.46386772]), 18.766019941592848). Num evals 1000.
+Time: 0.0139s. Best point found: (array([8.13278164, 9.74688672]), 19.07781376044834). Num evals 1000.
+Time: 0.0137s. Best point found: (array([ 8.15508431, -9.56389967]), 19.01097471393625). Num evals 1000.
+Time: 0.0141s. Best point found: (array([-7.80747312,  9.7606527 ]), 18.541269364572926). Num evals 1000.
+Average time: 0.0153 +- 0.00s. Average best value: 18.8571 +- 0.27. Average num eval: 1000.0000 +- 0.00.
+
+Function: Cos.
+Time: 0.0181s. Best point found: (array([9.0708304 , 7.93364964, 9.2256896 , 0.20215195, 5.33567555]), 7.220898679833825). Num evals 1000.
+Time: 0.0181s. Best point found: (array([ 9.98886764,  7.52928768, -3.62256276, -6.87336802, -1.5871052 ]), 7.222942584646341). Num evals 1000.
+Time: 0.0201s. Best point found: (array([ 9.00820467,  9.70784429,  1.97480638, -8.75639632, -5.06749366]), 7.604146690784014). Num evals 1000.
+Time: 0.0218s. Best point found: (array([ 9.38999608,  7.57546711, -6.67531968,  9.29996036,  9.52910656]), 7.039837295758013). Num evals 1000.
+Time: 0.0187s. Best point found: (array([ 7.92818084,  9.04828659, -8.37336399, -3.82035377,  4.52098556]), 7.37698962265219). Num evals 1000.
+Time: 0.0185s. Best point found: (array([ 9.99981363,  7.51693618,  4.97245536, -3.4019114 , -0.09025817]), 7.362792629969777). Num evals 1000.
+Time: 0.0194s. Best point found: (array([7.93468546, 8.63746675, 1.74477311, 1.89492595, 9.5340804 ]), 7.008472786674524). Num evals 1000.
+Time: 0.0209s. Best point found: (array([ 7.56743674,  9.71660788, -5.73384261,  8.1910754 , -4.89368776]), 7.196775435259257). Num evals 1000.
+Time: 0.0197s. Best point found: (array([ 8.70119484,  8.33087752,  3.56140046,  2.64627607, -4.22499704]), 7.316638415366921). Num evals 1000.
+Time: 0.0211s. Best point found: (array([ 6.60129695,  9.71826385, -0.72591754, -0.49183626,  0.93220569]), 7.163628404192162). Num evals 1000.
+Time: 0.0184s. Best point found: (array([ 6.63746053,  9.36957366, -5.72353584,  7.31929312,  7.94394862]), 7.183307948001597). Num evals 1000.
+Time: 0.0192s. Best point found: (array([ 7.88522896,  9.7144622 ,  6.29534959, -5.73441624,  9.6213142 ]), 7.30542112914056). Num evals 1000.
+Time: 0.0195s. Best point found: (array([ 8.98845552,  9.37594748, -7.75978532,  8.54122795,  6.85271242]), 7.301431106615738). Num evals 1000.
+Time: 0.0193s. Best point found: (array([ 7.54094232,  9.37618974, -7.00598989,  9.8116961 ,  2.77230402]), 7.33222250279926). Num evals 1000.
+Time: 0.0182s. Best point found: (array([ 8.67107791,  9.98983299, -1.97814721,  1.85979535, -5.43239353]), 7.452447106057237). Num evals 1000.
+Time: 0.0185s. Best point found: (array([ 6.11660126,  9.38567789, -4.41336494, -4.79445602,  7.20597139]), 7.051778706967838). Num evals 1000.
+Time: 0.0215s. Best point found: (array([ 7.94550889,  9.68937171, -8.81794617, -7.54330186, -6.56582023]), 7.4170631581902295). Num evals 1000.
+Time: 0.0183s. Best point found: (array([9.71825208, 7.08216236, 2.10942629, 9.65147494, 7.83673394]), 7.334934803726837). Num evals 1000.
+Time: 0.0191s. Best point found: (array([ 9.70230948,  7.90081542,  2.00142235, -7.6809459 ,  3.07661742]), 7.431781980698677). Num evals 1000.
+Time: 0.0193s. Best point found: (array([ 9.97230033,  7.07551092, -2.74168042, -8.75186149, -6.88839816]), 6.856731296763683). Num evals 1000.
+Average time: 0.0194 +- 0.00s. Average best value: 7.2590 +- 0.17. Average num eval: 1000.0000 +- 0.00.
+
+Function: Square.
+Time: 0.0140s. Best point found: (array([-0.15246922, -0.06298717]), -0.02721424699522145). Num evals 1000.
+Time: 0.0143s. Best point found: (array([ 0.17963006, -0.2732537 ]), -0.10693454117822318). Num evals 1000.
+Time: 0.0136s. Best point found: (array([0.11110964, 0.07178626]), -0.017498619569041446). Num evals 1000.
+Time: 0.0135s. Best point found: (array([0.05090366, 0.05694314]), -0.00583370356578038). Num evals 1000.
+Time: 0.0146s. Best point found: (array([-0.04679374,  0.08834704]), -0.009994854594344054). Num evals 1000.
+Time: 0.0166s. Best point found: (array([-0.08172693, -0.04850653]), -0.009032174992235688). Num evals 1000.
+Time: 0.0137s. Best point found: (array([ 0.03594871, -0.25301752]), -0.06531017251409374). Num evals 1000.
+Time: 0.0144s. Best point found: (array([-0.04784084, -0.04552437]), -0.004361213669688493). Num evals 1000.
+Time: 0.0155s. Best point found: (array([-0.0652248 ,  0.12303899]), -0.019392866044348013). Num evals 1000.
+Time: 0.0138s. Best point found: (array([ 0.04941467, -0.0116486 ]), -0.0025774994327484265). Num evals 1000.
+Time: 0.0140s. Best point found: (array([0.01068944, 0.0540572 ]), -0.0030364451475276286). Num evals 1000.
+Time: 0.0146s. Best point found: (array([0.17858405, 0.17696094]), -0.06320743623881206). Num evals 1000.
+Time: 0.0156s. Best point found: (array([-0.04064949,  0.18881744]), -0.037304405057110634). Num evals 1000.
+Time: 0.0138s. Best point found: (array([ 0.13415999, -0.00279361]), -0.018006708400167562). Num evals 1000.
+Time: 0.0148s. Best point found: (array([0.17816775, 0.10268965]), -0.04228891115599929). Num evals 1000.
+Time: 0.0154s. Best point found: (array([-0.04362524,  0.05524024]), -0.0049546457173952965). Num evals 1000.
+Time: 0.0136s. Best point found: (array([-0.15338452,  0.14012008]), -0.04316044813612961). Num evals 1000.
+Time: 0.0144s. Best point found: (array([-0.12814031,  0.22328995]), -0.06627833926091421). Num evals 1000.
+Time: 0.0164s. Best point found: (array([-0.15522663, -0.05005922]), -0.026601233543856618). Num evals 1000.
+Time: 0.0138s. Best point found: (array([-0.22552885,  0.04445178]), -0.05283922357873). Num evals 1000.
+Average time: 0.0145 +- 0.00s. Average best value: -0.0313 +- 0.03. Average num eval: 1000.0000 +- 0.00.
+
+Optimizer: AdaLIPO_E.
+Function: Rastrigin.
+Time: 0.0721s. Best point found: (array([ 2.27407604,  1.86848508,  4.3104557 ,  2.2101239 , -2.15020309]), -76.84288218340359). Num evals 4.
+Time: 5.4474s. Best point found: (array([-2.01388961,  0.06591518, -0.13183766,  1.07026551,  1.02046802]), -11.428379208824786). Num evals 1000.
+Time: 0.0931s. Best point found: (array([-2.0482588 , -0.29489818,  3.0163585 , -0.76821219,  2.48595312]), -62.26286779447676). Num evals 7.
+Time: 0.0695s. Best point found: (array([-0.85214299, -2.89094856, -1.37933637, -1.93488844, -2.78472336]), -54.67739611548581). Num evals 4.
+Time: 0.0693s. Best point found: (array([ 4.46514222,  2.17879528, -3.8616783 , -1.04294929, -0.74003954]), -81.19976081682866). Num evals 4.
+Time: 0.0683s. Best point found: (array([-1.83464071, -2.97313829,  4.29449469, -0.58252474, -2.93314682]), -76.97621950109003). Num evals 4.
+Time: 5.6340s. Best point found: (array([-0.93804734, -0.96987792,  3.00930139, -1.09339882, -1.28317667]), -28.40484601940887). Num evals 1000.
+Time: 0.0923s. Best point found: (array([ 3.20936355,  1.05327855,  3.57131644, -0.15274237, -2.21519715]), -68.22944771185497). Num evals 5.
+Time: 0.1901s. Best point found: (array([-3.07816138, -1.19672698, -0.48814171, -2.9131581 , -1.01009042]), -49.99347897885127). Num evals 29.
+Time: 5.6351s. Best point found: (array([-3.01180901, -1.96909496,  0.01114259,  2.04853986,  2.01655563]), -21.96695800507412). Num evals 1000.
+Time: 0.0913s. Best point found: (array([-2.39761614, -0.85417675,  1.30750429, -3.73331726, -2.76489412]), -85.32998448782354). Num evals 6.
+Time: 0.0906s. Best point found: (array([-1.97337987, -1.07286102,  4.93540982, -1.26336805, -4.11726409]), -63.36570155886222). Num evals 5.
+Time: 0.0922s. Best point found: (array([-2.87502013,  1.32714201, -2.2424054 , -0.18662108, -3.12941456]), -61.24389992787115). Num evals 12.
+Time: 0.1658s. Best point found: (array([-2.20949855, -2.06296711,  2.84681852,  2.32204626,  0.8297344 ]), -55.43342106561802). Num evals 24.
+Time: 0.1021s. Best point found: (array([-0.22728355,  1.01529616,  0.75744649, -1.91368216, -4.9388089 ]), -50.03125917948397). Num evals 25.
+Time: 0.1176s. Best point found: (array([-2.98849865, -4.41880715,  1.03760924, -0.86720845,  3.09047593]), -63.723641702422405). Num evals 31.
+Time: 0.1143s. Best point found: (array([ 2.46809992, -0.86934138, -0.85264246, -0.40325509,  0.29701638]), -65.91833449220385). Num evals 10.
+Time: 0.0916s. Best point found: (array([ 0.21884266, -3.92860304,  2.1505934 , -0.96357101, -3.59118103]), -65.79262239967687). Num evals 5.
+Time: 0.0909s. Best point found: (array([ 1.51948563, -1.08967451,  3.28567607,  1.59434959,  4.10021802]), -87.55102370954286). Num evals 6.
+Time: 0.0683s. Best point found: (array([ 4.03616857,  3.13380615, -0.52839162,  3.26539538, -1.97327505]), -75.48289965892148). Num evals 4.
+Average time: 0.9198 +- 1.95s. Average best value: -60.2928 +- 19.85. Average num eval: 159.2500 +- 353.29.
+
+Function: Rosenbrock.
+Time: 5.4213s. Best point found: (array([0.94182003, 0.87834546]), -0.010918284671515845). Num evals 1000.
+Time: 5.4672s. Best point found: (array([1.02102563, 1.0306968 ]), -0.01435789260512953). Num evals 1000.
+Time: 5.4495s. Best point found: (array([1.06489025, 1.12574868]), -0.011004739689545594). Num evals 1000.
+Time: 5.4051s. Best point found: (array([0.88245014, 0.77574269]), -0.014703360926216304). Num evals 1000.
+Time: 5.4400s. Best point found: (array([1.05912763, 1.13211132]), -0.014229000012924119). Num evals 1000.
+Time: 5.4369s. Best point found: (array([0.98481105, 0.96170431]), -0.006870519765159592). Num evals 1000.
+Time: 5.3887s. Best point found: (array([1.1902837 , 1.41597145]), -0.036272504017371046). Num evals 1000.
+Time: 5.4318s. Best point found: (array([0.94882182, 0.90625181]), -0.006205976781342713). Num evals 1000.
+Time: 5.4548s. Best point found: (array([0.83985322, 0.70655926]), -0.025792395448578732). Num evals 1000.
+Time: 5.4092s. Best point found: (array([0.93528695, 0.86714394]), -0.009990764299400271). Num evals 1000.
+Time: 5.4123s. Best point found: (array([0.81649544, 0.66316811]), -0.03489660931225654). Num evals 1000.
+Time: 5.4219s. Best point found: (array([1.02857145, 1.04627107]), -0.01447764492035042). Num evals 1000.
+Time: 5.4443s. Best point found: (array([1.02343139, 1.03875134]), -0.008049400444302187). Num evals 1000.
+Time: 5.4571s. Best point found: (array([0.95749355, 0.92676883]), -0.011756703206168855). Num evals 1000.
+Time: 5.3969s. Best point found: (array([0.96521139, 0.94268648]), -0.01342811919530176). Num evals 1000.
+Time: 5.4302s. Best point found: (array([1.1162671 , 1.22724351]), -0.0488948807818376). Num evals 1000.
+Time: 5.4249s. Best point found: (array([1.04089098, 1.10712487]), -0.05770295729586755). Num evals 1000.
+Time: 5.4933s. Best point found: (array([0.98428255, 0.97772998]), -0.008199824013935923). Num evals 1000.
+Time: 5.4723s. Best point found: (array([1.05554973, 1.11699426]), -0.0038748344284794908). Num evals 1000.
+Time: 5.4491s. Best point found: (array([1.08323049, 1.16846312]), -0.009353048533399567). Num evals 1000.
+Average time: 5.4353 +- 0.03s. Average best value: -0.0180 +- 0.01. Average num eval: 1000.0000 +- 0.00.
+
+Function: Holder.
+Time: 6.8964s. Best point found: (array([-8.06790539, -9.68198164]), 19.203753029769988). Num evals 1000.
+Time: 7.5608s. Best point found: (array([-8.06019859,  9.68025404]), 19.205739661286465). Num evals 909.
+Time: 1.1832s. Best point found: (array([-8.08899648, -9.6788297 ]), 19.194907426913378). Num evals 352.
+Time: 5.4293s. Best point found: (array([ 8.0410482 , -9.65458927]), 19.2055409445408). Num evals 755.
+Time: 1.4373s. Best point found: (array([-8.06637033,  9.67377065]), 19.206355529175067). Num evals 362.
+Time: 6.3865s. Best point found: (array([-8.04929613,  9.63285042]), 19.198036502777583). Num evals 1000.
+Time: 3.0740s. Best point found: (array([ 8.06693099, -9.68190181]), 19.204024071661966). Num evals 507.
+Time: 9.1043s. Best point found: (array([-8.03134998, -9.66568594]), 19.202989256096586). Num evals 1000.
+Time: 8.2994s. Best point found: (array([ 8.07614548, -9.66799983]), 19.20395657597489). Num evals 1000.
+Time: 8.8602s. Best point found: (array([-8.05298744,  9.69022685]), 19.201822088131195). Num evals 995.
+Time: 0.5668s. Best point found: (array([-8.11130986, -9.69409621]), 19.1678303260355). Num evals 193.
+Time: 7.5036s. Best point found: (array([-8.04842265,  9.67737233]), 19.206443334588602). Num evals 871.
+Time: 6.3520s. Best point found: (array([ 8.07409034, -9.63897042]), 19.198439600279528). Num evals 1000.
+Time: 6.5599s. Best point found: (array([ 8.06412452, -9.66504506]), 19.207681791897134). Num evals 1000.
+Time: 2.1268s. Best point found: (array([8.08239995, 9.67064412]), 19.200676092782885). Num evals 463.
+Time: 8.1045s. Best point found: (array([ 8.05836525, -9.67876536]), 19.206351138210522). Num evals 1000.
+Time: 0.2296s. Best point found: (array([-8.10444716,  9.68511506]), 19.179760503122495). Num evals 154.
+Time: 0.7976s. Best point found: (array([-8.07158609, -9.64412197]), 19.201665258406788). Num evals 222.
+Time: 1.6024s. Best point found: (array([-8.11321106,  9.67579998]), 19.173435808470426). Num evals 360.
+Time: 0.8798s. Best point found: (array([ 8.0973011 , -9.65814053]), 19.190424813129106). Num evals 262.
+Average time: 4.6477 +- 3.17s. Average best value: 19.1980 +- 0.01. Average num eval: 670.2500 +- 331.30.
+
+Function: Cos.
+Time: 5.5293s. Best point found: (array([ 7.53996122,  9.39696103, -0.52898737,  6.37809037,  4.50246616]), 7.285350668799044). Num evals 1000.
+Time: 5.4879s. Best point found: (array([ 7.54226537,  9.37497396,  8.30510592, -2.94104419,  0.52337432]), 7.324395274509632). Num evals 1000.
+Time: 5.5862s. Best point found: (array([ 9.40541029,  9.35430664, -3.64779183, -8.060859  , -6.72602357]), 7.5262565032882645). Num evals 1000.
+Time: 5.5285s. Best point found: (array([ 7.04208753,  9.72922768,  3.89378214, -1.93467446, -7.96965916]), 7.052375530000382). Num evals 1000.
+Time: 5.4416s. Best point found: (array([ 7.9423654 ,  9.99525628, -9.26186746, -8.22486581,  9.73088531]), 7.367090952216717). Num evals 1000.
+Time: 5.6064s. Best point found: (array([ 8.3053808 ,  9.98370555,  2.76927732, -1.07454746,  5.30303647]), 7.303644829886466). Num evals 1000.
+Time: 5.6391s. Best point found: (array([ 7.48426405,  9.36354634, -0.55979667, -5.94031959,  5.06803042]), 7.188751161774523). Num evals 1000.
+Time: 5.4496s. Best point found: (array([ 8.33606065,  9.69689297, -7.68177217, -9.52767923,  8.67906354]), 7.5134683516379415). Num evals 1000.
+Time: 5.5860s. Best point found: (array([ 9.99936605,  8.72991961, -4.43314623,  1.5307565 , -6.67267957]), 7.288811175324014). Num evals 1000.
+Time: 5.4329s. Best point found: (array([ 9.64327908,  9.39250754, -1.1184305 ,  4.80064966, -6.59498197]), 7.085543222459579). Num evals 1000.
+Time: 5.5653s. Best point found: (array([ 9.07115813,  9.68831657, -2.12688705, -5.96269382,  6.02950862]), 7.501741344968808). Num evals 1000.
+Time: 5.4775s. Best point found: (array([ 7.9077204 ,  8.30868943, -7.26527476,  1.87937597, -0.66119799]), 7.195418266807513). Num evals 1000.
+Time: 5.5011s. Best point found: (array([ 7.52890887,  9.39169628, -5.89083896,  3.07161816, -7.95248535]), 7.346403013639615). Num evals 1000.
+Time: 5.4768s. Best point found: (array([ 8.27818874,  9.00644007,  9.51458865, -4.08754355,  6.63358626]), 7.134086462429743). Num evals 1000.
+Time: 5.5252s. Best point found: (array([ 9.06481163,  8.30822665, -1.85705821, -3.22607297, -6.64429693]), 7.353316807160229). Num evals 1000.
+Time: 5.6525s. Best point found: (array([ 9.71383244,  9.02847789, -1.66572014, -6.73008468,  8.30591768]), 7.728256147748633). Num evals 1000.
+Time: 5.5697s. Best point found: (array([ 9.35895668,  9.39152002, -6.18053876, -5.75406823, -4.99927187]), 7.6530455104004345). Num evals 1000.
+Time: 5.5740s. Best point found: (array([ 9.01570117,  8.69342356,  0.1685984 , -3.85305771,  0.15356317]), 7.4477606365927835). Num evals 1000.
+Time: 5.6733s. Best point found: (array([ 9.39028897,  7.95521055, -4.23969124,  4.91836793,  0.72031939]), 7.345424929336106). Num evals 1000.
+Time: 5.6566s. Best point found: (array([ 9.68081807,  9.0407663 , -3.97520083,  8.81485819, -3.90030433]), 7.605895670486155). Num evals 1000.
+Average time: 5.5480 +- 0.07s. Average best value: 7.3624 +- 0.18. Average num eval: 1000.0000 +- 0.00.
+
+Function: Square.
+Time: 0.0767s. Best point found: (array([ 2.7673652 , -2.32506939]), -13.064257820050035). Num evals 7.
+Time: 6.6600s. Best point found: (array([0.01296133, 0.00675819]), -0.00021366927851082193). Num evals 1000.
+Time: 6.8079s. Best point found: (array([ 0.00464279, -0.02277842]), -0.0005404116730040182). Num evals 1000.
+Time: 6.9732s. Best point found: (array([-0.04140225,  0.01503004]), -0.0019400483448966258). Num evals 1000.
+Time: 6.8640s. Best point found: (array([-0.00613541,  0.02084728]), -0.0004722522183854079). Num evals 1000.
+Time: 6.6343s. Best point found: (array([-0.00251093, -0.01338799]), -0.00018554311502045785). Num evals 1000.
+Time: 6.9220s. Best point found: (array([-0.01494396,  0.0066825 ]), -0.0002679775705136906). Num evals 1000.
+Time: 6.8997s. Best point found: (array([-0.01445471, -0.00171682]), -0.00021188617240760476). Num evals 1000.
+Time: 6.8938s. Best point found: (array([ 0.02067775, -0.01312428]), -0.0005998158527593309). Num evals 1000.
+Time: 0.0583s. Best point found: (array([ 3.37580131, -1.16893022]), -12.762432377364348). Num evals 4.
+Time: 6.9505s. Best point found: (array([ 0.00502344, -0.04044806]), -0.001661280574569319). Num evals 1000.
+Time: 7.0601s. Best point found: (array([-0.00061156, -0.02699796]), -0.0007292638575750624). Num evals 1000.
+Time: 7.2377s. Best point found: (array([0.0135065, 0.002834 ]), -0.0001904569633668939). Num evals 1000.
+Time: 7.0486s. Best point found: (array([-0.03752072,  0.05153976]), -0.0040641513965163035). Num evals 1000.
+Time: 6.8134s. Best point found: (array([-0.02027549, -0.04368507]), -0.0023194804547804187). Num evals 1000.
+Time: 7.3327s. Best point found: (array([-0.01261872,  0.02117433]), -0.000607584233240808). Num evals 1000.
+Time: 7.0444s. Best point found: (array([0.04694524, 0.00433499]), -0.0022226481583025167). Num evals 1000.
+Time: 6.9618s. Best point found: (array([ 0.00636383, -0.00849586]), -0.00011267787905672581). Num evals 1000.
+Time: 7.0355s. Best point found: (array([ 0.02629712, -0.0188593 ]), -0.001047211639124653). Num evals 1000.
+Time: 7.2215s. Best point found: (array([0.01812071, 0.01691964]), -0.0006146343555887526). Num evals 1000.
+Average time: 6.2748 +- 2.08s. Average best value: -1.2922 +- 3.87. Average num eval: 900.5500 +- 298.35.
+
+Optimizer: CMA_ES.
+Function: Rastrigin.
+Time: 0.2076s. Best point found: (array([ 0.05844397, -0.08728675, -0.02574235, -0.02284648, -0.07476661]), -3.46776559576179). Num evals 900.
+Time: 0.0244s. Best point found: (array([0.91376828, 0.88210454, 1.01455541, 0.99541182, 1.01175888]), -8.782798030798766). Num evals 900.
+Time: 0.0243s. Best point found: (array([ 0.07250972,  0.97971306, -0.04998037, -0.02697669,  0.09923815]), -4.59343798860472). Num evals 900.
+Time: 0.0242s. Best point found: (array([-1.08079462e+00,  8.35219770e-01,  5.01223002e-02,  1.12571428e-01,
+        4.41501926e-05]), -10.930362096913946). Num evals 900.
+Time: 0.0244s. Best point found: (array([ 0.01224028, -0.06681151, -0.09081473,  0.17658527, -0.03474926]), -8.313797751795946). Num evals 900.
+Time: 0.0242s. Best point found: (array([-1.14603159,  0.73926384,  0.04538351,  0.0326271 , -0.02517972]), -17.19808984095178). Num evals 900.
+Time: 0.0245s. Best point found: (array([ 0.04863904, -0.1661455 ,  0.13471957, -0.00210356,  0.02886709]), -9.022569737493903). Num evals 900.
+Time: 0.0240s. Best point found: (array([-0.02978537,  0.21849431, -0.04705819, -0.13781905,  0.01981449]), -12.310299044066468). Num evals 900.
+Time: 0.0241s. Best point found: (array([-0.02061584,  0.0202443 , -0.00792285,  0.01815908,  0.0969049 ]), -2.049651231456785). Num evals 900.
+Time: 0.0241s. Best point found: (array([ 0.08033273, -0.0451714 ,  0.0130217 ,  0.03802017, -0.01712844]), -2.032789891432877). Num evals 900.
+Time: 0.0253s. Best point found: (array([-0.00694631, -0.05808977,  0.03811404,  0.03405565,  0.03620804]), -1.4467031037178302). Num evals 900.
+Time: 0.0244s. Best point found: (array([-0.11447271,  0.07673343,  0.03759352, -0.04473486, -0.0103728 ]), -4.330777089005352). Num evals 900.
+Time: 0.0242s. Best point found: (array([ 0.02834246,  0.01179521,  0.00042223, -0.00842447, -0.04142663]), -0.5392156296904105). Num evals 900.
+Time: 0.0241s. Best point found: (array([ 0.01417341,  0.02166359,  0.00375954, -0.01558117, -0.98875043]), -1.1863200495608766). Num evals 900.
+Time: 0.0242s. Best point found: (array([ 0.03369028,  0.074123  , -0.07079476, -0.00704492, -0.06006178]), -2.990127397560002). Num evals 900.
+Time: 0.0243s. Best point found: (array([-0.04327906,  0.16662808,  0.04200492, -0.00731822, -0.02064203]), -5.838063994146658). Num evals 900.
+Time: 0.0241s. Best point found: (array([-0.02998516, -0.02869194,  0.09730443,  0.01087368,  0.93778422]), -3.8189187037256573). Num evals 900.
+Time: 0.0241s. Best point found: (array([ 0.05980051, -0.01167362,  0.03331079,  0.03729133, -0.03141511]), -1.4173694708153164). Num evals 900.
+Time: 0.0243s. Best point found: (array([ 0.04312724, -0.08124344, -0.0044315 , -0.03310721, -0.00897927]), -1.8847624522621942). Num evals 900.
+Time: 0.0266s. Best point found: (array([-0.02126154,  0.06742766,  0.06563192, -0.02384752, -0.11210487]), -4.32582190191458). Num evals 900.
+Average time: 0.0336 +- 0.04s. Average best value: -5.3240 +- 4.32. Average num eval: 900.0000 +- 0.00.
+
+Function: Rosenbrock.
+Time: 0.0248s. Best point found: (array([1.14634132, 1.30910089]), -0.023913309855330495). Num evals 900.
+Time: 0.0247s. Best point found: (array([1.04850263, 1.10106659]), -0.002644512358010836). Num evals 900.
+Time: 0.0249s. Best point found: (array([1.11716881, 1.25189522]), -0.015194698270677234). Num evals 900.
+Time: 0.0143s. Best point found: (array([0.7285531 , 0.49434214]), -0.2065252625784731). Num evals 500.
+Time: 0.0247s. Best point found: (array([1.17648342, 1.39232424]), -0.037888465660019265). Num evals 900.
+Time: 0.0247s. Best point found: (array([1.19038755, 1.42124018]), -0.03802628724336292). Num evals 900.
+Time: 0.0140s. Best point found: (array([0.96654965, 0.93808374]), -0.002613152250853691). Num evals 500.
+Time: 0.0246s. Best point found: (array([0.99516475, 0.99385162]), -0.0012475060427912538). Num evals 900.
+Time: 0.0248s. Best point found: (array([0.94330655, 0.87709175]), -0.01943346328322867). Num evals 900.
+Time: 0.0246s. Best point found: (array([0.96957712, 0.94623038]), -0.004708517312110246). Num evals 900.
+Time: 0.0245s. Best point found: (array([1.15441613, 1.32130031]), -0.03678632903870704). Num evals 900.
+Time: 0.0164s. Best point found: (array([1.27196642, 1.59217773]), -0.1401219155985951). Num evals 600.
+Time: 0.0248s. Best point found: (array([1.09464508, 1.20108038]), -0.009760008318864827). Num evals 900.
+Time: 0.0245s. Best point found: (array([1.07818988, 1.1632545 ]), -0.006171581460937012). Num evals 900.
+Time: 0.0187s. Best point found: (array([1.09695401, 1.19786365]), -0.012364280437799139). Num evals 700.
+Time: 0.0246s. Best point found: (array([1.0245098 , 1.03999763]), -0.009860368659054791). Num evals 900.
+Time: 0.0213s. Best point found: (array([1.1338799 , 1.26392717]), -0.06525814569645118). Num evals 800.
+Time: 0.0249s. Best point found: (array([0.9717654 , 0.95094728]), -0.005178691198347641). Num evals 900.
+Time: 0.0248s. Best point found: (array([1.0260766, 1.0541237]), -0.0008465324853923479). Num evals 900.
+Time: 0.0245s. Best point found: (array([0.96638624, 0.9584212 ]), -0.06124723423353924). Num evals 900.
+Average time: 0.0228 +- 0.00s. Average best value: -0.0350 +- 0.05. Average num eval: 830.0000 +- 134.54.
+
+Function: Holder.
+Time: 0.0183s. Best point found: (array([-10.        ,  -9.99825537]), 15.151376131563312). Num evals 900.
+Time: 0.0183s. Best point found: (array([-8.21188333, -9.40650976]), 18.338590227149787). Num evals 900.
+Time: 0.0183s. Best point found: (array([-8.00273531, -9.37098614]), 18.35710798526447). Num evals 900.
+Time: 0.0180s. Best point found: (array([-10.        ,  -9.92940274]), 15.5463806133849). Num evals 900.
+Time: 0.0182s. Best point found: (array([-10.        ,  -9.71609496]), 16.22131961038182). Num evals 900.
+Time: 0.0180s. Best point found: (array([10., 10.]), 15.140223856952058). Num evals 900.
+Time: 0.0180s. Best point found: (array([10., 10.]), 15.140223856952058). Num evals 900.
+Time: 0.0181s. Best point found: (array([-10., -10.]), 15.140223856952058). Num evals 900.
+Time: 0.0180s. Best point found: (array([8.22305696, 9.65552759]), 18.923710074866538). Num evals 900.
+Time: 0.0180s. Best point found: (array([-10.        ,  -9.95999692]), 15.381710023954433). Num evals 900.
+Time: 0.0180s. Best point found: (array([10.        ,  9.78399521]), 16.09495449739724). Num evals 900.
+Time: 0.0180s. Best point found: (array([8.20128277, 9.3279117 ]), 17.945416851115986). Num evals 900.
+Time: 0.0181s. Best point found: (array([10.        ,  9.87968414]), 15.777218603505613). Num evals 900.
+Time: 0.0182s. Best point found: (array([-10.        ,  -9.97799519]), 15.276738674797548). Num evals 900.
+Time: 0.0181s. Best point found: (array([-10.        ,  -9.82438705]), 15.980972378083527). Num evals 900.
+Time: 0.0181s. Best point found: (array([-10.        ,  -9.85802893]), 15.86362308660012). Num evals 900.
+Time: 0.0181s. Best point found: (array([7.63400259, 9.33498974]), 16.611191825124365). Num evals 900.
+Time: 0.0183s. Best point found: (array([-10., -10.]), 15.140223856952058). Num evals 900.
+Time: 0.0183s. Best point found: (array([-8.43327697, -9.47228628]), 17.421516839554265). Num evals 900.
+Time: 0.0183s. Best point found: (array([-10.        ,  -9.65639891]), 16.266135412150046). Num evals 900.
+Average time: 0.0181 +- 0.00s. Average best value: 16.2859 +- 1.21. Average num eval: 900.0000 +- 0.00.
+
+Function: Cos.
+Time: 0.0121s. Best point found: (array([10.        , 10.        ,  9.73096783,  8.81175708,  9.18633466]), 7.724637744575368). Num evals 700.
+Time: 0.0102s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0106s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0102s. Best point found: (array([9.70492922, 9.70355251, 9.69104417, 9.9321182 , 9.92709166]), 7.875822580433299). Num evals 600.
+Time: 0.0102s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0102s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0106s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0123s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 700.
+Time: 0.0117s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 700.
+Time: 0.0117s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 700.
+Time: 0.0101s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0133s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 800.
+Time: 0.0102s. Best point found: (array([10.        , 10.        ,  8.84982984, 10.        ,  9.96503074]), 7.724637744575368). Num evals 600.
+Time: 0.0101s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0100s. Best point found: (array([9.39618383, 9.72157646, 9.66047947, 8.85822827, 9.07819661]), 7.737687538062147). Num evals 600.
+Time: 0.0103s. Best point found: (array([10.        , 10.        ,  8.56099297,  9.95951483, 10.        ]), 7.724637744575368). Num evals 600.
+Time: 0.0134s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 800.
+Time: 0.0132s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 800.
+Time: 0.0101s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Time: 0.0101s. Best point found: (array([10., 10., 10., 10., 10.]), 7.724637744575368). Num evals 600.
+Average time: 0.0110 +- 0.00s. Average best value: 7.7328 +- 0.03. Average num eval: 650.0000 +- 74.16.
+
+Function: Square.
+Time: 0.0172s. Best point found: (array([0.01028312, 0.00214041]), -0.0001103239028441378). Num evals 900.
+Time: 0.0172s. Best point found: (array([-0.00976265,  0.04113906]), -0.0017877313791899514). Num evals 900.
+Time: 0.0172s. Best point found: (array([-0.00174166,  0.00275959]), -1.064871184644642e-05). Num evals 900.
+Time: 0.0176s. Best point found: (array([ 0.00598755, -0.01075365]), -0.00015149184922926744). Num evals 900.
+Time: 0.0172s. Best point found: (array([-0.01022748,  0.00654679]), -0.00014746185270981076). Num evals 900.
+Time: 0.0172s. Best point found: (array([ 0.00412302, -0.00223283]), -2.1984880093092765e-05). Num evals 900.
+Time: 0.0170s. Best point found: (array([ 0.00733026, -0.00965946]), -0.0001470379212033463). Num evals 900.
+Time: 0.0170s. Best point found: (array([-0.00949682,  0.03152372]), -0.0010839348400155226). Num evals 900.
+Time: 0.0170s. Best point found: (array([ 0.00036276, -0.01406335]), -0.0001979093034470116). Num evals 900.
+Time: 0.0173s. Best point found: (array([-0.01078926,  0.01909239]), -0.00048092748748809544). Num evals 900.
+Time: 0.0170s. Best point found: (array([-0.00560438, -0.00162525]), -3.4050480868562154e-05). Num evals 900.
+Time: 0.0170s. Best point found: (array([0.00076574, 0.00024347]), -6.456305866756355e-07). Num evals 900.
+Time: 0.0171s. Best point found: (array([ 0.00322671, -0.01946819]), -0.00038942189120491345). Num evals 900.
+Time: 0.0170s. Best point found: (array([0.0044382 , 0.00101531]), -2.072846648067762e-05). Num evals 900.
+Time: 0.0170s. Best point found: (array([-2.51070716e-05,  1.24081678e-04]), -1.6026627834578445e-08). Num evals 900.
+Time: 0.0174s. Best point found: (array([-0.00712719,  0.00508149]), -7.66184243580615e-05). Num evals 900.
+Time: 0.0170s. Best point found: (array([ 0.00015746, -0.00095411]), -9.351155833237208e-07). Num evals 900.
+Time: 0.0171s. Best point found: (array([ 0.0054125 , -0.01629109]), -0.00029469467103423254). Num evals 900.
+Time: 0.0171s. Best point found: (array([-0.00202377, -0.00106003]), -5.219314352203907e-06). Num evals 900.
+Time: 0.0172s. Best point found: (array([-0.00201895, -0.00221209]), -8.969511745048967e-06). Num evals 900.
+Average time: 0.0171 +- 0.00s. Average best value: -0.0002 +- 0.00. Average num eval: 900.0000 +- 0.00.
+
