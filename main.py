@@ -27,25 +27,15 @@ def time_it(function, args={}):
 
 
 if __name__ == "__main__":
-    num_exp = 20
+    num_exp = 1
 
-    functions = [Rastrigin(), Rosenbrock(), Holder(), Cos(), Square()]
+    functions = [Rastrigin(), Square()]
     bounds = [
-        np.array(
-            [(-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12)]
-        ),
-        np.array(
-            [
-                (-2.048, 2.048),
-                (-2.048, 2.048),
-            ]
-        ),
-        np.array([(-10, 10), (-10, 10)]),
-        np.array([(-10, 10), (-10, 10), (-10, 10), (-10, 10), (-10, 10)]),
-        np.array([(-5, 5), (-5, 5)]),
+        np.array([(-5.12, 5.12)]),
+        np.array([(-100, 100)]),
     ]
 
-    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES]
+    optimizers_cls = [CMA_ES]
 
     num_eval = 1000
 
@@ -65,8 +55,9 @@ if __name__ == "__main__":
                     bounds[i],
                     m_0,
                     num_generations=num_eval // 100,
-                    lambda_=100,
-                    cov_method="full",
+                    lambda_=50,
+                    cov_method="scratch",
+                    mu=1,
                 )
             else:
                 raise NotImplementedError

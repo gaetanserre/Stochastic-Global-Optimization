@@ -5,6 +5,8 @@ import numpy as np
 import scipy
 from .__optimizer__ import Optimizer
 
+from scipy.stats import norm
+
 
 class CMA_ES(Optimizer):
     """
@@ -17,6 +19,7 @@ class CMA_ES(Optimizer):
         m_0,
         num_generations=100,
         lambda_=None,
+        mu=None,
         cov_method="full",
     ):
         self.m_0 = m_0
@@ -26,7 +29,7 @@ class CMA_ES(Optimizer):
         self.lambda_ = (
             lambda_ if lambda_ is not None else 4 + int(np.floor(3 * np.log(self.dim)))
         )
-        self.mu = self.lambda_ // 2
+        self.mu = self.lambda_ // 2 if mu is None else mu
         self.cov_method = cov_method
 
     def update_mean(self, mean, x, weights):
@@ -133,22 +136,35 @@ class CMA_ES(Optimizer):
 
         return weights.reshape(-1, 1)
 
+    @staticmethod
+    def print_quantile(mean, cov):
+        print(f"mean: {mean} var {cov}")
+        norm_std = norm(0, 1)
+        quantiles = norm_std.ppf([0.05, 0.95])
+        quantiles = np.array([mean + np.sqrt(cov) * q for q in quantiles])
+        print("Quantiles: ", quantiles.flatten())
+
     def optimize(self, function, verbose=False):
-        mean = np.zeros(self.dim)
+        mean = self.m_0
         cov = np.eye(self.dim)
         p_c = np.zeros(self.dim)
         p_sigma = np.zeros(self.dim)
         sigma = 1
 
-        weights = self.create_weights()
+        weights = np.ones(self.lambda_).reshape(-1, 1) * (
+            1 / self.mu
+        )  # self.create_weights()
 
         points = np.zeros((self.num_generations * self.lambda_, self.dim))
         values = np.zeros((self.num_generations * self.lambda_))
+
+        self.print_quantile(mean, cov)
 
         for i in range(self.num_generations):
             x = mean + sigma * np.random.multivariate_normal(
                 np.zeros(self.dim), cov, self.lambda_
             )
+
             # clip to bounds
             x = np.clip(x, self.bounds[:, 0], self.bounds[:, 1])
             y = np.array([function(xi) for xi in x])
@@ -181,6 +197,8 @@ class CMA_ES(Optimizer):
                 )
 
             mean = self.update_mean(mean, x_sorted, weights)
+
+            self.print_quantile(mean, cov)
 
         best_idx = np.argmax(values[: i * self.lambda_])
         return (
