@@ -136,14 +136,6 @@ class CMA_ES(Optimizer):
 
         return weights.reshape(-1, 1)
 
-    @staticmethod
-    def print_quantile(mean, cov):
-        print(f"mean: {mean} var {cov}")
-        norm_std = norm(0, 1)
-        quantiles = norm_std.ppf([0.05, 0.95])
-        quantiles = np.array([mean + np.sqrt(cov) * q for q in quantiles])
-        print("Quantiles: ", quantiles.flatten())
-
     def optimize(self, function, verbose=False):
         mean = self.m_0
         cov = np.eye(self.dim)
@@ -151,14 +143,10 @@ class CMA_ES(Optimizer):
         p_sigma = np.zeros(self.dim)
         sigma = 1
 
-        weights = np.ones(self.lambda_).reshape(-1, 1) * (
-            1 / self.mu
-        )  # self.create_weights()
+        weights = self.create_weights()
 
         points = np.zeros((self.num_generations * self.lambda_, self.dim))
         values = np.zeros((self.num_generations * self.lambda_))
-
-        self.print_quantile(mean, cov)
 
         for i in range(self.num_generations):
             x = mean + sigma * np.random.multivariate_normal(
@@ -197,8 +185,6 @@ class CMA_ES(Optimizer):
                 )
 
             mean = self.update_mean(mean, x_sorted, weights)
-
-            self.print_quantile(mean, cov)
 
         best_idx = np.argmax(values[: i * self.lambda_])
         return (
