@@ -48,14 +48,18 @@
       align(center, text(14pt)[
         Gaëtan Serré \
         ENS Paris-Saclay - Centre Borelli \
-        #link("mailto:gaetan.serre@ens-paris-saclay.fr")
+        #text(font: "CMU Typewriter Text")[
+          #link("mailto:gaetan.serre@ens-paris-saclay.fr")
+        ]
       ])
   } else {
     for author in authors {
       align(center, text(14pt)[
         #author.name \
         #author.affiliation \
-        #link("mailto:" + author.email)
+        #text(font: "CMU Typewriter Text")[
+          #link("mailto:" + author.email)
+        ]
       ])
     }
   }
