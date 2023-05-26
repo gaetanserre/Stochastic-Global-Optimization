@@ -7,21 +7,6 @@ import numpy as np
 from collections import deque
 
 
-def Uniform(X: np.array):
-    """
-    This function generates a random point in the feasible region X. We assume that X is a subset of R^n
-    described by the inequalities X = {x in R^n | a_i <= x_i <= b_i, i = 0, ..., m-1} where a_i, b_i are given
-    such that X[i,j] = [a_i, b_i] for i = 0, ..., m-1 and j = 0, 1.
-    For simplicity, we assume that X C Rectangle given by an infinite norm (i.e. X = {x in R^n | -M <= x_i <= M, i = 1, ..., n}).
-    X: feasible region (numpy array)
-    """
-
-    theta = np.zeros(X.shape[0])
-    for i in range(X.shape[0]):
-        theta[i] = np.random.uniform(X[i, 0], X[i, 1])
-    return theta
-
-
 def Bernoulli(p: float):
     """
     This function generates a random variable following a Bernoulli distribution.
@@ -65,7 +50,7 @@ class AdaLIPO_E(Optimizer):
         alpha = 10e-2
         k_hat = 0
 
-        X_1 = Uniform(self.bounds)
+        X_1 = np.random.uniform(self.bounds[:, 0], self.bounds[:, 1])
         nb_samples = 1
 
         # We keep track of the last `size_slope` values of nb_samples to compute the slope
@@ -113,7 +98,7 @@ class AdaLIPO_E(Optimizer):
             B_tp1 = Bernoulli(p(t))
             if B_tp1 == 1:
                 # Exploration
-                X_tp1 = Uniform(self.bounds)
+                X_tp1 = np.random.uniform(self.bounds[:, 0], self.bounds[:, 1])
                 nb_samples += 1
                 last_nb_samples[-1] = nb_samples
                 points[t] = X_tp1
@@ -121,7 +106,7 @@ class AdaLIPO_E(Optimizer):
             else:
                 # Exploitation
                 while True:
-                    X_tp1 = Uniform(self.bounds)
+                    X_tp1 = np.random.uniform(self.bounds[:, 0], self.bounds[:, 1])
                     nb_samples += 1
                     last_nb_samples[-1] = nb_samples
                     if condition(X_tp1, values, k_hat, points, t):
