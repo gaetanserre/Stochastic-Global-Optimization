@@ -96,6 +96,9 @@ class GO_SVGD(Optimizer):
                 step_size = optimizer.step(svgd_grad, x)
                 x = x + step_size * svgd_grad
 
+                # clamp to domain
+                x = np.clip(x, self.domain[:, 0], self.domain[:, 1])
+
         evals = np.array([function(xi) for xi in x])
         best_idx = np.argmax(evals)
         max_eval = evals[best_idx]
