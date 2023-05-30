@@ -11,6 +11,8 @@ from benchmark.rosenbrock import Rosenbrock
 from benchmark.holder import Holder
 from benchmark.cos import Cos
 
+from benchmark.epidemio.simulation import Simulation
+
 # Optimizations algorithms
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
@@ -40,30 +42,15 @@ def print_green(str):
 
 
 if __name__ == "__main__":
-    num_exp = 20
+    num_exp = 5
 
-    functions = [Rastrigin(), Rosenbrock(), Holder(), Cos(), Square()]
-    bounds = [
-        np.array(
-            [(-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12), (-5.12, 5.12)]
-        ),
-        np.array(
-            [
-                (-2.048, 2.048),
-                (-2.048, 2.048),
-                (-2.048, 2.048),
-                (-2.048, 2.048),
-                (-2.048, 2.048),
-            ]
-        ),
-        np.array([(-10, 10), (-10, 10)]),
-        np.array([(-10, 10), (-10, 10)]),
-        np.array([(-10, 10), (-10, 10), (-10, 10), (-10, 10), (-10, 10)]),
-    ]
+    functions = [Simulation()]
+
+    bounds = [np.array([(0, 1), (0, 1), (0, 1)])]
 
     optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
 
-    num_eval = 1000
+    num_eval = 500
 
     for i, function in enumerate(functions):
         print_yellow(f"Function: {function.__class__.__name__}.")
@@ -79,19 +66,19 @@ if __name__ == "__main__":
                 optimizer = optimizer_cls(
                     bounds[i],
                     m_0,
-                    num_generations=num_eval // 100,
-                    lambda_=100,
+                    num_generations=num_eval // 5,
+                    lambda_=5,
                     cov_method="full",
                 )
             elif optimizer_cls == GO_SVGD:
                 optimizer = optimizer_cls(
                     bounds[i],
-                    n_particles=100,
-                    k_iter=[50, 250, 450],
-                    svgd_iter=100,
+                    n_particles=10,
+                    k_iter=[50, 250],
+                    svgd_iter=10,
                 )
             else:
-                raise NotImplementedError
+                raise NotImplementedError(f"{optimizer_cls} not implemented.")
 
             times = []
             best_values = []
