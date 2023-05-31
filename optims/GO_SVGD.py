@@ -127,7 +127,7 @@ class GO_SVGD(Optimizer):
 
         all_points = [x.copy()]
         for k in self.k_iter:
-            optimizer = Adam(lr=0.5)
+            optimizer = Adam(lr=0.1)
             for _ in range(self.svgd_iter):
                 svgd_grad = svgd(x, np.array([logprob_grad(k)(xi) for xi in x]), kernel)
                 x = optimizer.step(svgd_grad, x)
