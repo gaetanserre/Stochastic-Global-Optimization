@@ -98,7 +98,9 @@ def cli():
     return argparser.parse_args()
 
 
-def run_exps(optimizers_cls, nb_exp, function, bounds, nb_eval, plot_figures):
+def run_exps(
+    optimizers_cls, nb_exp, function, bounds, nb_eval, svgd_lr=0.5, plot_figures=False
+):
     if plot_figures:
         from fig_generator import FigGenerator
 
@@ -128,6 +130,7 @@ def run_exps(optimizers_cls, nb_exp, function, bounds, nb_eval, plot_figures):
                 n_particles=5,
                 k_iter=[3, 100],
                 svgd_iter=10,
+                lr=svgd_lr,
             )
         else:
             raise return_error(f"{optimizer_cls} not implemented.")
@@ -210,6 +213,7 @@ if __name__ == "__main__":
             simulation,
             bounds,
             args.nb_eval,
+            svgd_lr=0.1,
             plot_figures=False,
         )
 
