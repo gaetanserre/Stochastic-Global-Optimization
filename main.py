@@ -2,101 +2,223 @@
 # Created in 2023 by Gaëtan Serré
 #
 
+import argparse
 import numpy as np
+import subprocess
+import os
+import json
+import time
 
-# benchmark functions
-from benchmark.rastrigin import Rastrigin
-from benchmark.square import Square
-from benchmark.rosenbrock import Rosenbrock
-from benchmark.holder import Holder
-from benchmark.cos import Cos
-
-from benchmark.epidemio.simulation import Simulation
-
-# Optimizations algorithms
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
 from optims.GO_SVGD import GO_SVGD
 
+from epidemiology.simulation import Simulation
+
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+
+# IPOL utils functions
+
+
+def return_error(error):
+    with open("demo_failure.txt", "w") as f:
+        f.write(error)
+    exit(0)
+
+
+# Parse the bounds
+def parse_bounds(bounds):
+    bounds = []
+    for b in args.bounds.split(" "):
+        try:
+            bounds.append(float(b))
+        except:
+            return_error("Bounds must be float.")
+    return np.array(bounds).reshape(-1, 2)
+
+
+# Use the OCaml parser to parse the function
+def parse_function(function):
+    if (
+        subprocess.run(
+            [
+                os.path.join(DIR_PATH, "numpy_parser", "numpy_parser"),
+                os.path.join(DIR_PATH, "numpy_parser", "numpy_primitives.txt"),
+                function,
+            ]
+        ).returncode
+        != 0
+    ):
+        return_error(f"Function expression '{args.function}' is not valid.")
+    return lambda x: eval(function)
+
+
+def build_ifr(death_param, nb_age_group, d=1.15):
+    ifr = [0] * nb_age_group
+    for i in range(nb_age_group - 1, -1, -1):
+        ifr[i] = death_param / d ** ((nb_age_group - 1) - i)
+    return ifr
+
 
 def time_it(function, args={}):
-    import time
-
     start = time.time()
     ret = function(**args)
     end = time.time()
     return ret, end - start
 
 
-def print_yellow(str):
-    print("\033[93m" + str + "\033[0m")
+def cli():
+    argparser = argparse.ArgumentParser(description="Run the experiments.")
+    argparser.add_argument(
+        "-e", "--nb_eval", type=int, default=1000, help="Number of evaluations."
+    )
+    argparser.add_argument(
+        "-x", "--nb_exp", type=int, default=5, help="Number of experiments."
+    )
+    argparser.add_argument(
+        "-f", "--function", type=str, default=None, help="Function to optimize."
+    )
+    argparser.add_argument("-b", "--bounds", type=str, default=None, help="Bounds.")
+    argparser.add_argument(
+        "-r",
+        "--reproduction",
+        type=float,
+        default=2.46,
+        help="Reproduction number for epidemiology simulation.",
+    )
+    argparser.add_argument(
+        "-d",
+        "--death_rate",
+        type=float,
+        default=0.01,
+        help="Death rate for epidemiology simulation.",
+    )
+
+    return argparser.parse_args()
 
 
-def print_blue(str):
-    print("\033[94m" + str + "\033[0m")
+def run_exps(optimizers_cls, nb_exp, function, bounds, nb_eval, plot_figures):
+    if plot_figures:
+        from fig_generator import FigGenerator
 
+        fig_gen = FigGenerator(function, bounds)
 
-def print_green(str):
-    print("\033[92m" + str + "\033[0m")
+        if not os.path.exists("figures"):
+            os.makedirs("figures")
+
+    for optimizer_cls in optimizers_cls:
+        print(f"Optimizer: {optimizer_cls.__name__}.")
+        if optimizer_cls == PRS:
+            optimizer = optimizer_cls(bounds, num_evals=nb_eval)
+        elif optimizer_cls == AdaLIPO_E:
+            optimizer = optimizer_cls(bounds, max_evals=nb_eval)
+        elif optimizer_cls == CMA_ES:
+            m_0 = np.random.uniform(bounds[:, 0], bounds[:, 1])
+            optimizer = optimizer_cls(
+                bounds,
+                m_0,
+                num_generations=nb_eval // 5,
+                lambda_=5,
+                cov_method="full",
+            )
+        elif optimizer_cls == GO_SVGD:
+            optimizer = optimizer_cls(
+                bounds,
+                n_particles=5,
+                k_iter=[3, 100],
+                svgd_iter=10,
+            )
+        else:
+            raise return_error(f"{optimizer_cls} not implemented.")
+
+        times = []
+        best_values = []
+        points = None
+        values = None
+        old_best = None
+        for _ in range(nb_exp):
+            ret, time = time_it(
+                optimizer.optimize, {"function": function, "verbose": False}
+            )
+            best_point, points_, values_ = ret
+            if old_best == None or best_point[1] > old_best:
+                points = points_
+                values = values_
+                old_best = best_point[1]
+
+            print(f"Time: {time:.4f}s. Best point found: {best_point}.")
+
+            times.append(time)
+            best_values.append(best_point[1])
+        print(
+            f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
+        )
+
+        if plot_figures:
+            path = f"figures/fun_{optimizer_cls.__name__}.png"
+            fig_gen.gen_figure(points, values, optimizer_cls.__name__, path=path)
 
 
 if __name__ == "__main__":
-    num_exp = 5
-
-    functions = [Simulation()]
-
-    bounds = [np.array([(0, 1), (0, 1), (0, 1)])]
+    args = cli()
 
     optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
 
-    num_eval = 500
+    if args.function is None:
+        # Experimental design optimization
 
-    for i, function in enumerate(functions):
-        print_yellow(f"Function: {function.__class__.__name__}.")
-        for optimizer_cls in optimizers_cls:
-            print_blue(f"Optimizer: {optimizer_cls.__name__}.")
+        # Set the reproduction number
+        params = json.load(open(os.path.join("epidemiology", "parameters.json"), "r"))
+        params["reproduction_number"] = args.reproduction
 
-            if optimizer_cls == PRS:
-                optimizer = optimizer_cls(bounds[i], num_evals=num_eval)
-            elif optimizer_cls == AdaLIPO_E:
-                optimizer = optimizer_cls(bounds[i], max_evals=num_eval)
-            elif optimizer_cls == CMA_ES:
-                m_0 = np.random.uniform(bounds[i][:, 0], bounds[i][:, 1])
-                optimizer = optimizer_cls(
-                    bounds[i],
-                    m_0,
-                    num_generations=num_eval // 5,
-                    lambda_=5,
-                    cov_method="full",
-                )
-            elif optimizer_cls == GO_SVGD:
-                optimizer = optimizer_cls(
-                    bounds[i],
-                    n_particles=10,
-                    k_iter=[50, 250],
-                    svgd_iter=10,
-                )
-            else:
-                raise NotImplementedError(f"{optimizer_cls} not implemented.")
+        json.dump(
+            params, open(os.path.join("epidemiology", "parameters.json"), "w"), indent=4
+        )
 
-            times = []
-            best_values = []
-            evals = []
-
-            for _ in range(num_exp):
-                ret, time = time_it(
-                    optimizer.optimize, {"function": function, "verbose": False}
-                )
-                best_point, points, values = ret
-
-                print(
-                    f"Time: {time:.4f}s. Best point found: {best_point}. Num evals {len(values)}."
-                )
-
-                times.append(time)
-                best_values.append(best_point[1])
-                evals.append(len(values))
-            print_green(
-                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}. Average num eval: {np.mean(evals):.4f} +- {np.std(evals):.2f}.\n"
+        disease_param = json.load(
+            open(
+                os.path.join(
+                    "epidemiology", "model", "epidemiological_parameters.json"
+                ),
+                "r",
             )
+        )
+
+        # Set the mortality
+        ifr = build_ifr(args.death_rate, 10)
+
+        disease_param["ifr"] = ifr
+
+        json.dump(
+            disease_param,
+            open(
+                os.path.join(
+                    "epidemiology", "model", "epidemiological_parameters.json"
+                ),
+                "w",
+            ),
+            indent=4,
+        )
+
+        simulation = Simulation()
+        bounds = np.array([(0, 1), (0, 1), (0, 1)])
+
+        run_exps(
+            optimizers_cls,
+            args.nb_exp,
+            simulation,
+            bounds,
+            args.nb_eval,
+            plot_figures=False,
+        )
+
+    else:
+        # Mathematical function optimization
+        f = parse_function(args.function)
+        bounds = parse_bounds(args.bounds)
+        dim = bounds.shape[0]
+
+        run_exps(
+            optimizers_cls, args.nb_exp, f, bounds, args.nb_eval, plot_figures=dim <= 2
+        )

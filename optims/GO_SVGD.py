@@ -7,7 +7,7 @@ from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
 
 
-class AdaGrad:
+""" class AdaGrad:
     def __init__(
         self,
         lr=0.01,
@@ -22,9 +22,10 @@ class AdaGrad:
         self.initial_accumulator_value = initial_accumulator_value
         self.eps = eps
         self.state_sum = 0
-        self.t = 1
+        self.t = 0
 
     def step(self, grad, params):
+        self.t += 1
         gamma_t = self.lr / (1 + (self.t - 1) * self.lr_decay)
 
         if self.weight_decay != 0:
@@ -32,7 +33,42 @@ class AdaGrad:
 
         self.state_sum += grad**2
 
-        return gamma_t / (np.sqrt(self.state_sum) + self.eps)
+        return gamma_t / (np.sqrt(self.state_sum) + self.eps) """
+
+
+class Adam:
+    def __init__(
+        self,
+        lr=0.001,
+        betas=(0.9, 0.999),
+        eps=1e-8,
+        amsgrad=False,
+    ):
+        self.lr = lr
+        self.betas = betas
+        self.eps = eps
+        self.amsgrad = amsgrad
+        self.state_m = 0
+        self.state_v = 0
+        self.state_v_max = 0
+        self.t = 0
+
+    def step(self, grad, params):
+        self.t += 1
+
+        grad = -grad
+
+        self.state_m = self.betas[0] * self.state_m + (1 - self.betas[0]) * grad
+        self.state_v = self.betas[1] * self.state_v + (1 - self.betas[1]) * grad**2
+
+        m_hat = self.state_m / (1 - self.betas[0] ** self.t)
+        v_hat = self.state_v / (1 - self.betas[1] ** self.t)
+
+        if self.amsgrad:
+            self.state_v_max = np.maximum(self.self.state_v_max, v_hat)
+            return self.lr * m_hat / (np.sqrt(self.state_v_max) + self.eps)
+        else:
+            return params - self.lr * m_hat / (np.sqrt(v_hat) + self.eps)
 
 
 def gradient(f, x, eps=1e-12):
@@ -51,7 +87,7 @@ def rbf(x, h=-1):
     sq_dist = pdist(x)
     pairwise_dists = squareform(sq_dist) ** 2
     if h < 0:  # if h < 0, using median trick
-        h = np.median(pairwise_dists)
+        h = np.median(pairwise_dists) + 1e-10
         h = np.sqrt(0.5 * h / np.log(x.shape[0] + 1))
 
     # compute the rbf kernel
@@ -89,21 +125,45 @@ class GO_SVGD(Optimizer):
             self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
         )
 
+        all_points = [x.copy()]
         for k in self.k_iter:
-            optimizer = AdaGrad(lr=0.1)
-            for i in range(self.svgd_iter):
+            optimizer = Adam(lr=0.5)
+            for _ in range(self.svgd_iter):
                 svgd_grad = svgd(x, np.array([logprob_grad(k)(xi) for xi in x]), kernel)
-                step_size = optimizer.step(svgd_grad, x)
-                x = x + step_size * svgd_grad
+                x = optimizer.step(svgd_grad, x)
 
                 # clamp to domain
                 x = np.clip(x, self.domain[:, 0], self.domain[:, 1])
 
-        evals = np.array([function(xi) for xi in x])
+                # save all points
+                all_points.append(x.copy())
+
+        """ from scipy.integrate import quad
+        import matplotlib.pyplot as plt
+
+        xs = np.linspace(self.domain[:, 0], self.domain[:, 1], 10000)
+        denom = quad(
+            lambda x: np.exp(k * function(x)), self.domain[:, 0], self.domain[:, 1]
+        )[0]
+        plt.plot(xs, [np.exp(k * function(xi)) / denom for xi in xs])
+        plt.savefig("d.png")
+        plt.clf()
+        plt.plot(xs, [logprob_grad(k)(xi) for xi in xs])
+        plt.savefig("grad.png")
+        plt.clf()
+
+        plt.hist(x[:, 0], bins=5, density=True)
+        plt.xlim(self.domain[0])
+        plt.savefig("hist.png")
+        plt.clf() """
+
+        evals = np.array([function(xi) for xi in x]).flatten()
         best_idx = np.argmax(evals)
         max_eval = evals[best_idx]
         best_particle = x[best_idx]
         if verbose:
             print(f"Best particle found: {best_particle}. Eval at f(best): {max_eval}.")
 
-        return (best_particle, max_eval), x, evals
+        all_points = np.array(all_points).reshape(-1, dim)
+        all_evals = np.array([function(xi) for xi in all_points]).flatten()
+        return (best_particle, max_eval), all_points, all_evals
