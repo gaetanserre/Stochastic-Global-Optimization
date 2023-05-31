@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
 
-    num_eval = 500
+    num_eval = 100
 
     for i, function in enumerate(functions):
         print_yellow(f"Function: {function.__class__.__name__}.")
