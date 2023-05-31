@@ -108,11 +108,12 @@ def svgd(x, logprob_grad, kernel):
 
 
 class GO_SVGD(Optimizer):
-    def __init__(self, domain, n_particles, k_iter, svgd_iter):
+    def __init__(self, domain, n_particles, k_iter, svgd_iter, lr=0.5):
         self.domain = domain
         self.n_particles = n_particles
         self.k_iter = k_iter
         self.svgd_iter = svgd_iter
+        self.lr = lr
 
     def optimize(self, function, verbose=False):
         logprob_grad = lambda k: (lambda x: k * gradient(function, x))
@@ -126,7 +127,7 @@ class GO_SVGD(Optimizer):
         )
 
         for k in self.k_iter:
-            optimizer = Adam(lr=0.1)
+            optimizer = Adam(lr=self.lr)
             for i in range(self.svgd_iter):
                 svgd_grad = svgd(x, np.array([logprob_grad(k)(xi) for xi in x]), kernel)
                 x = optimizer.step(svgd_grad, x)

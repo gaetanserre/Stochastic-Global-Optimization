@@ -76,6 +76,7 @@ if __name__ == "__main__":
                     n_particles=10,
                     k_iter=[50, 250],
                     svgd_iter=10,
+                    lr=0.1 if function.__class__.__name__ == "Simulation" else 0.5,
                 )
             else:
                 raise NotImplementedError(f"{optimizer_cls} not implemented.")
