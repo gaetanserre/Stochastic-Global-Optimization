@@ -84,7 +84,7 @@ class AdaLIPO_E(Optimizer):
             k: Lipschitz constant (float)
             points: set of points we have explored (numpy array)
             """
-            max_val = np.max(values)
+            max_val = np.max(values[:iter])
 
             left_min = np.min(
                 values[:iter] + k * np.linalg.norm(x - points[:iter], ord=2, axis=1)
