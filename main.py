@@ -83,7 +83,6 @@ if __name__ == "__main__":
 
             times = []
             best_values = []
-            evals = []
 
             for _ in range(num_exp):
                 ret, time = time_it(
@@ -91,13 +90,10 @@ if __name__ == "__main__":
                 )
                 best_point, points, values = ret
 
-                print(
-                    f"Time: {time:.4f}s. Best point found: {best_point}. Num evals {len(values)}."
-                )
+                print(f"Time: {time:.4f}s. Best point found: {best_point}.")
 
                 times.append(time)
                 best_values.append(best_point[1])
-                evals.append(len(values))
             print_green(
-                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}. Average num eval: {np.mean(evals):.4f} +- {np.std(evals):.2f}.\n"
+                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
             )
