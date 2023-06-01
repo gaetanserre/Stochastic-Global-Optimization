@@ -130,7 +130,7 @@ def run_exps(
                 n_particles=10,
                 k_iter=[50],
                 svgd_iter=10 if is_simu else 200,
-                lr=0.3,
+                lr=0.1 if is_simu else 0.3,
             )
         else:
             raise return_error(f"{optimizer_cls} not implemented.")
@@ -216,7 +216,7 @@ if __name__ == "__main__":
             1,
             simulation,
             bounds,
-            min(args.nb_eval, 500),
+            min(args.nb_eval, 250),
             is_simu=True,
             plot_figures=False,
         )
