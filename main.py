@@ -129,8 +129,8 @@ def run_exps(
                 bounds,
                 n_particles=10,
                 k_iter=[50],
-                svgd_iter=10 if is_simu else 500,
-                lr=0.1,
+                svgd_iter=10 if is_simu else 200,
+                lr=0.3,
             )
         else:
             raise return_error(f"{optimizer_cls} not implemented.")
