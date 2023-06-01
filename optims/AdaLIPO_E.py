@@ -36,8 +36,13 @@ class AdaLIPO_E(Optimizer):
         Check if the slope of the last `size_slope` points of the the nb_samples vs nb_evaluations curve
         is greater than max_slope.
         """
-        slope = (last_nb_samples[-1] - last_nb_samples[0]) / (len(last_nb_samples) - 1)
-        return slope > max_slope
+        if len(last_nb_samples) == size_slope:
+            slope = (last_nb_samples[-1] - last_nb_samples[0]) / (
+                len(last_nb_samples) - 1
+            )
+            return slope > max_slope
+        else:
+            return False
 
     def return_process(self, points, values, nb_samples):
         points = points[:nb_samples]
@@ -84,7 +89,7 @@ class AdaLIPO_E(Optimizer):
             k: Lipschitz constant (float)
             points: set of points we have explored (numpy array)
             """
-            max_val = np.max(values)
+            max_val = np.max(values[:iter])
 
             left_min = np.min(
                 values[:iter] + k * np.linalg.norm(x - points[:iter], ord=2, axis=1)
@@ -138,5 +143,5 @@ class AdaLIPO_E(Optimizer):
                 print(
                     f"Iteration: {t} Lipschitz constant: {k_hat:.4f} Number of samples: {nb_samples}"
                 )
-
+        print(k_hat)
         return self.return_process(points, values, t)
