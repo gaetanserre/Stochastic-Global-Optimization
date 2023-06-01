@@ -3,7 +3,6 @@
 #
 
 import numpy as np
-from scipy.integrate import cumulative_trapezoid as integrate
 from matplotlib.dates import drange
 from datetime import timedelta
 
@@ -19,16 +18,9 @@ def score(model, results, scenario: None):
         t = drange(dstart, dend, timedelta(days=1))
 
     # Compute the score
-    h = h.sum(axis=1)
-    h = h
-
-    w = w.sum(axis=1)
-    w = w
-
     cf_values = np.array(scenario.contact_factor_evolution["contact_factor"])
 
-    score = d[-1] / (
-        cf_values.prod() + 1e-10
-    )  # integrate(h, t)[-1] + integrate(w, t)[-1] / (cf_values.prod() + 1e-10)
+    # Score = nb_dead * max(1, log(1 / c1 * c2 * c3))
+    score = d[-1] * np.maximum(1, np.log(1 / (cf_values.prod() + 1e-10)))
 
     return -score
