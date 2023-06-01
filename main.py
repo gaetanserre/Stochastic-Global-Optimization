@@ -172,17 +172,21 @@ if __name__ == "__main__":
         # Experimental design optimization
 
         # Set the reproduction number
-        params = json.load(open(os.path.join("epidemiology", "parameters.json"), "r"))
+        params = json.load(
+            open(os.path.join(DIR_PATH, "epidemiology", "parameters.json"), "r")
+        )
         params["reproduction_number"] = args.reproduction
 
         json.dump(
-            params, open(os.path.join("epidemiology", "parameters.json"), "w"), indent=4
+            params,
+            open(os.path.join(DIR_PATH, "epidemiology", "parameters.json"), "w"),
+            indent=4,
         )
 
         disease_param = json.load(
             open(
                 os.path.join(
-                    "epidemiology", "model", "epidemiological_parameters.json"
+                    DIR_PATH, "epidemiology", "model", "epidemiological_parameters.json"
                 ),
                 "r",
             )
@@ -197,7 +201,7 @@ if __name__ == "__main__":
             disease_param,
             open(
                 os.path.join(
-                    "epidemiology", "model", "epidemiological_parameters.json"
+                    DIR_PATH, "epidemiology", "model", "epidemiological_parameters.json"
                 ),
                 "w",
             ),
