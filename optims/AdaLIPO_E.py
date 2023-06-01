@@ -24,7 +24,7 @@ class AdaLIPO_E(Optimizer):
     This class implements the AdaLIPO_E algorithm.
     """
 
-    def __init__(self, bounds, max_evals, window_slope=5, max_slope=600):
+    def __init__(self, bounds, max_evals, window_slope=5, max_slope=1000):
         self.bounds = bounds
         self.max_evals = max_evals
         self.window_slope = window_slope
