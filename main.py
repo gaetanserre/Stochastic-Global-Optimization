@@ -77,9 +77,9 @@ def cli():
         "-x", "--nb_exp", type=int, default=5, help="Number of experiments."
     )
     argparser.add_argument(
-        "-f", "--function", type=str, default=None, help="Function to optimize."
+        "-f", "--function", type=str, default="", help="Function to optimize."
     )
-    argparser.add_argument("-b", "--bounds", type=str, default=None, help="Bounds.")
+    argparser.add_argument("-b", "--bounds", type=str, default="", help="Bounds.")
     argparser.add_argument(
         "-r",
         "--reproduction",
@@ -91,7 +91,7 @@ def cli():
         "-d",
         "--death_rate",
         type=float,
-        default=0.01,
+        default=0.008,
         help="Death rate for epidemiology simulation.",
     )
 
@@ -99,7 +99,7 @@ def cli():
 
 
 def run_exps(
-    optimizers_cls, nb_exp, function, bounds, nb_eval, svgd_lr=0.5, plot_figures=False
+    optimizers_cls, nb_exp, function, bounds, nb_eval, is_simu=False, plot_figures=False
 ):
     if plot_figures:
         from fig_generator import FigGenerator
@@ -129,8 +129,8 @@ def run_exps(
                 bounds,
                 n_particles=10,
                 k_iter=[50],
-                svgd_iter=10,
-                lr=svgd_lr,
+                svgd_iter=10 if is_simu else 500,
+                lr=0.1,
             )
         else:
             raise return_error(f"{optimizer_cls} not implemented.")
@@ -168,7 +168,7 @@ if __name__ == "__main__":
 
     optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
 
-    if args.function is None:
+    if args.function == "":
         # Experimental design optimization
 
         # Set the reproduction number
@@ -205,16 +205,15 @@ if __name__ == "__main__":
         )
 
         simulation = Simulation()
-        print(simulation(np.ones(3)))
         bounds = np.array([(0, 1), (0, 1), (0, 1)])
 
         run_exps(
             optimizers_cls,
-            args.nb_exp,
+            1,
             simulation,
             bounds,
-            args.nb_eval,
-            svgd_lr=0.1,
+            min(args.nb_eval, 500),
+            is_simu=True,
             plot_figures=False,
         )
 

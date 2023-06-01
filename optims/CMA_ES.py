@@ -5,8 +5,6 @@ import numpy as np
 import scipy
 from .__optimizer__ import Optimizer
 
-from scipy.stats import norm
-
 
 class CMA_ES(Optimizer):
     """
