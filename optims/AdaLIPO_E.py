@@ -143,5 +143,4 @@ class AdaLIPO_E(Optimizer):
                 print(
                     f"Iteration: {t} Lipschitz constant: {k_hat:.4f} Number of samples: {nb_samples}"
                 )
-        print(k_hat)
         return self.return_process(points, values, t)
