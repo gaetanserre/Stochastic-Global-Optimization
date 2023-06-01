@@ -2,3 +2,4 @@
 __pycache__
 *.pyc
 figures/
+numpy_parser/numpy_parser
