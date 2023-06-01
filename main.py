@@ -54,7 +54,7 @@ def parse_function(function):
     return lambda x: eval(function)
 
 
-def build_ifr(death_param, nb_age_group, d=1.15):
+def build_ifr(death_param, nb_age_group, d=2.2):
     ifr = [0] * nb_age_group
     for i in range(nb_age_group - 1, -1, -1):
         ifr[i] = death_param / d ** ((nb_age_group - 1) - i)
@@ -127,8 +127,8 @@ def run_exps(
         elif optimizer_cls == GO_SVGD:
             optimizer = optimizer_cls(
                 bounds,
-                n_particles=5,
-                k_iter=[3, 100],
+                n_particles=10,
+                k_iter=[50],
                 svgd_iter=10,
                 lr=svgd_lr,
             )
@@ -191,7 +191,7 @@ if __name__ == "__main__":
         # Set the mortality
         ifr = build_ifr(args.death_rate, 10)
 
-        disease_param["ifr"] = ifr
+        disease_param["transition_data"]["ifr"] = ifr
 
         json.dump(
             disease_param,
@@ -205,6 +205,7 @@ if __name__ == "__main__":
         )
 
         simulation = Simulation()
+        print(simulation(np.ones(3)))
         bounds = np.array([(0, 1), (0, 1), (0, 1)])
 
         run_exps(

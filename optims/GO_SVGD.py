@@ -129,7 +129,7 @@ class GO_SVGD(Optimizer):
         all_points = [x.copy()]
         for k in self.k_iter:
             optimizer = Adam(lr=self.lr)
-            for _ in range(self.svgd_iter):
+            for i in range(self.svgd_iter):
                 svgd_grad = svgd(x, np.array([logprob_grad(k)(xi) for xi in x]), kernel)
                 x = optimizer.step(svgd_grad, x)
 
@@ -139,23 +139,30 @@ class GO_SVGD(Optimizer):
                 # save all points
                 all_points.append(x.copy())
 
-        """ from scipy.integrate import quad
-        import matplotlib.pyplot as plt
+                """ from scipy.integrate import quad
+                import matplotlib.pyplot as plt
+                import seaborn as sns
 
-        xs = np.linspace(self.domain[:, 0], self.domain[:, 1], 10000)
-        denom = quad(
-            lambda x: np.exp(k * function(x)), self.domain[:, 0], self.domain[:, 1]
-        )[0]
-        plt.plot(xs, [np.exp(k * function(xi)) / denom for xi in xs])
-        plt.savefig("d.png")
-        plt.clf()
-        plt.plot(xs, [logprob_grad(k)(xi) for xi in xs])
+                xs = np.linspace(self.domain[:, 0], self.domain[:, 1], 10000)
+                denom = quad(
+                    lambda x: np.exp(k * function(x)),
+                    self.domain[:, 0],
+                    self.domain[:, 1],
+                )[0]
+                plt.plot(
+                    xs,
+                    [np.exp(k * function(xi)) / denom for xi in xs],
+                    label="d target",
+                )
+                plt.savefig("d_target.png")
+                plt.clf()
+                sns.kdeplot(x[:, 0], bw_method=0.1, label="d")
+                plt.legend()
+                plt.savefig(f"d_{i}.png")
+                plt.clf() """
+
+        """ plt.plot(xs, [logprob_grad(k)(xi) for xi in xs])
         plt.savefig("grad.png")
-        plt.clf()
-
-        plt.hist(x[:, 0], bins=5, density=True)
-        plt.xlim(self.domain[0])
-        plt.savefig("hist.png")
         plt.clf() """
 
         evals = np.array([function(xi) for xi in x]).flatten()
