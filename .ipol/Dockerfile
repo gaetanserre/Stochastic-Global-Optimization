@@ -18,3 +18,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 WORKDIR $bin/numpy_parser
 RUN eval $(opam env) && make
+
+WORKDIR $bin
+RUN chmod -R 777 *
