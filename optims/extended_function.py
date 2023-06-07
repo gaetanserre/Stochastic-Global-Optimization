@@ -14,13 +14,13 @@ def extended_function(f, bounds):
     def extended_f(x):
         penalties_inf = np.sum(
             [
-                np.log(1 / np.maximum(1, bounds[i, 0] - x[i]) ** 10)
+                np.log(1 / np.maximum(1, bounds[i, 0] - x[i]) ** 20)
                 for i in range(bounds.shape[0])
             ]
         )
         penalties_sup = np.sum(
             [
-                np.log(1 / np.maximum(1, x[i] - bounds[i, 1]) ** 10)
+                np.log(1 / np.maximum(1, x[i] - bounds[i, 1]) ** 20)
                 for i in range(bounds.shape[0])
             ]
         )
