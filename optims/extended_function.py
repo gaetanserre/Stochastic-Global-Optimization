@@ -12,18 +12,15 @@ def extended_function(f, bounds):
     """
 
     def extended_f(x):
+        eps = 1e-10
+        mu = 0.01
         penalties_inf = np.sum(
-            [
-                np.log(1 / np.maximum(1, bounds[i, 0] - x[i]) ** 20)
-                for i in range(bounds.shape[0])
-            ]
+            [np.log(-(bounds[i, 0] - x[i]) + eps) for i in range(bounds.shape[0])]
         )
         penalties_sup = np.sum(
-            [
-                np.log(1 / np.maximum(1, x[i] - bounds[i, 1]) ** 20)
-                for i in range(bounds.shape[0])
-            ]
+            [np.log(-(x[i] - bounds[i, 1]) + eps) for i in range(bounds.shape[0])]
         )
-        return f(x) + penalties_inf + penalties_sup
+
+        return f(x) + mu * (penalties_inf + penalties_sup)
 
     return extended_f

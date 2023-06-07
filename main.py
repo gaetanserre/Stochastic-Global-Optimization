@@ -95,6 +95,8 @@ if __name__ == "__main__":
                 )
                 best_point, points, values = ret
 
+                best_point = (best_point[0], function(best_point[0]))
+
                 print(f"Time: {time:.4f}s. Best point found: {best_point}.")
 
                 times.append(time)
