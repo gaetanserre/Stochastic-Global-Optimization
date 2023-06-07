@@ -132,9 +132,6 @@ class GO_SVGD(Optimizer):
                 svgd_grad = svgd(x, np.array([logprob_grad(k)(xi) for xi in x]), kernel)
                 x = optimizer.step(svgd_grad, x)
 
-                # clamp to domain
-                x = np.clip(x, self.domain[:, 0], self.domain[:, 1])
-
         evals = np.array([function(xi) for xi in x])
         best_idx = np.argmax(evals)
         max_eval = evals[best_idx]

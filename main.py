@@ -10,6 +10,7 @@ from benchmark.square import Square
 from benchmark.rosenbrock import Rosenbrock
 from benchmark.holder import Holder
 from benchmark.cos import Cos
+from optims.extended_function import extended_function
 
 from benchmark.epidemio.simulation import Simulation
 
@@ -44,13 +45,13 @@ def print_green(str):
 if __name__ == "__main__":
     num_exp = 5
 
-    functions = [Simulation()]
+    functions = [Rosenbrock()]
 
-    bounds = [np.array([(0, 1), (0, 1), (0, 1)])]
+    bounds = [np.array([(-10, 10), (-10, 10)])]
 
     optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
 
-    num_eval = 100
+    num_eval = 1000
 
     for i, function in enumerate(functions):
         print_yellow(f"Function: {function.__class__.__name__}.")
@@ -73,7 +74,7 @@ if __name__ == "__main__":
             elif optimizer_cls == GO_SVGD:
                 optimizer = optimizer_cls(
                     bounds[i],
-                    n_particles=10,
+                    n_particles=100,
                     k_iter=[50, 250],
                     svgd_iter=10,
                     lr=0.1 if function.__class__.__name__ == "Simulation" else 0.5,
@@ -86,7 +87,11 @@ if __name__ == "__main__":
 
             for _ in range(num_exp):
                 ret, time = time_it(
-                    optimizer.optimize, {"function": function, "verbose": False}
+                    optimizer.optimize,
+                    {
+                        "function": extended_function(function, bounds[i]),
+                        "verbose": False,
+                    },
                 )
                 best_point, points, values = ret
 

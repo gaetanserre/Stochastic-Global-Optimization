@@ -151,8 +151,6 @@ class CMA_ES(Optimizer):
                 np.zeros(self.dim), cov, self.lambda_
             )
 
-            # clip to bounds
-            x = np.clip(x, self.bounds[:, 0], self.bounds[:, 1])
             y = np.array([function(xi) for xi in x])
             x_sorted = x[np.argsort(-y)]
 
