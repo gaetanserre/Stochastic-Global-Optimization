@@ -9,6 +9,8 @@ import os
 import json
 import time
 
+from optims.extended_function import extended_function
+
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
@@ -142,9 +144,11 @@ def run_exps(
         old_best = None
         for _ in range(nb_exp):
             ret, time = time_it(
-                optimizer.optimize, {"function": function, "verbose": False}
+                optimizer.optimize,
+                {"function": extended_function(function, bounds), "verbose": False},
             )
             best_point, points_, values_ = ret
+            best_point = (best_point[0], function(best_point[0]))
             if old_best == None or best_point[1] > old_best:
                 points = points_
                 values = values_
