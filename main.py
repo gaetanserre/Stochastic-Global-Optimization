@@ -145,7 +145,7 @@ def run_exps(
         for _ in range(nb_exp):
             ret, time = time_it(
                 optimizer.optimize,
-                {"function": extended_function(function, bounds), "verbose": False},
+                {"function": function, "verbose": False},
             )
             best_point, points_, values_ = ret
             best_point = (best_point[0], function(best_point[0]))
