@@ -152,7 +152,7 @@ class CMA_ES(Optimizer):
             )
 
             # clip the points to the bounds
-            x = np.clip(x, self.bounds[0], self.bounds[1])
+            x = np.clip(x, self.bounds[:, 0], self.bounds[:, 1])
 
             y = np.array([function(xi) for xi in x])
             x_sorted = x[np.argsort(-y)]
