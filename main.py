@@ -74,9 +74,9 @@ if __name__ == "__main__":
             elif optimizer_cls == GO_SVGD:
                 optimizer = optimizer_cls(
                     bounds[i],
-                    n_particles=100,
-                    k_iter=[50, 250],
-                    svgd_iter=10,
+                    n_particles=10,
+                    k_iter=[100_000],
+                    svgd_iter=1000,
                     lr=0.1 if function.__class__.__name__ == "Simulation" else 0.5,
                 )
             else:
