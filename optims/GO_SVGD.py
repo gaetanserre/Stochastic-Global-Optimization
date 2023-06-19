@@ -126,7 +126,7 @@ class GO_SVGD(Optimizer):
             self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
         )
 
-        from scipy.integrate import quad
+        """ from scipy.integrate import quad
         from matplotlib import pyplot as plt
 
         xs = np.linspace(self.domain[:, 0], self.domain[:, 1], 1000)
@@ -136,7 +136,7 @@ class GO_SVGD(Optimizer):
             5,
         )[0]
 
-        """ # dists = np.array([np.exp(self.k_iter[0] * function(xi)) / denom for xi in xs])
+        # dists = np.array([np.exp(self.k_iter[0] * function(xi)) / denom for xi in xs])
         # plt.plot(xs, dists, color="red", label="$m^k$")
         plt.vlines(1.75946115, 0, 10, color="red", label="$m^k$")
         plt.hist(x[:, 0], bins=self.n_particles // 10, density=True)
