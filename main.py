@@ -131,7 +131,7 @@ def run_exps(
                 bounds,
                 n_particles=10,
                 k_iter=[100_000],
-                svgd_iter=10 if is_simu else 500,
+                svgd_iter=30 if is_simu else 500,
                 lr=0.1 if is_simu else 0.7,
             )
         else:
