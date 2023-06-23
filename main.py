@@ -47,11 +47,36 @@ if __name__ == "__main__":
 
     functions = [Rosenbrock()]
 
-    bounds = [np.array([(-10, 10), (-10, 10)])]
+    bounds = [
+        np.array(
+            [
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+                (-10, 10),
+            ]
+        )
+    ]
 
-    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
+    optimizers_cls = [PRS, CMA_ES, GO_SVGD]
 
-    num_eval = 1000
+    num_eval = 50000
 
     for i, function in enumerate(functions):
         print_yellow(f"Function: {function.__class__.__name__}.")
@@ -76,7 +101,7 @@ if __name__ == "__main__":
                     bounds[i],
                     n_particles=10,
                     k_iter=[100_000],
-                    svgd_iter=1000,
+                    svgd_iter=500,
                     lr=0.1 if function.__class__.__name__ == "Simulation" else 0.5,
                 )
             else:
@@ -84,8 +109,10 @@ if __name__ == "__main__":
 
             times = []
             best_values = []
+            num_evals = 0
 
             for _ in range(num_exp):
+                function.n = 0
                 ret, time = time_it(
                     optimizer.optimize,
                     {
@@ -94,6 +121,7 @@ if __name__ == "__main__":
                     },
                 )
                 best_point, points, values = ret
+                num_evals += function.n
 
                 best_point = (best_point[0], function(best_point[0]))
 
@@ -102,5 +130,5 @@ if __name__ == "__main__":
                 times.append(time)
                 best_values.append(best_point[1])
             print_green(
-                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
+                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average number of evaluations: {num_evals / num_exp:.2f}. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
             )
