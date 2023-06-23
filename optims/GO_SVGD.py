@@ -75,10 +75,11 @@ def gradient(f, x, eps=1e-12):
     f_x = f(x)
 
     grad = np.zeros(x.shape)
+    x_p = x.copy()
     for i in range(x.shape[0]):
-        x_p = x.copy()
         x_p[i] += eps
         grad[i] = (f(x_p) - f_x) / eps
+        x_p[i] -= eps
 
     return grad
 
