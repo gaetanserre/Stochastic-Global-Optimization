@@ -93,7 +93,7 @@ class CMA_ES(Optimizer):
         except Exception as e:
             print(np.sum(weights[: self.mu] * (x[: self.mu] - mean), axis=0) / sigma)
             print(cov)
-            print(e)
+            raise e
 
         sigma = sigma * np.exp(
             (c_sigma / d_sigma) * ((np.linalg.norm(p_sigma) / np.sqrt(self.dim)) - 1)
