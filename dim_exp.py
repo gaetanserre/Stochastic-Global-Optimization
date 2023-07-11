@@ -56,7 +56,7 @@ def match_optim(optim_cls, bounds, num_evals):
             cov_method="full",
         )
     elif optim_cls == GO_SVGD:
-        return optim_cls(bounds, n_particles=10, k_iter=[100_000], svgd_iter=10, lr=0.5)
+        return optim_cls(bounds, n_particles=10, k_iter=[100_000], svgd_iter=20, lr=0.5)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
@@ -137,12 +137,15 @@ if __name__ == "__main__":
             indent=4,
         )
 
-    create_figs(function_mean, function_std, "all")
+    # create_figs(function_mean, function_std, "all")
     # remove keys from dict
-    for f in function_mean.keys():
+
+    create_figs(function_mean, function_std, "all")
+
+    """ for f in function_mean.keys():
         function_mean[f].pop("PRS")
         function_std[f].pop("PRS")
         function_mean[f].pop("AdaLIPO_E")
         function_std[f].pop("AdaLIPO_E")
 
-    create_figs(function_mean, function_std, "CMA-ES_GO-SVGD")
+    create_figs(function_mean, function_std, "CMA-ES_GO-SVGD") """
