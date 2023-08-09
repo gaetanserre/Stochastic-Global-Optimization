@@ -126,7 +126,7 @@ class AdaLIPO_E(Optimizer):
             for i in range(t):
                 ratios.append(
                     np.abs(value - values[i]) / np.linalg.norm(X_tp1 - points[i], ord=2)
-                )
+                )  # We add all new ratios to the list.
 
             i_hat = int(np.ceil(np.log(max(ratios)) / np.log(1 + alpha)))
             k_hat = k(i_hat)
