@@ -179,9 +179,12 @@ class CMA_ES(Optimizer):
                 raise ValueError(f"Unknown covariance method {self.cov_method}")
 
             if self.cov_method == "full":
-                sigma, p_sigma = self.update_step_size(
-                    x_sorted, mean, sigma, p_sigma, cov, weights
-                )
+                try:
+                    sigma, p_sigma = self.update_step_size(
+                        x_sorted, mean, sigma, p_sigma, cov, weights
+                    )
+                except:
+                    break
 
             mean = self.update_mean(mean, x_sorted, weights)
 
