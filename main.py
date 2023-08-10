@@ -149,7 +149,7 @@ def run_exps(
             )
             best_point, points_, values_ = ret
             best_point = (best_point[0], function(best_point[0]))
-            if old_best == None or best_point[1] > old_best:
+            if old_best == None or best_point[1] < old_best:
                 points = points_
                 values = values_
                 old_best = best_point[1]

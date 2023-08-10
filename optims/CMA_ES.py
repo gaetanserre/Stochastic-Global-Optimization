@@ -154,7 +154,7 @@ class CMA_ES(Optimizer):
             # clip to bounds
             x = np.clip(x, self.bounds[:, 0], self.bounds[:, 1])
             y = np.array([function(xi) for xi in x]).flatten()
-            x_sorted = x[np.argsort(-y)]
+            x_sorted = x[np.argsort(y)]
 
             points[i * self.lambda_ : (i + 1) * self.lambda_] = x
             values[i * self.lambda_ : (i + 1) * self.lambda_] = y
@@ -184,7 +184,7 @@ class CMA_ES(Optimizer):
 
             mean = self.update_mean(mean, x_sorted, weights)
 
-        best_idx = np.argmax(values)
+        best_idx = np.argmin(values)
         return (
             (points[best_idx], values[best_idx]),
             points,

@@ -116,7 +116,7 @@ class GO_SVGD(Optimizer):
         self.lr = lr
 
     def optimize(self, function, verbose=False):
-        logprob_grad = lambda k: (lambda x: k * gradient(function, x))
+        logprob_grad = lambda k: (lambda x: -k * gradient(function, x))
 
         kernel = rbf
 
@@ -166,12 +166,12 @@ class GO_SVGD(Optimizer):
         plt.clf() """
 
         evals = np.array([function(xi) for xi in x]).flatten()
-        best_idx = np.argmax(evals)
-        max_eval = evals[best_idx]
+        best_idx = np.argmin(evals)
+        min_eval = evals[best_idx]
         best_particle = x[best_idx]
         if verbose:
-            print(f"Best particle found: {best_particle}. Eval at f(best): {max_eval}.")
+            print(f"Best particle found: {best_particle}. Eval at f(best): {min_eval}.")
 
         all_points = np.array(all_points).reshape(-1, dim)
         all_evals = np.array([function(xi) for xi in all_points]).flatten()
-        return (best_particle, max_eval), all_points, all_evals
+        return (best_particle, min_eval), all_points, all_evals

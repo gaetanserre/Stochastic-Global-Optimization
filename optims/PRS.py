@@ -24,5 +24,5 @@ class PRS(Optimizer):
 
         values = np.array([function(point) for point in points])
 
-        best_idx = np.argmax(values)
+        best_idx = np.argmin(values)
         return (points[best_idx], values[best_idx]), points, values
