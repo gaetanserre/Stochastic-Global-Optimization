@@ -15,8 +15,8 @@ class Ackley(Function):
         self.n += 1
         a = 20
         b = 0.2
-        c = 2 * np.pi
-        return -(
+        c = 1
+        return (
             -a * np.exp(-b * np.sqrt(np.sum(x**2) / len(x)))
             - np.exp(np.sum(np.cos(c * x)) / len(x))
             + a

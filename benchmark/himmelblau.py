@@ -13,4 +13,4 @@ class Himmelblau(Function):
 
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1
-        return -((x[0] ** 2 + x[1] - 11) ** 2 + (x[0] + x[1] ** 2 - 7) ** 2)
+        return (x[0] ** 2 + x[1] - 11) ** 2 + (x[0] + x[1] ** 2 - 7) ** 2

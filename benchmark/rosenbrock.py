@@ -13,4 +13,4 @@ class Rosenbrock(Function):
 
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1
-        return -np.sum(100 * (x[1:] - x[:-1] ** 2) ** 2 + (1 - x[:-1]) ** 2)
+        return np.sum(100 * (x[1:] - x[:-1] ** 2) ** 2 + (1 - x[:-1]) ** 2)

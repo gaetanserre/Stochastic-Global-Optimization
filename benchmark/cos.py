@@ -13,4 +13,4 @@ class Cos(Function):
 
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1
-        return -(np.cos(x[0] ** 2) + x[0] / 5 + 1)
+        return np.cos(x[0] ** 2) + x[0] / 5 + 1

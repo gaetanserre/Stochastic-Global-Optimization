@@ -14,4 +14,4 @@ class Square(Function):
 
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1
-        return -np.sum(x**2)
+        return np.sum(x**2)

@@ -5,10 +5,12 @@
 import numpy as np
 
 # benchmark functions
-from benchmark.rastrigin import Rastrigin
-from benchmark.square import Square
-from benchmark.rosenbrock import Rosenbrock
+from benchmark.ackley import Ackley
+from benchmark.himmelblau import Himmelblau
 from benchmark.holder import Holder
+from benchmark.rastrigin import Rastrigin
+from benchmark.rosenbrock import Rosenbrock
+from benchmark.square import Square
 from benchmark.cos import Cos
 from optims.extended_function import extended_function
 
@@ -59,7 +61,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             n_particles=10,
             k_iter=[100_000],
             svgd_iter=500,
-            lr=0.5 if is_sim else 0.1,
+            lr=0.1 if is_sim else 0.1,
         )
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
@@ -68,53 +70,41 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
 if __name__ == "__main__":
     num_exp = 5
 
-    functions = [Square(), Rosenbrock()]
+    functions = [Ackley(), Himmelblau(), Holder(), Rastrigin(), Rosenbrock(), Square()]
 
     bounds = [
         np.array(
             [
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
+                (-32.768, 32.768),
+                (-32.768, 32.768),
+            ]
+        ),
+        np.array(
+            [
+                (-4, 4),
+                (-4, 4),
             ]
         ),
         np.array(
             [
                 (-10, 10),
                 (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
-                (-10, 10),
+            ]
+        ),
+        np.array(
+            [
+                (-5.12, 5.12),
+                (-5.12, 5.12),
+            ]
+        ),
+        np.array(
+            [
+                (-3, 3),
+                (-3, 3),
+            ]
+        ),
+        np.array(
+            [
                 (-10, 10),
                 (-10, 10),
             ]
@@ -123,7 +113,7 @@ if __name__ == "__main__":
 
     optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
 
-    num_eval = 1500
+    num_eval = 150
 
     for i, function in enumerate(functions):
         print_yellow(f"Function: {function.__class__.__name__}.")

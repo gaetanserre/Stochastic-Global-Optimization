@@ -23,4 +23,4 @@ def score(model, results, scenario: None):
     # Score = nb_dead * max(1, log(1 / c1 * c2 * c3))
     score = d[-1] * np.maximum(1, np.log(1 / (cf_values.prod() + 1e-10)))
 
-    return -score
+    return score

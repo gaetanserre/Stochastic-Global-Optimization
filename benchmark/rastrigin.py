@@ -14,4 +14,4 @@ class Rastrigin(Function):
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1
         dim = x.shape[0]
-        return -(10 * dim + np.sum(x**2 - 10 * np.cos(2 * np.pi * x)))
+        return 10 * dim + np.sum(x**2 - 10 * np.cos(2 * np.pi * x))

@@ -21,7 +21,7 @@ def Bernoulli(p: float):
 
 class AdaLIPO_E(Optimizer):
     """
-    This class implements the AdaLIPO_E algorithm.
+    This class implements the AdaLIPO_E algorithm for minimization of a function.
     """
 
     def __init__(self, bounds, max_evals, window_slope=5, max_slope=600):
@@ -43,7 +43,7 @@ class AdaLIPO_E(Optimizer):
         points = points[:nb_samples]
         values = values[:nb_samples]
         best_idx = np.argmax(values)
-        return (points[best_idx], values[best_idx]), points, values
+        return (points[best_idx], -values[best_idx]), points, -values
 
     def optimize(self, function, verbose=False):
         t = 1
@@ -59,7 +59,7 @@ class AdaLIPO_E(Optimizer):
         points = np.zeros((self.max_evals, X_1.shape[0]))
         values = np.zeros(self.max_evals)
         points[0] = X_1
-        values[0] = function(X_1)
+        values[0] = -function(X_1)
 
         def k(i):
             """
@@ -102,7 +102,6 @@ class AdaLIPO_E(Optimizer):
                 nb_samples += 1
                 last_nb_samples[-1] = nb_samples
                 points[t] = X_tp1
-                value = function(X_tp1)
             else:
                 # Exploitation
                 while True:
@@ -120,8 +119,8 @@ class AdaLIPO_E(Optimizer):
                                 f"Exponential growth of the number of samples. Stopping the algorithm at iteration {t}."
                             )
                         return self.return_process(points, values, t)
-                value = function(X_tp1)
 
+            value = -function(X_tp1)
             values[t] = value
             for i in range(t):
                 ratios.append(

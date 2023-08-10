@@ -14,7 +14,7 @@ class Optimizer:
         self, function: Callable, verbose: bool
     ) -> Tuple[Tuple[float, float], np.ndarray, np.ndarray]:
         """
-        function: function to be maximized
+        function: function to be minimized
         Returns a tuple containing:
             - a tuple containing the best point found and value at this point
             - a numpy array containing the points visited

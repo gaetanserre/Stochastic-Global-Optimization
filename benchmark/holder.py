@@ -13,7 +13,7 @@ class Holder(Function):
 
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1
-        return np.abs(
+        return -np.abs(
             np.sin(x[0])
             * np.cos(x[1])
             * np.exp(np.abs(1 - (np.sqrt(x[0] ** 2 + x[1] ** 2)) / np.pi))
