@@ -164,7 +164,7 @@ def run_exps(
 
         if plot_figures:
             path = f"figures/fun_{optimizer_cls.__name__}.png"
-            fig_gen.gen_figure(points, values, optimizer_cls.__name__, path=path)
+            fig_gen.gen_figure(points, values, path=path)
 
 
 if __name__ == "__main__":

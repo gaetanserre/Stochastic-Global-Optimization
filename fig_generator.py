@@ -21,20 +21,18 @@ class FigGenerator:
         self,
         eval_points: np.array,
         eval_values: np.array,
-        method: str,
         path: str = None,
     ):
         """
         Generates a figure
         path: path to save the figure (str) (optional)
-        method: name of the method used (str)
         """
 
         dim = eval_points.shape[1]
         if dim == 1:
-            self.gen_1D(eval_points, eval_values, method)
+            self.gen_1D(eval_points, eval_values)
         elif dim == 2:
-            self.gen_2D(eval_points, eval_values, method)
+            self.gen_2D(eval_points, eval_values)
         else:
             raise ValueError(
                 f"Cannot generate a figure for {dim}-dimensional functions"
@@ -46,7 +44,7 @@ class FigGenerator:
             plt.show()
         plt.clf()
 
-    def gen_1D(self, eval_points, eval_values, method):
+    def gen_1D(self, eval_points, eval_values):
         """
         Generates a figure for 1D functions
         """
@@ -70,7 +68,7 @@ class FigGenerator:
         plt.ylabel("$f(x)$")
         plt.legend()
 
-    def gen_2D(self, eval_points, eval_values, method):
+    def gen_2D(self, eval_points, eval_values):
         """
         Generates a figure for 2D functions
         """
