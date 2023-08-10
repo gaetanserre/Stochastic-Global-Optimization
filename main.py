@@ -61,7 +61,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             n_particles=10,
             k_iter=[100_000],
             svgd_iter=500,
-            lr=0.1 if is_sim else 0.1,
+            lr=0.1 if is_sim else 0.7,
         )
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
