@@ -10,7 +10,7 @@ from benchmark.himmelblau import Himmelblau
 from benchmark.holder import Holder
 from benchmark.rastrigin import Rastrigin
 from benchmark.rosenbrock import Rosenbrock
-from benchmark.square import Square
+from benchmark.sphere import Sphere
 from benchmark.cos import Cos
 from optims.extended_function import extended_function
 
@@ -20,7 +20,7 @@ from benchmark.epidemio.simulation import Simulation
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
-from optims.GO_SVGD import GO_SVGD
+from optims.NMDS import NMDS
 
 
 def time_it(function, args={}):
@@ -55,22 +55,22 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             lambda_=5,
             cov_method="full",
         )
-    elif optim_cls == GO_SVGD:
+    elif optim_cls == NMDS:
         return optim_cls(
             bounds,
-            n_particles=10,
+            n_particles=100,
             k_iter=[100_000],
             svgd_iter=500,
-            lr=0.1 if is_sim else 0.7,
+            lr=0.1 if is_sim else 0.2,
         )
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
 
 if __name__ == "__main__":
-    num_exp = 5
+    num_exp = 10
 
-    functions = [Ackley(), Himmelblau(), Holder(), Rastrigin(), Rosenbrock(), Square()]
+    functions = [Ackley(), Himmelblau(), Holder(), Rastrigin(), Rosenbrock(), Sphere()]
 
     bounds = [
         np.array(
@@ -111,9 +111,9 @@ if __name__ == "__main__":
         ),
     ]
 
-    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
+    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, NMDS]
 
-    num_eval = 150
+    num_eval = 2000
 
     for i, function in enumerate(functions):
         print_yellow(f"Function: {function.__class__.__name__}.")
@@ -136,7 +136,7 @@ if __name__ == "__main__":
                 ret, time = time_it(
                     optimizer.optimize,
                     {
-                        "function": extended_function(function, bounds[i]),
+                        "function": function,
                         "verbose": False,
                     },
                 )

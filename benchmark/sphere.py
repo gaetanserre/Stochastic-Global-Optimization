@@ -7,7 +7,7 @@ import numpy as np
 from .__function__ import Function
 
 
-class Square(Function):
+class Sphere(Function):
     def __init__(self) -> None:
         super().__init__()
         self.n = 0

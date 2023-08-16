@@ -75,11 +75,10 @@ def gradient(f, x, eps=1e-12):
     f_x = f(x)
 
     grad = np.zeros(x.shape)
-    x_p = x.copy()
     for i in range(x.shape[0]):
+        x_p = x.copy()
         x_p[i] += eps
         grad[i] = (f(x_p) - f_x) / eps
-        x_p[i] -= eps
 
     return grad
 
@@ -88,8 +87,8 @@ def rbf(x, h=-1):
     sq_dist = pdist(x)
     pairwise_dists = squareform(sq_dist) ** 2
     if h < 0:  # if h < 0, using median trick
-        h = np.median(pairwise_dists)
-        h = np.sqrt(0.5 * h / np.log(x.shape[0] + 1)) + 1e-10
+        h = np.median(pairwise_dists) + 1e-10
+        h = np.sqrt(0.5 * h / np.log(x.shape[0] + 1))
 
     # compute the rbf kernel
     Kxy = np.exp(-pairwise_dists / h**2 / 2)
@@ -108,7 +107,7 @@ def svgd(x, logprob_grad, kernel):
     return svgd_grad
 
 
-class GO_SVGD(Optimizer):
+class NMDS(Optimizer):
     def __init__(self, domain, n_particles, k_iter, svgd_iter, lr=0.5):
         self.domain = domain
         self.n_particles = n_particles
@@ -127,47 +126,52 @@ class GO_SVGD(Optimizer):
             self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
         )
 
-        """ from scipy.integrate import quad
-        from matplotlib import pyplot as plt
-
-        xs = np.linspace(self.domain[:, 0], self.domain[:, 1], 1000)
-        denom = quad(
-            lambda x: np.exp(self.k_iter[0] * function(np.array(x).reshape(-1, 1))),
-            0,
-            5,
-        )[0]
-
-        # dists = np.array([np.exp(self.k_iter[0] * function(xi)) / denom for xi in xs])
-        # plt.plot(xs, dists, color="red", label="$m^k$")
-        plt.vlines(1.75946115, 0, 10, color="red", label="$m^k$")
-        plt.hist(x[:, 0], bins=self.n_particles // 10, density=True)
-        plt.xlim(self.domain[0])
-        plt.legend()
-        plt.savefig("init.svg")
-        plt.show() """
-
+        all_points = [x.copy()]
         for k in self.k_iter:
             optimizer = Adam(lr=self.lr)
             for i in range(self.svgd_iter):
                 svgd_grad = svgd(x, np.array([logprob_grad(k)(xi) for xi in x]), kernel)
                 x = optimizer.step(svgd_grad, x)
 
-                # clip to domain
+                # clamp to domain
                 x = np.clip(x, self.domain[:, 0], self.domain[:, 1])
 
-        """ # plt.plot(xs, dists, color="red", label="$m^k$")
-        plt.vlines(1.75946115, 0, 10, color="red", label="$m^k$")
-        plt.hist(x[:, 0], bins=self.n_particles // 10, density=True)
-        plt.xlim(self.domain[0])
-        plt.legend()
-        plt.savefig("end.svg")
-        plt.show() """
+                # save all points
+                all_points.append(x.copy())
 
-        evals = np.array([function(xi) for xi in x])
+                """ from scipy.integrate import quad
+                import matplotlib.pyplot as plt
+                import seaborn as sns
+
+                xs = np.linspace(self.domain[:, 0], self.domain[:, 1], 10000)
+                denom = quad(
+                    lambda x: np.exp(k * function(x)),
+                    self.domain[:, 0],
+                    self.domain[:, 1],
+                )[0]
+                plt.plot(
+                    xs,
+                    [np.exp(k * function(xi)) / denom for xi in xs],
+                    label="d target",
+                )
+                plt.savefig("d_target.png")
+                plt.clf()
+                sns.kdeplot(x[:, 0], bw_method=0.1, label="d")
+                plt.legend()
+                plt.savefig(f"d_{i}.png")
+                plt.clf() """
+
+        """ plt.plot(xs, [logprob_grad(k)(xi) for xi in xs])
+        plt.savefig("grad.png")
+        plt.clf() """
+
+        evals = np.array([function(xi) for xi in x]).flatten()
         best_idx = np.argmin(evals)
         min_eval = evals[best_idx]
         best_particle = x[best_idx]
         if verbose:
             print(f"Best particle found: {best_particle}. Eval at f(best): {min_eval}.")
 
-        return (best_particle, min_eval), x, evals
+        all_points = np.array(all_points).reshape(-1, dim)
+        all_evals = np.array([function(xi) for xi in all_points]).flatten()
+        return (best_particle, min_eval), all_points, all_evals
