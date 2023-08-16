@@ -16,7 +16,7 @@ from optims.extended_function import extended_function
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
-from optims.GO_SVGD import GO_SVGD
+from optims.NMDS import NMDS
 
 
 def print_color(str, color):
@@ -55,8 +55,10 @@ def match_optim(optim_cls, bounds, num_evals):
             lambda_=5,
             cov_method="full",
         )
-    elif optim_cls == GO_SVGD:
-        return optim_cls(bounds, n_particles=10, k_iter=[100_000], svgd_iter=20, lr=0.5)
+    elif optim_cls == NMDS:
+        return optim_cls(
+            bounds, n_particles=100, k_iter=[100_000], svgd_iter=500, lr=0.5
+        )
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
@@ -85,7 +87,7 @@ def create_figs(function_mean, function_std, path):
         plt.title(f"{f}")
         plt.xticks(dims)
         plt.xlabel("Dimension")
-        plt.ylabel("$d_{max}$")
+        plt.ylabel("$d_{min}$")
         plt.legend()
         plt.savefig(f"{f}_{path}.svg", bbox_inches="tight")
         plt.clf()
@@ -95,8 +97,8 @@ if __name__ == "__main__":
     args = cli()
 
     functions = [Rosenbrock()]
-    optim_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
-    optim_nb_evals = [1500, 1500, 1500, 100_000]
+    optim_cls = [CMA_ES, NMDS]
+    optim_nb_evals = [500000, 100_000]
 
     function_mean = {}
     function_std = {}
@@ -115,9 +117,7 @@ if __name__ == "__main__":
                     bounds = create_bounds(dim, args.min_bound, args.max_bound)
                     optimizer = match_optim(optim, bounds, nb_evals)
 
-                    best_point, points, values = optimizer.optimize(
-                        extended_function(f, bounds), verbose=False
-                    )
+                    best_point, points, values = optimizer.optimize(f, verbose=False)
                     best_value.append(f(best_point[0]))
                 dim_mean[dim] = np.mean(best_value)
                 dim_std[dim] = np.std(best_value)
@@ -140,7 +140,7 @@ if __name__ == "__main__":
     # create_figs(function_mean, function_std, "all")
     # remove keys from dict
 
-    create_figs(function_mean, function_std, "all")
+    create_figs(function_mean, function_std, "CMA-ES_NMDS")
 
     """ for f in function_mean.keys():
         function_mean[f].pop("PRS")
