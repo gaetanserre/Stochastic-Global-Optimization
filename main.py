@@ -14,7 +14,7 @@ from optims.extended_function import extended_function
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
-from optims.GO_SVGD import GO_SVGD
+from optims.NMDS import NMDS
 
 from epidemiology.simulation import Simulation
 
@@ -126,7 +126,7 @@ def run_exps(
                 lambda_=5,
                 cov_method="full",
             )
-        elif optimizer_cls == GO_SVGD:
+        elif optimizer_cls == NMDS:
             optimizer = optimizer_cls(
                 bounds,
                 n_particles=10,
@@ -170,7 +170,7 @@ def run_exps(
 if __name__ == "__main__":
     args = cli()
 
-    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, GO_SVGD]
+    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, NMDS]
 
     if args.function == "":
         # Experimental design optimization

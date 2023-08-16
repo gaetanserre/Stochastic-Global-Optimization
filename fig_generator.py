@@ -73,8 +73,8 @@ class FigGenerator:
         Generates a figure for 2D functions
         """
 
-        x = np.linspace(self.X[0][0], self.X[0][1], 100)
-        y = np.linspace(self.X[1][0], self.X[1][1], 100)
+        x = np.linspace(self.X[0][0], self.X[0][1], 30)
+        y = np.linspace(self.X[1][0], self.X[1][1], 30)
         x, y = np.meshgrid(x, y)
         z = np.array(
             [self.f(np.array([xi, yi])) for xi, yi in zip(np.ravel(x), np.ravel(y))]
