@@ -1,8 +1,12 @@
-### Global optimization
+## Stochastic Global optimization algorithms
 
-Implementation on several global optimization algorithms.
+This repository implements several global optimization algorithms. The algorithms are implemented in the `optims` package. The `benchmark` folder contains usual test functions for global optimization. Run `main.py` to run the algorithms on the benchmark functions.
 
-- AdaLIPO-E [(Beja-Battais, Serré, Chirrane, 2023)]([https://hal-universite-paris-saclay.archives-ouvertes.fr/hal-04069150](https://www.ipol.im/pub/pre/469/));
-- CMA-ES [(Hansen, 2023)](https://hal-anses.archives-ouvertes.fr/LRI-AO/hal-01297037v2).
+### Algorithms
+
+- Pure Random Search
+- CMA-ES [Hansen, 2023](https://inria.hal.science/hal-01297037/file/tutorial-2023-02.pdf)
+- AdaLIPO-E [Malherbe and Vayatis, 2017](https://arxiv.org/pdf/1812.03457.pdf) & [Beja-Battais et al., 2023](https://hal-universite-paris-saclay.archives-ouvertes.fr/hal-04069150/document)
+- NMDS [Serré, 2023](https://gaetanserre.github.io/assets/master_thesis.pdf).
 
 See demo [here](https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000365).
