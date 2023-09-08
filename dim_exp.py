@@ -97,8 +97,8 @@ if __name__ == "__main__":
     args = cli()
 
     functions = [Rosenbrock()]
-    optim_cls = [CMA_ES, NMDS]
-    optim_nb_evals = [500000, 100_000]
+    optim_cls = [CMA_ES, NMDS, AdaLIPO_E, PRS]
+    optim_nb_evals = [2000, 2000, 2000, 2000]
 
     function_mean = {}
     function_std = {}
@@ -140,7 +140,7 @@ if __name__ == "__main__":
     # create_figs(function_mean, function_std, "all")
     # remove keys from dict
 
-    create_figs(function_mean, function_std, "CMA-ES_NMDS")
+    create_figs(function_mean, function_std, "all")
 
     """ for f in function_mean.keys():
         function_mean[f].pop("PRS")
