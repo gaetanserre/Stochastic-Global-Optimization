@@ -65,7 +65,7 @@ class Adam:
         v_hat = self.state_v / (1 - self.betas[1] ** self.t)
 
         if self.amsgrad:
-            self.state_v_max = np.maximum(self.self.state_v_max, v_hat)
+            self.state_v_max = np.maximum(self.state_v_max, v_hat)
             return self.lr * m_hat / (np.sqrt(self.state_v_max) + self.eps)
         else:
             return params - self.lr * m_hat / (np.sqrt(v_hat) + self.eps)
