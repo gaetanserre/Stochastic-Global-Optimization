@@ -3,6 +3,7 @@
 #
 
 import numpy as np
+import os
 
 # benchmark functions
 from benchmark.ackley import Ackley
@@ -12,6 +13,11 @@ from benchmark.rastrigin import Rastrigin
 from benchmark.rosenbrock import Rosenbrock
 from benchmark.sphere import Sphere
 from benchmark.cos import Cos
+from benchmark.branin import Branin
+from benchmark.eggholder import EggHolder
+from benchmark.drop_wave import Drop_Wave
+from benchmark.michalewicz import Michalewicz
+from benchmark.goldstein_price import Goldstein_Price
 from optims.extended_function import extended_function
 
 from benchmark.epidemio.simulation import Simulation
@@ -59,7 +65,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(
             bounds,
             n_particles=100,
-            k_iter=[100_000],
+            k_iter=[1000],
             svgd_iter=500,
             lr=0.1 if is_sim else 0.2,
         )
@@ -70,13 +76,13 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
 if __name__ == "__main__":
     num_exp = 10
 
-    functions = [Ackley(), Himmelblau(), Holder(), Rastrigin(), Rosenbrock(), Sphere()]
+    functions = [Goldstein_Price()]
 
     bounds = [
         np.array(
             [
-                (-32.768, 32.768),
-                (-32.768, 32.768),
+                (-2, 2),
+                (-2, 2),
             ]
         ),
         np.array(
@@ -117,6 +123,17 @@ if __name__ == "__main__":
 
     for i, function in enumerate(functions):
         print_yellow(f"Function: {function.__class__.__name__}.")
+
+        dim = bounds[i].shape[0]
+        plot_figures = dim <= 2
+        if plot_figures:
+            from fig_generator import FigGenerator
+
+            fig_gen = FigGenerator(function, bounds[i])
+
+            if not os.path.exists("figures"):
+                os.makedirs("figures")
+
         for optimizer_cls in optimizers_cls:
             print_blue(f"Optimizer: {optimizer_cls.__name__}.")
 
@@ -152,3 +169,6 @@ if __name__ == "__main__":
             print_green(
                 f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average number of evaluations: {num_evals / num_exp:.2f}. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
             )
+            if plot_figures:
+                path = f"figures/{type(function).__name__}_{optimizer_cls.__name__}.svg"
+                fig_gen.gen_figure(points, values, path=path)
