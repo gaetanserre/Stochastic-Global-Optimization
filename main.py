@@ -76,21 +76,13 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
 if __name__ == "__main__":
     num_exp = 10
 
-    functions = [Michalewicz()]
+    functions = [Goldstein_Price()]
 
     bounds = [
         np.array(
             [
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
+                (-2, 2),
+                (-2, 2),
             ]
         ),
         np.array(
