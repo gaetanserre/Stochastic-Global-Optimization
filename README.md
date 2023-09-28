@@ -9,4 +9,6 @@ This repository implements several global optimization algorithms. The algorithm
 - AdaLIPO-E [Malherbe and Vayatis, 2017](https://arxiv.org/pdf/1812.03457.pdf) & [Beja-Battais et al., 2023](https://hal-universite-paris-saclay.archives-ouvertes.fr/hal-04069150/document)
 - NMDS [Serré, 2023](https://gaetanserre.github.io/assets/master_thesis.pdf).
 
-See demo [here](https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000365).
+### Credits
+
+[Virtual Library of Simulation Experiments](https://www.sfu.ca/~ssurjano/optimization.html)
