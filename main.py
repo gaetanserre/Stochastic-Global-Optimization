@@ -26,7 +26,7 @@ from benchmark.epidemio.simulation import Simulation
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
-from optims.NMDS import NMDS
+from optims.NMDS_particles import NMDS
 
 
 def time_it(function, args={}):
@@ -76,13 +76,21 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
 if __name__ == "__main__":
     num_exp = 10
 
-    functions = [Goldstein_Price()]
+    functions = [Michalewicz()]
 
     bounds = [
         np.array(
             [
-                (-2, 2),
-                (-2, 2),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
+                (0, np.pi),
             ]
         ),
         np.array(
@@ -117,7 +125,7 @@ if __name__ == "__main__":
         ),
     ]
 
-    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, NMDS]
+    optimizers_cls = [NMDS]
 
     num_eval = 2000
 
