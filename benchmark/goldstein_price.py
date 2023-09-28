@@ -2,7 +2,8 @@
 # Created in 2023 by Gaëtan Serré
 #
 
-import numpy as np
+import jax
+import jax.numpy as jnp
 from .__function__ import Function
 
 
@@ -11,8 +12,8 @@ class Goldstein_Price(Function):
         super().__init__()
         self.n = 0
 
-    def __call__(self, x: np.ndarray) -> float:
-        self.n += 1
+    @staticmethod
+    def call(x: jnp.ndarray) -> float:
         return (
             1
             + (x[0] + x[1] + 1) ** 2
@@ -36,3 +37,8 @@ class Goldstein_Price(Function):
                 + 27 * x[1] ** 2
             )
         )
+
+    def __call__(self, x: jnp.ndarray) -> float:
+        self.n += 1
+        jit = jax.jit(self.call)
+        return jit(x)

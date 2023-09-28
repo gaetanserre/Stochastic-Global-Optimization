@@ -83,14 +83,6 @@ if __name__ == "__main__":
             [
                 (0, np.pi),
                 (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
-                (0, np.pi),
             ]
         ),
         np.array(
