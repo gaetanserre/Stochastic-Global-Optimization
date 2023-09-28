@@ -7,35 +7,6 @@ from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
 
 
-""" class AdaGrad:
-    def __init__(
-        self,
-        lr=0.01,
-        lr_decay=0,
-        weight_decay=0,
-        initial_accumulator_value=0,
-        eps=1e-10,
-    ):
-        self.lr = lr
-        self.lr_decay = lr_decay
-        self.weight_decay = weight_decay
-        self.initial_accumulator_value = initial_accumulator_value
-        self.eps = eps
-        self.state_sum = 0
-        self.t = 0
-
-    def step(self, grad, params):
-        self.t += 1
-        gamma_t = self.lr / (1 + (self.t - 1) * self.lr_decay)
-
-        if self.weight_decay != 0:
-            grad += self.weight_decay * params
-
-        self.state_sum += grad**2
-
-        return gamma_t / (np.sqrt(self.state_sum) + self.eps) """
-
-
 class Adam:
     def __init__(
         self,
