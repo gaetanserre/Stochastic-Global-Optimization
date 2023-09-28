@@ -110,32 +110,6 @@ class NMDS(Optimizer):
                 # save all points
                 all_points.append(x.copy())
 
-                """ from scipy.integrate import quad
-                import matplotlib.pyplot as plt
-                import seaborn as sns
-
-                xs = np.linspace(self.domain[:, 0], self.domain[:, 1], 10000)
-                denom = quad(
-                    lambda x: np.exp(k * function(x)),
-                    self.domain[:, 0],
-                    self.domain[:, 1],
-                )[0]
-                plt.plot(
-                    xs,
-                    [np.exp(k * function(xi)) / denom for xi in xs],
-                    label="d target",
-                )
-                plt.savefig("d_target.png")
-                plt.clf()
-                sns.kdeplot(x[:, 0], bw_method=0.1, label="d")
-                plt.legend()
-                plt.savefig(f"d_{i}.png")
-                plt.clf() """
-
-        """ plt.plot(xs, [logprob_grad(k)(xi) for xi in xs])
-        plt.savefig("grad.png")
-        plt.clf() """
-
         evals = np.array([function(xi) for xi in x]).flatten()
         best_idx = np.argmin(evals)
         min_eval = evals[best_idx]
