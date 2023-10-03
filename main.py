@@ -26,7 +26,8 @@ from benchmark.epidemio.simulation import Simulation
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
-from optims.NMDS_particles import NMDS
+from optims.NMDS import NMDS
+from optims.NMDS_particles import NMDS_particles
 
 
 def time_it(function, args={}):
@@ -61,7 +62,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             lambda_=5,
             cov_method="full",
         )
-    elif optim_cls == NMDS:
+    elif optim_cls == NMDS or optim_cls == NMDS_particles:
         return optim_cls(
             bounds,
             n_particles=100,
@@ -76,11 +77,47 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
 if __name__ == "__main__":
     num_exp = 10
 
-    functions = [Goldstein_Price()]
+    functions = [
+        Ackley(),
+        Branin(),
+        Drop_Wave(),
+        EggHolder(),
+        Goldstein_Price(),
+        Himmelblau(),
+        Holder(),
+        Michalewicz(),
+        Rastrigin(),
+        Rosenbrock(),
+        Sphere(),
+    ]
 
     bounds = [
         np.array(
             [
+                (-32.768, 32.768),
+                (-32.768, 32.768),
+            ]
+        ),
+        np.array(
+            [
+                (-5, 10),
+                (0, 15),
+            ]
+        ),
+        np.array(
+            [
+                (-5.12, 5.12),
+                (-5.12, 5.12),
+            ]
+        ),
+        np.array(
+            [
+                (-512, 512),
+                (-512, 512),
+            ]
+        ),
+        np.array(
+            [
                 (-2, 2),
                 (-2, 2),
             ]
@@ -95,6 +132,12 @@ if __name__ == "__main__":
             [
                 (-10, 10),
                 (-10, 10),
+            ]
+        ),
+        np.array(
+            [
+                (-0, np.pi),
+                (-0, np.pi),
             ]
         ),
         np.array(
@@ -117,7 +160,7 @@ if __name__ == "__main__":
         ),
     ]
 
-    optimizers_cls = [NMDS]
+    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, NMDS, NMDS_particles]
 
     num_eval = 2000
 
