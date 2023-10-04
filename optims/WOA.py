@@ -7,7 +7,7 @@ import numpy as np
 from .whale_optimization import WhaleOptimization
 
 
-class Whale(Optimizer):
+class WOA(Optimizer):
     def __init__(self, domain, n_gen, n_sol, a=2, b=0.5):
         self.domain = domain
         self.n_gen = n_gen

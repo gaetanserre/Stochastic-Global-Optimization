@@ -17,6 +17,7 @@ class WhaleOptimization:
         self._a_step = a_step
         self._maximize = maximize
         self._best_solutions = []
+        self._dim = constraints.shape[0]
 
     def get_solutions(self):
         """return solutions"""
@@ -68,12 +69,8 @@ class WhaleOptimization:
 
     def _rank_solutions(self):
         """find best solution"""
-        # fitness = self._opt_func(self._sols[:, 0], self._sols[:, 1])
         fitness = np.array(
-            [
-                self._opt_func(np.array([self._sols[i, 0], self._sols[i, 1]]))
-                for i in range(self._sols.shape[0])
-            ]
+            [self._opt_func(self._sols[i, :]) for i in range(self._sols.shape[0])]
         )
         sol_fitness = [(f, s) for f, s in zip(fitness, self._sols)]
 
@@ -98,11 +95,11 @@ class WhaleOptimization:
         )
 
     def _compute_A(self):
-        r = np.random.uniform(0.0, 1.0, size=2)
+        r = np.random.uniform(0.0, 1.0, size=self._dim)
         return (2.0 * np.multiply(self._a, r)) - self._a
 
     def _compute_C(self):
-        return 2.0 * np.random.uniform(0.0, 1.0, size=2)
+        return 2.0 * np.random.uniform(0.0, 1.0, size=self._dim)
 
     def _encircle(self, sol, best_sol, A):
         D = self._encircle_D(sol, best_sol)
@@ -123,7 +120,7 @@ class WhaleOptimization:
 
     def _attack(self, sol, best_sol):
         D = np.linalg.norm(best_sol - sol)
-        L = np.random.uniform(-1.0, 1.0, size=2)
+        L = np.random.uniform(-1.0, 1.0, size=self._dim)
         return (
             np.multiply(np.multiply(D, np.exp(self._b * L)), np.cos(2.0 * np.pi * L))
             + best_sol
