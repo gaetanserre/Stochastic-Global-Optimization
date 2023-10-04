@@ -226,7 +226,7 @@ if __name__ == "__main__":
                 f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average number of evaluations: {num_evals / num_exp:.2f}. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
             ) """
             opt_dict[optimizer_cls.__name__] = [
-                f"{np.mean(best_values):.4f}",
+                np.mean(best_values),
                 f"{num_evals / num_exp:.2f}",
                 f"{np.mean(times):.4f}",
             ]
