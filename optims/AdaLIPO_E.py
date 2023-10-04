@@ -24,8 +24,8 @@ class AdaLIPO_E(Optimizer):
     This class implements the AdaLIPO_E algorithm for minimization of a function.
     """
 
-    def __init__(self, bounds, max_evals, window_slope=5, max_slope=600):
-        self.bounds = bounds
+    def __init__(self, domain, max_evals, window_slope=5, max_slope=600):
+        self.domain = domain
         self.max_evals = max_evals
         self.window_slope = window_slope
         self.max_slope = max_slope
@@ -50,7 +50,7 @@ class AdaLIPO_E(Optimizer):
         alpha = 10e-2
         k_hat = 0
 
-        X_1 = np.random.uniform(self.bounds[:, 0], self.bounds[:, 1])
+        X_1 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
         nb_samples = 1
 
         # We keep track of the last `size_slope` values of nb_samples to compute the slope
@@ -98,14 +98,14 @@ class AdaLIPO_E(Optimizer):
             B_tp1 = Bernoulli(p(t))
             if B_tp1 == 1:
                 # Exploration
-                X_tp1 = np.random.uniform(self.bounds[:, 0], self.bounds[:, 1])
+                X_tp1 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
                 nb_samples += 1
                 last_nb_samples[-1] = nb_samples
                 points[t] = X_tp1
             else:
                 # Exploitation
                 while True:
-                    X_tp1 = np.random.uniform(self.bounds[:, 0], self.bounds[:, 1])
+                    X_tp1 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
                     nb_samples += 1
                     last_nb_samples[-1] = nb_samples
                     if condition(X_tp1, values, k_hat, points, t):

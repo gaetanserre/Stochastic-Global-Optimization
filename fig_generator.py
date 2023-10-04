@@ -28,6 +28,9 @@ class FigGenerator:
         path: path to save the figure (str) (optional)
         """
 
+        if eval_points.shape[0] == 0:
+            return
+
         dim = eval_points.shape[1]
         if dim == 1:
             self.gen_1D(eval_points, eval_values)
