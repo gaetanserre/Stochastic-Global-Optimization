@@ -28,6 +28,9 @@ from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
 from optims.NMDS import NMDS
 from optims.NMDS_particles import NMDS_particles
+from optims.BayesOpt import BayesOpt
+from optims.N_CMA_ES import N_CMA_ES
+from optims.Whale import Whale
 
 
 def time_it(function, args={}):
@@ -70,6 +73,13 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             svgd_iter=500,
             lr=0.1 if is_sim else 0.2,
         )
+    elif optim_cls == BayesOpt:
+        return optim_cls(bounds, n_iter=70)
+    elif optim_cls == N_CMA_ES:
+        m_0 = np.random.uniform(bounds[:, 0], bounds[:, 1])
+        return optim_cls(bounds, m_0, num_evals)
+    elif optim_cls == Whale:
+        return optim_cls(bounds, n_gen=30, n_sol=num_evals // 30)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
@@ -160,7 +170,7 @@ if __name__ == "__main__":
         ),
     ]
 
-    optimizers_cls = [PRS, AdaLIPO_E, CMA_ES, NMDS, NMDS_particles]
+    optimizers_cls = [AdaLIPO_E, CMA_ES, N_CMA_ES, NMDS_particles, BayesOpt, Whale]
 
     num_eval = 2000
 
