@@ -30,7 +30,9 @@ from optims.NMDS import NMDS
 from optims.NMDS_particles import NMDS_particles
 from optims.BayesOpt import BayesOpt
 from optims.N_CMA_ES import N_CMA_ES
-from optims.Whale import Whale
+from optims.WOA import WOA
+
+from pretty_printer import pprint_results
 
 
 def time_it(function, args={}):
@@ -78,7 +80,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
     elif optim_cls == N_CMA_ES:
         m_0 = np.random.uniform(bounds[:, 0], bounds[:, 1])
         return optim_cls(bounds, m_0, num_evals)
-    elif optim_cls == Whale:
+    elif optim_cls == WOA:
         return optim_cls(bounds, n_gen=30, n_sol=num_evals // 30)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
@@ -170,7 +172,7 @@ if __name__ == "__main__":
         ),
     ]
 
-    optimizers_cls = [AdaLIPO_E, CMA_ES, N_CMA_ES, NMDS_particles, BayesOpt, Whale]
+    optimizers_cls = [AdaLIPO_E, CMA_ES, N_CMA_ES, NMDS_particles, BayesOpt, WOA]
 
     num_eval = 2000
 
@@ -178,7 +180,7 @@ if __name__ == "__main__":
         print_yellow(f"Function: {function.__class__.__name__}.")
 
         dim = bounds[i].shape[0]
-        plot_figures = dim <= 2
+        plot_figures = False  # dim <= 2
         if plot_figures:
             from fig_generator import FigGenerator
 
@@ -187,6 +189,7 @@ if __name__ == "__main__":
             if not os.path.exists("figures"):
                 os.makedirs("figures")
 
+        opt_dict = {}
         for optimizer_cls in optimizers_cls:
             print_blue(f"Optimizer: {optimizer_cls.__name__}.")
 
@@ -215,13 +218,19 @@ if __name__ == "__main__":
 
                 best_point = (best_point[0], function(best_point[0]))
 
-                print(f"Time: {time:.4f}s. Best point found: {best_point}.")
+                # print(f"Time: {time:.4f}s. Best point found: {best_point}.")
 
                 times.append(time)
                 best_values.append(best_point[1])
-            print_green(
+            """ print_green(
                 f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average number of evaluations: {num_evals / num_exp:.2f}. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
-            )
+            ) """
+            opt_dict[optimizer_cls.__name__] = [
+                f"{np.mean(best_values):.4f}",
+                f"{num_evals / num_exp:.2f}",
+                f"{np.mean(times):.4f}",
+            ]
             if plot_figures:
                 path = f"figures/{type(function).__name__}_{optimizer_cls.__name__}.svg"
                 fig_gen.gen_figure(points, values, path=path)
+        pprint_results(opt_dict)
