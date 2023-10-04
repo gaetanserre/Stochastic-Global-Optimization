@@ -48,7 +48,7 @@ def print_color(str, color):
     print(f"\033[{color}m" + str + "\033[0m")
 
 
-print_yellow = lambda str: print_color(str, 93)
+print_pink = lambda str: print_color(str, 95)
 print_blue = lambda str: print_color(str, 94)
 print_green = lambda str: print_color(str, 92)
 
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     num_eval = 2000
 
     for i, function in enumerate(functions):
-        print_yellow(f"Function: {function.__class__.__name__}.")
+        print_pink(f"Function: {function.__class__.__name__}.")
 
         dim = bounds[i].shape[0]
         plot_figures = False  # dim <= 2
