@@ -32,7 +32,7 @@ from optims.BayesOpt import BayesOpt
 from optims.N_CMA_ES import N_CMA_ES
 from optims.WOA import WOA
 
-from pretty_printer import pprint_results
+from pretty_printer import pprint_results_get_rank, pprint_rank
 
 
 def time_it(function, args={}):
@@ -84,6 +84,15 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, n_gen=30, n_sol=num_evals // 30)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
+
+
+def merge_ranks(rank_dict, new_ranks):
+    if rank_dict == {}:
+        return new_ranks
+    else:
+        for k, v in rank_dict.items():
+            rank_dict[k] = v + new_ranks[k]
+        return rank_dict
 
 
 if __name__ == "__main__":
@@ -176,6 +185,8 @@ if __name__ == "__main__":
 
     num_eval = 2000
 
+    all_ranks = {}
+
     for i, function in enumerate(functions):
         print_pink(f"Function: {function.__class__.__name__}.")
 
@@ -233,4 +244,7 @@ if __name__ == "__main__":
             if plot_figures:
                 path = f"figures/{type(function).__name__}_{optimizer_cls.__name__}.svg"
                 fig_gen.gen_figure(points, values, path=path)
-        pprint_results(opt_dict)
+        new_ranks = pprint_results_get_rank(opt_dict)
+
+        all_ranks = merge_ranks(all_ranks, new_ranks)
+    pprint_rank(all_ranks)
