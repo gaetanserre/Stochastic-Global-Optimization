@@ -55,6 +55,9 @@ def gradient(f, x, eps=1e-12):
         x_p[i] += eps
         grad[i] = (f(x_p) - f_x) / eps
 
+    # We remove the number of evaluations required to estimate the gradient
+    f.n -= x.shape[0]
+
     return grad, f_x
 
 

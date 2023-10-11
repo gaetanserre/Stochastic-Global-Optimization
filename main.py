@@ -72,7 +72,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             bounds,
             n_particles=100,
             k_iter=[1000],
-            svgd_iter=500,
+            svgd_iter=200,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == BayesOpt:
