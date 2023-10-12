@@ -30,6 +30,8 @@ class AdaLIPO_E(Optimizer):
         self.window_slope = window_slope
         self.max_slope = max_slope
 
+        self.states = []
+
     @staticmethod
     def slope_stop_condition(last_nb_samples, size_slope, max_slope):
         """
@@ -43,6 +45,8 @@ class AdaLIPO_E(Optimizer):
         points = points[:nb_samples]
         values = values[:nb_samples]
         best_idx = np.argmax(values)
+        self.states += list(points)
+        self.states = np.array(self.states)
         return (points[best_idx], -values[best_idx]), points, -values
 
     def optimize(self, function, verbose=False):
@@ -119,6 +123,8 @@ class AdaLIPO_E(Optimizer):
                                 f"Exponential growth of the number of samples. Stopping the algorithm at iteration {t}."
                             )
                         return self.return_process(points, values, t)
+                    else:
+                        self.states.append(points[t - 1])
 
             value = -function(X_tp1)
             values[t] = value

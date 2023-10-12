@@ -30,6 +30,8 @@ class CMA_ES(Optimizer):
         self.mu = self.lambda_ // 2 if mu is None else mu
         self.cov_method = cov_method
 
+        self.modes = []
+
     def update_mean(self, mean, x, weights):
         c_m = 1
         return mean + c_m * np.sum(weights[: self.mu] * (x[: self.mu] - mean), axis=0)
@@ -187,6 +189,8 @@ class CMA_ES(Optimizer):
                     break
 
             mean = self.update_mean(mean, x_sorted, weights)
+
+            self.modes.append((mean, sigma**2 * cov))
 
         best_idx = np.argmin(values[: i * self.lambda_])
         return (
