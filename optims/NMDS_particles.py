@@ -92,8 +92,8 @@ class NMDS_particles(Optimizer):
         n_particles,
         k_iter,
         svgd_iter,
-        distance_q=0.1,
-        value_q=0.5,
+        distance_q=0.5,
+        value_q=0.3,
         lr=0.2,
     ):
         self.domain = domain
