@@ -31,6 +31,7 @@ from optims.NMDS_particles import NMDS_particles
 from optims.BayesOpt import BayesOpt
 from optims.N_CMA_ES import N_CMA_ES
 from optims.WOA import WOA
+from optims.Simulated_Annealing import SimulatedAnnealing
 
 from pretty_printer import pprint_results_get_rank, pprint_rank
 
@@ -82,6 +83,8 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, m_0, num_evals)
     elif optim_cls == WOA:
         return optim_cls(bounds, n_gen=30, n_sol=num_evals // 30)
+    elif optim_cls == SimulatedAnnealing:
+        return optim_cls(bounds, num_evals)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
@@ -95,107 +98,46 @@ def merge_ranks(rank_dict, new_ranks):
         return rank_dict
 
 
+def create_bounds(min, max, dim):
+    bounds = [(min, max) for _ in range(dim)]
+    return np.array(bounds)
+
+
 if __name__ == "__main__":
     num_exp = 10
 
-    functions = [
-        Ackley(),
-        Branin(),
-        Drop_Wave(),
-        EggHolder(),
-        Goldstein_Price(),
-        Himmelblau(),
-        Holder(),
-        Michalewicz(),
-        Rastrigin(),
-        Rosenbrock(),
-        Sphere(),
-    ]
+    functions = {
+        # "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
+        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 500)],
+        # "Drop_Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
+        # "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
+        # "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
+        # "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
+        # "Holder": [Holder(), create_bounds(-10, 10, 2)],
+        # "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 500)],
+        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 500)],
+        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 500)],
+        "Sphere": [Sphere(), create_bounds(-10, 10, 500)],
+    }
 
-    bounds = [
-        np.array(
-            [
-                (-32.768, 32.768),
-                (-32.768, 32.768),
-            ]
-        ),
-        np.array(
-            [
-                (-5, 10),
-                (0, 15),
-            ]
-        ),
-        np.array(
-            [
-                (-5.12, 5.12),
-                (-5.12, 5.12),
-            ]
-        ),
-        np.array(
-            [
-                (-512, 512),
-                (-512, 512),
-            ]
-        ),
-        np.array(
-            [
-                (-2, 2),
-                (-2, 2),
-            ]
-        ),
-        np.array(
-            [
-                (-4, 4),
-                (-4, 4),
-            ]
-        ),
-        np.array(
-            [
-                (-10, 10),
-                (-10, 10),
-            ]
-        ),
-        np.array(
-            [
-                (-0, np.pi),
-                (-0, np.pi),
-            ]
-        ),
-        np.array(
-            [
-                (-5.12, 5.12),
-                (-5.12, 5.12),
-            ]
-        ),
-        np.array(
-            [
-                (-3, 3),
-                (-3, 3),
-            ]
-        ),
-        np.array(
-            [
-                (-10, 10),
-                (-10, 10),
-            ]
-        ),
-    ]
+    optimizers_cls = [SimulatedAnnealing, NMDS_particles]
 
-    optimizers_cls = [AdaLIPO_E, CMA_ES, N_CMA_ES, NMDS_particles, BayesOpt, WOA]
-
-    num_eval = 2000
+    num_eval = 1_000_000
 
     all_ranks = {}
 
-    for i, function in enumerate(functions):
-        print_pink(f"Function: {function.__class__.__name__}.")
+    for function_name, objects in functions.items():
+        print_pink(f"Function: {function_name}.")
 
-        dim = bounds[i].shape[0]
+        function = objects[0]
+        bounds = objects[1]
+
+        dim = bounds.shape[0]
         plot_figures = False  # dim <= 2
         if plot_figures:
             from fig_generator import FigGenerator
 
-            fig_gen = FigGenerator(function, bounds[i])
+            fig_gen = FigGenerator(function, bounds)
 
             if not os.path.exists("figures"):
                 os.makedirs("figures")
@@ -206,7 +148,7 @@ if __name__ == "__main__":
 
             optimizer = match_optim(
                 optimizer_cls,
-                bounds[i],
+                bounds,
                 num_eval,
                 is_sim=function.__class__.__name__ == "Simulation",
             )

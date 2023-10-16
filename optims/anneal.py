@@ -143,13 +143,13 @@ class Annealer(object):
         last update that strictly decreased the energy.  At high
         temperatures it will include both moves that improved the overall
         state and moves that simply undid previously accepted moves that
-        increased the energy by thermal excititation.  At low temperatures
+        increased the energy by thermal excitation.  At low temperatures
         it will tend toward zero as the moves that can decrease the energy
         are exhausted and moves that would increase the energy are no longer
         thermally accessible."""
 
         elapsed = time.time() - self.start
-        if step == 0:
+        """ if step == 0:
             print(
                 "\n Temperature        Energy    Accept   Improve     Elapsed   Remaining",
                 file=sys.stderr,
@@ -176,9 +176,9 @@ class Annealer(object):
                 file=sys.stderr,
                 end="",
             )
-            sys.stderr.flush()
+            sys.stderr.flush() """
 
-    def anneal(self):
+    def anneal(self, save_states=False):
         """Minimizes the energy of a system by simulated annealing.
 
         Parameters
@@ -224,7 +224,8 @@ class Annealer(object):
             if dE > 0.0 and math.exp(-dE / T) < random.random():
                 # Restore previous state
                 self.state = self.copy_state(prevState)
-                self.states.append(self.state)
+                if save_states:
+                    self.states.append(self.state)
                 E = prevEnergy
             else:
                 # Accept new state and compare to best state
@@ -233,7 +234,8 @@ class Annealer(object):
                     improves += 1
                 prevState = self.copy_state(self.state)
                 prevEnergy = E
-                self.states.append(self.state)
+                if save_states:
+                    self.states.append(self.state)
                 if E < self.best_energy:
                     self.best_state = self.copy_state(self.state)
                     self.best_energy = E
@@ -243,7 +245,8 @@ class Annealer(object):
                     trials = accepts = improves = 0
 
         self.state = self.copy_state(self.best_state)
-        self.states.append(self.state)
+        if save_states:
+            self.states.append(self.state)
         if self.save_state_on_exit:
             self.save_state()
 
