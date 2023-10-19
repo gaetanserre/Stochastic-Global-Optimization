@@ -92,8 +92,8 @@ class NMDS_particles(Optimizer):
         n_particles,
         k_iter,
         svgd_iter,
-        distance_q=0.5,
-        value_q=0.3,
+        distance_q=0.5,  # 0
+        value_q=0.3,  # 1
         lr=0.2,
     ):
         self.domain = domain
@@ -131,6 +131,9 @@ class NMDS_particles(Optimizer):
             self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
         )
 
+        """ random_indices = np.random.choice(x.shape[0], 5)
+        self.paths = [x[random_indices]] """
+
         n_particles = self.n_particles
 
         all_points = [x.copy()]
@@ -146,7 +149,6 @@ class NMDS_particles(Optimizer):
                     f_evals[j] = f_eval
 
                 svgd_grad = svgd(x, logprob_grad_array, kernel)
-                # x_new = x + 1e-8 * svgd_grad
                 x_new = optimizer.step(svgd_grad, x)
 
                 # clamp to domain
@@ -157,6 +159,8 @@ class NMDS_particles(Optimizer):
                 optimizer.update_states(mask)
 
                 x = x_new
+
+                # self.paths.append(x[random_indices])
 
                 # save all points
                 all_points.append(x.copy())
