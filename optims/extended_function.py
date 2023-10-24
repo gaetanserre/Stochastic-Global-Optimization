@@ -12,7 +12,7 @@ def extended_function(f, bounds):
     """
 
     def extended_f(x):
-        eps = 1e-2
+        eps = 1e-8
         mu = 1e-6
         penalties_inf = np.sum(
             [np.log(-(bounds[i, 0] - x[i]) + eps) for i in range(bounds.shape[0])]
@@ -31,7 +31,7 @@ def extended_function(f, bounds):
         print(bounds[1, 1] - x[0])
         print("End bounds") """
 
-        if np.linalg.norm(bounds - x) < 0.1:
+        """ if np.linalg.norm(bounds - x) < 0.1:
             penalties_inf = np.sum(
                 [
                     np.exp(1 / (-(bounds[i, 0] - x[i]) + eps))
@@ -47,7 +47,7 @@ def extended_function(f, bounds):
 
             # print((penalties_inf + penalties_sup))
             return f(x) + mu * (penalties_inf + penalties_sup)
-        else:
-            return f(x)
+        else: """
+        return f(x) - mu * (penalties_inf + penalties_sup)
 
     return extended_f

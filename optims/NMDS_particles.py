@@ -61,19 +61,19 @@ def gradient(f, x, eps=1e-12):
     return grad, f_x
 
 
-def rbf(x, h=-1):
+def rbf(x, sigma=-1):
     sq_dist = pdist(x)
     pairwise_dists = squareform(sq_dist) ** 2
-    if h < 0:  # if h < 0, using median trick
-        h = np.median(pairwise_dists) + 1e-10
-        h = np.sqrt(0.5 * h / np.log(x.shape[0] + 1))
+    if sigma < 0:  # if sigma < 0, using median trick
+        sigma = np.median(pairwise_dists) + 1e-10
+        sigma = np.sqrt(0.5 * sigma / np.log(x.shape[0] + 1))
 
     # compute the rbf kernel
-    Kxy = np.exp(-pairwise_dists / h**2 / 2)
+    Kxy = np.exp(-pairwise_dists / sigma**2 / 2)
 
     dxkxy = (x * Kxy.sum(axis=1).reshape(-1, 1) - Kxy @ x).reshape(
         x.shape[0], x.shape[1]
-    ) / (h**2)
+    ) / (sigma**2)
 
     return Kxy, dxkxy
 
@@ -92,8 +92,8 @@ class NMDS_particles(Optimizer):
         n_particles,
         k_iter,
         svgd_iter,
-        distance_q=0.5,  # 0
-        value_q=0.3,  # 1
+        distance_q=0,  # 0.5
+        value_q=0,  # 0.3
         lr=0.2,
     ):
         self.domain = domain
@@ -122,8 +122,8 @@ class NMDS_particles(Optimizer):
         else:
             return x_new, np.ones(x_new.shape[0], dtype=bool)
 
-    def optimize(self, function, verbose=False):
-        kernel = rbf
+    def optimize(self, function, sigma=-1, verbose=False):
+        kernel = lambda x: rbf(x, sigma=sigma)
 
         dim = self.domain.shape[0]
 
@@ -131,8 +131,8 @@ class NMDS_particles(Optimizer):
             self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
         )
 
-        """ random_indices = np.random.choice(x.shape[0], 5)
-        self.paths = [x[random_indices]] """
+        random_indices = np.random.choice(x.shape[0], 5)
+        self.paths = [x[random_indices]]
 
         n_particles = self.n_particles
 
@@ -160,7 +160,7 @@ class NMDS_particles(Optimizer):
 
                 x = x_new
 
-                # self.paths.append(x[random_indices])
+                self.paths.append(x[random_indices])
 
                 # save all points
                 all_points.append(x.copy())
