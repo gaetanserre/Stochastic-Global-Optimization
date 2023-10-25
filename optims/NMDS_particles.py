@@ -7,7 +7,18 @@ from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
 
 
-class Adam:
+class Optimizer:
+    def __init__(self, lr):
+        self.lr = lr
+
+    def step(self, grad, params):
+        pass
+
+    def update_states(self, mask):
+        pass
+
+
+class Adam(Optimizer):
     def __init__(
         self,
         lr=0.001,
@@ -15,7 +26,7 @@ class Adam:
         eps=1e-8,
         amsgrad=False,
     ):
-        self.lr = lr
+        super().__init__(lr)
         self.betas = betas
         self.eps = eps
         self.amsgrad = amsgrad
@@ -44,6 +55,14 @@ class Adam:
     def update_states(self, mask):
         self.state_m = self.state_m[mask]
         self.state_v = self.state_v[mask]
+
+
+class Static_Optimizer(Optimizer):
+    def __init__(self, lr):
+        super().__init__(lr)
+
+    def step(self, grad, params):
+        return params + self.lr * grad
 
 
 def gradient(f, x, eps=1e-12):
@@ -95,6 +114,7 @@ class NMDS_particles(Optimizer):
         distance_q=0,  # 0.5
         value_q=0,  # 0.3
         lr=0.2,
+        adam=True,
     ):
         self.domain = domain
         self.n_particles = n_particles
@@ -103,6 +123,7 @@ class NMDS_particles(Optimizer):
         self.distance_q = distance_q
         self.value_q = value_q
         self.lr = lr
+        self.adam = adam
 
     def remove_particles(self, x, x_new, x_values):
         if x_new.shape[0] > 10:
@@ -138,7 +159,7 @@ class NMDS_particles(Optimizer):
 
         all_points = [x.copy()]
         for k in self.k_iter:
-            optimizer = Adam(lr=self.lr)
+            optimizer = Adam(lr=self.lr) if self.adam else Static_Optimizer(lr=self.lr)
             for i in range(self.svgd_iter):
                 logprob_grad_array = [np.zeros(dim)] * n_particles
                 f_evals = [0] * n_particles
