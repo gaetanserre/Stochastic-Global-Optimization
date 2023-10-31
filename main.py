@@ -72,15 +72,15 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(
             bounds,
             n_particles=100,
-            k_iter=[1000],
-            svgd_iter=200,
+            k_iter=[100_000],
+            svgd_iter=500,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == BayesOpt:
         return optim_cls(bounds, n_iter=70)
     elif optim_cls == N_CMA_ES:
         m_0 = np.random.uniform(bounds[:, 0], bounds[:, 1])
-        return optim_cls(bounds, m_0, num_evals)
+        return optim_cls(bounds, m_0, max_evals=num_evals)
     elif optim_cls == WOA:
         return optim_cls(bounds, n_gen=30, n_sol=num_evals // 30)
     elif optim_cls == SimulatedAnnealing:
@@ -108,21 +108,21 @@ if __name__ == "__main__":
 
     functions = {
         # "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
-        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 500)],
+        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
         # "Drop_Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
         # "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
         # "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
         # "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
         # "Holder": [Holder(), create_bounds(-10, 10, 2)],
         # "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 500)],
-        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 500)],
-        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 500)],
-        "Sphere": [Sphere(), create_bounds(-10, 10, 500)],
+        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
+        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
+        "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
     }
 
-    optimizers_cls = [SimulatedAnnealing, NMDS_particles]
+    optimizers_cls = [WOA, CMA_ES, NMDS_particles]
 
-    num_eval = 1_000_000
+    num_eval = 20_000
 
     all_ranks = {}
 
