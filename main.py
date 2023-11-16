@@ -107,22 +107,22 @@ if __name__ == "__main__":
     num_exp = 10
 
     functions = {
+        # "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
         # "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
-        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
         # "Drop_Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
         # "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
         # "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
         # "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
         # "Holder": [Holder(), create_bounds(-10, 10, 2)],
-        # "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 500)],
-        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
-        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
-        "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
+        "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
+        # "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
+        # "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
+        # "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
     }
 
     optimizers_cls = [WOA, CMA_ES, NMDS_particles]
 
-    num_eval = 20_000
+    num_evals = [300_000] * 4
 
     all_ranks = {}
 
@@ -143,19 +143,19 @@ if __name__ == "__main__":
                 os.makedirs("figures")
 
         opt_dict = {}
-        for optimizer_cls in optimizers_cls:
+        for i, optimizer_cls in enumerate(optimizers_cls):
             print_blue(f"Optimizer: {optimizer_cls.__name__}.")
 
             optimizer = match_optim(
                 optimizer_cls,
                 bounds,
-                num_eval,
+                num_evals[i],
                 is_sim=function.__class__.__name__ == "Simulation",
             )
 
             times = []
             best_values = []
-            num_evals = 0
+            num_f_evals = 0
 
             for _ in range(num_exp):
                 function.n = 0
@@ -167,7 +167,7 @@ if __name__ == "__main__":
                     },
                 )
                 best_point, points, values = ret
-                num_evals += function.n
+                num_f_evals += function.n
 
                 best_point = (best_point[0], function(best_point[0]))
 
@@ -176,11 +176,11 @@ if __name__ == "__main__":
                 times.append(time)
                 best_values.append(best_point[1])
             """ print_green(
-                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average number of evaluations: {num_evals / num_exp:.2f}. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
+                f"Average time: {np.mean(times):.4f} +- {np.std(times):.2f}s. Average number of evaluations: {num_f_evals / num_exp:.2f}. Average best value: {np.mean(best_values):.4f} +- {np.std(best_values):.2f}.\n"
             ) """
             opt_dict[optimizer_cls.__name__] = [
                 np.mean(best_values),
-                f"{num_evals / num_exp:.2f}",
+                f"{num_f_evals / num_exp:.2f}",
                 f"{np.mean(times):.4f}",
             ]
             if plot_figures:
