@@ -8,7 +8,7 @@ import numpy as np
 import cma
 
 
-class N_CMA_ES(Optimizer):
+class CMA_ES(Optimizer):
     def __init__(self, domain, m_0, max_evals, sigma0=1):
         self.domain = domain
         self.m_0 = m_0

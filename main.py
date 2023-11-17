@@ -25,11 +25,10 @@ from benchmark.epidemio.simulation import Simulation
 # Optimizations algorithms
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
-from optims.CMA_ES import CMA_ES
 from optims.NMDS import NMDS
 from optims.NMDS_particles import NMDS_particles
 from optims.BayesOpt import BayesOpt
-from optims.N_CMA_ES import N_CMA_ES
+from optims.N_CMA_ES import CMA_ES
 from optims.WOA import WOA
 from optims.Simulated_Annealing import SimulatedAnnealing
 
@@ -59,15 +58,6 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, num_evals=num_evals)
     elif optim_cls == AdaLIPO_E:
         return optim_cls(bounds, max_evals=num_evals)
-    elif optim_cls == CMA_ES:
-        m_0 = np.random.uniform(bounds[:, 0], bounds[:, 1])
-        return optim_cls(
-            bounds,
-            m_0,
-            num_generations=num_evals // 5,
-            lambda_=5,
-            cov_method="full",
-        )
     elif optim_cls == NMDS or optim_cls == NMDS_particles:
         return optim_cls(
             bounds,
@@ -78,7 +68,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         )
     elif optim_cls == BayesOpt:
         return optim_cls(bounds, n_iter=70)
-    elif optim_cls == N_CMA_ES:
+    elif optim_cls == CMA_ES:
         m_0 = np.random.uniform(bounds[:, 0], bounds[:, 1])
         return optim_cls(bounds, m_0, max_evals=num_evals)
     elif optim_cls == WOA:
@@ -107,22 +97,22 @@ if __name__ == "__main__":
     num_exp = 10
 
     functions = {
-        # "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
-        # "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
-        # "Drop_Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
-        # "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
-        # "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
-        # "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
-        # "Holder": [Holder(), create_bounds(-10, 10, 2)],
-        "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
-        # "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
-        # "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
-        # "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
+        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
+        "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
+        "Drop Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
+        "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
+        "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
+        "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
+        "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
+        "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 2)],
+        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 2)],
+        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 2)],
+        "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
     }
 
-    optimizers_cls = [WOA, CMA_ES, NMDS_particles]
+    optimizers_cls = [AdaLIPO_E, WOA, CMA_ES, NMDS, NMDS_particles]
 
-    num_evals = [300_000] * 4
+    num_evals = [2000, 200_000, 200_000, 200_000, 200_000]
 
     all_ranks = {}
 
