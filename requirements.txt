@@ -3,3 +3,4 @@ scipy==1.10.1
 cma==3.3.0
 bayesian-optimization==1.4.3
 prettytable==3.9.0
+filterpy==1.4.5
