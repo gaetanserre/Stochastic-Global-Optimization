@@ -5,7 +5,7 @@
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
-from filterpy.monte_carlo import multinomial_resample
+from filterpy.monte_carlo import residual_resample
 
 
 class Optimizer:
@@ -28,6 +28,9 @@ class Adam(Optimizer):
         amsgrad=False,
     ):
         super().__init__(lr)
+        self.init(betas, eps, amsgrad)
+
+    def init(self, betas=(0.9, 0.999), eps=1e-8, amsgrad=False):
         self.betas = betas
         self.eps = eps
         self.amsgrad = amsgrad
@@ -126,25 +129,7 @@ class NMDS_particles(Optimizer):
         self.lr = lr
         self.adam = adam
 
-    def remove_particles(self, x, x_new, x_values):
-        if x_new.shape[0] > 10:
-            distance = np.linalg.norm(x - x_new, axis=1)
-            dist_quantile = np.quantile(distance, q=self.distance_q)
-            dist_mask = distance < dist_quantile
-
-            value_quantile = np.quantile(x_values, q=self.value_q)
-            value_mask = x_values > value_quantile
-
-            mask = ~(dist_mask & value_mask)
-
-            if np.all(mask):
-                return x_new, np.ones(x_new.shape[0], dtype=bool)
-            else:
-                return x_new[mask], mask
-        else:
-            return x_new, np.ones(x_new.shape[0], dtype=bool)
-
-    def predict(self, x, logprob_grad_array, kernel, optimizer):
+    def move(self, x, logprob_grad_array, kernel, optimizer):
         svgd_grad = svgd(x, logprob_grad_array, kernel)
         x = optimizer.step(svgd_grad, x)
 
@@ -158,30 +143,44 @@ class NMDS_particles(Optimizer):
         return 1.0 / np.sum(weights**2)
 
     @staticmethod
-    def resample_from_indexes(x, weights, indexes):
+    def resample_from_indexes(x, weights, indexes, optimizer):
         x[:] = x[indexes]
 
         rnd_noise = np.random.uniform(-1, 1, x.shape) * 1e-6
         x += rnd_noise
 
         weights = np.ones(x.shape[0]) / x.shape[0]
+
+        optimizer.init()
+
         return x, weights
 
-    @staticmethod
-    def resample_from_indexes_no_duplicates(x, weights, indexes):
+    def resample_from_indexes_no_duplicates(self, x, weights, indexes, optimizer):
         # Remove duplicates
-        indexes = np.sort(np.unique(indexes))
+        unique_indexes = np.sort(np.unique(indexes))
+        if unique_indexes.shape[0] < 10:
+            # print("Not enough unique indexes")
+            """if self.has_resampled:
+            return x, weights"""
+            return NMDS_particles.resample_from_indexes(x, weights, indexes, optimizer)
+
         mask = np.zeros(x.shape[0], dtype=bool)
-        mask[indexes] = True
+        mask[unique_indexes] = True
 
         x = x[mask]
         weights = np.ones(x.shape[0]) / x.shape[0]
 
-        return x, weights, mask
+        optimizer.update_states(mask)
+
+        self.has_resampled = True
+
+        return x, weights
 
     @staticmethod
-    def update_weights(weights, f_evals):
-        weights *= np.minimum(1e20, np.exp(-f_evals))
+    def update_weights(weights, k, f_evals):
+        max_val = np.max(f_evals)
+        weights = np.exp(-100 * f_evals / max_val) / weights + 1e-50
+        weights[weights > 1e50] = 1e50
         weights /= np.sum(weights)
         return weights
 
@@ -198,6 +197,8 @@ class NMDS_particles(Optimizer):
         # self.paths = [x[random_indices]]
 
         n_particles = self.n_particles
+
+        self.has_resampled = False
 
         all_points = [x.copy()]
         for k in self.k_iter:
@@ -216,20 +217,25 @@ class NMDS_particles(Optimizer):
                 f_evals = np.array(f_evals)
 
                 # Move particles
-                x = self.predict(x, logprob_grad_array, kernel, optimizer)
+                x = self.move(x, logprob_grad_array, kernel, optimizer)
 
                 # Update weights
-                weights = self.update_weights(weights, f_evals)
+                weights = self.update_weights(weights, k, f_evals)
 
                 # Resample if too few effective particles
-                if self.neff(weights) < n_particles / 2:
-                    indexes = multinomial_resample(weights)
-                    x, weights, mask = self.resample_from_indexes_no_duplicates(
-                        x, weights, indexes
+                neff = self.neff(weights)
+                """ print(weights)
+                print(f_evals)
+                print(n_particles)
+                print(neff) """
+                if neff < n_particles / 10:
+                    # print("Resampling")
+                    indexes = residual_resample(weights)
+                    x, weights = self.resample_from_indexes_no_duplicates(
+                        x, weights, indexes, optimizer
                     )
 
                     n_particles = x.shape[0]
-                    optimizer.update_states(mask)
 
                 # self.paths.append(x[random_indices])
 
