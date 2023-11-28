@@ -59,11 +59,15 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, num_evals=num_evals)
     elif optim_cls == AdaLIPO_E:
         return optim_cls(bounds, max_evals=num_evals)
-    elif (
-        optim_cls == NMDS
-        or optim_cls == NMDS_particles
-        or optim_cls == NMDS_particles_old
-    ):
+    elif optim_cls == NMDS or optim_cls == NMDS_particles:
+        return optim_cls(
+            bounds,
+            n_particles=500,
+            k_iter=[10_000],
+            svgd_iter=100,
+            lr=0.1 if is_sim else 0.2,
+        )
+    elif optim_cls == NMDS_particles_old:
         return optim_cls(
             bounds,
             n_particles=5000,
@@ -102,25 +106,33 @@ if __name__ == "__main__":
     num_exp = 10
 
     functions = {
-        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
-        "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
-        "Drop Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
-        "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
-        "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
-        "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
-        "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
-        "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 2)],
-        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 2)],
-        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 2)],
-        "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
+        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
+        # "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
+        # "Drop Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
+        # "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
+        # "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
+        # "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
+        # "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
+        "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
+        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
+        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
+        "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
     }
 
-    # optimizers_cls = [AdaLIPO_E, BayesOpt, WOA, CMA_ES, NMDS, NMDS_particles]
+    """ optimizers_cls = [
+        AdaLIPO_E,
+        BayesOpt,
+        WOA,
+        CMA_ES,
+        NMDS,
+        NMDS_particles,
+        NMDS_particles_old,
+    ] """
     # optimizers_cls = [WOA, CMA_ES, NMDS, NMDS_particles]
-    optimizers_cls = [NMDS_particles_old, NMDS_particles]
+    optimizers_cls = [WOA, CMA_ES, NMDS, NMDS_particles_old, NMDS_particles]
 
-    # num_evals = [2000, 70, 300_000, 300_000, 0, 0]
-    num_evals = [600_000, 600_000, 0, 0]
+    # num_evals = [2000, 70, 200_000, 200_000, 0, 0, 0]
+    num_evals = [600_000, 600_000, 0, 0, 0]
 
     all_ranks = {}
 

@@ -20,5 +20,5 @@ class Ackley(Function):
             -a * np.exp(-b * np.sqrt(np.sum(x**2) / len(x)))
             - np.exp(np.sum(np.cos(c * x)) / len(x))
             + a
-            + np.exp(1)
+            + np.e
         )

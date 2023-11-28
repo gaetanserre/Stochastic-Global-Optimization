@@ -231,7 +231,7 @@ class NMDS_particles(Optimizer):
                 if neff < n_particles / 10:
                     # print("Resampling")
                     indexes = residual_resample(weights)
-                    x, weights = self.resample_from_indexes_no_duplicates(
+                    x, weights = self.resample_from_indexes(
                         x, weights, indexes, optimizer
                     )
 
