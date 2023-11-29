@@ -45,7 +45,7 @@ class CMA_ES(Optimizer):
         return intermediate_fun """
 
     def optimize(self, function, verbose=False):
-        x_opt, es = cma.fmin2(
+        res = cma.fmin(
             function,
             self.m_0,
             self.sigma0,
@@ -56,4 +56,21 @@ class CMA_ES(Optimizer):
             },
         )
 
-        return (x_opt, function(x_opt)), np.array([]), np.array([])
+        x_opt = res[0]
+        f_opt = res[1]
+
+        return (x_opt, f_opt), np.array([]), np.array([])
+
+    def optimize_stats(self, function, verbose=False):
+        res = cma.fmin(
+            function,
+            self.m_0,
+            self.sigma0,
+            {
+                "bounds": self.transform_domain(self.domain),
+                "verbose": -9,
+                "maxiter": self.max_evals,
+            },
+        )
+
+        return res[5], res[6]

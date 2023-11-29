@@ -5,6 +5,7 @@
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
+from .N_CMA_ES import CMA_ES
 
 
 class Optimizer:
@@ -104,13 +105,15 @@ def svgd(x, logprob_grad, kernel):
     return svgd_grad
 
 
-class NMDS_particles_old(Optimizer):
+class NMDS_particles(Optimizer):
     def __init__(
         self,
         domain,
         n_particles,
         k_iter,
         svgd_iter,
+        cma_iter,
+        sigma=-1,
         distance_q=0.5,  # 0
         value_q=0.3,  # 0
         lr=0.2,
@@ -120,10 +123,30 @@ class NMDS_particles_old(Optimizer):
         self.n_particles = n_particles
         self.k_iter = k_iter
         self.svgd_iter = svgd_iter
+        self.cma_iter = cma_iter
+        self.sigma = sigma
         self.distance_q = distance_q
         self.value_q = value_q
         self.lr = lr
         self.adam = adam
+
+    def initialize_particles(self, function):
+        dim = self.domain.shape[0]
+
+        m_0 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
+        cma = CMA_ES(self.domain, m_0, self.cma_iter)
+
+        uniform_particles = self.n_particles
+        cma_particles = self.n_particles
+        mean, std = cma.optimize_stats(function)
+
+        # std = np.ones(dim) * 5
+        x_cma = np.random.normal(mean, std, size=(cma_particles, dim))
+        """ x_uniform = np.random.uniform(
+            self.domain[:, 0], self.domain[:, 1], size=(uniform_particles, dim)
+        ) """
+        return x_cma
+        # return np.concatenate((x_cma, x_uniform), axis=0)
 
     def remove_particles(self, x, x_new, x_values):
         if x_new.shape[0] > 10:
@@ -143,14 +166,12 @@ class NMDS_particles_old(Optimizer):
         else:
             return x_new, np.ones(x_new.shape[0], dtype=bool)
 
-    def optimize(self, function, sigma=-1, verbose=False):
-        kernel = lambda x: rbf(x, sigma=sigma)
+    def optimize(self, function, verbose=False):
+        kernel = lambda x: rbf(x, sigma=self.sigma)
 
         dim = self.domain.shape[0]
 
-        x = np.random.uniform(
-            self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
-        )
+        x = self.initialize_particles(function)
 
         # random_indices = np.random.choice(x.shape[0], 5)
         # self.paths = [x[random_indices]]

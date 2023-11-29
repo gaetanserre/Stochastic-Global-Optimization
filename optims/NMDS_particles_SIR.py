@@ -108,7 +108,7 @@ def svgd(x, logprob_grad, kernel):
     return svgd_grad
 
 
-class NMDS_particles(Optimizer):
+class NMDS_particles_SIR(Optimizer):
     def __init__(
         self,
         domain,

@@ -26,8 +26,9 @@ from benchmark.epidemio.simulation import Simulation
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.NMDS import NMDS
-from optims.NMDS_particles import NMDS_particles_old
-from optims.NMDS_particles2 import NMDS_particles
+from optims.NMDS_particles import NMDS_particles
+from optims.NMDS_particles_SIR import NMDS_particles_SIR
+from optims.NMDS_CMA import NMDS_CMA
 from optims.BayesOpt import BayesOpt
 from optims.N_CMA_ES import CMA_ES
 from optims.WOA import WOA
@@ -59,7 +60,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, num_evals=num_evals)
     elif optim_cls == AdaLIPO_E:
         return optim_cls(bounds, max_evals=num_evals)
-    elif optim_cls == NMDS or optim_cls == NMDS_particles:
+    elif optim_cls == NMDS or optim_cls == NMDS_particles_SIR:
         return optim_cls(
             bounds,
             n_particles=500,
@@ -67,12 +68,23 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             svgd_iter=100,
             lr=0.1 if is_sim else 0.2,
         )
-    elif optim_cls == NMDS_particles_old:
+    elif optim_cls == NMDS_particles:
         return optim_cls(
             bounds,
             n_particles=5000,
             k_iter=[10_000],
             svgd_iter=300,
+            cma_iter=30_000,
+            sigma=-1,
+            lr=0.1 if is_sim else 0.2,
+        )
+    elif optim_cls == NMDS_CMA:
+        return optim_cls(
+            bounds,
+            n_particles=500,
+            k_iter=[1000],
+            svgd_iter=1000,
+            cma_iter=200,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == BayesOpt:
@@ -113,9 +125,9 @@ if __name__ == "__main__":
         # "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
         # "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
         # "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
-        "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
+        # "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
         "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
-        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
+        # "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
         "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
     }
 
@@ -129,10 +141,12 @@ if __name__ == "__main__":
         NMDS_particles_old,
     ] """
     # optimizers_cls = [WOA, CMA_ES, NMDS, NMDS_particles]
-    optimizers_cls = [WOA, CMA_ES, NMDS, NMDS_particles_old, NMDS_particles]
+    # optimizers_cls = [WOA, CMA_ES, NMDS, NMDS_particles]
+    optimizers_cls = [NMDS_particles]
 
     # num_evals = [2000, 70, 200_000, 200_000, 0, 0, 0]
-    num_evals = [600_000, 600_000, 0, 0, 0]
+    # num_evals = [600_000, 600_000, 0, 0, 0]
+    num_evals = [200_000, 0]
 
     all_ranks = {}
 
