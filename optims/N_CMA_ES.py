@@ -73,4 +73,4 @@ class CMA_ES(Optimizer):
             },
         )
 
-        return res[5], res[6]
+        return res[1], res[5], res[6]

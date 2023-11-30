@@ -33,3 +33,19 @@ class WOA(Optimizer):
         best_value = optimizer._best_solutions[-1][0]
 
         return (best_point, best_value), np.array([]), np.array([])
+
+    def optimize_(self, function):
+        optimizer = WhaleOptimization(
+            function,
+            self.domain,
+            self.n_sol,
+            self.b,
+            self.a,
+            self.a / self.n_gen,
+            maximize=False,
+        )
+
+        for _ in range(self.n_gen):
+            optimizer.optimize()
+
+        return optimizer

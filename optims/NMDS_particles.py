@@ -130,24 +130,6 @@ class NMDS_particles(Optimizer):
         self.lr = lr
         self.adam = adam
 
-    def initialize_particles(self, function):
-        dim = self.domain.shape[0]
-
-        m_0 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
-        cma = CMA_ES(self.domain, m_0, self.cma_iter)
-
-        uniform_particles = self.n_particles
-        cma_particles = self.n_particles
-        mean, std = cma.optimize_stats(function)
-
-        # std = np.ones(dim) * 5
-        x_cma = np.random.normal(mean, std, size=(cma_particles, dim))
-        """ x_uniform = np.random.uniform(
-            self.domain[:, 0], self.domain[:, 1], size=(uniform_particles, dim)
-        ) """
-        return x_cma
-        # return np.concatenate((x_cma, x_uniform), axis=0)
-
     def remove_particles(self, x, x_new, x_values):
         if x_new.shape[0] > 10:
             distance = np.linalg.norm(x - x_new, axis=1)
@@ -171,7 +153,9 @@ class NMDS_particles(Optimizer):
 
         dim = self.domain.shape[0]
 
-        x = self.initialize_particles(function)
+        x = np.random.uniform(
+            self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
+        )
 
         # random_indices = np.random.choice(x.shape[0], 5)
         # self.paths = [x[random_indices]]
