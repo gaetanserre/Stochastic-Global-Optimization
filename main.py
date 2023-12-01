@@ -4,6 +4,7 @@
 
 import numpy as np
 import os
+import argparse
 
 # benchmark functions
 from benchmark.ackley import Ackley
@@ -107,44 +108,67 @@ def create_bounds(min, max, dim):
     return np.array(bounds)
 
 
+def cli():
+    parser = argparse.ArgumentParser(description="Run the benchmark.")
+    parser.add_argument(
+        "--big-dimension",
+        "-bd",
+        action="store_true",
+        help="Run the big dimensions benchmark with",
+    )
+
+    parser.add_argument(
+        "--num-exp",
+        "-ne",
+        type=int,
+        default=10,
+        help="Number of experiment to run.",
+    )
+
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
-    num_exp = 10
+    args = cli()
 
-    """ functions = {
-        "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
-        "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
-        "Drop Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
-        "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
-        "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
-        "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
-        "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
-        "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 2)],
-        "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 2)],
-        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 2)],
-        "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
-    } """
+    num_exp = args.num_exp
 
-    functions = {
-        # "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
-        # "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
-        # "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
-        "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
-        # "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
-    }
+    if args.big_dimension:
+        functions = {
+            "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
+            "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
+            "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
+            "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
+            "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
+        }
 
-    optimizers_cls = [NMDS_hybrid]
-    """ optimizers_cls = [
-        AdaLIPO_E,
-        BayesOpt,
-        NMDS,
-        NMDS_particles,
-        NMDS_hybrid,
-        CMA_ES,
-        WOA,
-    ] """
+        optimizers_cls = [WOA, CMA_ES, NMDS, NMDS_particles, NMDS_hybrid]
+        num_evals = [600_000, 600_000, 0, 0, 0]
+    else:
+        functions = {
+            "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
+            "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
+            "Drop Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
+            "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
+            "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
+            "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
+            "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
+            "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 2)],
+            "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 2)],
+            "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 2)],
+            "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
+        }
 
-    # num_evals = [2000, 70, 0, 0, 0, 200_000, 200_000]
-    num_evals = [600_000, 600_000, 0]
+        optimizers_cls = [
+            AdaLIPO_E,
+            BayesOpt,
+            NMDS,
+            NMDS_particles,
+            NMDS_hybrid,
+            CMA_ES,
+            WOA,
+        ]
+        num_evals = [2000, 70, 0, 0, 0, 200_000, 200_000]
 
     all_ranks = {}
 
@@ -192,8 +216,6 @@ if __name__ == "__main__":
                 num_f_evals += function.n
 
                 best_point = (best_point[0], function(best_point[0]))
-
-                print(best_point[1])
 
                 # print(f"Time: {time:.4f}s. Best point found: {best_point}.")
 
