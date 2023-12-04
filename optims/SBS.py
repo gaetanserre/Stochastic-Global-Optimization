@@ -5,9 +5,6 @@
 import numpy as np
 from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
-from .N_CMA_ES import CMA_ES
-from .WOA import WOA
-from .utils import print_purple
 
 
 class Adam:
@@ -57,19 +54,19 @@ def gradient(f, x, eps=1e-12):
     return grad
 
 
-def rbf(x, sigma=-1):
+def rbf(x, h=-1):
     sq_dist = pdist(x)
     pairwise_dists = squareform(sq_dist) ** 2
-    if sigma < 0:  # if sigma < 0, using median trick
-        sigma = np.median(pairwise_dists) + 1e-10
-        sigma = np.sqrt(0.5 * sigma / np.log(x.shape[0] + 1))
+    if h < 0:  # if h < 0, using median trick
+        h = np.median(pairwise_dists) + 1e-10
+        h = np.sqrt(0.5 * h / np.log(x.shape[0] + 1))
 
     # compute the rbf kernel
-    Kxy = np.exp(-pairwise_dists / sigma**2 / 2)
+    Kxy = np.exp(-pairwise_dists / h**2 / 2)
 
     dxkxy = (x * Kxy.sum(axis=1).reshape(-1, 1) - Kxy @ x).reshape(
         x.shape[0], x.shape[1]
-    ) / (sigma**2)
+    ) / (h**2)
 
     return Kxy, dxkxy
 
@@ -81,52 +78,24 @@ def svgd(x, logprob_grad, kernel):
     return svgd_grad
 
 
-class NMDS_hybrid(Optimizer):
-    def __init__(
-        self, domain, n_particles, k_iter, svgd_iter, cma_iter, sigma=-1, lr=0.5
-    ):
+class SBS(Optimizer):
+    def __init__(self, domain, n_particles, k_iter, svgd_iter, lr=0.5):
         self.domain = domain
         self.n_particles = n_particles
         self.k_iter = k_iter
         self.svgd_iter = svgd_iter
-        self.cma_iter = cma_iter
-        self.sigma = sigma
         self.lr = lr
-
-    def initialize_particles(self, function):
-        dim = self.domain.shape[0]
-
-        # Run iterations of CMA-ES
-
-        m_0 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
-        cma = CMA_ES(self.domain, m_0, self.cma_iter)
-        best_cma, mean, std = cma.optimize_stats(function)
-
-        # Run iterations of WOA
-        woa = WOA(self.domain, 30, self.n_particles)
-        woa = woa.optimize_(function)
-        best_woa = woa._best_solutions[-1][0]
-
-        print(f"Best CMA-ES: {best_cma}. Best WOA: {best_woa}.")
-
-        # Initialize particles
-        if best_cma < best_woa:
-            print_purple("Initializing particles with CMA-ES.")
-            x = np.random.normal(mean, std, size=(self.n_particles, dim))
-        else:
-            print_purple("Initializing particles with WOA.")
-            x = woa._sols
-
-        return x
 
     def optimize(self, function, verbose=False):
         logprob_grad = lambda k: (lambda x: -k * gradient(function, x))
 
-        kernel = lambda x: rbf(x, sigma=self.sigma)
+        kernel = rbf
 
         dim = self.domain.shape[0]
 
-        x = self.initialize_particles(function)
+        x = np.random.uniform(
+            self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
+        )
 
         all_points = [x.copy()]
         for k in self.k_iter:

@@ -26,10 +26,10 @@ from benchmark.epidemio.simulation import Simulation
 # Optimizations algorithms
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
-from optims.NMDS import NMDS
-from optims.NMDS_particles import NMDS_particles
-from optims.NMDS_particles_SIR import NMDS_particles_SIR
-from optims.NMDS_hybrid import NMDS_hybrid
+from optims.SBS import SBS
+from optims.SBS_particles import SBS_particles
+from optims.SBS_particles_SIR import SBS_particles_SIR
+from optims.SBS_hybrid import SBS_hybrid
 from optims.BayesOpt import BayesOpt
 from optims.N_CMA_ES import CMA_ES
 from optims.WOA import WOA
@@ -53,7 +53,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, num_evals=num_evals)
     elif optim_cls == AdaLIPO_E:
         return optim_cls(bounds, max_evals=num_evals)
-    elif optim_cls == NMDS or optim_cls == NMDS_particles_SIR:
+    elif optim_cls == SBS or optim_cls == SBS_particles_SIR:
         return optim_cls(
             bounds,
             n_particles=500,
@@ -61,7 +61,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             svgd_iter=300,
             lr=0.1 if is_sim else 0.2,
         )
-    elif optim_cls == NMDS_particles:
+    elif optim_cls == SBS_particles:
         return optim_cls(
             bounds,
             n_particles=5000,
@@ -71,12 +71,12 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             sigma=1e-10,
             lr=0.1 if is_sim else 0.2,
         )
-    elif optim_cls == NMDS_hybrid:
+    elif optim_cls == SBS_hybrid:
         return optim_cls(
             bounds,
             n_particles=500,
             k_iter=[10_000],
-            svgd_iter=100,
+            svgd_iter=200,
             cma_iter=10_000,
             sigma=1e-10,
             lr=0.1 if is_sim else 1e-3,
@@ -142,7 +142,7 @@ if __name__ == "__main__":
             "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
         }
 
-        optimizers_cls = [WOA, CMA_ES, NMDS, NMDS_particles, NMDS_hybrid]
+        optimizers_cls = [WOA, CMA_ES, SBS, SBS_particles, SBS_hybrid]
         num_evals = [600_000, 600_000, 0, 0, 0]
     else:
         functions = {
@@ -161,14 +161,14 @@ if __name__ == "__main__":
 
         optimizers_cls = [
             AdaLIPO_E,
-            BayesOpt,
-            NMDS,
-            NMDS_particles,
-            NMDS_hybrid,
+            # BayesOpt,
+            SBS,
+            SBS_particles,
+            SBS_hybrid,
             CMA_ES,
             WOA,
         ]
-        num_evals = [2000, 70, 0, 0, 0, 200_000, 200_000]
+        num_evals = [2000, 0, 0, 0, 200_000, 200_000]
 
     all_ranks = {}
 

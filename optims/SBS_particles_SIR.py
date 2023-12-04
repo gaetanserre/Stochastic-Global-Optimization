@@ -108,7 +108,7 @@ def svgd(x, logprob_grad, kernel):
     return svgd_grad
 
 
-class NMDS_particles_SIR(Optimizer):
+class SBS_particles_SIR(Optimizer):
     def __init__(
         self,
         domain,
@@ -162,7 +162,9 @@ class NMDS_particles_SIR(Optimizer):
             # print("Not enough unique indexes")
             """if self.has_resampled:
             return x, weights"""
-            return NMDS_particles.resample_from_indexes(x, weights, indexes, optimizer)
+            return SBS_particles_SIR.resample_from_indexes(
+                x, weights, indexes, optimizer
+            )
 
         mask = np.zeros(x.shape[0], dtype=bool)
         mask[unique_indexes] = True

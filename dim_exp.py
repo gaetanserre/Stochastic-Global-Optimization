@@ -16,7 +16,7 @@ from optims.extended_function import extended_function
 from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.CMA_ES import CMA_ES
-from optims.NMDS import NMDS
+from optims.SBS import NMDS
 
 
 def print_color(str, color):
