@@ -112,7 +112,6 @@ class SBS_particles(Optimizer):
         n_particles,
         k_iter,
         svgd_iter,
-        cma_iter,
         sigma=-1,
         distance_q=0.5,  # 0
         value_q=0.3,  # 0
@@ -123,7 +122,6 @@ class SBS_particles(Optimizer):
         self.n_particles = n_particles
         self.k_iter = k_iter
         self.svgd_iter = svgd_iter
-        self.cma_iter = cma_iter
         self.sigma = sigma
         self.distance_q = distance_q
         self.value_q = value_q

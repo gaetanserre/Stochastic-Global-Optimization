@@ -83,13 +83,13 @@ def svgd(x, logprob_grad, kernel):
 
 class SBS_hybrid(Optimizer):
     def __init__(
-        self, domain, n_particles, k_iter, svgd_iter, cma_iter, sigma=-1, lr=0.5
+        self, domain, n_particles, k_iter, svgd_iter, warm_start_iter, sigma=-1, lr=0.5
     ):
         self.domain = domain
         self.n_particles = n_particles
         self.k_iter = k_iter
         self.svgd_iter = svgd_iter
-        self.cma_iter = cma_iter
+        self.warm_start_iter = warm_start_iter
         self.sigma = sigma
         self.lr = lr
 
@@ -99,7 +99,7 @@ class SBS_hybrid(Optimizer):
         # Run iterations of CMA-ES
 
         m_0 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
-        cma = CMA_ES(self.domain, m_0, self.cma_iter)
+        cma = CMA_ES(self.domain, m_0, self.warm_start_iter)
         best_cma, mean, std = cma.optimize_stats(function)
 
         # Run iterations of WOA
@@ -117,7 +117,7 @@ class SBS_hybrid(Optimizer):
             print_purple("Initializing particles with WOA.")
             x = woa._sols
 
-        return x
+        return np.clip(x, self.domain[:, 0], self.domain[:, 1])
 
     def optimize(self, function, verbose=False):
         logprob_grad = lambda k: (lambda x: -k * gradient(function, x))

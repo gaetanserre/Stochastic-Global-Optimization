@@ -67,7 +67,6 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             n_particles=5000,
             k_iter=[10_000],
             svgd_iter=300,
-            cma_iter=300,
             sigma=1e-10,
             lr=0.1 if is_sim else 0.2,
         )
@@ -77,7 +76,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             n_particles=500,
             k_iter=[10_000],
             svgd_iter=200,
-            cma_iter=10_000,
+            warm_start_iter=10_000,
             sigma=1e-10,
             lr=0.1 if is_sim else 1e-3,
         )
