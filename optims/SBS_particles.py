@@ -161,6 +161,7 @@ class SBS_particles(Optimizer):
         n_particles = self.n_particles
 
         all_points = [x.copy()]
+        removed_points = []
         for k in self.k_iter:
             optimizer = Adam(lr=self.lr) if self.adam else Static_Optimizer(lr=self.lr)
             for i in range(self.svgd_iter):
@@ -178,15 +179,16 @@ class SBS_particles(Optimizer):
                 # clamp to domain
                 x_new = np.clip(x_new, self.domain[:, 0], self.domain[:, 1])
 
-                x_new, mask = self.remove_particles(x, x_new, f_evals)
-                n_particles = x_new.shape[0]
+                x_new_filtered, mask = self.remove_particles(x, x_new, f_evals)
+                n_particles = x_new_filtered.shape[0]
                 optimizer.update_states(mask)
 
-                x = x_new
+                x = x_new_filtered
 
                 # self.paths.append(x[random_indices])
 
                 # save all points
+                removed_points.append(x_new[~mask].copy())
                 all_points.append(x.copy())
 
         evals = np.array([function(xi) for xi in x]).flatten()
@@ -203,5 +205,17 @@ class SBS_particles(Optimizer):
             else:
                 np_all_points = np.concatenate((np_all_points, np_seq), axis=0)
 
+        np_removed_points = None
+        for i, np_seq in enumerate(removed_points):
+            if i == 0:
+                np_removed_points = np_seq
+            else:
+                np_removed_points = np.concatenate((np_removed_points, np_seq), axis=0)
+
         all_evals = np.array([function(xi) for xi in np_all_points]).flatten()
-        return (best_particle, min_eval), np_all_points, all_evals
+        removed_evals = np.array([function(xi) for xi in np_removed_points]).flatten()
+        return (
+            (best_particle, min_eval),
+            (np_all_points, np_removed_points),
+            (all_evals, removed_evals),
+        )

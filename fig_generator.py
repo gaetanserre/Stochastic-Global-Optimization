@@ -28,10 +28,10 @@ class FigGenerator:
         path: path to save the figure (str) (optional)
         """
 
-        if eval_points.shape[0] == 0:
+        if eval_points[0].shape[0] == 0:
             return
 
-        dim = eval_points.shape[1]
+        dim = eval_points[0].shape[1]
         if dim == 1:
             self.gen_1D(eval_points, eval_values)
         elif dim == 2:
@@ -42,7 +42,7 @@ class FigGenerator:
             )
 
         if path is not None:
-            plt.savefig(path, bbox_inches="tight")
+            plt.savefig(path)
         else:
             plt.show()
         plt.clf()
@@ -71,7 +71,7 @@ class FigGenerator:
         plt.ylabel("$f(x)$")
         plt.legend()
 
-    def gen_2D(self, eval_points, eval_values):
+    def gen_2D(self, points, values):
         """
         Generates a figure for 2D functions
         """
@@ -91,6 +91,8 @@ class FigGenerator:
             x, y, Z, cmap="coolwarm", linewidth=0, antialiased=True, zorder=4.4
         )
 
+        eval_points, removed_points = points
+        eval_values, removed_values = values
         cb = ax.scatter(
             eval_points[:, 0],
             eval_points[:, 1],
@@ -101,8 +103,17 @@ class FigGenerator:
             zorder=4.5,
         )
 
+        cb = ax.scatter(
+            removed_points[:, 0],
+            removed_points[:, 1],
+            removed_values,
+            c="black",
+            zorder=4.5,
+        )
+
         # plt.colorbar(cb, fraction=0.046, pad=0.04)
 
-        ax.set_xlabel("$X$", fontsize=15)
-        ax.set_ylabel("$Y$", fontsize=15)
+        ax.set_xlabel("$x$", fontsize=15)
+        ax.set_ylabel("$y$", fontsize=15)
+        ax.set_zlabel("$f(x, y)$", fontsize=15)
         ax.legend(fontsize=15)

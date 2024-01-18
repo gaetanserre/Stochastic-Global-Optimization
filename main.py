@@ -121,7 +121,7 @@ def cli():
         "--num-exp",
         "-ne",
         type=int,
-        default=10,
+        default=1,
         help="Number of experiment to run.",
     )
 
@@ -150,26 +150,16 @@ if __name__ == "__main__":
     else:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
-            "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
-            "Drop Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
-            "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
-            "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
-            "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
-            "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
-            "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 2)],
-            "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 2)],
-            "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 2)],
-            "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
         }
 
         optimizers_cls = [
-            AdaLIPO_E,
+            # AdaLIPO_E,
             # BayesOpt,
-            SBS,
+            # SBS,
             SBS_particles,
-            SBS_hybrid,
-            CMA_ES,
-            WOA,
+            # SBS_hybrid,
+            # CMA_ES,
+            # WOA,
         ]
         num_evals = [2000, 0, 0, 0, 200_000, 200_000]
 
@@ -182,7 +172,7 @@ if __name__ == "__main__":
         bounds = objects[1]
 
         dim = bounds.shape[0]
-        plot_figures = False  # dim <= 2
+        plot_figures = dim <= 2
         if plot_figures:
             from fig_generator import FigGenerator
 
