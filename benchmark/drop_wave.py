@@ -6,19 +6,13 @@ import numpy as np
 from .__function__ import Function
 
 
-class Ackley(Function):
+class Drop_Wave(Function):
     def __init__(self) -> None:
         super().__init__()
         self.n = 0
 
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1
-        a = 20
-        b = 0.2
-        c = 1
-        return (
-            -a * np.exp(-b * np.sqrt(np.sum(x**2) / len(x)))
-            - np.exp(np.sum(np.cos(c * x)) / len(x))
-            + a
-            + np.e
+        return -(1 + np.cos(12 * np.sqrt(x[0] ** 2 + x[1] ** 2))) / (
+            0.5 * (x[0] ** 2 + x[1] ** 2) + 2
         )

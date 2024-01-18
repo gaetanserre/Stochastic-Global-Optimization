@@ -13,7 +13,7 @@ class CMA_ES(Optimizer):
 
     def __init__(
         self,
-        bounds,
+        domain,
         m_0,
         num_generations=100,
         lambda_=None,
@@ -22,13 +22,15 @@ class CMA_ES(Optimizer):
     ):
         self.m_0 = m_0
         self.dim = m_0.shape[0]
-        self.bounds = bounds
+        self.domain = domain
         self.num_generations = num_generations
         self.lambda_ = (
             lambda_ if lambda_ is not None else 4 + int(np.floor(3 * np.log(self.dim)))
         )
         self.mu = self.lambda_ // 2 if mu is None else mu
         self.cov_method = cov_method
+
+        self.modes = []
 
     def update_mean(self, mean, x, weights):
         c_m = 1
@@ -151,8 +153,8 @@ class CMA_ES(Optimizer):
                 np.zeros(self.dim), cov, self.lambda_
             )
 
-            # clip the points to the bounds
-            x = np.clip(x, self.bounds[:, 0], self.bounds[:, 1])
+            # clip the points to the domain
+            x = np.clip(x, self.domain[:, 0], self.domain[:, 1])
 
             y = np.array([function(xi) for xi in x])
             x_sorted = x[np.argsort(y)]
@@ -187,6 +189,8 @@ class CMA_ES(Optimizer):
                     break
 
             mean = self.update_mean(mean, x_sorted, weights)
+
+            self.modes.append((mean, sigma**2 * cov))
 
         best_idx = np.argmin(values[: i * self.lambda_])
         return (

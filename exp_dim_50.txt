@@ -1,0 +1,184 @@
+Function: Ackley.
+Optimizer: WOA.
+Optimizer: CMA_ES.
+Optimizer: NMDS.
+Optimizer: NMDS_particles.
+Optimizer: NMDS_hybrid.
+Best CMA-ES: 19.523471839974174. Best WOA: 20.55988275922929.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.44066429299884. Best WOA: 20.795346223233363.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.335374454747853. Best WOA: 20.65261321632829.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.596261391382615. Best WOA: 20.641251501509153.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.721538899279228. Best WOA: 20.44792080205392.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.54882582873555. Best WOA: 20.53915993879594.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.36247959157595. Best WOA: 20.623707904031896.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.65826477330108. Best WOA: 20.797296627179136.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.49410805300223. Best WOA: 20.7043941693569.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.20286831583359. Best WOA: 20.507887949594522.
+Initializing particles with CMA-ES.
++-------------------+--------------------+--------------+------------------+
+|     Algorithms    |   Average value    | Average eval | Average time (s) |
++-------------------+--------------------+--------------+------------------+
+| 1. NMDS_particles | 18.785201029741945 |  971793.40   |      6.8453      |
+|      2. NMDS      | 18.962347681728893 |  7801000.00  |     61.4940      |
+|     3. CMA_ES     | 19.45461521881986  |   8581.00    |      0.5181      |
+|   4. NMDS_hybrid  | 19.488385744083114 |  2624660.50  |     20.8634      |
+|       5. WOA      | 20.177300292286727 |  600000.00   |     15.2103      |
++-------------------+--------------------+--------------+------------------+
+Function: Michalewicz.
+Optimizer: WOA.
+Optimizer: CMA_ES.
+Optimizer: NMDS.
+Optimizer: NMDS_particles.
+Optimizer: NMDS_hybrid.
+Best CMA-ES: -38.097924259391235. Best WOA: -11.192166280182601.
+Initializing particles with CMA-ES.
+Best CMA-ES: -36.787941248573304. Best WOA: -11.125510119442408.
+Initializing particles with CMA-ES.
+Best CMA-ES: -34.839209631021525. Best WOA: -10.694150093937033.
+Initializing particles with CMA-ES.
+Best CMA-ES: -30.82578652048624. Best WOA: -10.682733174149933.
+Initializing particles with CMA-ES.
+Best CMA-ES: -36.96049541968911. Best WOA: -11.993497141557592.
+Initializing particles with CMA-ES.
+Best CMA-ES: -31.727033015330186. Best WOA: -11.777891909172244.
+Initializing particles with CMA-ES.
+Best CMA-ES: -34.350905167873584. Best WOA: -10.559144467813333.
+Initializing particles with CMA-ES.
+Best CMA-ES: -36.15911664730283. Best WOA: -10.227977712478902.
+Initializing particles with CMA-ES.
+Best CMA-ES: -34.1049877792711. Best WOA: -11.562686973015762.
+Initializing particles with CMA-ES.
+Best CMA-ES: -36.11563284551917. Best WOA: -11.583232802080602.
+Initializing particles with CMA-ES.
++-------------------+---------------------+--------------+------------------+
+|     Algorithms    |    Average value    | Average eval | Average time (s) |
++-------------------+---------------------+--------------+------------------+
+|     1. CMA_ES     |   -35.516165588232  |   68474.50   |      8.0368      |
+|   2. NMDS_hybrid  | -35.013581954097496 |  2695097.50  |     145.3521     |
+|      3. NMDS      | -19.503259717746666 |  7801000.00  |     404.9694     |
+|       4. WOA      |  -13.07248061052293 |  600000.00   |     42.1155      |
+| 5. NMDS_particles | -11.159325998051948 |  803084.80   |     40.8386      |
++-------------------+---------------------+--------------+------------------+
+Function: Rastrigin.
+Optimizer: WOA.
+Optimizer: CMA_ES.
+Optimizer: NMDS.
+Optimizer: NMDS_particles.
+Optimizer: NMDS_hybrid.
+Best CMA-ES: 152.22806795649421. Best WOA: 694.1683023457603.
+Initializing particles with CMA-ES.
+Best CMA-ES: 151.2332102487672. Best WOA: 738.8201973123126.
+Initializing particles with CMA-ES.
+Best CMA-ES: 144.26844615171188. Best WOA: 730.0473199149382.
+Initializing particles with CMA-ES.
+Best CMA-ES: 66.66217617470721. Best WOA: 729.4489706342704.
+Initializing particles with CMA-ES.
+Best CMA-ES: 83.57639940387344. Best WOA: 707.4790431583358.
+Initializing particles with CMA-ES.
+Best CMA-ES: 134.31882956458475. Best WOA: 726.0631937136043.
+Initializing particles with CMA-ES.
+Best CMA-ES: 112.42997876350336. Best WOA: 713.0687707721863.
+Initializing particles with CMA-ES.
+Best CMA-ES: 110.44008588385026. Best WOA: 710.1187370530135.
+Initializing particles with CMA-ES.
+Best CMA-ES: 149.24344958959676. Best WOA: 717.5877359851487.
+Initializing particles with CMA-ES.
+Best CMA-ES: 62.68237525650568. Best WOA: 706.0806733609911.
+Initializing particles with CMA-ES.
++-------------------+--------------------+--------------+------------------+
+|     Algorithms    |   Average value    | Average eval | Average time (s) |
++-------------------+--------------------+--------------+------------------+
+|   1. NMDS_hybrid  | 103.07750314682035 |  2630483.50  |     14.9963      |
+|     2. CMA_ES     | 111.73357396859724 |   14285.50   |      0.8816      |
+| 3. NMDS_particles | 250.8509971787816  |  844579.80   |      4.4513      |
+|      4. NMDS      | 276.4982586770483  |  7801000.00  |     44.9787      |
+|       5. WOA      | 617.9377196093375  |  600000.00   |     14.7165      |
++-------------------+--------------------+--------------+------------------+
+Function: Rosenbrock.
+Optimizer: WOA.
+Optimizer: CMA_ES.
+Optimizer: NMDS.
+Optimizer: NMDS_particles.
+Optimizer: NMDS_hybrid.
+Best CMA-ES: 3.617955911263306e-14. Best WOA: 47444.646624970715.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.803838108012263e-14. Best WOA: 42318.52621294204.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.888538677958516e-14. Best WOA: 46008.766671935104.
+Initializing particles with CMA-ES.
+Best CMA-ES: 5.961377899741762e-14. Best WOA: 42186.98245584325.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.1199010017164224e-14. Best WOA: 43928.134587451.
+Initializing particles with CMA-ES.
+Best CMA-ES: 5.227510164905129e-14. Best WOA: 40586.747115636615.
+Initializing particles with CMA-ES.
+Best CMA-ES: 5.420887161933476e-14. Best WOA: 42854.29118101132.
+Initializing particles with CMA-ES.
+Best CMA-ES: 3.838349717164237e-14. Best WOA: 48849.127860568566.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.7411365259624417e-14. Best WOA: 47538.30916388035.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.0756016431732538e-14. Best WOA: 48642.20303421541.
+Initializing particles with CMA-ES.
++-------------------+-----------------------+--------------+------------------+
+|     Algorithms    |     Average value     | Average eval | Average time (s) |
++-------------------+-----------------------+--------------+------------------+
+|   1. NMDS_hybrid  | 5.560082867662376e-07 |  2716022.50  |     23.4291      |
+|     2. CMA_ES     |   0.7973247708602151  |  100090.00   |      6.4108      |
+| 3. NMDS_particles |   10.51566883329216   |  1170737.40  |      6.8631      |
+|      4. NMDS      |   31.196300663227504  |  7801000.00  |     49.0998      |
+|       5. WOA      |   30873.11878722492   |  600000.00   |     18.2368      |
++-------------------+-----------------------+--------------+------------------+
+Function: Sphere.
+Optimizer: WOA.
+Optimizer: CMA_ES.
+Optimizer: NMDS.
+Optimizer: NMDS_particles.
+Optimizer: NMDS_hybrid.
+Best CMA-ES: 1.0726636004552177e-14. Best WOA: 923.4192785599465.
+Initializing particles with CMA-ES.
+Best CMA-ES: 7.680590082888428e-15. Best WOA: 1066.676931220775.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.3031843384395462e-14. Best WOA: 1049.4610330031994.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.0074951935538947e-14. Best WOA: 1018.9052208578665.
+Initializing particles with CMA-ES.
+Best CMA-ES: 9.788336486004968e-15. Best WOA: 1070.0633031165844.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.0202641262082468e-14. Best WOA: 956.6815445768113.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.0283191587292779e-14. Best WOA: 1130.0023765924082.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.9012322388891082e-14. Best WOA: 951.6178234954172.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.601208310305968e-14. Best WOA: 1059.018496307592.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.4017995810107308e-14. Best WOA: 1056.9555147060632.
+Initializing particles with CMA-ES.
++-------------------+------------------------+--------------+------------------+
+|     Algorithms    |     Average value      | Average eval | Average time (s) |
++-------------------+------------------------+--------------+------------------+
+|     1. CMA_ES     | 8.746334360652673e-15  |   10276.00   |      0.6062      |
+| 2. NMDS_particles | 3.2165133632331536e-11 |  1135460.80  |      3.5264      |
+|   3. NMDS_hybrid  |  7.22918207422963e-10  |  2626183.00  |      7.8254      |
+|      4. NMDS      | 0.0003070610183688788  |  7801000.00  |     22.6939      |
+|       5. WOA      |   760.8540552293359    |  600000.00   |     16.5903      |
++-------------------+------------------------+--------------+------------------+
++----------------+------------+--------------+
+|   Algorithms   | Final rank | Average rank |
++----------------+------------+--------------+
+|  NMDS_hybrid   |     1      |    1.400     |
+|     CMA_ES     |     2      |    1.800     |
+| NMDS_particles |     3      |    2.800     |
+|      NMDS      |     4      |    3.400     |
+|      WOA       |     5      |    4.800     |
++----------------+------------+--------------+

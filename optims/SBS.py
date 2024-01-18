@@ -7,35 +7,6 @@ from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
 
 
-""" class AdaGrad:
-    def __init__(
-        self,
-        lr=0.01,
-        lr_decay=0,
-        weight_decay=0,
-        initial_accumulator_value=0,
-        eps=1e-10,
-    ):
-        self.lr = lr
-        self.lr_decay = lr_decay
-        self.weight_decay = weight_decay
-        self.initial_accumulator_value = initial_accumulator_value
-        self.eps = eps
-        self.state_sum = 0
-        self.t = 0
-
-    def step(self, grad, params):
-        self.t += 1
-        gamma_t = self.lr / (1 + (self.t - 1) * self.lr_decay)
-
-        if self.weight_decay != 0:
-            grad += self.weight_decay * params
-
-        self.state_sum += grad**2
-
-        return gamma_t / (np.sqrt(self.state_sum) + self.eps) """
-
-
 class Adam:
     def __init__(
         self,
@@ -83,19 +54,19 @@ def gradient(f, x, eps=1e-12):
     return grad
 
 
-def rbf(x, h=-1):
+def rbf(x, sigma=-1):
     sq_dist = pdist(x)
     pairwise_dists = squareform(sq_dist) ** 2
-    if h < 0:  # if h < 0, using median trick
-        h = np.median(pairwise_dists) + 1e-10
-        h = np.sqrt(0.5 * h / np.log(x.shape[0] + 1))
+    if sigma < 0:  # if sigma < 0, using median trick
+        sigma = np.median(pairwise_dists) + 1e-10
+        sigma = np.sqrt(0.5 * sigma / np.log(x.shape[0] + 1))
 
     # compute the rbf kernel
-    Kxy = np.exp(-pairwise_dists / h**2 / 2)
+    Kxy = np.exp(-pairwise_dists / sigma**2 / 2)
 
     dxkxy = (x * Kxy.sum(axis=1).reshape(-1, 1) - Kxy @ x).reshape(
         x.shape[0], x.shape[1]
-    ) / (h**2)
+    ) / (sigma**2)
 
     return Kxy, dxkxy
 
@@ -107,18 +78,19 @@ def svgd(x, logprob_grad, kernel):
     return svgd_grad
 
 
-class NMDS(Optimizer):
-    def __init__(self, domain, n_particles, k_iter, svgd_iter, lr=0.5):
+class SBS(Optimizer):
+    def __init__(self, domain, n_particles, k_iter, svgd_iter, sigma=-1, lr=0.5):
         self.domain = domain
         self.n_particles = n_particles
         self.k_iter = k_iter
         self.svgd_iter = svgd_iter
+        self.sigma = sigma
         self.lr = lr
 
     def optimize(self, function, verbose=False):
         logprob_grad = lambda k: (lambda x: -k * gradient(function, x))
 
-        kernel = rbf
+        kernel = lambda x: rbf(x, sigma=self.sigma)
 
         dim = self.domain.shape[0]
 

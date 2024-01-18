@@ -1,0 +1,417 @@
+Function: Ackley.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: 19.932351909882346. Best WOA: 7.882540633108448e-06.
+Initializing particles with WOA.
+Best CMA-ES: 19.962640876322656. Best WOA: 3.373153541774698e-05.
+Initializing particles with WOA.
+Best CMA-ES: 1.0445422304883323e-11. Best WOA: 1.366815549319611e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.485297639777567. Best WOA: 2.0285126094865547e-05.
+Initializing particles with WOA.
+Best CMA-ES: 19.887487041431115. Best WOA: 1.3595739393412742e-05.
+Initializing particles with WOA.
+Best CMA-ES: 19.784231266486334. Best WOA: 4.246754941705788e-05.
+Initializing particles with WOA.
+Best CMA-ES: 19.868644647754437. Best WOA: 1.7243701567526415e-05.
+Initializing particles with WOA.
+Best CMA-ES: 19.182936663193114. Best WOA: 4.0316121240113745e-05.
+Initializing particles with WOA.
+Best CMA-ES: 4.075406678794025e-12. Best WOA: 2.4563550685474667e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 19.485297639777567. Best WOA: 1.550712689324385e-05.
+Initializing particles with WOA.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+-----------------------+--------------+------------------+
+|     Algorithms    |     Average value     | Average eval | Average time (s) |
++-------------------+-----------------------+--------------+------------------+
+|       1. WOA      | 5.577947104207226e-07 |  199980.00   |      2.6786      |
+|   2. SBS_hybrid  | 0.0007072842803474977 |  416506.80   |      3.4257      |
+| 3. SBS_particles |  0.030246659201295233 |   68703.20   |      0.8576      |
+|      4. SBS      |  0.044044111778398065 |  601000.00   |      5.5929      |
+|    5. AdaLIPO_E   |   0.9446690074821085  |    109.20    |      0.0755      |
+|     6. CMA_ES     |   19.425546028345615  |    454.60    |      0.0240      |
++-------------------+-----------------------+--------------+------------------+
+Function: Branin.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.39793628021080885.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.39797530991646823.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.3978892761792725.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.39801654601155434.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.3978978417432515.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.3978878157463672.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.3978921369918478.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.39803306569487695.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.39792210191134814.
+Initializing particles with CMA-ES.
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.3978903533397222.
+Initializing particles with CMA-ES.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+---------------------+--------------+------------------+
+|     Algorithms    |    Average value    | Average eval | Average time (s) |
++-------------------+---------------------+--------------+------------------+
+|   1. SBS_hybrid  | 0.39788735772973816 |  416542.80   |      1.4124      |
+|     2. CMA_ES     | 0.39788735772973904 |    490.60    |      0.0289      |
+| 3. SBS_particles | 0.39788737557013737 |  104471.20   |      0.8385      |
+|       4. WOA      |  0.3978895834919882 |  199980.00   |      1.9772      |
+|      5. SBS      | 0.39793857838733115 |  601000.00   |      2.7932      |
+|    6. AdaLIPO_E   |  0.4009916338220382 |   2000.00    |     14.2525      |
++-------------------+---------------------+--------------+------------------+
+Function: Drop Wave.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9999999999127098.
+Initializing particles with WOA.
+Best CMA-ES: -0.1858447617036595. Best WOA: -0.999999999996066.
+Initializing particles with WOA.
+Best CMA-ES: -0.2796104431721548. Best WOA: -0.9999999999986456.
+Initializing particles with WOA.
+Best CMA-ES: -0.1271556151409579. Best WOA: -0.9999999999761959.
+Initializing particles with WOA.
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9999999968966875.
+Initializing particles with WOA.
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9999999998334158.
+Initializing particles with WOA.
+Best CMA-ES: -0.9957626645334635. Best WOA: -0.9999999999825359.
+Initializing particles with WOA.
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9999999998732853.
+Initializing particles with WOA.
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9999999992922479.
+Initializing particles with WOA.
+Best CMA-ES: -0.9312334795752648. Best WOA: -0.999999999982716.
+Initializing particles with WOA.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+---------------------+--------------+------------------+
+|     Algorithms    |    Average value    | Average eval | Average time (s) |
++-------------------+---------------------+--------------+------------------+
+|       1. WOA      |  -0.999999999999974 |  199980.00   |      2.0493      |
+|   2. SBS_hybrid  | -0.9999999999998851 |  416523.00   |      1.4880      |
+| 3. SBS_particles | -0.9999269028970261 |   65061.80   |      0.5279      |
+|    4. AdaLIPO_E   | -0.9408037798437533 |   2000.00    |     13.8728      |
+|      5. SBS      | -0.9336206616359093 |  601000.00   |      2.9775      |
+|     6. CMA_ES     | -0.8431133266249755 |    557.20    |      0.0296      |
++-------------------+---------------------+--------------+------------------+
+Function: Egg Holder.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: -419.3119495736531. Best WOA: -959.6405159771135.
+Initializing particles with WOA.
+Best CMA-ES: -559.7868565506305. Best WOA: -959.6406463134708.
+Initializing particles with WOA.
+Best CMA-ES: -629.6336812770509. Best WOA: -894.4669390113303.
+Initializing particles with WOA.
+Best CMA-ES: -507.873859421005. Best WOA: -959.6406551577014.
+Initializing particles with WOA.
+Best CMA-ES: -821.1964610663143. Best WOA: -959.6406625380067.
+Initializing particles with WOA.
+Best CMA-ES: -293.2958323611324. Best WOA: -959.6406591911448.
+Initializing particles with WOA.
+Best CMA-ES: -557.8577790251709. Best WOA: -959.6406470993466.
+Initializing particles with WOA.
+Best CMA-ES: -422.2107833066915. Best WOA: -959.640366166188.
+Initializing particles with WOA.
+Best CMA-ES: -306.7204678432658. Best WOA: -959.6406626794733.
+Initializing particles with WOA.
+Best CMA-ES: -362.4135512235841. Best WOA: -959.6406626859883.
+Initializing particles with WOA.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+--------------------+--------------+------------------+
+|     Algorithms    |   Average value    | Average eval | Average time (s) |
++-------------------+--------------------+--------------+------------------+
+|       1. WOA      | -959.6406626760242 |  199980.00   |      2.2543      |
+| 2. SBS_particles | -958.8231739740446 |   69830.20   |      0.6190      |
+|   3. SBS_hybrid  | -953.1338344789071 |  416568.60   |      2.5161      |
+|    4. AdaLIPO_E   | -926.9624323469695 |   2000.00    |     14.0478      |
+|      5. SBS      | -887.395970433657  |  601000.00   |      4.3507      |
+|     6. CMA_ES     | -821.1964610663144 |    523.60    |      0.0293      |
++-------------------+--------------------+--------------+------------------+
+Function: Goldstein Price.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: 2.999999999999968. Best WOA: 3.0000022329794698.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.9999999999999254. Best WOA: 3.0000746470742192.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.999999999999966. Best WOA: 3.000030106302921.
+Initializing particles with CMA-ES.
+Best CMA-ES: 83.99999999999888. Best WOA: 3.0001628914840652.
+Initializing particles with WOA.
+Best CMA-ES: 2.999999999999936. Best WOA: 3.0003125177131467.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.9999999999999574. Best WOA: 3.000228076878936.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.999999999999983. Best WOA: 3.0000557531246215.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.999999999999945. Best WOA: 3.000126995535808.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.9999999999999476. Best WOA: 3.0001003768446948.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.9999999999999316. Best WOA: 3.0000986290779967.
+Initializing particles with CMA-ES.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+--------------------+--------------+------------------+
+|     Algorithms    |   Average value    | Average eval | Average time (s) |
++-------------------+--------------------+--------------+------------------+
+|   1. SBS_hybrid  | 3.0000000001155303 |  416551.20   |      1.8341      |
+| 2. SBS_particles |  3.00000237204439  |   98540.20   |      0.8520      |
+|       3. WOA      | 3.0000057618000797 |  199980.00   |      2.1322      |
+|      4. SBS      | 3.004051147806565  |  601000.00   |      3.3970      |
+|     5. CMA_ES     | 3.0945765852959974 |    527.20    |      0.0266      |
+|    6. AdaLIPO_E   | 3.4329350832894967 |   2000.00    |     13.7692      |
++-------------------+--------------------+--------------+------------------+
+Function: Himmelblau.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: 2.7248972209803698e-17. Best WOA: 1.968039058616104e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 7.421270200583621e-17. Best WOA: 0.000172040390784602.
+Initializing particles with CMA-ES.
+Best CMA-ES: 3.158935442102057e-17. Best WOA: 0.0002005845914310821.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.295467424064728e-17. Best WOA: 5.1096604525756067e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 4.526020478733674e-17. Best WOA: 0.0024024804415232045.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.2397998928832923e-16. Best WOA: 0.0007148657814547656.
+Initializing particles with CMA-ES.
+Best CMA-ES: 8.940554202617553e-16. Best WOA: 0.001444497834040353.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.0609954647528977e-16. Best WOA: 0.00012540839928753004.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.2969483335503318e-16. Best WOA: 0.0001312533488452964.
+Initializing particles with CMA-ES.
+Best CMA-ES: 3.96222326586271e-16. Best WOA: 0.0011771073696359438.
+Initializing particles with CMA-ES.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+------------------------+--------------+------------------+
+|     Algorithms    |     Average value      | Average eval | Average time (s) |
++-------------------+------------------------+--------------+------------------+
+|     1. CMA_ES     | 1.9822415356982857e-16 |    499.60    |      0.0304      |
+|   2. SBS_hybrid  | 2.0047383622551378e-15 |  416503.80   |      1.1018      |
+| 3. SBS_particles | 6.511458261754686e-14  |   91156.00   |      0.5937      |
+|       4. WOA      | 1.783416646799564e-05  |  199980.00   |      1.8598      |
+|      5. SBS      | 9.548772540525704e-05  |  601000.00   |      2.3438      |
+|    6. AdaLIPO_E   |  0.009003706400625375  |   2000.00    |     14.2207      |
++-------------------+------------------------+--------------+------------------+
+Function: Holder Table.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: -19.20850256788675. Best WOA: -19.208179806185203.
+Initializing particles with CMA-ES.
+Best CMA-ES: -8.09512265742868. Best WOA: -19.208397735630427.
+Initializing particles with WOA.
+Best CMA-ES: -19.208502567886747. Best WOA: -19.208496582184196.
+Initializing particles with CMA-ES.
+Best CMA-ES: -2.346576314623315. Best WOA: -19.206574597251205.
+Initializing particles with WOA.
+Best CMA-ES: -5.712246520612027. Best WOA: -19.208248600264987.
+Initializing particles with WOA.
+Best CMA-ES: -19.20850256788675. Best WOA: -19.207923915974234.
+Initializing particles with CMA-ES.
+Best CMA-ES: -19.20850256788674. Best WOA: -19.20848300610627.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.1830908778886593. Best WOA: -19.208380003110623.
+Initializing particles with WOA.
+Best CMA-ES: -2.346576314623316. Best WOA: -19.20837395207278.
+Initializing particles with WOA.
+Best CMA-ES: -1.732972243896069. Best WOA: -19.20814172340593.
+Initializing particles with WOA.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+---------------------+--------------+------------------+
+|     Algorithms    |    Average value    | Average eval | Average time (s) |
++-------------------+---------------------+--------------+------------------+
+|   1. SBS_hybrid  | -19.208502562189246 |  416489.40   |      2.4155      |
+|       2. WOA      | -19.208486490511884 |  199980.00   |      2.2602      |
+| 3. SBS_particles | -19.208423409666892 |   67574.40   |      0.6269      |
+|    4. AdaLIPO_E   | -19.201728849937204 |    973.80    |      5.1446      |
+|      5. SBS      | -16.267832196826834 |  601000.00   |      3.9248      |
+|     6. CMA_ES     | -13.239640047271797 |    535.60    |      0.0289      |
++-------------------+---------------------+--------------+------------------+
+Function: Michalewicz.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: -1.801303410098553. Best WOA: -1.801229821977043.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.8012214271726834.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.8012582736854093.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.801237291072749.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.2140595156208163. Best WOA: -1.8012911904022177.
+Initializing particles with WOA.
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.801168226788206.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.801287075778336.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.5626906075750142. Best WOA: -1.8012793180597992.
+Initializing particles with WOA.
+Best CMA-ES: -1.8013034100985494. Best WOA: -1.801277016080196.
+Initializing particles with CMA-ES.
+Best CMA-ES: -1.8013034100985537. Best WOA: -1.8012314293680665.
+Initializing particles with CMA-ES.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+---------------------+--------------+------------------+
+|     Algorithms    |    Average value    | Average eval | Average time (s) |
++-------------------+---------------------+--------------+------------------+
+|   1. SBS_hybrid  | -1.8013034100982313 |  416513.40   |      3.3088      |
+|       2. WOA      | -1.8012984386111683 |  199980.00   |      2.4990      |
+|      3. SBS      | -1.8011609607122263 |  601000.00   |      6.0144      |
+| 4. SBS_particles | -1.8011584899481439 |   62725.40   |      0.7342      |
+|     5. CMA_ES     |  -1.80065276104169  |    499.60    |      0.0258      |
+|    6. AdaLIPO_E   |  -1.785973957060488 |    116.70    |      0.0752      |
++-------------------+---------------------+--------------+------------------+
+Function: Rastrigin.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: 0.9949590570932898. Best WOA: 3.538431769811723e-10.
+Initializing particles with WOA.
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.6996360702469246e-10.
+Initializing particles with WOA.
+Best CMA-ES: 3.979831190554087. Best WOA: 8.612843771516054e-11.
+Initializing particles with WOA.
+Best CMA-ES: 3.979831190554087. Best WOA: 1.5794654473211267e-10.
+Initializing particles with WOA.
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.0970779840135947e-11.
+Initializing particles with WOA.
+Best CMA-ES: 0.0597973245189074. Best WOA: 9.084288876692881e-12.
+Initializing particles with WOA.
+Best CMA-ES: 0.9949590570932898. Best WOA: 7.652189992768399e-11.
+Initializing particles with WOA.
+Best CMA-ES: 0.9949590570932898. Best WOA: 4.560334332381899e-10.
+Initializing particles with WOA.
+Best CMA-ES: 12.934432432041099. Best WOA: 3.112177182629239e-11.
+Initializing particles with WOA.
+Best CMA-ES: 4.974790247647377. Best WOA: 2.276294708281057e-10.
+Initializing particles with WOA.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+------------------------+--------------+------------------+
+|     Algorithms    |     Average value      | Average eval | Average time (s) |
++-------------------+------------------------+--------------+------------------+
+|       1. WOA      | 3.3573144264664734e-13 |  199980.00   |      2.3927      |
+|   2. SBS_hybrid  | 9.332623562841036e-12  |  416632.20   |      2.8653      |
+| 3. SBS_particles | 2.403903300063348e-05  |   66350.40   |      0.6978      |
+|    4. AdaLIPO_E   |  0.17651834001733172   |    852.70    |      2.2708      |
+|      5. SBS      |   1.0274406297015932   |  601000.00   |      4.5308      |
+|     6. CMA_ES     |   2.7526644851229234   |    613.60    |      0.0319      |
++-------------------+------------------------+--------------+------------------+
+Function: Rosenbrock.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: 2.412928537691221e-17. Best WOA: 1.4247747898819008e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.1224793176294704e-15. Best WOA: 4.715398636865898e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 9.655674929348932e-16. Best WOA: 2.9953072587648883e-06.
+Initializing particles with CMA-ES.
+Best CMA-ES: 5.547862966774579e-15. Best WOA: 0.00011417821511951849.
+Initializing particles with CMA-ES.
+Best CMA-ES: 3.2061626928707845e-17. Best WOA: 0.000265156615823684.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.3177967708929338e-16. Best WOA: 0.00017116747767905192.
+Initializing particles with CMA-ES.
+Best CMA-ES: 5.816688552627168e-18. Best WOA: 5.695182267379633e-06.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.8430456938165696e-15. Best WOA: 4.792222291937392e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.201333399492568e-16. Best WOA: 2.3348911008344324e-05.
+Initializing particles with CMA-ES.
+Best CMA-ES: 5.299983730790759e-17. Best WOA: 4.3989883026092535e-05.
+Initializing particles with CMA-ES.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+------------------------+--------------+------------------+
+|     Algorithms    |     Average value      | Average eval | Average time (s) |
++-------------------+------------------------+--------------+------------------+
+|     1. CMA_ES     | 4.283474466899711e-16  |    677.80    |      0.0381      |
+|   2. SBS_hybrid  | 5.626677790607141e-12  |  416758.80   |      3.4023      |
+|       3. WOA      | 1.4976303669739046e-06 |  199980.00   |      2.6217      |
+| 4. SBS_particles | 7.117907322656475e-06  |  107938.80   |      1.3850      |
+|      5. SBS      | 0.0005290506257529436  |  601000.00   |      5.0569      |
+|    6. AdaLIPO_E   |  0.014039891251016809  |   2000.00    |     13.8719      |
++-------------------+------------------------+--------------+------------------+
+Function: Sphere.
+Optimizer: AdaLIPO_E.
+Optimizer: SBS.
+Optimizer: SBS_particles.
+Optimizer: SBS_hybrid.
+Best CMA-ES: 7.276530526135614e-16. Best WOA: 1.826622336344374e-13.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.515593149514442e-17. Best WOA: 2.0442873043807471e-13.
+Initializing particles with CMA-ES.
+Best CMA-ES: 5.603101254876224e-15. Best WOA: 1.587876309002785e-11.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.0740288095182534e-15. Best WOA: 1.220064980633239e-12.
+Initializing particles with CMA-ES.
+Best CMA-ES: 3.451233672230329e-17. Best WOA: 6.965408341941698e-12.
+Initializing particles with CMA-ES.
+Best CMA-ES: 6.559807832328879e-16. Best WOA: 2.6014182907644088e-12.
+Initializing particles with CMA-ES.
+Best CMA-ES: 2.615347973427957e-18. Best WOA: 1.9341460605327112e-11.
+Initializing particles with CMA-ES.
+Best CMA-ES: 1.412835928708723e-16. Best WOA: 9.402066279469053e-11.
+Initializing particles with CMA-ES.
+Best CMA-ES: 3.94485459254334e-18. Best WOA: 1.7623870667266164e-11.
+Initializing particles with CMA-ES.
+Best CMA-ES: 4.143652488676534e-16. Best WOA: 3.346103009725647e-12.
+Initializing particles with CMA-ES.
+Optimizer: CMA_ES.
+Optimizer: WOA.
++-------------------+------------------------+--------------+------------------+
+|     Algorithms    |     Average value      | Average eval | Average time (s) |
++-------------------+------------------------+--------------+------------------+
+|   1. SBS_hybrid  | 2.985217449290537e-17  |  416519.40   |      1.6064      |
+|     2. CMA_ES     | 3.8914401070615255e-16 |    493.00    |      0.0265      |
+|       3. WOA      | 3.970644927097778e-15  |  199980.00   |      2.0221      |
+| 4. SBS_particles | 6.3624732312514786e-15 |   76743.80   |      0.6491      |
+|      5. SBS      | 4.364882476122874e-07  |  601000.00   |      3.1889      |
+|    6. AdaLIPO_E   | 0.0010106314698617408  |   2000.00    |     16.7140      |
++-------------------+------------------------+--------------+------------------+
++----------------+------------+--------------+
+|   Algorithms   | Final rank | Average rank |
++----------------+------------+--------------+
+|  SBS_hybrid   |     1      |    1.636     |
+|      WOA       |     2      |    2.273     |
+| SBS_particles |     3      |    3.091     |
+|     CMA_ES     |     4      |    4.182     |
+|      SBS      |     5      |    4.636     |
+|   AdaLIPO_E    |     6      |    5.182     |
++----------------+------------+--------------+
