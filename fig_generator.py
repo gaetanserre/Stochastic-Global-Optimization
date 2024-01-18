@@ -103,6 +103,6 @@ class FigGenerator:
 
         # plt.colorbar(cb, fraction=0.046, pad=0.04)
 
-        ax.set_xlabel("$X$", fontsize=15)
-        ax.set_ylabel("$Y$", fontsize=15)
+        ax.set_xlabel("$x$", fontsize=15)
+        ax.set_ylabel("$y$", fontsize=15)
         ax.legend(fontsize=15)
