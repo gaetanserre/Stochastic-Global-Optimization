@@ -53,21 +53,22 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, num_evals=num_evals)
     elif optim_cls == AdaLIPO_E:
         return optim_cls(bounds, max_evals=num_evals)
-    elif optim_cls == SBS or optim_cls == SBS_particles_SIR:
+    elif optim_cls == SBS:
         return optim_cls(
             bounds,
             n_particles=500,
             k_iter=[10_000],
             svgd_iter=300,
+            sigma=1e-5,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == SBS_particles:
         return optim_cls(
             bounds,
-            n_particles=5000,
+            n_particles=500,
             k_iter=[10_000],
             svgd_iter=300,
-            sigma=1e-10,
+            sigma=1e-5,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == SBS_hybrid:
@@ -77,7 +78,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             k_iter=[10_000],
             svgd_iter=200,
             warm_start_iter=10_000,
-            sigma=1e-10,
+            sigma=1e-5,
             lr=0.1 if is_sim else 1e-3,
         )
     elif optim_cls == BayesOpt:
@@ -129,6 +130,9 @@ def cli():
 
 if __name__ == "__main__":
     args = cli()
+
+    # Set Numpy random seed
+    np.random.seed(42)
 
     num_exp = args.num_exp
 
