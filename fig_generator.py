@@ -109,6 +109,7 @@ class FigGenerator:
             removed_values,
             c="black",
             zorder=4.5,
+            label="filtered particles",
         )
 
         # plt.colorbar(cb, fraction=0.046, pad=0.04)
