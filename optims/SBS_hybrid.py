@@ -103,7 +103,9 @@ class SBS_hybrid(Optimizer):
         best_cma, mean, std = cma.optimize_stats(function)
 
         # Run iterations of WOA
-        woa = WOA(self.domain, 30, self.n_particles)
+
+        n_gen = max(1, self.warm_start_iter // self.n_particles)
+        woa = WOA(self.domain, n_gen, self.n_particles)
         woa = woa.optimize_(function)
         best_woa = woa._best_solutions[-1][0]
 

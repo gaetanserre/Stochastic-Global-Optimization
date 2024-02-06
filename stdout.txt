@@ -1,0 +1,2397 @@
+[95mFunction: Ackley.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 19.86864464775444. Best WOA: 2.1227239279845453.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.76435177953611. Best WOA: 0.20818910070745433.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.485297639777567. Best WOA: 2.8295903666883224.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.602673549427891e-11. Best WOA: 2.4601603089433834.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.868644647754437. Best WOA: 1.1972997379585952.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.832733610073436. Best WOA: 2.225260231596.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.784231266486334. Best WOA: 2.1141041157613825.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.182936663193157. Best WOA: 0.9065804070816879.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.784913062364406. Best WOA: 1.4047646487055343.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 6.903366767119223e-12. Best WOA: 0.90069337956642.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 17.198930984723695. Best WOA: 0.5291087790452775.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.1450840275983865e-11. Best WOA: 1.6763709204119093.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.764351779536117. Best WOA: 1.04311843033252.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.784231266486334. Best WOA: 1.6077169008056704.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.182936663193114. Best WOA: 5.595645607275351.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.887487041431115. Best WOA: 0.714371488876385.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.784913062364403. Best WOA: 0.8637539829175691.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.86864464775444. Best WOA: 1.8027043378912357.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 17.198930984723695. Best WOA: 2.1947636252910283.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.932351909882346. Best WOA: 1.775747646371841.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.182936663193114. Best WOA: 0.7117763625012725.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.485297639777567. Best WOA: 2.6107020858351615.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.920774733183862e-12. Best WOA: 0.8215056500487887.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.53734225736905. Best WOA: 0.8092536893546449.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.887487041431115. Best WOA: 0.09452854469897831.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 7.525091660909311e-12. Best WOA: 1.2771433119147813.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.842615032250251e-12. Best WOA: 1.1593634754323685.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 0.8073912297809227.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 1.2001109392041625.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.485297639777567. Best WOA: 1.9957608620613532.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.784231266486334. Best WOA: 0.6934983084753417.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.784231266486334. Best WOA: 0.8781444092225326.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 17.198930984723695. Best WOA: 2.4517908006988844.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.86864464775444. Best WOA: 0.8145311290069555.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.784231266486334. Best WOA: 2.1072298994163146.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.182936663193114. Best WOA: 0.8984335710988494.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.832733610073436. Best WOA: 0.5793121989811145.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.76435177953611. Best WOA: 0.3250406418875582.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.7573499039590388e-12. Best WOA: 1.9406521372990828.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.887487041431115. Best WOA: 1.2397247376922143.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.360059563714636. Best WOA: 1.079346870873366.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 17.198930984723695. Best WOA: 0.853646895313624.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.8070878954622458e-12. Best WOA: 0.3704347567989399.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.832733610073436. Best WOA: 0.668004013473873.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.887487041431115. Best WOA: 0.09759228357094729.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.784913062364406. Best WOA: 1.967480131561889.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.680833250361502e-11. Best WOA: 0.06845912463944659.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.182936663193114. Best WOA: 0.5246965241297166.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.182936663193118. Best WOA: 1.6903230748495202.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.932351909882346. Best WOA: 3.409934739610112.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.2226220863785784e-11. Best WOA: 2.744400308712138.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.723865825757457e-12. Best WOA: 0.9736670307830164.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.485297639777567. Best WOA: 1.694595140533615.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.887487041431115. Best WOA: 0.8728232432234688.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.594424728232696. Best WOA: 0.3568668779377906.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.76435177953611. Best WOA: 3.000068503072765.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 7.155609438314059e-12. Best WOA: 0.704958630361443.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 18.5944247282327. Best WOA: 0.31495312203534853.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.7786661860318418e-12. Best WOA: 1.4234762615093328.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.832733610073436. Best WOA: 1.3939251365313265.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.784913062364406. Best WOA: 1.6519886581315046.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.76435177953611. Best WOA: 0.4307273615643479.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.784231266486334. Best WOA: 1.619045960411587.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.0370815317628512e-11. Best WOA: 1.4935156383016204.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.42554602834561. Best WOA: 1.2521414915142448.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 3.5851321911195555e-12. Best WOA: 2.1544143809829177.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.868644647754437. Best WOA: 0.4364436778424481.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.86864464775444. Best WOA: 0.3227767543842863.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 8.459899447643693e-13. Best WOA: 0.8810549555381582.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.784231266486334. Best WOA: 3.7016909011186887.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.932351909882346. Best WOA: 0.5697688702467691.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 1.2824781794510582.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.360059563714632. Best WOA: 0.7863878445536696.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.962640876322656. Best WOA: 0.418640757729563.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.842642949140387. Best WOA: 1.097209229893036.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 1.9827960105230678.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 8.185896405166204e-12. Best WOA: 1.4643416005761414.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 2.37073880728714.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.182936663193114. Best WOA: 2.8369160443507977.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.1088907569956064e-12. Best WOA: 1.5269280344559886.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.53734225736905. Best WOA: 2.473463405443987.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 6.59428067706358e-12. Best WOA: 0.8045958139484637.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.240874566605271e-12. Best WOA: 0.3464201256334545.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.53734225736905. Best WOA: 0.5164862418341838.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.36005956371464. Best WOA: 0.8692719601968979.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.53734225736905. Best WOA: 0.6672658026334344.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.784231266486337. Best WOA: 0.9073808354018031.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.182936663193114. Best WOA: 4.095053920284734.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.832733610073436. Best WOA: 1.9854885118753711.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 16.525966380179558. Best WOA: 1.482911164534546.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.962640876322656. Best WOA: 0.7117738958956719.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.932351909882346. Best WOA: 1.0843859255943262.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.784913062364406. Best WOA: 2.6955990213800765.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.76435177953611. Best WOA: 1.9513042778015124.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.832733610073436. Best WOA: 0.20267280717756764.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.88748704143112. Best WOA: 0.32586577000768857.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.6080026199460917e-11. Best WOA: 1.4725197957233012.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.5761615063402132e-12. Best WOA: 0.33233394543924577.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.962640876322656. Best WOA: 3.090873554982313.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 18.784913062364406. Best WOA: 1.8902099436198943.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+-----------------------+--------------+------------------+
+|    Algorithms    |     Average value     | Average eval | Average time (s) |
++------------------+-----------------------+--------------+------------------+
+|      1. WOA      | 5.405974029137895e-07 |  199980.00   |      5.5129      |
+|  2. SBS_hybrid   | 0.0008549708650879672 |  801917.18   |      9.6512      |
+|      3. SBS      |  0.015343538233128005 |  601000.00   |     17.6239      |
+| 4. SBS_particles |  0.028519593076246377 |   16959.44   |      0.2643      |
+|   5. AdaLIPO_E   |   1.531856929568942   |    110.50    |      0.1729      |
+|    6. CMA_ES     |   19.29044466337989   |    449.74    |      0.0579      |
++------------------+-----------------------+--------------+------------------+
+[95mFunction: Branin.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4619096255502573.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4013436434886479.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.40011072259664715.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.5216007985563262.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.41985492365982324.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.44783505352679676.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.43709112478160783.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.45685603824603405.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.43493535966745966.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4058155723317629.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.44150571628982505.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.417408600146004.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4345084987069505.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4602948283471271.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4445212845861075.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4328818769484215.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772974526. Best WOA: 0.42484276363508044.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4030121201760668.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.45293448741159636.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.40968486915511804.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4220131205029247.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772974526. Best WOA: 0.4451592756550653.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4458616609851127.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.42798799427098366.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.44218040449526086.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4857779459224112.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.49751305016974356.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4276680228537231.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.41844257774445737.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4161585338564997.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.44248223117834584.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.44466262561660663.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4130926007478912.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4266104364306802.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.42870566876383975.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.5342340183341499.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4198557455341376.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4225792476856949.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4139024215709899.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.725609418776898.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.43579430002766983.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.40526569779926724.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.40978600947435595.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4163345777615568.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.5178296033704104.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4425738696186805.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.480089287186491.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4000851489884951.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.46617399537280946.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.40429882111619264.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.40741088902372624.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4228198221847759.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4037343305304475.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.40442048387478735.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.40016348748898345.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4340698441652098.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.40732111082421696.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.41608095474017937.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4866526019641082.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4268261571704173.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.46573691015382224.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4784602207881541.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4049701111264703.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.41059355312723156.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.43514022680981057.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.46586005436413913.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.402277986537273.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.5157994242976542.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.3978873577297417. Best WOA: 0.4059560492533656.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.41216895793469277.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4194399150272492.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.40661229373696983.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4245396431804238.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4367303819774708.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4366722572991293.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.41235555226418796.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.41589713271776674.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.404892096436706.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.44669831323036746.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4005187403394146.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.39864940539842486.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772974526. Best WOA: 0.40098616285263944.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4151510004417247.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.6973265353166358.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.46640770550300203.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.42984299416523974.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.40058948571942565.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.40879354043041793.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.7243457464002745.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4763368973509152.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.3978873577297417. Best WOA: 0.4928825253160998.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.42003407159085526.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4004936740785432.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4013431774319418.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.463081808170136.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.39825530949232757.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.7132358300217572.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4060741821305829.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4160426399677579.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4193741044023831.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+---------------------+--------------+------------------+
+|    Algorithms    |    Average value    | Average eval | Average time (s) |
++------------------+---------------------+--------------+------------------+
+|  1. SBS_hybrid   |  0.3978873577297381 |  801920.84   |      3.0922      |
+|    2. CMA_ES     |  0.3978873577297385 |    544.12    |      0.0691      |
+|      3. SBS      |  0.3978873667748881 |  601000.00   |      6.1829      |
+| 4. SBS_particles | 0.39788742325185417 |   20610.60   |      0.1436      |
+|      5. WOA      | 0.39789054071845953 |  199980.00   |      3.9769      |
+|   6. AdaLIPO_E   |  0.4009218235554042 |   2000.00    |     25.1311      |
++------------------+---------------------+--------------+------------------+
+[95mFunction: Drop Wave.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9314848630824561.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362199544626252. Best WOA: -0.9361913902144947.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9202661157413223.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.2783467553216397. Best WOA: -0.9211617333935037.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.22972368470054766. Best WOA: -0.9362068499699765.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9361658447600951.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9362316913194217.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.28736634123431054. Best WOA: -0.9362447881823401.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079415. Best WOA: -0.9362423908680324.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9488819704631215. Best WOA: -0.933974868808715.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9344448493917223.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9356049864560555.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9346581993908756.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.2551627340748725. Best WOA: -0.9512670034590843.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9679901140135094.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.369127699442139. Best WOA: -0.9355904149107932.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9360569577347787.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.1791967025971017. Best WOA: -0.9317404514708628.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9360880216418405.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.8470478784400558. Best WOA: -0.9271313945999847.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9354390014817101.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9362130782482959.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.7857513346523582. Best WOA: -0.9362452539156243.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.8024742925119053. Best WOA: -0.9361354067302086.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9360766535794289.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.93604598929748.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.2297236847005474. Best WOA: -0.9319552462620655.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9972240045566102. Best WOA: -0.93623872704856.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9707390848916104. Best WOA: -0.9360390459975475.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9359978102157721.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9362350040149481.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9362129253249397.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9359034844517552.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9268190198537458.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9200065424763967. Best WOA: -0.9351139277341809.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9988884092043147.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.36912769944213897. Best WOA: -0.9360337502313549.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9321278211912403. Best WOA: -0.9354295514016646.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9352386223212682.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9147286720255849.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9325634969816226.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9355834364577827.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.833236180555483. Best WOA: -0.9358784934460077.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.6194994367738176. Best WOA: -0.93623563059075.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.3691276994421389. Best WOA: -0.9361672262913167.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.22972368470054763. Best WOA: -0.9577207640692614.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.369127699442139. Best WOA: -0.9549482088496578.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079415. Best WOA: -0.93596860772174.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9278345240289165. Best WOA: -0.9353277203512701.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9358561788275686.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.8961086476855648.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362221682543564. Best WOA: -0.9351434695274295.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079415. Best WOA: -0.9353423321387925.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9362421455687411.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9338582657952288.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9346908956484218. Best WOA: -0.9357411612254802.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9353712677825358.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9710141840593478.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.6194994367738176. Best WOA: -0.9343801167983299.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.18563461374091528. Best WOA: -0.9306959000668807.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.7267138125108905. Best WOA: -0.9354461166235014.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9362067944705542.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.7857513346523582. Best WOA: -0.9337862775433252.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.6174553473502972. Best WOA: -0.9354577565938221.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.8713833636011427. Best WOA: -0.9361928977919162.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9354191687234817.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.7857513346523582. Best WOA: -0.9694421761217016.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9360331301291623. Best WOA: -0.9362411719511101.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9328180473585808.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.6194994367738176. Best WOA: -0.9354387812901928.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.2468578423558524. Best WOA: -0.936078579988003.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9361301028236516.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.93546406949022.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9346777240422922.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9361740326389277.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.6395465502429267. Best WOA: -0.9303956212679597.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9103202327417039.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079401. Best WOA: -0.9362294569940318.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079411. Best WOA: -0.9040204473208728.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.1858447617036596. Best WOA: -0.9361448325773946.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9855421794829082. Best WOA: -0.9361493072060166.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9337614214376392.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079413. Best WOA: -0.9331894188127675.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.93624493486656.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9713975794578579.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9294694596537557. Best WOA: -0.9989455338106642.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.6194994367738171. Best WOA: -0.9360585464324237.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9430818326540807.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9333278937529258. Best WOA: -0.9203460105987472.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9353545964924409. Best WOA: -0.9361632460372254.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.7857513346523582. Best WOA: -0.9360002216913225.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.369127699442139. Best WOA: -0.9342790945456776.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9361562166045645.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362367060745023. Best WOA: -0.9747938457433417.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.863748328949461. Best WOA: -0.9284032323560593.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9362350009836639.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.5231201635131608. Best WOA: -0.9360457994612758.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9359487673309552.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9358546093984076.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9341068030469255. Best WOA: -0.9360913749513045.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+---------------------+--------------+------------------+
+|    Algorithms    |    Average value    | Average eval | Average time (s) |
++------------------+---------------------+--------------+------------------+
+|      1. WOA      | -0.9999999999999595 |  199980.00   |      3.9178      |
+|      2. SBS      | -0.9814138072475077 |  601000.00   |      6.5159      |
+| 3. SBS_particles |  -0.963538433568591 |   15564.36   |      0.1173      |
+|  4. SBS_hybrid   | -0.9560882639261647 |  801952.64   |      3.1856      |
+|   5. AdaLIPO_E   | -0.9446657442859813 |   2000.00    |     24.4620      |
+|    6. CMA_ES     | -0.8375415643195864 |    562.12    |      0.0670      |
++------------------+---------------------+--------------+------------------+
+[95mFunction: Egg Holder.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -493.9605115033977. Best WOA: -959.2484095042819.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -493.9605115033977. Best WOA: -959.4954953670613.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -786.5259940788701. Best WOA: -959.6197492210015.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -888.949125269892. Best WOA: -959.511138412093.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -557.3686873304632. Best WOA: -959.6297030006704.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -493.9605115033976. Best WOA: -959.6404334818601.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -935.3379515605803. Best WOA: -959.6295337691965.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -88.30425945369828. Best WOA: -959.6363791030997.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -821.1964610663144. Best WOA: -957.9653233938359.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.48799654728094. Best WOA: -919.7687788603212.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -206.69740638837771. Best WOA: -959.3723454912847.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -301.03271395308815. Best WOA: -890.3721080299172.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -420.1395097367885. Best WOA: -878.4909684127877.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -718.1674596221537. Best WOA: -959.2204966426166.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -629.6336812770509. Best WOA: -959.6406447327884.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -786.5259940788701. Best WOA: -958.771473491626.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -250.65145464561715. Best WOA: -959.0449861416914.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -559.7868565506304. Best WOA: -959.2680656947377.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -425.301505882812. Best WOA: -956.6026147479143.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -421.1557143749644. Best WOA: -959.6060525921289.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -558.52073209733. Best WOA: -958.654789446289.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -443.4973840539706. Best WOA: -959.5023782965739.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -421.1557143749644. Best WOA: -944.0017561567972.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.487996547281. Best WOA: -889.0062680262703.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -894.5789003906. Best WOA: -958.1958300387462.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -343.15559054576954. Best WOA: -959.6070719311019.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -362.41355122358414. Best WOA: -959.6099140209105.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -715.9801136098888. Best WOA: -956.5081293734299.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -582.3062800549297. Best WOA: -957.6368371253559.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -956.9182316246656. Best WOA: -891.8055344118304.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -629.6336812770509. Best WOA: -956.9934085192567.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -111.78879672928772. Best WOA: -959.6382862260066.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -955.2551521443155. Best WOA: -911.869237645175.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -512.3902645106729. Best WOA: -959.0719283978749.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.48799654728094. Best WOA: -889.9193833995561.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -557.3686873304632. Best WOA: -959.6047455462802.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.4879965472809. Best WOA: -890.756555427782.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -738.0378298060739. Best WOA: -959.636521855999.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.48799654728094. Best WOA: -709.4227119579198.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -306.7204678432658. Best WOA: -867.7173702103673.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -507.873859421005. Best WOA: -891.5443998834673.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -202.53202424101812. Best WOA: -955.6250067821923.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.48799654728094. Best WOA: -959.519631591957.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -302.2816032832561. Best WOA: -959.6343031369652.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -959.640662720851. Best WOA: -882.4341629729156.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -306.72046784326574. Best WOA: -887.2349815534869.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -306.7204678432658. Best WOA: -957.294054801185.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -582.3062800549296. Best WOA: -958.4952628535107.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -786.52599407887. Best WOA: -959.5309231272497.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -362.4135512235841. Best WOA: -959.4842497998814.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -935.3379515605803. Best WOA: -957.6823824371634.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -421.1557143749644. Best WOA: -958.4435825048909.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.487996547281. Best WOA: -955.580049237112.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -718.1674596221537. Best WOA: -959.6324690998889.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -718.1674596221537. Best WOA: -958.6893219954643.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -629.6336812770508. Best WOA: -957.642971012803.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -507.873859421005. Best WOA: -876.1196391989093.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -512.390264510673. Best WOA: -881.8972655190594.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -420.13950973678845. Best WOA: -959.5815206168702.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -559.7868565506305. Best WOA: -908.6408975013.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -888.9491252698921. Best WOA: -958.6979200914096.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -111.78879672928774. Best WOA: -958.4724315916311.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -716.6715003419415. Best WOA: -954.179021973091.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -123.79416260700896. Best WOA: -959.5239904045777.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -293.2958323611323. Best WOA: -959.6403869498147.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -894.5789003906. Best WOA: -959.4888182128902.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -410.98477763359665. Best WOA: -958.1496178196309.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -558.5207320973301. Best WOA: -959.3314037403065.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -410.98477763359665. Best WOA: -886.1533637866473.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -565.997780971012. Best WOA: -956.4672627900625.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -629.633681277051. Best WOA: -959.3741148274582.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -935.3379515605804. Best WOA: -957.2268503612598.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -302.28160328325606. Best WOA: -881.4831187020288.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -250.65145464561715. Best WOA: -959.2897767446161.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -507.873859421005. Best WOA: -958.5372986594366.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -558.5207320973301. Best WOA: -954.7839367638505.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -786.5259940788701. Best WOA: -952.5271722039154.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -111.78879672928772. Best WOA: -955.2017192686842.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -419.3119495736531. Best WOA: -958.6883459437187.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.487996547281. Best WOA: -959.444406042809.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -565.997780971012. Best WOA: -886.3823925575562.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -959.640662720851. Best WOA: -895.3154376282303.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -410.98477763359665. Best WOA: -890.9789807333891.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -507.873859421005. Best WOA: -959.5970685151856.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -421.1557143749644. Best WOA: -958.6901742270632.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -250.65145464561715. Best WOA: -959.5326708284485.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -306.7204678432658. Best WOA: -888.9624077551944.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -716.6715003419415. Best WOA: -953.7861748850289.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -206.69740638837771. Best WOA: -958.5729109391784.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -704.806595916218. Best WOA: -958.9810795971798.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -445.04748700147127. Best WOA: -959.5189296086999.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -558.1663996257342. Best WOA: -929.7548000460364.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -704.8065959162182. Best WOA: -958.6461981171706.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -301.03271395308815. Best WOA: -954.7140980997809.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -565.997780971012. Best WOA: -954.8517148919698.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -426.48799654728094. Best WOA: -886.3254256060379.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -419.3119495736531. Best WOA: -958.4723167513382.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -425.301505882812. Best WOA: -872.968482182472.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -211.18048744346555. Best WOA: -959.0291011063781.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -894.5789003906. Best WOA: -958.9394033251721.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+---------------------+--------------+------------------+
+|    Algorithms    |    Average value    | Average eval | Average time (s) |
++------------------+---------------------+--------------+------------------+
+|      1. WOA      |  -959.6406626704287 |  199980.00   |      4.4230      |
+|      2. SBS      |  -951.7174357472951 |  601000.00   |      9.1626      |
+|  3. SBS_hybrid   |  -946.7327821650287 |  801971.42   |      4.7333      |
+| 4. SBS_particles |  -941.4765640666212 |   16870.52   |      0.1550      |
+|   5. AdaLIPO_E   |  -930.3113412912068 |   1981.86    |     24.0876      |
+|    6. CMA_ES     | -395.26326411134573 |    573.10    |      0.0762      |
++------------------+---------------------+--------------+------------------+
+[95mFunction: Goldstein Price.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 2.999999999999954. Best WOA: 3.0736306484820926.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999929. Best WOA: 3.236430412248654.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999944. Best WOA: 3.3419528563132848.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999254. Best WOA: 3.084037666642318.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999944. Best WOA: 3.047479580176734.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999623. Best WOA: 3.308754391658592.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 11.355812385548937. Best WOA: 3.2920326396333617.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.9999999999999893. Best WOA: 3.005576219454449.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999955. Best WOA: 3.047218340857188.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 83.99999999999798. Best WOA: 3.4545341937175658.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 83.99999999999832. Best WOA: 3.2356038351498375.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 83.99999999999876. Best WOA: 3.6930594225085662.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.9999999999999862. Best WOA: 3.308951459838601.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999662. Best WOA: 3.0707080596315635.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999485. Best WOA: 3.160886553359977.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999956. Best WOA: 3.0256258751073317.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999934. Best WOA: 3.8824449805880383.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999467. Best WOA: 3.030382149051692.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 83.99999999999832. Best WOA: 3.020165792011707.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.999999999999946. Best WOA: 3.9322048361921644.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999543. Best WOA: 3.237976950463513.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999307. Best WOA: 3.4286119717287424.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 83.99999999999848. Best WOA: 3.3621893844218778.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.999999999999954. Best WOA: 3.340516740928637.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 30.0. Best WOA: 3.1012945764210316.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.9999999999999507. Best WOA: 3.438570863752433.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999614. Best WOA: 3.606698404769291.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 83.99999999999835. Best WOA: 3.6502524858880396.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 30.0. Best WOA: 3.432202802002221.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.999999999999963. Best WOA: 3.1315043364872728.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999966. Best WOA: 3.746522254641279.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999948. Best WOA: 3.729438419049408.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999587. Best WOA: 3.324746973055371.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999374. Best WOA: 3.359845635575971.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999294. Best WOA: 3.0724039116170316.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999316. Best WOA: 3.1210529749002336.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999303. Best WOA: 3.2618985945061945.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999436. Best WOA: 3.4045439100190817.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.99999999999997. Best WOA: 4.06742904188798.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999574. Best WOA: 4.228234406559597.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999574. Best WOA: 3.1332178242320823.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999936. Best WOA: 3.0488184714569857.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999565. Best WOA: 3.347426511760631.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999467. Best WOA: 3.009209628658198.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999334. Best WOA: 3.257227723083544.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999387. Best WOA: 3.077378143833721.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999583. Best WOA: 3.2572642199339037.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999968. Best WOA: 4.351188262495807.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999954. Best WOA: 3.050868056032257.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999948. Best WOA: 3.0227691675939585.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999627. Best WOA: 3.2889445231023706.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999463. Best WOA: 3.0165379074151515.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999436. Best WOA: 3.3111491643332904.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999503. Best WOA: 3.7702425274255313.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999936. Best WOA: 3.9097398856067445.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999467. Best WOA: 3.0390461542138434.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999954. Best WOA: 3.706593246948487.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999972. Best WOA: 3.0632310709954793.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999485. Best WOA: 3.0430397988994486.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999945. Best WOA: 3.7352563146051545.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999436. Best WOA: 3.3969969804095697.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999334. Best WOA: 3.0717535923023624.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999303. Best WOA: 3.28651027386402.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999948. Best WOA: 4.986894144416582.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999961. Best WOA: 5.881080473122942.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999986. Best WOA: 3.109469923790323.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999565. Best WOA: 3.027093188099383.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999374. Best WOA: 3.044038494838141.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999951. Best WOA: 3.114282099718519.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 83.9999999999986. Best WOA: 3.2553036464187417.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.999999999999953. Best WOA: 3.2379154140888757.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999556. Best WOA: 4.040968762965096.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 30.0. Best WOA: 3.6099784656551415.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.999999999999933. Best WOA: 3.3724151656927006.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999954. Best WOA: 3.0289786337569216.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.99999999999993. Best WOA: 3.001005187825343.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 83.99999999999817. Best WOA: 3.1176385623758556.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.999999999999933. Best WOA: 3.5566874946279623.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999961. Best WOA: 3.2959136702372813.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999623. Best WOA: 3.5981528529282945.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999756. Best WOA: 3.588322402375884.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999954. Best WOA: 3.0473512857678005.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 35.01434225878233. Best WOA: 3.199744792242118.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.999999999999955. Best WOA: 3.079208235716132.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999387. Best WOA: 3.993126018747465.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999405. Best WOA: 3.052247864731009.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999516. Best WOA: 3.32990329701608.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999423. Best WOA: 3.8059648130818573.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 30.0. Best WOA: 3.0358120111223803.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.9999999999999365. Best WOA: 3.2073898227613435.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999936. Best WOA: 3.960562376366992.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 83.99999999999902. Best WOA: 3.0024235061298796.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.9999999999999574. Best WOA: 3.256416009036011.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999958. Best WOA: 3.4896965162386824.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999614. Best WOA: 3.0947187147648254.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999926. Best WOA: 3.4979645363642438.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999716. Best WOA: 3.0437746678187168.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999414. Best WOA: 3.173114102373761.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999936. Best WOA: 3.074125217568791.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999565. Best WOA: 3.2056840268872726.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+--------------------+--------------+------------------+
+|    Algorithms    |   Average value    | Average eval | Average time (s) |
++------------------+--------------------+--------------+------------------+
+|  1. SBS_hybrid   | 3.0000000004136633 |  801946.82   |      3.9417      |
+| 2. SBS_particles | 3.0000006232754375 |   18596.90   |      0.1613      |
+|      3. SBS      | 3.0000006920528177 |  601000.00   |      7.8298      |
+|      4. WOA      | 3.000005832861278  |  199980.00   |      4.2109      |
+|   5. AdaLIPO_E   | 3.5629335204976473 |   2000.00    |     24.2642      |
+|    6. CMA_ES     | 6.088795568555851  |    537.34    |      0.0659      |
++------------------+--------------------+--------------+------------------+
+[95mFunction: Himmelblau.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 3.694540273230555e-16. Best WOA: 0.3983216389523008.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.76727098301304e-16. Best WOA: 0.11206334828026403.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.6184979224842486e-15. Best WOA: 0.03510138457699766.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.707090679732085e-18. Best WOA: 0.6121762781257728.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1763985195421446e-17. Best WOA: 0.5228885529285898.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.402411382088802e-16. Best WOA: 0.008492629688195627.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.573589278546829e-16. Best WOA: 0.01573273969358338.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.37328480275979e-16. Best WOA: 0.022041193953505216.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.787336714728643e-15. Best WOA: 0.0079711497370607.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.219082716726178e-16. Best WOA: 0.07111030130469992.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.801847527383214e-18. Best WOA: 0.11311995761993399.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.425515992081736e-17. Best WOA: 0.09361121808033485.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7047967217950713e-16. Best WOA: 0.013543376763782552.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.2224255242673156e-16. Best WOA: 0.9917985962709779.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.499477645665876e-16. Best WOA: 0.4555311591647909.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.867487622991862e-16. Best WOA: 0.0055412822883676854.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.985019848566373e-16. Best WOA: 0.03436456360907632.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.482923390104999e-17. Best WOA: 0.010898504368261591.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.274105642988009e-17. Best WOA: 0.25831915347570844.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.520816459248526e-17. Best WOA: 0.022231611082825092.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.720700155006064e-16. Best WOA: 0.016845563968568535.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.445360393764749e-17. Best WOA: 0.04885695502465639.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.54366153169455e-17. Best WOA: 0.2681349440363426.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.862290532860799e-16. Best WOA: 0.12346164824937647.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9894509594427903e-16. Best WOA: 0.37167477515603753.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.7823399982848493e-17. Best WOA: 0.45161980372917465.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.762820521081451e-17. Best WOA: 0.020034119544826007.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.8832168341996487e-16. Best WOA: 0.0034799989440082095.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.089414136673905e-16. Best WOA: 0.2404927404177219.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.996263648223697e-17. Best WOA: 0.003172683176792233.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.5723949923559877e-16. Best WOA: 0.02748725114228201.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.927006560143596e-16. Best WOA: 0.19798227728867612.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1939824248914157e-16. Best WOA: 0.001403060802841566.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.841960028949953e-16. Best WOA: 0.025931647935145866.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.390105135187596e-17. Best WOA: 0.061701723865792826.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.6541730834116823e-16. Best WOA: 0.04537584168337245.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.309198576750001e-16. Best WOA: 0.01695750759187747.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.2838872783550608e-16. Best WOA: 0.4248341052042197.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.5187367393758025e-17. Best WOA: 0.15074629588171332.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.2120399645919136e-18. Best WOA: 0.023762158302323283.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1081692587623839e-15. Best WOA: 0.034659959991057684.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.5011248144973714e-18. Best WOA: 0.12623571142111317.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.763899953700642e-18. Best WOA: 0.03115517527703532.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.898628083479373e-17. Best WOA: 0.020463855755045855.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2283197832775856e-16. Best WOA: 0.005423390922823108.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.847671167453649e-17. Best WOA: 0.12908572605268906.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.2843925138816e-15. Best WOA: 0.16494732238425278.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.260877752466108e-18. Best WOA: 0.08786365148086428.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.857660437734335e-18. Best WOA: 0.23717560516362374.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.567501985371106e-18. Best WOA: 0.04524217142117451.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.685512802659636e-18. Best WOA: 0.05730599988853685.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.4809622852269635e-16. Best WOA: 0.052910161326261244.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.109083006816915e-16. Best WOA: 0.0074341819642126696.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7053497682021955e-15. Best WOA: 0.14092747154806246.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.44719421991548e-17. Best WOA: 0.042490462262515856.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.7915140325787677e-16. Best WOA: 0.12722373757034222.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.7397988421963768e-15. Best WOA: 0.13064173012706318.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.884079420990112e-17. Best WOA: 0.001539459968847424.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9512690354762606e-16. Best WOA: 0.020497600983131314.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.3364018933252142e-16. Best WOA: 0.08782180583206343.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.728145510865752e-16. Best WOA: 0.08530574932735127.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.329642901317971e-16. Best WOA: 0.30559981388590834.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0179362907823631e-16. Best WOA: 0.18595678896350432.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.111448991017608e-16. Best WOA: 0.005778386502309224.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.679989311470706e-16. Best WOA: 0.05626085141851345.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.301454211187122e-17. Best WOA: 0.12253091364624841.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.049307509707193e-18. Best WOA: 0.1522560692685492.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.432172844031397e-17. Best WOA: 0.11850598076419533.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.330888861648799e-17. Best WOA: 0.05236711567676944.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.773366326706513e-17. Best WOA: 0.01600912683371737.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.6203655817268856e-16. Best WOA: 0.02276682346780337.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4680353709666143e-17. Best WOA: 0.16350941326278312.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.475161133277328e-16. Best WOA: 0.3504851867259747.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4992956369607813e-17. Best WOA: 0.195390159398107.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.046434655284e-16. Best WOA: 0.02234180213018314.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.514069447925373e-17. Best WOA: 0.18177119214195547.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.6602462973599777e-16. Best WOA: 0.0821067579132082.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.504993169573957e-17. Best WOA: 0.13329617417946046.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.6562622086694574e-16. Best WOA: 0.11353105774509398.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.964623873008863e-19. Best WOA: 0.10314990993645196.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.220624541362729e-18. Best WOA: 0.06797271891047088.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.736771916682553e-16. Best WOA: 0.0702727607102335.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7520655364625924e-16. Best WOA: 0.033917829289156445.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.033016380790335e-16. Best WOA: 0.023036211335748232.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.0892167731580447e-16. Best WOA: 0.0003316890106743607.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9206312283265243e-17. Best WOA: 0.0034888354635161196.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.967066913229661e-17. Best WOA: 0.03334297863238278.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.0159351989675265e-17. Best WOA: 0.2949514534748999.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.3371420950029968e-15. Best WOA: 0.3577017504556958.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.268260853430501e-17. Best WOA: 0.08859971103458855.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4737625187268827e-17. Best WOA: 0.07151765500688653.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.857693552536922e-17. Best WOA: 0.14579299507405635.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.102614849875411e-17. Best WOA: 0.013197096555213393.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.2516285226178675e-18. Best WOA: 0.031916902670776265.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.2199263570505065e-16. Best WOA: 0.2603162692658366.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.502851779933964e-17. Best WOA: 0.188175729321824.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.793788713686859e-17. Best WOA: 0.05384865498437387.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7981225004426421e-19. Best WOA: 0.1424297137239769.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.287963061512797e-14. Best WOA: 0.03774325719681568.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2204280307916254e-16. Best WOA: 0.04054915240163745.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|    1. CMA_ES     | 4.2359690931730235e-16 |    532.24    |      0.0672      |
+|  2. SBS_hybrid   |  4.59900563130505e-15  |  801922.70   |      2.2001      |
+|      3. SBS      | 5.719666301294373e-08  |  601000.00   |      4.5239      |
+| 4. SBS_particles | 2.269968056932854e-07  |   19352.28   |      0.1066      |
+|      5. WOA      | 1.1687342043405298e-05 |  199980.00   |      3.7830      |
+|   6. AdaLIPO_E   |  0.007105174914717019  |   2000.00    |     25.3482      |
++------------------+------------------------+--------------+------------------+
+[95mFunction: Holder Table.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -2.346576314623316. Best WOA: -19.139467757955725.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -19.086160488400132.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -3.69292849301365. Best WOA: -19.058272762135612.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -19.04122392167182.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -19.18068082612001.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -18.927125286807822.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.20850256788675. Best WOA: -19.198926692541065.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -11.069551166751276. Best WOA: -19.19157101210376.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.654139057842869. Best WOA: -19.184452050719724.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.018482102053614.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -11.069551166751276. Best WOA: -18.534602113656547.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -18.761795225947363.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -5.654139057842868. Best WOA: -19.196274460446944.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.504677029920918. Best WOA: -18.92111649461156.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -19.136974753711232.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.7329722438960702. Best WOA: -18.73960560349402.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.095122657428682. Best WOA: -19.18631251536211.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -19.200012247308678.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -4.712458360790642. Best WOA: -19.07584265726523.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.1830908778886593. Best WOA: -19.117428850710464.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.725475010873383. Best WOA: -18.850563155865842.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.504677029920924. Best WOA: -18.74207299653684.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -18.39284697572223.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -8.095122657428679. Best WOA: -19.115925881959303.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -10.615982216127682. Best WOA: -19.144512565496417.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886736. Best WOA: -19.12386687259857.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -9.50467702992092. Best WOA: -19.160053904344288.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -2.346576314623315. Best WOA: -19.195124500038713.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -4.71245836079064. Best WOA: -18.946338568175477.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886736. Best WOA: -19.180542897957334.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -19.001397907240673.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.1830908778886593. Best WOA: -19.177200849138696.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -19.066429317577327.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.08782360978841.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -11.069551166751273. Best WOA: -19.180196518161193.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.09512265742868. Best WOA: -19.151977807934113.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -2.3465763146233156. Best WOA: -19.12616204577003.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -16.267832896646684. Best WOA: -18.650344622814824.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -19.02667420916532.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.73297224389607. Best WOA: -19.188934447211427.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612046. Best WOA: -19.006100983684483.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -19.145725969878573.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -8.715038287108534. Best WOA: -19.11772200171276.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.504677029920922. Best WOA: -18.52700179096775.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -19.206635104432998.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.208502567886736. Best WOA: -19.18726645892709.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -2.3465763146233156. Best WOA: -19.148135039987995.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -2.3465763146233156. Best WOA: -19.17863385056951.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.095122657428675. Best WOA: -19.08740429344723.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.504677029920918. Best WOA: -19.18709847778797.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.715038287108532. Best WOA: -19.018305507301832.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612046. Best WOA: -19.199652886579685.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.504677029920918. Best WOA: -18.478122820252636.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -11.069551166751278. Best WOA: -18.996133262474913.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -3.0388533612993647. Best WOA: -19.176777336918754.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -18.896834585399702.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.08624318673343.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.1830908778886595. Best WOA: -19.077041354511113.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.171636840458003.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -3.0388533612993647. Best WOA: -19.100983306445272.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612045. Best WOA: -18.831488013956463.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -3.0388533612993647. Best WOA: -18.713838115331882.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612045. Best WOA: -19.091082010352647.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.046079266063565.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -11.069551166751276. Best WOA: -19.193802087132596.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.095122657428682. Best WOA: -19.086121559251904.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.095122657428682. Best WOA: -19.14471655793111.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -19.032086728546915.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -9.504677029920915. Best WOA: -19.1653700534424.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612045. Best WOA: -19.077174212265014.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.1830908778886595. Best WOA: -18.900672383741426.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -19.10045408194623.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -2.3465763146233156. Best WOA: -19.144463678153727.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.50467702992092. Best WOA: -19.159450010927298.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.02655872114201.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -4.712458360790626. Best WOA: -19.168423554256986.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.18706112750444.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -11.069551166751278. Best WOA: -18.83836189512933.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.095122657428679. Best WOA: -19.20279653876094.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -2.346576314623316. Best WOA: -19.185833279653853.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.50467702992092. Best WOA: -19.170781511878577.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -16.26783289664668. Best WOA: -19.197395665591053.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886736. Best WOA: -19.190430064194555.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.20850256788675. Best WOA: -19.07747512062359.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.197496648269304.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -3.0388533612993642. Best WOA: -18.17203483514681.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612042. Best WOA: -19.15575882236935.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -19.135054817392362.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -8.095122657428679. Best WOA: -19.11769858929273.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612046. Best WOA: -18.83691087895557.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612046. Best WOA: -19.08471520461156.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -11.069551166751276. Best WOA: -19.13995920767721.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -8.095122657428682. Best WOA: -19.149553313389966.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886743. Best WOA: -18.976627899497466.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -11.06955116675127. Best WOA: -19.129975073877283.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -4.82751400179856. Best WOA: -19.05374776364284.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -11.069551166751276. Best WOA: -19.05761229779719.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.504677029920915. Best WOA: -19.118146831009717.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -9.504677029920922. Best WOA: -18.93582822194701.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -3.0388533612993647. Best WOA: -19.17004373852614.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+---------------------+--------------+------------------+
+|    Algorithms    |    Average value    | Average eval | Average time (s) |
++------------------+---------------------+--------------+------------------+
+|  1. SBS_hybrid   | -19.208502554028676 |  801901.70   |      4.7633      |
+|      2. SBS      |  -19.20850219096553 |  601000.00   |      9.1415      |
+|      3. WOA      | -19.208480279304673 |  199980.00   |      4.4079      |
+| 4. SBS_particles |  -19.20846268472008 |   16335.86   |      0.1522      |
+|   5. AdaLIPO_E   | -19.192160456005624 |    961.36    |      8.1954      |
+|    6. CMA_ES     |  -7.702736111667942 |    482.62    |      0.0613      |
++------------------+---------------------+--------------+------------------+
+[95mFunction: Michalewicz.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7848783477192374.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7920115244914512.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.7696467510838718.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208172. Best WOA: -1.7882090382822238.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.7818504527226344.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7751557228163302.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7580305892974897.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.7840778457574487.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7878905056990337.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.7742599423909127.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985506. Best WOA: -1.7977515067841172.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.1827005677446614. Best WOA: -1.7522686635244633.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.0. Best WOA: -1.7762436369904915.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7714383374091316.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7697641490366085.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7939137484202141.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7888985209999748.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.7683086884551642.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7818480038654607.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.6232764006281433. Best WOA: -1.7220147628948688.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7999831557845858.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7803382363969793.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.689199168212689.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.0. Best WOA: -1.7807437147960203.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.793523210612515.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.5688633958761327.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.7439908023267168.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985519. Best WOA: -1.7624961558055348.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208174. Best WOA: -1.6544675628089807.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.783791194422302.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208174. Best WOA: -1.769361843478104.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7695448567582854.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.723078962965742.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.7999664891909064. Best WOA: -1.7999582135343948.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.0. Best WOA: -1.7513240260720502.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7990936923337422.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985508. Best WOA: -1.7928069120569727.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7936283816427907.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7858856571781385.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7428928112977857.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.79914669013748.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7776812634999049.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7403612607759644.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7145997487019704.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.8013034100999147. Best WOA: -1.7823451828216479.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.801303410098548. Best WOA: -1.6862941676434833.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7963350863184466.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.5808141364526664. Best WOA: -1.450369392472726.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7919792935551497.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.7619152955972412.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208165. Best WOA: -1.7985859704889524.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.80130341009848. Best WOA: -1.7987554081051986.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.7652759911817024.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.7829982379923441.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985525. Best WOA: -1.7871840165642665.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208174. Best WOA: -1.7258221661249475.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.735394451144696.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7899146870087588.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.662585172562211.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7533844848199869.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.777785456627924.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7974106054795116.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.194630791746205. Best WOA: -1.7942299627679683.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.8004595306509075.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.8000913104646372.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.726189878517021.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7944881511339348.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7846939550859098.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985534. Best WOA: -1.7544351336710227.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7770464507140522.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.6957493255912535.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.776079975751185.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7863257071048955.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7978204555051502.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7882564406078418.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.797759485928487.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.7868990666963738.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.0. Best WOA: -1.7794510637538745.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985514. Best WOA: -1.750144239319165.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985486. Best WOA: -1.780636465710932.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208165. Best WOA: -1.7778061703859072.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.0. Best WOA: -1.7785705389955653.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.78371438066079.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7980755356911466.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7894097433252596.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.69894333330413.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.7026548910562507.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7601155200396292.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7368370710143797.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7911614136979561.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.747882847810473.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208165. Best WOA: -1.762207533232096.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7204363401306928.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.778439339039689.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985499. Best WOA: -1.7671792395907944.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9993059303394753. Best WOA: -1.7640568839367234.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7841173307638036.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7875230085519558.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7934643544125555.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.7988721738699325.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+---------------------+--------------+------------------+
+|    Algorithms    |    Average value    | Average eval | Average time (s) |
++------------------+---------------------+--------------+------------------+
+|      1. SBS      |  -1.801303168109341 |  601000.00   |     14.7720      |
+|      2. WOA      | -1.8012985167320141 |  199980.00   |      5.1287      |
+| 3. SBS_particles | -1.8012979291880404 |   15464.06   |      0.2168      |
+|  4. SBS_hybrid   | -1.7895585322058716 |  801913.34   |      8.2452      |
+|   5. AdaLIPO_E   |  -1.784704239449958 |    123.84    |      0.1871      |
+|    6. CMA_ES     | -1.5444546202464833 |    509.62    |      0.0681      |
++------------------+---------------------+--------------+------------------+
+[95mFunction: Rastrigin.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 0.9949590570932969. Best WOA: 0.4065773284629479.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 2.408281482785199.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 1.1532370493236783.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 1.1722373463692293.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 0.03290413045180429.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.0706309680424546.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4447316755929442. Best WOA: 1.2939518139784454.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.2930923274215864.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.899074983015616. Best WOA: 1.0987862899642806.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 1.1732712055763699.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.1615151549583551.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.8959335402041688. Best WOA: 2.6097995693513383.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.0928062737812212.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.0. Best WOA: 1.1771365825035716.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.1662003771979386.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.697345716500589.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 2.07548388689003.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.0. Best WOA: 2.5317248502452188.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.979831190554087. Best WOA: 0.09571147856227569.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.135791182813513.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.880487064498496. Best WOA: 2.043598735931667.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865867. Best WOA: 1.417383425740141.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 1.187823629762356.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 0.09996561861065345.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 2.009315552265832.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.9161856863344298.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.0. Best WOA: 2.5158950847992294.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 24.87384503394854. Best WOA: 1.062063213530763.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.7893132085126808. Best WOA: 2.4281485724946137.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.5587613859824927.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 15.919243792461534. Best WOA: 1.1167575931348566.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 0.7627040945002221.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.300167340607498.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.949560298580302. Best WOA: 1.110149228272057.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.0415941914894304. Best WOA: 1.125736943328267.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865796. Best WOA: 1.173350837363536.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.31577282448732547. Best WOA: 0.9964619357532776.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 16.914202849554822. Best WOA: 1.1350846268438417.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865867. Best WOA: 0.3616299403233967.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 1.2875461059818996.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 7.058278379651872. Best WOA: 2.3607490237741473.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.645954691347864. Best WOA: 0.4201571800127155.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 4.3289167202520975. Best WOA: 2.7302960015721283.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.818454394202938. Best WOA: 1.3729517749328615.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 2.5208112134096723.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.13315885986720488. Best WOA: 0.05883832317259419.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 1.7548840846179772.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.601994750888727. Best WOA: 0.8627589307700276.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.256571054534774.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865796. Best WOA: 0.06490113363318883.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 7.0480390967348825. Best WOA: 0.5587941646619292.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 9.9495602985803. Best WOA: 1.1933390852808046.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.1488473445404566.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.0. Best WOA: 1.0770028586405616.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.052085328606516.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.5145708304627234. Best WOA: 0.8337280545584989.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.4037319318956207. Best WOA: 2.314609268731651.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865832. Best WOA: 1.1737171564341367.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 12.934432432041095. Best WOA: 0.15104007433551203.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 3.979831190554087. Best WOA: 2.3805856769354463.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.5928711724826528. Best WOA: 2.4013529029512313.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.974790247647379. Best WOA: 1.3116263275148654.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 1.4158777436435201.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865796. Best WOA: 2.248565068936223.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.174433036437314.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.974790247647379. Best WOA: 1.3807057729464844.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.833117135230971. Best WOA: 1.8547868480497343.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.726990565274438. Best WOA: 4.019793954250222.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 15.51727136087349. Best WOA: 0.8182882890834549.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 4.095487297414719. Best WOA: 0.571913837625214.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 0.24242126132405417.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.3122993118318753.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.949560298580302. Best WOA: 1.9917501293960456.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932969. Best WOA: 3.22956374594483.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.979831190554087. Best WOA: 1.0176520386654104.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 0.4812998104942565.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.974790247647379. Best WOA: 1.359321108734207.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.5760711352076626.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.0. Best WOA: 0.6669923987074498.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 0.5669468551637493.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.138521432024838. Best WOA: 0.9477807860751071.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 2.717400961946023.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.6419642421629703.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.979831190554087. Best WOA: 1.0619487293504228.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865796. Best WOA: 2.0649619768558125.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 0.9966088536850073.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 4.214606445223366.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865796. Best WOA: 0.0809095604372807.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.2597430390925979. Best WOA: 0.46825866437421126.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.1481521096612326.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9899181141865796. Best WOA: 0.9499331510614795.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 4.97479024764738. Best WOA: 1.0128203283255601.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.9899181141865796. Best WOA: 1.6029906982861917.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.2870749132753048.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.721298772919532. Best WOA: 0.24727041044694076.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 4.660429448599867. Best WOA: 1.2362090755366637.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 4.97479024764738. Best WOA: 2.538029521413506.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.0. Best WOA: 0.995265082235079.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.061645944514874. Best WOA: 1.6813785671725014.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 0.335632573012731.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|      1. WOA      | 3.0102143000476646e-13 |  199980.00   |      4.8476      |
+|      2. SBS      |  0.010208047214423139  |  601000.00   |     12.2239      |
+| 3. SBS_particles |  0.021307328100732013  |   15535.32   |      0.1932      |
+|   4. AdaLIPO_E   |  0.13691570738843756   |    847.79    |      4.2601      |
+|  5. SBS_hybrid   |   0.4775802466652578   |  802005.80   |      7.0459      |
+|    6. CMA_ES     |   4.4910331610857925   |    613.24    |      0.0769      |
++------------------+------------------------+--------------+------------------+
+[95mFunction: Rosenbrock.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 2.0853700885910383e-16. Best WOA: 0.011112166207685481.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.646373403881164e-17. Best WOA: 0.005422214692736778.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.6644020310954948e-16. Best WOA: 0.016645989675360386.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.02294980464988e-18. Best WOA: 0.04546739338146624.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.624535570394508e-17. Best WOA: 0.008299810004502663.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.4142323783188876e-16. Best WOA: 0.008955801150407382.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0061406339345472e-16. Best WOA: 0.10038600709618525.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.527101699847377e-17. Best WOA: 0.1909943519934138.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4737170019329006e-16. Best WOA: 0.013908244683303131.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2942660114348934e-17. Best WOA: 0.011593412570347914.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.203032255079671e-18. Best WOA: 0.09330485654906381.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.0327265441232126e-18. Best WOA: 0.1237566244481831.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.881788345202565e-16. Best WOA: 0.05253503805668827.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.220862485631522e-17. Best WOA: 0.001839379404852407.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.423906512359382e-16. Best WOA: 0.006462679178925735.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.905885373808395e-18. Best WOA: 0.06643597205137891.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0496547634691421e-16. Best WOA: 0.0009518041886451469.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0776393632644075e-16. Best WOA: 0.02968035523834664.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.0668392899765713e-16. Best WOA: 0.03908040976382362.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7484040295367817e-17. Best WOA: 0.02351437937759776.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.710517293387114e-17. Best WOA: 0.08829388234208153.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.188517972142754e-17. Best WOA: 0.005959659764432676.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.679830521734076e-16. Best WOA: 0.051302022688826616.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4785288067809704e-16. Best WOA: 0.1889210684107719.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.987057211903458e-17. Best WOA: 0.007330533428294105.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.8899597219483966e-18. Best WOA: 0.06524893431125615.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2276691606163948e-16. Best WOA: 0.15399835164174003.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.820833851584408e-16. Best WOA: 0.005581755020382636.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0886204252452173e-16. Best WOA: 0.5046527092345389.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4425930057092064e-15. Best WOA: 0.030641814324580213.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.718023619675684e-16. Best WOA: 0.06259109850820752.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.527834491141116e-19. Best WOA: 0.03613014568386986.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9871560238118644e-17. Best WOA: 0.05008695024172469.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.987016536248137e-17. Best WOA: 0.023061810555839286.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.2714023578306193e-16. Best WOA: 0.0050942639412324174.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.927835321776782e-18. Best WOA: 0.17148518917513808.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.2418909465539214e-17. Best WOA: 0.08330667584182111.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.756411859893211e-17. Best WOA: 0.10306456290801044.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1976123092174568e-17. Best WOA: 0.002351716520668969.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.097886431898e-16. Best WOA: 0.056715314783922756.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9905897792281205e-16. Best WOA: 0.07412436030245474.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0562791425361976e-17. Best WOA: 0.0565803122778023.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7359742683663776e-17. Best WOA: 0.0046618393608478005.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.390492817269668e-18. Best WOA: 0.07802486105813373.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.803170231791936e-16. Best WOA: 0.0668395107408691.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.3144416665369529e-18. Best WOA: 0.30045770383106196.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.5518964429972857e-17. Best WOA: 0.061771073114757685.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.011690735262286e-16. Best WOA: 0.06932053976983064.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.4962787425409078e-15. Best WOA: 0.003548330759619174.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.63873960411419e-18. Best WOA: 0.039485023673697495.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.8223684613893907e-15. Best WOA: 0.13355164851091805.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.000504541456022e-17. Best WOA: 0.08260463788617882.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.045439674207337e-15. Best WOA: 0.019816542834680827.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4863572873492772e-17. Best WOA: 0.02003749471286685.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.932151448022232e-16. Best WOA: 0.008534205744394528.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.21552311006927e-16. Best WOA: 0.05050566302245178.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.553289907152513e-16. Best WOA: 0.017290087099316127.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.561431758962392e-17. Best WOA: 0.0072745545157747015.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.3791665946555894e-15. Best WOA: 0.001788098024383304.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.461141642922583e-16. Best WOA: 0.018785086157489004.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.106951096505762e-17. Best WOA: 0.04168582004967937.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.5930186932787024e-17. Best WOA: 0.0034565865189018137.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.2822365000298265e-18. Best WOA: 0.062448331493323225.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.733233617855595e-16. Best WOA: 0.11279997098854244.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1997867933492317e-17. Best WOA: 0.15122095823923357.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.0926152779961903e-16. Best WOA: 0.34178965387857774.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7677765410413348e-17. Best WOA: 0.07826667369400898.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.825112883508904e-17. Best WOA: 0.4178240823727143.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2879164695143201e-17. Best WOA: 0.0442978675888936.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.1872090870712813e-17. Best WOA: 0.01506780251056385.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.6718424557197357e-16. Best WOA: 0.010769040718727776.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.449287436208668e-16. Best WOA: 0.00408052243200804.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.48347522894102e-17. Best WOA: 0.06187289265389334.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.879427782721842e-16. Best WOA: 0.04941083248894909.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.722108514319209e-17. Best WOA: 0.013633327670652643.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.401875856537426e-17. Best WOA: 0.012533438847297244.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.628768250240213e-17. Best WOA: 0.002749920775069677.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9684282753219742e-15. Best WOA: 0.09157352847599745.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9256529185895225e-18. Best WOA: 0.028904424182998288.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.0184402671517876e-16. Best WOA: 0.01796825103816735.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.0999164811433547e-17. Best WOA: 0.0020480984683554863.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.2559613144642993e-16. Best WOA: 0.05195889287953354.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2084911031740523e-17. Best WOA: 0.14684282928291534.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.3976845223281166e-16. Best WOA: 0.11199904763561108.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.3587808244892535e-16. Best WOA: 0.10305543004246469.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.636550494386793e-17. Best WOA: 0.07406756269848214.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.070996845646767e-19. Best WOA: 0.01846130014817165.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.5818670664459711e-16. Best WOA: 0.010989055228290016.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.2142722454568266e-16. Best WOA: 0.0008573159556146975.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.3113867814542187e-17. Best WOA: 0.08553741862330178.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.091655063093202e-16. Best WOA: 0.08054892876199528.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.880899960194238e-17. Best WOA: 0.09497382861768666.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.432781888767222e-16. Best WOA: 0.04330679834628181.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.4387513309471318e-17. Best WOA: 0.04256979637474429.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.955057700564172e-17. Best WOA: 0.0860744146379196.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.010657341174643e-18. Best WOA: 0.08138519430147947.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.5631738593183074e-17. Best WOA: 0.02940465468863982.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.917270822493891e-18. Best WOA: 0.03101403540831161.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.2760469284362915e-17. Best WOA: 0.1611726196419122.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.2772415782280185e-16. Best WOA: 0.01924543395517606.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|    1. CMA_ES     | 1.0544715330905372e-15 |    718.72    |      0.0914      |
+|  2. SBS_hybrid   | 1.1164308197143728e-12 |  802109.24   |      7.7636      |
+|      3. WOA      | 1.5808737256809739e-06 |  199980.00   |      5.0699      |
+|      4. SBS      | 1.739840472822701e-06  |  601000.00   |     13.5590      |
+| 5. SBS_particles | 0.00040045754675520367 |   20911.00   |      0.2811      |
+|   6. AdaLIPO_E   |  0.03584640583150993   |   2000.00    |     24.3356      |
++------------------+------------------------+--------------+------------------+
+[95mFunction: Sphere.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 9.85062744349778e-16. Best WOA: 0.04686118509330961.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2229247216042749e-17. Best WOA: 0.018420391998902344.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.640595124457615e-16. Best WOA: 0.01699989415470524.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.6506192551064378e-16. Best WOA: 0.04104301550426651.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.831425059961761e-16. Best WOA: 0.01738009683897835.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7418527393755142e-16. Best WOA: 0.012151316548478203.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.6459820803418675e-16. Best WOA: 0.002927486747203667.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.004515503266539e-16. Best WOA: 0.011519268289461983.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9333293536751224e-16. Best WOA: 0.03621911754542331.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.71813965168836e-16. Best WOA: 0.0007613819145272009.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.0914204651158294e-17. Best WOA: 0.010582780394070311.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.9910845485309653e-17. Best WOA: 0.003326386977963295.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.039542181520776e-15. Best WOA: 6.955528693628174e-05.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.073083879775556e-17. Best WOA: 0.004299658241367366.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1282457246003071e-17. Best WOA: 0.0005659546461756759.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.763164610028335e-16. Best WOA: 0.1750612431039874.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.207652532735531e-17. Best WOA: 0.0675769795524744.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9784418716587088e-17. Best WOA: 0.029886046495158237.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.867911251946756e-17. Best WOA: 0.0025914481645331697.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.206257237782367e-16. Best WOA: 0.008846966009012407.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1112742136109882e-16. Best WOA: 0.03750374968642814.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4483209982082e-15. Best WOA: 0.003936367175005751.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.0995623931491833e-16. Best WOA: 0.07698447056643105.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1974191786574852e-18. Best WOA: 0.05962216497924943.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.1884182143357468e-16. Best WOA: 0.0021327844318818493.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.044368933200111e-18. Best WOA: 0.025957680600456598.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.617816996134555e-15. Best WOA: 0.0031283809436661978.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7436393661610548e-16. Best WOA: 0.017072081742866424.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.072153291569711e-17. Best WOA: 0.0022978823059344824.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.1163305943063204e-15. Best WOA: 0.010186652584024208.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.558693517750946e-16. Best WOA: 0.01688873372141052.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.605685193303202e-16. Best WOA: 0.022210678041585594.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.9483583754609288e-16. Best WOA: 0.0011187501991812582.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.263530019782565e-16. Best WOA: 0.024777951162018946.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.654871532541129e-16. Best WOA: 0.0007182887763685306.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.837364652579708e-17. Best WOA: 0.03445820513888022.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.2707085276640646e-16. Best WOA: 0.08910110420948877.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.100529147890022e-17. Best WOA: 0.01807675532483096.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.0624000850346733e-15. Best WOA: 0.022327031197526336.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.361018257590004e-17. Best WOA: 0.00306584006372099.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.942416406947701e-16. Best WOA: 0.015124426320499896.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.278381171870062e-15. Best WOA: 0.001286999256170883.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0431905334133192e-16. Best WOA: 0.026401185049908543.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.528645334249649e-16. Best WOA: 0.012306105309464428.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.629174985666246e-17. Best WOA: 0.0010303834464089668.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.881698789644151e-15. Best WOA: 0.0008893015294610825.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.1486598395694584e-15. Best WOA: 0.002176102054398815.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.3197074783637795e-17. Best WOA: 0.018514900096782468.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.272847417863347e-18. Best WOA: 0.004051845989111389.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.374368964200802e-16. Best WOA: 0.0037540704493792226.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0505584390456202e-15. Best WOA: 0.01081662875758792.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4758899861650406e-16. Best WOA: 0.016403025080871214.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.075959676652557e-17. Best WOA: 0.024461073425835273.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0904996313186624e-17. Best WOA: 0.0090957674066981.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0626082489385874e-16. Best WOA: 0.053388098533665614.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.5250910092392395e-17. Best WOA: 0.040535940315907126.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.092378753343742e-14. Best WOA: 0.05333802966606186.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.4130980934369624e-18. Best WOA: 0.0036017625673357666.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.539910841148175e-18. Best WOA: 0.03846024913476918.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.463988922536237e-16. Best WOA: 0.1482922014478064.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1868492184544906e-16. Best WOA: 0.009261103860166481.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.856280107165134e-19. Best WOA: 0.029360258852830952.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.465800895615366e-15. Best WOA: 0.023327402779924487.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2642238937027198e-15. Best WOA: 0.012828449014390559.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.482431685753643e-16. Best WOA: 0.0008647472013340099.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.20616018733745e-16. Best WOA: 0.004381594318462771.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.11832875966622e-16. Best WOA: 0.000533730227064892.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0338354042226156e-16. Best WOA: 0.0064855544869871435.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.836907664473582e-16. Best WOA: 0.007633754541692421.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.5925376639022593e-16. Best WOA: 0.002314071689633793.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.3339773738405857e-16. Best WOA: 0.0900361575174735.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.095758133497189e-16. Best WOA: 0.0004151664433525975.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.110289078878913e-15. Best WOA: 0.02359940476703947.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.294823329293999e-17. Best WOA: 0.026295078210445126.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.494812583897475e-16. Best WOA: 0.03166278697014355.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1684010992333812e-16. Best WOA: 0.002991020844554393.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.453294728129261e-16. Best WOA: 0.0016082257088850178.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7361383844314704e-16. Best WOA: 0.0038113412961275077.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.206663280862492e-16. Best WOA: 0.008806049637854628.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.689590163896777e-17. Best WOA: 0.005985016478994055.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.068403335805426e-16. Best WOA: 0.01998475738674233.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.455487400515255e-16. Best WOA: 0.014299007451730248.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.211823633494559e-17. Best WOA: 5.940642258256558e-05.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.018614806678808e-17. Best WOA: 0.03718949918953919.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1557854161398546e-16. Best WOA: 0.07764551379945794.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.8594702503821995e-16. Best WOA: 0.011357896353562422.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0341197189088848e-17. Best WOA: 0.03559353953615142.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1873561738277865e-16. Best WOA: 0.05253997466198122.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.57572075648846e-17. Best WOA: 0.0061840610133012345.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 8.684026159191501e-18. Best WOA: 0.0240217489238873.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.040482265016195e-16. Best WOA: 0.013244020315241072.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.210977783393198e-17. Best WOA: 0.030977065048769736.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.084954591975948e-16. Best WOA: 0.03525442704182268.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.1380177447457447e-15. Best WOA: 0.0216619749073882.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 5.340937843089873e-16. Best WOA: 0.008112028049341875.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.041630723274349e-17. Best WOA: 0.016347454444100105.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.409554376419839e-17. Best WOA: 0.00825328573099133.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.7270378714785022e-17. Best WOA: 0.0009692579656741502.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.6180259908075892e-17. Best WOA: 0.031546214069703774.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.904571553444002e-17. Best WOA: 0.014972892090153742.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+-----------------------+--------------+------------------+
+|    Algorithms    |     Average value     | Average eval | Average time (s) |
++------------------+-----------------------+--------------+------------------+
+|  1. SBS_hybrid   | 2.222270191814874e-16 |  801900.92   |      4.0856      |
+|    2. CMA_ES     |  7.33821302352106e-16 |    495.64    |      0.0604      |
+|      3. WOA      | 4.573367827472812e-15 |  199980.00   |      4.1727      |
+|      4. SBS      |  8.62992738316899e-09 |  601000.00   |      7.4884      |
+| 5. SBS_particles | 8.326510035713419e-08 |   17931.88   |      0.1568      |
+|   6. AdaLIPO_E   |   0.0011344719207712  |   2000.00    |     30.1861      |
++------------------+-----------------------+--------------+------------------+
++---------------+------------+--------------+
+|   Algorithms  | Final rank | Average rank |
++---------------+------------+--------------+
+|   SBS_hybrid  |     1      |    2.364     |
+|      WOA      |     2      |    2.636     |
+|      SBS      |     3      |    2.636     |
+| SBS_particles |     4      |    3.727     |
+|     CMA_ES    |     5      |    4.364     |
+|   AdaLIPO_E   |     6      |    5.273     |
++---------------+------------+--------------+

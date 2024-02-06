@@ -74,11 +74,11 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
     elif optim_cls == SBS_hybrid:
         return optim_cls(
             bounds,
-            n_particles=500,
+            n_particles=200,
             k_iter=[10_000],
-            svgd_iter=200,
-            warm_start_iter=10_000,
-            sigma=1e-5,
+            svgd_iter=1000,
+            warm_start_iter=1000,
+            sigma=1e-10,
             lr=0.1 if is_sim else 1e-3,
         )
     elif optim_cls == BayesOpt:
@@ -171,7 +171,7 @@ if __name__ == "__main__":
             CMA_ES,
             WOA,
         ]
-        num_evals = [2000, 0, 0, 0, 200_000, 200_000]
+        num_evals = [2000, 0, 0, 0, 800_000, 200_000]
 
     all_ranks = {}
 
