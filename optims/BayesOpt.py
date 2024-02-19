@@ -29,12 +29,7 @@ class BayesOpt(Optimizer):
     @staticmethod
     def transform_function(function):
         def intermediate_fun(**params):
-            p_values = params.values()
-            l = [0] * len(p_values)
-            for i, v in enumerate(p_values):
-                l[i] = v
-
-            return -function(np.array(l))
+            return -function(np.array(list(params.values())))
 
         return intermediate_fun
 
