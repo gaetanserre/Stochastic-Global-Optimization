@@ -48,6 +48,20 @@ def time_it(function, args={}):
     return ret, end - start
 
 
+def merge_ranks(rank_dict, new_ranks):
+    if rank_dict == {}:
+        return new_ranks
+    else:
+        for k, v in rank_dict.items():
+            rank_dict[k] = v + new_ranks[k]
+        return rank_dict
+
+
+def create_bounds(min, max, dim):
+    bounds = [(min, max) for _ in range(dim)]
+    return np.array(bounds)
+
+
 def match_optim(optim_cls, bounds, num_evals, is_sim=False):
     if optim_cls == PRS:
         return optim_cls(bounds, num_evals=num_evals)
@@ -92,20 +106,6 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, num_evals)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
-
-
-def merge_ranks(rank_dict, new_ranks):
-    if rank_dict == {}:
-        return new_ranks
-    else:
-        for k, v in rank_dict.items():
-            rank_dict[k] = v + new_ranks[k]
-        return rank_dict
-
-
-def create_bounds(min, max, dim):
-    bounds = [(min, max) for _ in range(dim)]
-    return np.array(bounds)
 
 
 def cli():
