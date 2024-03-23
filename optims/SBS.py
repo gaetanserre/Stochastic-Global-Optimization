@@ -51,7 +51,7 @@ def gradient(f, x, eps=1e-12):
         x_p[i] += eps
         grad[i] = (f(x_p) - f_x) / eps
 
-    return grad
+    return grad, f_x
 
 
 def rbf(x, sigma=-1):
@@ -88,8 +88,6 @@ class SBS(Optimizer):
         self.lr = lr
 
     def optimize(self, function, verbose=False):
-        logprob_grad = lambda k: (lambda x: -k * gradient(function, x))
-
         kernel = lambda x: rbf(x, sigma=self.sigma)
 
         dim = self.domain.shape[0]
@@ -99,10 +97,18 @@ class SBS(Optimizer):
         )
 
         all_points = [x.copy()]
+        all_evals = []
         for k in self.k_iter:
             optimizer = Adam(lr=self.lr)
             for i in range(self.svgd_iter):
-                svgd_grad = svgd(x, np.array([logprob_grad(k)(xi) for xi in x]), kernel)
+                grads = [0] * self.n_particles
+                fs = [0] * self.n_particles
+                for i, xi in enumerate(x):
+                    grad, f_xi = gradient(function, xi)
+                    grads[i] = -k * grad
+                    fs[i] = f_xi
+                all_evals.append(fs)
+                svgd_grad = svgd(x, np.array(grads), kernel)
                 x = optimizer.step(svgd_grad, x)
 
                 # clamp to domain
@@ -111,13 +117,12 @@ class SBS(Optimizer):
                 # save all points
                 all_points.append(x.copy())
 
-        evals = np.array([function(xi) for xi in x]).flatten()
-        best_idx = np.argmin(evals)
-        min_eval = evals[best_idx]
-        best_particle = x[best_idx]
+        all_points = np.array(all_points).reshape(-1, dim)
+        all_evals = np.array(all_evals).flatten()
+        best_idx = np.argmin(all_evals)
+        min_eval = all_evals[best_idx]
+        best_particle = all_points[best_idx]
         if verbose:
             print(f"Best particle found: {best_particle}. Eval at f(best): {min_eval}.")
 
-        all_points = np.array(all_points).reshape(-1, dim)
-        all_evals = np.array([function(xi) for xi in all_points]).flatten()
         return (best_particle, min_eval), all_points, all_evals

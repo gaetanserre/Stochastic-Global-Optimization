@@ -161,24 +161,24 @@ class SBS_particles(Optimizer):
         n_particles = self.n_particles
 
         all_points = [x.copy()]
+        all_evals = []
         for k in self.k_iter:
             optimizer = Adam(lr=self.lr) if self.adam else Static_Optimizer(lr=self.lr)
             for i in range(self.svgd_iter):
-                logprob_grad_array = [np.zeros(dim)] * n_particles
-                f_evals = [0] * n_particles
-
-                for j in range(n_particles):
-                    grad, f_eval = gradient(function, x[j])
-                    logprob_grad_array[j] = -k * grad
-                    f_evals[j] = f_eval
-
-                svgd_grad = svgd(x, logprob_grad_array, kernel)
+                grads = [0] * n_particles
+                fs = [0] * n_particles
+                for i, xi in enumerate(x):
+                    grad, f_xi = gradient(function, xi)
+                    grads[i] = -k * grad
+                    fs[i] = f_xi
+                all_evals.append(fs)
+                svgd_grad = svgd(x, np.array(grads), kernel)
                 x_new = optimizer.step(svgd_grad, x)
 
                 # clamp to domain
                 x_new = np.clip(x_new, self.domain[:, 0], self.domain[:, 1])
 
-                x_new, mask = self.remove_particles(x, x_new, f_evals)
+                x_new, mask = self.remove_particles(x, x_new, all_evals[-1])
                 n_particles = x_new.shape[0]
                 optimizer.update_states(mask)
 
@@ -189,10 +189,10 @@ class SBS_particles(Optimizer):
                 # save all points
                 all_points.append(x.copy())
 
-        evals = np.array([function(xi) for xi in x]).flatten()
-        best_idx = np.argmin(evals)
-        min_eval = evals[best_idx]
-        best_particle = x[best_idx]
+        all_evals = np.array(all_evals).flatten()
+        best_idx = np.argmin(all_evals)
+        min_eval = all_evals[best_idx]
+        best_particle = all_points[best_idx]
         if verbose:
             print(f"Best particle found: {best_particle}. Eval at f(best): {min_eval}.")
 
@@ -203,5 +203,4 @@ class SBS_particles(Optimizer):
             else:
                 np_all_points = np.concatenate((np_all_points, np_seq), axis=0)
 
-        all_evals = np.array([function(xi) for xi in np_all_points]).flatten()
         return (best_particle, min_eval), np_all_points, all_evals
