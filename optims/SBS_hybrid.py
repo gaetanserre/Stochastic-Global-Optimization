@@ -54,7 +54,7 @@ def gradient(f, x, eps=1e-12):
         x_p[i] += eps
         grad[i] = (f(x_p) - f_x) / eps
 
-    return grad
+    return grad, f_x
 
 
 def rbf(x, sigma=-1):
@@ -122,8 +122,6 @@ class SBS_hybrid(Optimizer):
         return np.clip(x, self.domain[:, 0], self.domain[:, 1])
 
     def optimize(self, function, verbose=False):
-        logprob_grad = lambda k: (lambda x: -k * gradient(function, x))
-
         kernel = lambda x: rbf(x, sigma=self.sigma)
 
         dim = self.domain.shape[0]
