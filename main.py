@@ -28,11 +28,11 @@ from optims.PRS import PRS
 from optims.AdaLIPO_E import AdaLIPO_E
 from optims.SBS import SBS
 from optims.SBS_particles import SBS_particles
-from optims.SBS_particles_SIR import SBS_particles_SIR
 from optims.SBS_hybrid import SBS_hybrid
 from optims.BayesOpt import BayesOpt
 from optims.N_CMA_ES import CMA_ES
 from optims.WOA import WOA
+from optims.Langevin import Langevin
 from optims.Simulated_Annealing import SimulatedAnnealing
 from optims.utils import print_pink, print_blue
 
@@ -104,6 +104,8 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, n_gen=30, n_sol=num_evals // 30)
     elif optim_cls == SimulatedAnnealing:
         return optim_cls(bounds, num_evals)
+    elif optim_cls == Langevin:
+        return optim_cls(bounds, n_iter=num_evals, kappa=10_000, init_lr=0.2)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
@@ -145,8 +147,8 @@ if __name__ == "__main__":
             "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
         }
 
-        optimizers_cls = [WOA, CMA_ES, SBS, SBS_particles, SBS_hybrid]
-        num_evals = [600_000, 600_000, 0, 0, 0]
+        optimizers_cls = [WOA, CMA_ES, Langevin, SBS, SBS_particles, SBS_hybrid]
+        num_evals = [1_000_000, 1_000_000, 1_000_000, 0, 0, 0]
     else:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
@@ -164,14 +166,15 @@ if __name__ == "__main__":
 
         optimizers_cls = [
             AdaLIPO_E,
-            # BayesOpt,
+            BayesOpt,
+            Langevin,
             SBS,
             SBS_particles,
             SBS_hybrid,
             CMA_ES,
             WOA,
         ]
-        num_evals = [2000, 0, 0, 0, 800_000, 800_000]
+        num_evals = [2000, 100, 800_000, 0, 0, 0, 800_000, 800_000]
 
     all_ranks = {}
 
