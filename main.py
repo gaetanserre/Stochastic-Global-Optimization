@@ -73,7 +73,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             n_particles=500,
             k_iter=[10_000],
             svgd_iter=300,
-            sigma=1e-5,
+            sigma=1 / 500**2,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == SBS_particles:
@@ -82,7 +82,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             n_particles=500,
             k_iter=[10_000],
             svgd_iter=300,
-            sigma=1e-5,
+            sigma=1 / 500**2,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == SBS_hybrid:
@@ -171,7 +171,7 @@ if __name__ == "__main__":
             CMA_ES,
             WOA,
         ]
-        num_evals = [2000, 0, 0, 0, 800_000, 200_000]
+        num_evals = [2000, 0, 0, 0, 800_000, 800_000]
 
     all_ranks = {}
 
