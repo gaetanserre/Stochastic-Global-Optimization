@@ -1,0 +1,463 @@
+[95mFunction: Ackley.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 19.88748704143112. Best WOA: 1.4811129009533102.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 2.413587617012944.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 4.128697383976032e-12. Best WOA: 1.4231009365753278.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 1.7670297675542952.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 19.76435177953611. Best WOA: 3.6962268261005247.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 4.171329948121638e-12. Best WOA: 1.5531573406591694.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.868644647754437. Best WOA: 0.37022526087881547.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 9.560796598861998e-12. Best WOA: 0.6397464613285604.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 19.622929859540317. Best WOA: 1.5871466216950876.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 17.198930984723695. Best WOA: 1.346248233320328.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|      1. WOA      | 1.7005416141913088e-07 |  799980.00   |     22.5478      |
+|  2. SBS_hybrid   | 6.7253557824109574e-06 |  601556.60   |      7.9401      |
+|      3. SBS      | 0.0008800574124323112  |  450000.00   |     18.6763      |
+| 4. SBS_particles |  0.003265321173492186  |   12568.20   |      0.2291      |
+|   5. BayesOpt    |  0.22401985502210958   |    75.00     |     11.2280      |
+|   6. AdaLIPO_E   |   1.3188339746345032   |    115.60    |      0.1803      |
+|   7. Langevin    |   6.434246552044504    |  2400000.00  |     37.2221      |
+|    8. CMA_ES     |   15.540436822678737   |    506.20    |      0.0602      |
++------------------+------------------------+--------------+------------------+
+[95mFunction: Branin.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4255328118688233.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.42310709261649393.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4065587935546766.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4942742510068552.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4435517333896808.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4061910708972434.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4191861933236307.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.5103032250000581.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973816. Best WOA: 0.4316284530058123.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.39788735772973993. Best WOA: 0.4375825838582923.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+---------------------+--------------+------------------+
+|    Algorithms    |    Average value    | Average eval | Average time (s) |
++------------------+---------------------+--------------+------------------+
+|  1. SBS_hybrid   | 0.39788735772973816 |  601523.00   |      2.6743      |
+|    2. CMA_ES     |  0.3978873577297394 |    482.80    |      0.0545      |
+|      3. SBS      | 0.39788735775225137 |  450000.00   |      7.6516      |
+| 4. SBS_particles | 0.39788735788430907 |   15419.40   |      0.1453      |
+|      5. WOA      | 0.39788820728828644 |  799980.00   |     16.3505      |
+|   6. Langevin    |  0.3978937427476472 |  2400000.00  |     14.7126      |
+|   7. BayesOpt    |  0.3985340572661961 |    75.00     |     14.1995      |
+|   8. AdaLIPO_E   |  0.3994004403807125 |   2000.00    |     25.8746      |
++------------------+---------------------+--------------+------------------+
+[95mFunction: Drop Wave.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9351426803588779.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.13267606504260213. Best WOA: -0.9570822041242524.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079418. Best WOA: -0.9358314388623679.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079408. Best WOA: -0.9320861951128971.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9536622091600342. Best WOA: -0.9357287132463202.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9357314283598994.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.2888120051180351. Best WOA: -0.9362446205522614.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9345356008061383. Best WOA: -0.9578733664595781.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -0.9362453278079417. Best WOA: -0.9332740374934336.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -0.9362453278079416. Best WOA: -0.9319213373062962.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+----------------------+--------------+------------------+
+|    Algorithms    |    Average value     | Average eval | Average time (s) |
++------------------+----------------------+--------------+------------------+
+|      1. WOA      | -0.9999999999999976  |  799980.00   |     15.9710      |
+|      2. SBS      | -0.9744981311131644  |  450000.00   |      8.0273      |
+| 3. SBS_particles | -0.9687148687777352  |   11365.20   |      0.1162      |
+|   4. AdaLIPO_E   | -0.9522477364375306  |   2000.00    |     25.3024      |
+|  5. SBS_hybrid   | -0.9403223301500008  |  601589.00   |      2.8418      |
+|    6. CMA_ES     | -0.7763508118069955  |    544.00    |      0.0586      |
+|   7. BayesOpt    | -0.7644838080711207  |    75.00     |      7.1663      |
+|   8. Langevin    | -0.05229446251981912 |  2400000.00  |     14.8788      |
++------------------+----------------------+--------------+------------------+
+[95mFunction: Egg Holder.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -558.1663996257342. Best WOA: -936.1627008568666.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -270.8952520105788. Best WOA: -958.1269658991533.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -126.42383220972168. Best WOA: -959.5514755116856.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -421.1557143749644. Best WOA: -959.4461064649054.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -507.873859421005. Best WOA: -959.5777579287235.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -559.7868565506305. Best WOA: -937.4595169082374.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -604.9986352138035. Best WOA: -956.3849434841941.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -307.44505956298156. Best WOA: -944.0193552333991.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -493.9605115033977. Best WOA: -855.5211457573655.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -306.7204678432658. Best WOA: -958.9826069493147.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+--------------------+--------------+------------------+
+|    Algorithms    |   Average value    | Average eval | Average time (s) |
++------------------+--------------------+--------------+------------------+
+|      1. WOA      | -959.640662719958  |  799980.00   |     18.1791      |
+|    2. CMA_ES     | -955.5877680403853 |    630.40    |      0.0717      |
+|  3. SBS_hybrid   | -953.8071489206116 |  601550.60   |      4.0493      |
+|      4. SBS      | -951.3379194294384 |  450000.00   |     10.9888      |
+| 5. SBS_particles | -950.255556976768  |   12525.30   |      0.1489      |
+|   6. AdaLIPO_E   | -922.1111590510784 |   1941.10    |     23.9505      |
+|   7. BayesOpt    | -850.5091632855223 |    75.00     |     10.4523      |
+|   8. Langevin    | 1049.1316235044928 |  2400000.00  |     20.2753      |
++------------------+--------------------+--------------+------------------+
+[95mFunction: Goldstein Price.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 83.9999999999988. Best WOA: 3.1317976683143596.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.99999999999996. Best WOA: 3.2218085775551213.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999945. Best WOA: 4.03885722863595.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999365. Best WOA: 3.1224307323589584.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999962. Best WOA: 3.48678256781648.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999636. Best WOA: 4.161731436305026.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999436. Best WOA: 4.194935937767967.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999365. Best WOA: 3.641558510224814.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.9999999999999476. Best WOA: 3.3954650822436956.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.999999999999951. Best WOA: 3.1172848441289482.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+--------------------+--------------+------------------+
+|    Algorithms    |   Average value    | Average eval | Average time (s) |
++------------------+--------------------+--------------+------------------+
+|  1. SBS_hybrid   |  3.00000000000003  |  601531.40   |      3.2755      |
+|      2. SBS      | 3.0000000014637123 |  450000.00   |      9.3772      |
+| 3. SBS_particles | 3.0000000154728754 |   13896.30   |      0.1586      |
+|      4. WOA      | 3.000000628121929  |  799980.00   |     17.0694      |
+|   5. AdaLIPO_E   | 3.6487848669745597 |   2000.00    |     24.8454      |
+|   6. BayesOpt    | 9.279854748675952  |    75.00     |     10.2521      |
+|    7. CMA_ES     | 43.49999999999927  |    556.60    |      0.0643      |
+|   8. Langevin    | 7697.100000045733  |  2400000.00  |     17.0741      |
++------------------+--------------------+--------------+------------------+
+[95mFunction: Himmelblau.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 1.3583458892713067e-16. Best WOA: 0.2159604078876037.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.8712835766770205e-18. Best WOA: 0.013428874718208575.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0204573267678291e-15. Best WOA: 0.1310861112965398.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.0171536199457144e-16. Best WOA: 0.03936035966131842.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.1862782043235763e-15. Best WOA: 0.52299869313107.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.51708949012447e-17. Best WOA: 0.027883501696635844.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.975593866586885e-16. Best WOA: 0.31981767425758223.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.6093436751643556e-17. Best WOA: 0.27985106954175776.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.820853287509893e-16. Best WOA: 0.03314852723863277.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.91220325411387e-16. Best WOA: 0.5035266136041837.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|  1. SBS_hybrid   | 6.822379767061155e-21  |  601497.80   |      1.9887      |
+|    2. CMA_ES     | 5.517560207372655e-16  |    512.80    |      0.0586      |
+|      3. SBS      |  6.40137184841735e-11  |  450000.00   |      5.9140      |
+| 4. SBS_particles |  9.31877096935703e-11  |   14341.50   |      0.1086      |
+|   5. Langevin    | 6.211618029452945e-07  |  2400000.00  |     11.5874      |
+|      6. WOA      | 1.4689412749069635e-06 |  799980.00   |     15.4197      |
+|   7. BayesOpt    | 0.0004444071388454594  |    75.00     |     12.4296      |
+|   8. AdaLIPO_E   | 0.0037405717632103637  |   2000.00    |     26.0199      |
++------------------+------------------------+--------------+------------------+
+[95mFunction: Holder Table.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -19.191434179383048.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -8.09512265742868. Best WOA: -18.951094883481275.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -11.069551166751275. Best WOA: -19.186113878431712.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -19.059511674957996.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -19.20850256788674. Best WOA: -18.913311350377437.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -11.069551166751278. Best WOA: -18.8490164658222.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.7329722438960702. Best WOA: -18.407150447375734.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -5.712246520612046. Best WOA: -19.10712038023689.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -19.208502567886747. Best WOA: -18.7389988066159.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -4.7107069598065845. Best WOA: -19.022054926973826.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+---------------------+--------------+------------------+
+|    Algorithms    |    Average value    | Average eval | Average time (s) |
++------------------+---------------------+--------------+------------------+
+|  1. SBS_hybrid   |  -19.20850256786197 |  601506.80   |      4.0753      |
+|      2. SBS      | -19.208502567003233 |  450000.00   |     11.1450      |
+| 3. SBS_particles | -19.208502363787044 |   12448.50   |      0.1483      |
+|      4. WOA      | -19.208500633002206 |  799980.00   |     18.1589      |
+|   5. AdaLIPO_E   | -19.202826662178225 |    908.50    |      8.1996      |
+|   6. BayesOpt    |  -18.8034678688793  |    75.00     |      9.5862      |
+|    7. CMA_ES     | -12.697341446978369 |    479.20    |      0.0599      |
+|   8. Langevin    | -11.687362250743693 |  2400000.00  |     20.4182      |
++------------------+---------------------+--------------+------------------+
+[95mFunction: Michalewicz.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: -1.0. Best WOA: -1.793567577234585.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: -1.8013034100985523. Best WOA: -1.7983268755778181.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985528. Best WOA: -1.7907962404989344.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098553. Best WOA: -1.7616100835574624.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.724337389714164.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.731865216796436.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985532. Best WOA: -1.8005317966785834.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.801303410098552. Best WOA: -1.7321867204433103.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.8013034100985483. Best WOA: -1.797452702917765.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: -1.2140595156208154. Best WOA: -1.7898857470003.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+-----------------------+--------------+------------------+
+|    Algorithms    |     Average value     | Average eval | Average time (s) |
++------------------+-----------------------+--------------+------------------+
+|  1. SBS_hybrid   |  -1.8013034100985532  |  601523.00   |      6.9157      |
+|    2. CMA_ES     |  -1.8013034100985528  |    521.80    |      0.0621      |
+|      3. SBS      |  -1.8013034097363445  |  450000.00   |     16.6585      |
+| 4. SBS_particles |  -1.8013034093434048  |   11887.80   |      0.2020      |
+|      5. WOA      |  -1.8013030637700034  |  799980.00   |     21.2148      |
+|   6. BayesOpt    |  -1.8012774193176664  |    75.00     |      9.2257      |
+|   7. AdaLIPO_E   |  -1.7893289629640587  |    134.10    |      0.2217      |
+|   8. Langevin    | -5.87644996991885e-11 |  2400000.00  |     33.6402      |
++------------------+-----------------------+--------------+------------------+
+[95mFunction: Rastrigin.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 0.39113180726093333. Best WOA: 1.2894539264600624.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 12.934432432041099. Best WOA: 1.2378399190617344.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 2.9493912681197614. Best WOA: 3.774926636332097.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 0.2390290616028672.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.791929201070296. Best WOA: 2.0787417312915792.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 1.0676155311202997.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.3272714129681731. Best WOA: 1.911409591079181.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 0.9949590570932898. Best WOA: 0.20781897636940272.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 13.843833829551283. Best WOA: 1.2580728139965203.
+[35mInitializing particles with WOA.[0m
+Best CMA-ES: 1.0811904093463482. Best WOA: 0.44360923769682614.
+[35mInitializing particles with WOA.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|      1. WOA      | 7.815970093361103e-15  |  799980.00   |     19.7209      |
+| 2. SBS_particles | 1.0423211449506198e-08 |   12260.10   |      0.1805      |
+|   3. AdaLIPO_E   |  0.08266822180665442   |    814.80    |      4.0226      |
+|      4. SBS      |   0.0994959079991304   |  450000.00   |     13.7103      |
+|  5. SBS_hybrid   |   1.1939498609481536   |  601624.40   |      5.7771      |
+|   6. Langevin    |   1.8464634118594678   |  2400000.00  |     27.7736      |
+|   7. BayesOpt    |   2.568549459820376    |    75.00     |      9.4939      |
+|    8. CMA_ES     |   7.267745248144047    |    591.40    |      0.0668      |
++------------------+------------------------+--------------+------------------+
+[95mFunction: Rosenbrock.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 1.1568414438656715e-16. Best WOA: 0.10661619426621533.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.051692721516594e-17. Best WOA: 0.0024006185167196195.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 3.2246040342520605e-15. Best WOA: 0.014769460727134351.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.612798678129477e-16. Best WOA: 0.029001885458028426.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.681131465760823e-15. Best WOA: 0.001526312210025947.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.5413067068167357e-16. Best WOA: 0.14563557565071727.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.4065281046342887e-16. Best WOA: 0.020042185088911924.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.347762964544769e-15. Best WOA: 0.03199743434332771.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 6.275114314918034e-17. Best WOA: 0.009717395559306705.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.208039308362634e-16. Best WOA: 0.06794184250297947.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|  1. SBS_hybrid   | 4.8583713702677974e-17 |  601653.80   |      6.3459      |
+|    2. CMA_ES     | 2.0090369221425382e-16 |    606.40    |      0.0743      |
+|      3. WOA      | 1.6416480490744177e-07 |  799980.00   |     20.9855      |
+|      4. SBS      | 4.3304129976444164e-07 |  450000.00   |     15.4189      |
+| 5. SBS_particles | 5.5385302643590485e-05 |   15467.10   |      0.2565      |
+|   6. AdaLIPO_E   |  0.03970676766050395   |   2000.00    |     24.9113      |
+|   7. BayesOpt    |   0.1830932455393641   |    75.00     |     10.6824      |
+|   8. Langevin    |   0.5730317698953683   |  2400000.00  |     31.2538      |
++------------------+------------------------+--------------+------------------+
+[95mFunction: Sphere.[0m
+[94mOptimizer: AdaLIPO_E.[0m
+[94mOptimizer: BayesOpt.[0m
+[94mOptimizer: Langevin.[0m
+[94mOptimizer: SBS.[0m
+[94mOptimizer: SBS_particles.[0m
+[94mOptimizer: SBS_hybrid.[0m
+Best CMA-ES: 3.125362541665484e-16. Best WOA: 0.04074335534765859.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0316459659356503e-17. Best WOA: 0.0159482752565228.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.2835934982089156e-14. Best WOA: 0.010893166784172723.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.3678629055774776e-16. Best WOA: 0.06043783005745505.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 4.014805151299754e-17. Best WOA: 0.06870115553237242.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 2.5888577511979423e-17. Best WOA: 0.03205724788202892.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 9.453031441241557e-17. Best WOA: 0.004521287221720648.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.4802873676479561e-15. Best WOA: 0.09993365670806342.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 1.0510026849783834e-16. Best WOA: 0.0183298401540095.
+[35mInitializing particles with CMA-ES.[0m
+Best CMA-ES: 7.058182127460323e-18. Best WOA: 0.022320447349530904.
+[35mInitializing particles with CMA-ES.[0m
+[94mOptimizer: CMA_ES.[0m
+[94mOptimizer: WOA.[0m
++------------------+------------------------+--------------+------------------+
+|    Algorithms    |     Average value      | Average eval | Average time (s) |
++------------------+------------------------+--------------+------------------+
+|  1. SBS_hybrid   | 2.4606485543437147e-21 |  601516.40   |      3.5187      |
+|      2. WOA      | 3.2647924218492966e-16 |  799980.00   |     17.0830      |
+|    3. CMA_ES     | 1.3641490722040157e-15 |    505.00    |      0.0581      |
+| 4. SBS_particles | 8.327117833508121e-12  |   13448.10   |      0.1549      |
+|      5. SBS      | 1.1841835768938844e-11 |  450000.00   |      8.9070      |
+|   6. Langevin    | 7.4658600234843016e-06 |  2400000.00  |     19.0753      |
+|   7. BayesOpt    | 0.0008749075278686866  |    75.00     |     15.9049      |
+|   8. AdaLIPO_E   | 0.0011366189363194485  |   2000.00    |     31.0243      |
++------------------+------------------------+--------------+------------------+
++---------------+------------+--------------+
+|   Algorithms  | Final rank | Average rank |
++---------------+------------+--------------+
+|   SBS_hybrid  |     1      |    2.000     |
+|      WOA      |     2      |    3.000     |
+|      SBS      |     3      |    3.182     |
+| SBS_particles |     4      |    3.727     |
+|     CMA_ES    |     5      |    4.455     |
+|   AdaLIPO_E   |     6      |    6.000     |
+|    BayesOpt   |     7      |    6.545     |
+|    Langevin   |     8      |    7.091     |
++---------------+------------+--------------+
