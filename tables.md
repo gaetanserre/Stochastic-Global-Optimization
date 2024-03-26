@@ -1,7 +1,7 @@
 
-2d benchmark. 800k for every methods (except AdaLIPO & BayesOpt). $\sigma=1/N^2$
-| | SBS Hybrid | WOA | SBS | SBS particles | CMA-ES | AdaLIPO | BayesOpt | Langevin |
-|-|------------|-----|-----|---------------|--------|---------|--------- |----------|
+2d benchmark. 100 runs. 800k budget for every methods (except AdaLIPO & BayesOpt). For SBS and variants, $\sigma=1/N^2$.
+| | SBS hybrid | WOA | SBS | SBS particles | CMA-ES | AdaLIPO | BayesOpt | Langevin |
+|-|------------|-----|-----|---------------|--------|---------|----------|----------|
 | Ackley | 6.75e-6 | 1.7e-7 | 0.0008 | 0.0032 | 15.54 | 1.31 | 0.22 | 6.43 |
 | Branin | 0.397 | 0.397 | 0.397 | 0.397 | 0.397 | 0.399 | 0.398 | 0.397 |
 | Drop Wave | -0.94 | -0.99 | -0.96 | -0.97 | -0.77 | -0.95 | -0.76 | -0.05 |
@@ -15,3 +15,14 @@
 | Sphere | 2.4e-21 | 3.26e-16 | 1.18e-11 | 8.32e-12 | 1.36e-15 | 0.001 | 0.008 | 7.46e-6 |
 | **Avg rank** | **2** | **3** | **3.18** | **3.72** | **4.45** | **6** | **6.5** | **7** |
 | **Final rank** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** |
+
+50d benchmark. 100 runs. 8M budget for every methods. For SBS and variants, $\sigma=1/N^2$.
+| | CMA-ES | SBS hybrid | SBS particles | SBS | Langevin | WOA |
+|-|--------|------------|---------------|-----|----------|-----|
+| Ackley | 19.58 | 19.52 | 18.97 | 19.02 | 21.45 | 20.10 |
+| Michalewicz | -34.40 | -32.33 | -12.2 | -13.73 | -0.80 | -13.17 |
+| Rastrigin | 100.39 | 107.35 | 272.22 | 278.98 | 22.18 | 610.01 |
+| Rosenbrock | 0.39 | 28.88 | 25.67 | 38.23 | 15.69 | 28799.61 |
+| Sphere | 1.31e-14 | 8.77e-20 | 1.56e-10 | 2.57e-10 | 0.001 | 747.81 |
+| **Avg rank** | **2** | **2.6** | **3.2** | **3.8** | **4** | **5** |
+| **Final rank** | **1** | **2** | **3** | **4** | **5** | **6** |
