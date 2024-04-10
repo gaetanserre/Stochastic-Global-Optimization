@@ -36,7 +36,8 @@ from optims.Langevin import Langevin
 from optims.Simulated_Annealing import SimulatedAnnealing
 from optims.utils import print_pink, print_blue
 
-from pretty_printer import pprint_results_get_rank, pprint_rank
+from utils.pretty_printer import pprint_results_get_rank, pprint_rank
+from utils.mk_latex_table import mk_table
 
 
 def time_it(function, args={}):
@@ -55,6 +56,13 @@ def merge_ranks(rank_dict, new_ranks):
         for k, v in rank_dict.items():
             rank_dict[k] = v + new_ranks[k]
         return rank_dict
+
+
+def add_dict_entry(dict, key, value):
+    if key not in dict:
+        dict[key] = value
+    else:
+        dict[key].update(value)
 
 
 def create_bounds(min, max, dim):
@@ -82,7 +90,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
             n_particles=500,
             k_iter=[10_000],
             svgd_iter=300,
-            sigma=1 / 500**2,
+            sigma=lambda N: 1 / N**2,
             lr=0.1 if is_sim else 0.2,
         )
     elif optim_cls == SBS_hybrid:
@@ -125,6 +133,13 @@ def cli():
         type=int,
         default=10,
         help="Number of experiment to run.",
+    )
+
+    parser.add_argument(
+        "--latex",
+        "-lt",
+        action="store_true",
+        help="Print the LateX table associated with the benchmark.",
     )
 
     return parser.parse_args()
@@ -177,6 +192,8 @@ if __name__ == "__main__":
         num_evals = [2000, 100, 800_000, 0, 0, 0, 800_000, 800_000]
 
     all_ranks = {}
+    sota_methods = {}
+    proposed_methods = {}
 
     for function_name, objects in functions.items():
         print_pink(f"Function: {function_name}.")
@@ -187,7 +204,7 @@ if __name__ == "__main__":
         dim = bounds.shape[0]
         plot_figures = False  # dim <= 2
         if plot_figures:
-            from fig_generator import FigGenerator
+            from utils.fig_generator import FigGenerator
 
             fig_gen = FigGenerator(function, bounds)
 
@@ -223,6 +240,19 @@ if __name__ == "__main__":
 
                 best_point = (best_point[0], function(best_point[0]))
 
+                if "SBS" in optimizer_cls.__name__:
+                    add_dict_entry(
+                        proposed_methods,
+                        optimizer_cls.__name__,
+                        {function_name: best_point[1]},
+                    )
+                else:
+                    add_dict_entry(
+                        sota_methods,
+                        optimizer_cls.__name__,
+                        {function_name: best_point[1]},
+                    )
+
                 # print(f"Time: {time:.4f}s. Best point found: {best_point}.")
 
                 times.append(time)
@@ -242,3 +272,11 @@ if __name__ == "__main__":
 
         all_ranks = merge_ranks(all_ranks, new_ranks)
     pprint_rank(all_ranks)
+
+    if args.latex:
+        mk_table(
+            list(functions.keys()),
+            sota_methods,
+            proposed_methods,
+            all_ranks,
+        )

@@ -112,7 +112,7 @@ class SBS_particles(Optimizer):
         n_particles,
         k_iter,
         svgd_iter,
-        sigma=-1,
+        sigma=lambda N: 1 / N**2,
         distance_q=0.5,  # 0
         value_q=0.3,  # 0
         lr=0.2,
@@ -147,7 +147,7 @@ class SBS_particles(Optimizer):
             return x_new, np.ones(x_new.shape[0], dtype=bool)
 
     def optimize(self, function, verbose=False):
-        kernel = lambda x: rbf(x, sigma=self.sigma)
+        kernel = lambda N: lambda x: rbf(x, sigma=self.sigma(N))
 
         dim = self.domain.shape[0]
 
@@ -172,7 +172,7 @@ class SBS_particles(Optimizer):
                     grads[i] = -k * grad
                     fs[i] = f_xi
                 all_evals.append(fs)
-                svgd_grad = svgd(x, np.array(grads), kernel)
+                svgd_grad = svgd(x, np.array(grads), kernel(n_particles))
                 x_new = optimizer.step(svgd_grad, x)
 
                 # clamp to domain
