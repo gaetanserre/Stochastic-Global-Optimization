@@ -15,7 +15,7 @@ def sort_methods(methods, all_ranks):
 
 def transform_power_of_ten(v):
     n = 0
-    while v * 10**n <= 1:
+    while np.abs(v * 10**n) <= 1:
         n += 1
     return f"${v * 10**n:.2f} \\times 10^{{-{n}}}$"
 
