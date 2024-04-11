@@ -7,7 +7,8 @@ from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
 from .N_CMA_ES import CMA_ES
 from .WOA import WOA
-from .utils import print_purple
+
+print_purple = lambda str: print(f"\033[35m" + str + "\033[0m")
 
 
 class Adam:

@@ -3,6 +3,7 @@
 #
 
 import numpy as np
+from .utils import *
 
 # dict : Method name -> Function name -> score
 
@@ -41,22 +42,28 @@ def get_best_score(dict, f_name):
     return best_score
 
 
-def compute_ratio(sota_methods, proposed_methods, function_names):
+def compute_ratio(sota_methods, proposed_methods, function_mins):
     ratios = {}
-    for f_name in function_names:
-        best_value = get_best_score(sota_methods, f_name)
-        best_value = min(best_value, get_best_score(proposed_methods, f_name)) + 1e-50
+    for f_name in function_mins.keys():
+        best_value = min(
+            get_best_score(sota_methods, f_name),
+            get_best_score(proposed_methods, f_name),
+        )
+        best_dist = np.abs(best_value - function_mins[f_name])
+
         ratios[f_name] = {}
         for s_name in sota_methods.keys():
-            ratios[f_name][s_name] = best_value / sota_methods[s_name][f_name] + 1e-50
+            dist = np.abs(sota_methods[s_name][f_name] - function_mins[f_name])
+            ratios[f_name][s_name] = (best_dist + 1e-10) / (dist + 1e-10)
+
         for p_name in proposed_methods.keys():
-            ratios[f_name][p_name] = (
-                best_value / proposed_methods[p_name][f_name] + 1e-50
-            )
+            dist = np.abs(proposed_methods[p_name][f_name] - function_mins[f_name])
+            ratios[f_name][p_name] = (best_dist + 1e-10) / (dist + 1e-10)
     return ratios
 
 
-def mk_table(function_names, sota_methods, proposed_methods, all_ranks):
+def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
+    function_names = list(function_mins.keys())
     sota_names = sort_methods(list(sota_methods.keys()), all_ranks)
     proposed_names = sort_methods(list(proposed_methods.keys()), all_ranks)
 
@@ -84,8 +91,8 @@ def mk_table(function_names, sota_methods, proposed_methods, all_ranks):
 
     lines.append("\\midrule")
 
-    ratios_lines = "$\\frac{1}{|F|} \sum_{f \in F} \\text{sol}_f / \\text{best}_f$"
-    ratios = compute_ratio(sota_methods, proposed_methods, function_names)
+    ratios_lines = "$\\frac{1}{|F|} \sum_{f \in F} df_\\text{best} / df_\\text{sol}$"
+    ratios = compute_ratio(sota_methods, proposed_methods, function_mins)
     sum_ratios = []
     for s_name in sota_names:
         sum_ratios.append(np.sum([ratios[f_name][s_name] for f_name in function_names]))
@@ -119,5 +126,7 @@ def mk_table(function_names, sota_methods, proposed_methods, all_ranks):
     lines.append(final_line)
     lines.append("\\bottomrule")
 
+    print("\n\n")
     for l in lines:
-        print(l)
+        print_purple(l)
+    print("\n\n")

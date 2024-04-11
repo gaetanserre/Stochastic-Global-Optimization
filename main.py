@@ -34,40 +34,10 @@ from optims.N_CMA_ES import CMA_ES
 from optims.WOA import WOA
 from optims.Langevin import Langevin
 from optims.Simulated_Annealing import SimulatedAnnealing
-from optims.utils import print_pink, print_blue
 
+from utils.utils import *
 from utils.pretty_printer import pprint_results_get_rank, pprint_rank
 from utils.mk_latex_table import mk_table
-
-
-def time_it(function, args={}):
-    import time
-
-    start = time.time()
-    ret = function(**args)
-    end = time.time()
-    return ret, end - start
-
-
-def merge_ranks(rank_dict, new_ranks):
-    if rank_dict == {}:
-        return new_ranks
-    else:
-        for k, v in rank_dict.items():
-            rank_dict[k] = v + new_ranks[k]
-        return rank_dict
-
-
-def add_dict_entry(dict, key, value):
-    if key not in dict:
-        dict[key] = value
-    else:
-        dict[key].update(value)
-
-
-def create_bounds(min, max, dim):
-    bounds = [(min, max) for _ in range(dim)]
-    return np.array(bounds)
 
 
 def match_optim(optim_cls, bounds, num_evals, is_sim=False):
@@ -274,8 +244,12 @@ if __name__ == "__main__":
     pprint_rank(all_ranks)
 
     if args.latex:
+        functions_mins = {}
+        for f_name in functions.keys():
+            functions_mins[f_name] = functions[f_name][0].min
+
         mk_table(
-            list(functions.keys()),
+            functions_mins,
             sota_methods,
             proposed_methods,
             all_ranks,
