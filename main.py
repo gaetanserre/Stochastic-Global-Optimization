@@ -164,6 +164,7 @@ if __name__ == "__main__":
     all_ranks = {}
     sota_methods = {}
     proposed_methods = {}
+    sbs_pf_economy = []
 
     for function_name, objects in functions.items():
         print_pink(f"Function: {function_name}.")
@@ -241,7 +242,14 @@ if __name__ == "__main__":
         new_ranks = pprint_results_get_rank(opt_dict)
 
         all_ranks = merge_ranks(all_ranks, new_ranks)
+
+        sbs_pf_economy.append(
+            100 - float(opt_dict["SBS_particles"][1]) / float(opt_dict["SBS"][1]) * 100
+        )
+
     pprint_rank(all_ranks)
+
+    print(f"Average economy of SBS_particles over SBS: {np.mean(sbs_pf_economy):.2f}%.")
 
     if args.latex:
         functions_mins = {}
