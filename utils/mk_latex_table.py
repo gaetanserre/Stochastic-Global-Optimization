@@ -107,9 +107,9 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
 
     avg_line = "Average rank"
     for s_name in sota_names:
-        avg_line += f" & {np.mean(all_ranks[s_name]):.2f}"
+        avg_line += f" & ${np.mean(all_ranks[s_name]):.2f}$"
     for p_name in proposed_names:
-        avg_line += f" & {np.mean(all_ranks[p_name]):.2f}"
+        avg_line += f" & ${np.mean(all_ranks[p_name]):.2f}$"
     avg_line += " \\\\"
     lines.append(avg_line)
     lines.append("\\midrule")
@@ -119,9 +119,9 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
 
     final_line = "Final rank"
     for s_name in sota_names:
-        final_line += f" & {sorted_method.index(s_name) + 1}"
+        final_line += f" & ${sorted_method.index(s_name) + 1}$"
     for p_name in proposed_names:
-        final_line += f" & {sorted_method.index(p_name) + 1}"
+        final_line += f" & ${sorted_method.index(p_name) + 1}$"
     final_line += " \\\\"
     lines.append(final_line)
     lines.append("\\bottomrule")
