@@ -18,21 +18,21 @@ def transform_power_of_ten(v):
     n = 0
     while np.abs(v * 10**n) <= 1:
         n += 1
-    return f"${v * 10**n:.2f} \\times 10^{{-{n}}}$"
+    return f"{v * 10**n:.2f} \\times 10^{{-{n}}}"
 
 
 def transform_number(v):
     if np.abs(v) >= 0.001:
-        return f"${v:.3f}$"
+        return f"{v:.3f}"
     elif 0 < np.abs(v):
         return f"{transform_power_of_ten(v)}"
     else:
-        return "$0$"
+        return "0"
 
 
 def mk_score_line(dict, method_name, f_name):
     v = dict[method_name].get(f_name)
-    return f" {transform_number(v)} &"
+    return f" ${transform_number(v)}$ &"
 
 
 def get_best_score(dict, f_name):
@@ -54,11 +54,11 @@ def compute_ratio(sota_methods, proposed_methods, function_mins):
         ratios[f_name] = {}
         for s_name in sota_methods.keys():
             dist = np.abs(sota_methods[s_name][f_name] - function_mins[f_name])
-            ratios[f_name][s_name] = (best_dist + 1e-10) / (dist + 1e-10)
+            ratios[f_name][s_name] = min(100, (dist + 1e-10) / (best_dist + 1e-10))
 
         for p_name in proposed_methods.keys():
             dist = np.abs(proposed_methods[p_name][f_name] - function_mins[f_name])
-            ratios[f_name][p_name] = (best_dist + 1e-10) / (dist + 1e-10)
+            ratios[f_name][p_name] = min(100, (dist + 1e-10) / (best_dist + 1e-10))
     return ratios
 
 
@@ -81,7 +81,6 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
     for f_name in function_names:
         line = f"{f_name} &"
         for s_name in sota_names:
-            print(s_name, f_name, sota_methods[s_name][f_name])
             line += mk_score_line(sota_methods, s_name, f_name)
         for p_name in proposed_names:
             line += mk_score_line(proposed_methods, p_name, f_name)
@@ -91,25 +90,34 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
 
     lines.append("\\midrule")
 
-    ratios_lines = "$\\frac{1}{|F|} \sum_{f \in F} df_\\text{best} / df_\\text{sol}$"
+    ratios_lines = "Competitive ratio"
     ratios = compute_ratio(sota_methods, proposed_methods, function_mins)
     sum_ratios = []
     for s_name in sota_names:
         sum_ratios.append(np.sum([ratios[f_name][s_name] for f_name in function_names]))
     for p_name in proposed_names:
         sum_ratios.append(np.sum([ratios[f_name][p_name] for f_name in function_names]))
-
     for ratio in sum_ratios:
-        ratios_lines += f" & {transform_number(ratio / len(function_names))}"
+        if ratio == np.min(sum_ratios):
+            ratios_lines += (
+                f" & $\\mathbf{{{transform_number(ratio / len(function_names))}}}$"
+            )
+        else:
+            ratios_lines += f" & ${transform_number(ratio / len(function_names))}$"
     ratios_lines += " \\\\"
     lines.append(ratios_lines)
     lines.append("\\midrule")
 
     avg_line = "Average rank"
-    for s_name in sota_names:
-        avg_line += f" & ${np.mean(all_ranks[s_name]):.2f}$"
-    for p_name in proposed_names:
-        avg_line += f" & ${np.mean(all_ranks[p_name]):.2f}$"
+    mean_ranks = {}
+    for name in all_ranks.keys():
+        mean_ranks[name] = np.mean(all_ranks[name])
+    for name in sota_names + proposed_names:
+        rank = mean_ranks[name]
+        if rank == np.min(list(mean_ranks.values())):
+            avg_line += f" & $\\mathbf{{{rank:.2f}}}$"
+        else:
+            avg_line += f" & ${rank:.2f}$"
     avg_line += " \\\\"
     lines.append(avg_line)
     lines.append("\\midrule")
@@ -118,10 +126,12 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
     sorted_method.reverse()
 
     final_line = "Final rank"
-    for s_name in sota_names:
-        final_line += f" & ${sorted_method.index(s_name) + 1}$"
-    for p_name in proposed_names:
-        final_line += f" & ${sorted_method.index(p_name) + 1}$"
+    for name in sota_names + proposed_names:
+        rank = sorted_method.index(name) + 1
+        if rank == 1:
+            final_line += " & $\\mathbf{1}$"
+        else:
+            final_line += f" & ${rank}$"
     final_line += " \\\\"
     lines.append(final_line)
     lines.append("\\bottomrule")
