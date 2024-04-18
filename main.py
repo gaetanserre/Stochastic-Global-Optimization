@@ -83,7 +83,9 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
     elif optim_cls == SimulatedAnnealing:
         return optim_cls(bounds, num_evals)
     elif optim_cls == Langevin:
-        return optim_cls(bounds, n_iter=num_evals, kappa=10_000, init_lr=0.2)
+        return optim_cls(
+            bounds, n_iter=num_evals // (len(bounds) + 1), kappa=10_000, init_lr=0.2
+        )
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
@@ -133,7 +135,7 @@ if __name__ == "__main__":
         }
 
         optimizers_cls = [WOA, CMA_ES, Langevin, SBS, SBS_particles, SBS_hybrid]
-        num_evals = [1_000_000, 1_000_000, 1_000_000, 0, 0, 0]
+        num_evals = [8_000_000, 8_000_000, 8_000_000, 0, 0, 0]
     else:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
@@ -243,9 +245,11 @@ if __name__ == "__main__":
 
         all_ranks = merge_ranks(all_ranks, new_ranks)
 
-        sbs_pf_economy.append(
-            100 - float(opt_dict["SBS_particles"][1]) / float(opt_dict["SBS"][1]) * 100
-        )
+        if "SBS" in opt_dict and "SBS_particles" in opt_dict:
+            sbs_pf_economy.append(
+                100
+                - float(opt_dict["SBS_particles"][1]) / float(opt_dict["SBS"][1]) * 100
+            )
 
     pprint_rank(all_ranks)
 
