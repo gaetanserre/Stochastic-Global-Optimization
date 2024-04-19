@@ -84,7 +84,14 @@ def svgd(x, logprob_grad, kernel):
 
 class SBS_hybrid(Optimizer):
     def __init__(
-        self, domain, n_particles, k_iter, svgd_iter, warm_start_iter, sigma=-1, lr=0.5
+        self,
+        domain,
+        n_particles,
+        k_iter,
+        svgd_iter,
+        warm_start_iter,
+        sigma=1e-10,
+        lr=0.5,
     ):
         self.domain = domain
         self.n_particles = n_particles

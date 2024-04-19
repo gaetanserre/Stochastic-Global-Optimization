@@ -6,6 +6,9 @@ import numpy as np
 from scipy.spatial.distance import pdist, squareform
 from .__optimizer__ import Optimizer
 from .N_CMA_ES import CMA_ES
+from .WOA import WOA
+
+print_purple = lambda str: print(f"\033[35m" + str + "\033[0m")
 
 
 class Optimizer:
@@ -117,6 +120,7 @@ class SBS_particles(Optimizer):
         value_q=0.3,  # 0
         lr=0.2,
         adam=True,
+        warm_start_iter=None,
     ):
         self.domain = domain
         self.n_particles = n_particles
@@ -127,6 +131,35 @@ class SBS_particles(Optimizer):
         self.value_q = value_q
         self.lr = lr
         self.adam = adam
+        self.warm_start_iter = warm_start_iter
+
+    def initialize_particles(self, function):
+        dim = self.domain.shape[0]
+
+        # Run iterations of CMA-ES
+
+        m_0 = np.random.uniform(self.domain[:, 0], self.domain[:, 1])
+        cma = CMA_ES(self.domain, m_0, self.warm_start_iter)
+        best_cma, mean, std = cma.optimize_stats(function)
+
+        # Run iterations of WOA
+
+        n_gen = max(1, self.warm_start_iter // self.n_particles)
+        woa = WOA(self.domain, n_gen, self.n_particles)
+        woa = woa.optimize_(function)
+        best_woa = woa._best_solutions[-1][0]
+
+        print(f"Best CMA-ES: {best_cma}. Best WOA: {best_woa}.")
+
+        # Initialize particles
+        if best_cma < best_woa:
+            print_purple("Initializing particles with CMA-ES.")
+            x = np.random.normal(mean, std, size=(self.n_particles, dim))
+        else:
+            print_purple("Initializing particles with WOA.")
+            x = woa._sols
+
+        return np.clip(x, self.domain[:, 0], self.domain[:, 1])
 
     def remove_particles(self, x, x_new, x_values):
         if x_new.shape[0] > 10:
@@ -151,9 +184,12 @@ class SBS_particles(Optimizer):
 
         dim = self.domain.shape[0]
 
-        x = np.random.uniform(
-            self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
-        )
+        if self.warm_start_iter is None:
+            x = np.random.uniform(
+                self.domain[:, 0], self.domain[:, 1], size=(self.n_particles, dim)
+            )
+        else:
+            x = self.initialize_particles(function)
 
         # random_indices = np.random.choice(x.shape[0], 5)
         # self.paths = [x[random_indices]]
