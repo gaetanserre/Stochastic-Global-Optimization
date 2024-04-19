@@ -213,21 +213,6 @@ if __name__ == "__main__":
 
                 best_point = (best_point[0], function(best_point[0]))
 
-                if "SBS" in optimizer_cls.__name__:
-                    add_dict_entry(
-                        proposed_methods,
-                        optimizer_cls.__name__,
-                        {function_name: best_point[1]},
-                    )
-                else:
-                    add_dict_entry(
-                        sota_methods,
-                        optimizer_cls.__name__,
-                        {function_name: best_point[1]},
-                    )
-
-                # print(f"Time: {time:.4f}s. Best point found: {best_point}.")
-
                 times.append(time)
                 best_values.append(best_point[1])
             """ print_green(
@@ -242,8 +227,17 @@ if __name__ == "__main__":
                 path = f"figures/{type(function).__name__}_{optimizer_cls.__name__}.svg"
                 fig_gen.gen_figure(points, values, path=path)
         new_ranks = pprint_results_get_rank(opt_dict)
-
         all_ranks = merge_ranks(all_ranks, new_ranks)
+
+        for m_name in opt_dict.keys():
+            if "SBS" in m_name:
+                add_dict_entry(
+                    proposed_methods, m_name, {function_name: opt_dict[m_name][0]}
+                )
+            else:
+                add_dict_entry(
+                    sota_methods, m_name, {function_name: opt_dict[m_name][0]}
+                )
 
         if "SBS" in opt_dict and "SBS_particles" in opt_dict:
             sbs_pf_economy.append(
