@@ -2,8 +2,6 @@
 # Created in 2024 by Gaëtan Serré
 #
 
-from .__optimizer__ import Optimizer
-
 from .SBS_particles import SBS_particles
 
 

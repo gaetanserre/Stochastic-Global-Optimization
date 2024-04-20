@@ -184,8 +184,16 @@ if __name__ == "__main__":
             "Sphere": [Sphere(), create_bounds(-10, 10, 50)],
         }
 
-        optimizers_cls = [WOA, CMA_ES, Langevin, SBS, SBS_particles, SBS_hybrid]
-        num_evals = [8_000_000, 8_000_000, 8_000_000, 0, 0, 0]
+        optimizers_cls = [
+            WOA,
+            CMA_ES,
+            Langevin,
+            SBS,
+            SBS_particles,
+            SBS_hybrid,
+            SBS_particles_hybrid,
+        ]
+        num_evals = [8_000_000, 8_000_000, 8_000_000, 0, 0, 0, 0]
     else:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
@@ -201,11 +209,21 @@ if __name__ == "__main__":
             "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
         }
 
-        optimizers_cls = [SBS, SBS_hybrid, SBS_particles, SBS_particles_hybrid]
-        num_evals = [2000, 100, 800_000, 0, 0, 0, 800_000, 800_000]
+        optimizers_cls = [
+            AdaLIPO_E,
+            BayesOpt,
+            Langevin,
+            SBS,
+            SBS_particles,
+            SBS_hybrid,
+            SBS_particles_hybrid,
+            CMA_ES,
+            WOA,
+        ]
+        num_evals = [2000, 100, 800_000, 0, 0, 0, 0, 800_000, 800_000]
 
     # Number of core to use
-    nb_core = min(cpu_count() - 1, len(optimizers_cls))
+    nb_core = min(cpu_count(), len(optimizers_cls))
     print_green(f"Using {nb_core} core(s).")
 
     # Data to store
