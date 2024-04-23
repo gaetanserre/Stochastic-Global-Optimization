@@ -40,6 +40,32 @@ def add_dict_entry(dict, key, value):
         dict[key].update(value)
 
 
+def transform_dict_to_opt_dict(return_dict):
+    value_dict = {}
+    time_dict = {}
+    eval_dict = {}
+
+    def add_dict(d, k, v):
+        if k not in d:
+            d[k] = [v]
+        else:
+            d[k].append(v)
+
+    for l in return_dict.values():
+        for k, v in l.items():
+            add_dict(value_dict, k, v[0])
+            add_dict(eval_dict, k, v[1])
+            add_dict(time_dict, k, v[2])
+    opt_dict = {}
+    for k in value_dict.keys():
+        opt_dict[k] = [
+            np.mean(value_dict[k]),
+            f"{np.mean(eval_dict[k]):.2f}",
+            f"{np.mean(time_dict[k]):.4f}",
+        ]
+    return opt_dict
+
+
 def create_bounds(min, max, dim):
     bounds = [(min, max) for _ in range(dim)]
     return np.array(bounds)

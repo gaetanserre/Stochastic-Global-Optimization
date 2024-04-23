@@ -149,14 +149,14 @@ class SBS_particles(Optimizer):
         woa = woa.optimize_(function)
         best_woa = woa._best_solutions[-1][0]
 
-        print(f"Best CMA-ES: {best_cma}. Best WOA: {best_woa}.")
+        # print(f"Best CMA-ES: {best_cma}. Best WOA: {best_woa}.")
 
         # Initialize particles
         if best_cma < best_woa:
-            print_purple("Initializing particles with CMA-ES.")
+            # print_purple("Initializing particles with CMA-ES.")
             x = np.random.normal(mean, std, size=(self.n_particles, dim))
         else:
-            print_purple("Initializing particles with WOA.")
+            # print_purple("Initializing particles with WOA.")
             x = woa._sols
 
         return np.clip(x, self.domain[:, 0], self.domain[:, 1])

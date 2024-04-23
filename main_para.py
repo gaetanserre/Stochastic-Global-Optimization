@@ -1,11 +1,12 @@
 #
-# Created in 2023 by Gaëtan Serré
+# Created in 2024 by Gaëtan Serré
 #
 
 import numpy as np
 import os
 import argparse
-from multiprocessing import Pool, cpu_count
+from multiprocessing import cpu_count, Process, Manager
+import time
 
 # benchmark functions
 from benchmark.ackley import Ackley
@@ -117,6 +118,14 @@ def cli():
     )
 
     parser.add_argument(
+        "--cores",
+        "-co",
+        type=int,
+        default=cpu_count(),
+        help="Number of cores to use.",
+    )
+
+    parser.add_argument(
         "--latex",
         "-lt",
         action="store_true",
@@ -126,8 +135,8 @@ def cli():
     return parser.parse_args()
 
 
-def run_optimizer(args):
-    optimizer_cls, num_eval, function, bounds, num_exp = args
+def run_optimizer(procnum, return_dict, args):
+    optimizer_cls, num_eval, function, bounds = args
     print_blue(f"Optimizer: {optimizer_cls.__name__}.")
 
     optimizer = match_optim(
@@ -137,34 +146,27 @@ def run_optimizer(args):
         is_sim=function.__class__.__name__ == "Simulation",
     )
 
-    times = []
-    best_values = []
-    num_f_evals = 0
+    function.n = 0
+    ret, time = time_it(
+        optimizer.optimize,
+        {
+            "function": function,
+            "verbose": False,
+        },
+    )
+    best_point, points, values = ret
 
-    for _ in range(num_exp):
-        function.n = 0
-        ret, time = time_it(
-            optimizer.optimize,
-            {
-                "function": function,
-                "verbose": False,
-            },
-        )
-        best_point, points, values = ret
-        num_f_evals += function.n
-
-        best_point = (best_point[0], function(best_point[0]))
-
-        times.append(time)
-        best_values.append(best_point[1])
+    best_point = (best_point[0], function(best_point[0]))
 
     print_green(f"{optimizer_cls.__name__} done.")
 
-    return [
-        np.mean(best_values),
-        f"{num_f_evals / num_exp:.2f}",
-        f"{np.mean(times):.4f}",
-    ]
+    return_dict[procnum] = {
+        optimizer_cls.__name__: [
+            best_point[1],
+            function.n,
+            time,
+        ]
+    }
 
 
 if __name__ == "__main__":
@@ -223,7 +225,7 @@ if __name__ == "__main__":
         num_evals = [2000, 100, 800_000, 0, 0, 0, 0, 800_000, 800_000]
 
     # Number of core to use
-    nb_core = min(cpu_count(), len(optimizers_cls))
+    nb_core = args.cores
     print_green(f"Using {nb_core} core(s).")
 
     # Data to store
@@ -252,14 +254,65 @@ if __name__ == "__main__":
         opt_dict = {}
 
         args_list = [
-            (optimizers_cls[i], num_evals[i], function, bounds, num_exp)
+            (optimizers_cls[i], num_evals[i], function, bounds)
             for i in range(len(optimizers_cls))
-        ]
+        ] * num_exp
 
-        with Pool(nb_core) as p:
+        procs = []
+        procnum = 0
+        manager = Manager()
+        return_dict = manager.dict()
+        for _ in range(nb_core):
+            if args_list != []:
+                args = args_list.pop()
+                proc = Process(
+                    target=run_optimizer,
+                    args=(
+                        procnum,
+                        return_dict,
+                        args,
+                    ),
+                )
+                procs.append(proc)
+                proc.start()
+                procnum += 1
+            else:
+                break
+
+        flag = True
+        while flag:
+            flag = False
+            to_remove = []
+            for proc in procs:
+                proc.join(timeout=0.1)
+                if proc.is_alive():
+                    flag = True
+                else:
+                    proc.join()
+                    to_remove.append(proc)
+                    if args_list != []:
+                        args = args_list.pop()
+                        proc = Process(
+                            target=run_optimizer,
+                            args=(
+                                procnum,
+                                return_dict,
+                                args,
+                            ),
+                        )
+                        procs.append(proc)
+                        proc.start()
+                        procnum += 1
+                        flag = True
+            for proc in to_remove:
+                procs.remove(proc)
+
+        opt_dict = transform_dict_to_opt_dict(return_dict)
+
+        """ with Pool(nb_core) as p:
             l = p.map(run_optimizer, args_list)
         for i in range(len(optimizers_cls)):
-            opt_dict[optimizers_cls[i].__name__] = l[i]
+            opt_dict[optimizers_cls[i].__name__] = l[i] """
 
         new_ranks = pprint_results_get_rank(opt_dict)
         all_ranks = merge_ranks(all_ranks, new_ranks)
@@ -286,6 +339,8 @@ if __name__ == "__main__":
                 / float(opt_dict["SBS_hybrid"][1])
                 * 100
             )
+
+        time.sleep(5)
 
     pprint_rank(all_ranks)
 
