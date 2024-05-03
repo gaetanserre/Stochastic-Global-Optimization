@@ -18,7 +18,7 @@ def transform_power_of_ten(v):
     n = 0
     while np.abs(v * 10**n) <= 1:
         n += 1
-    return f"{v * 10**n:.2f} \\times 10^{{-{n}}}"
+    return f"{int(v * 10**n)} \\times 10^{{-{n}}}"
 
 
 def transform_number(v):
@@ -90,7 +90,7 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
 
     lines.append("\\midrule")
 
-    ratios_lines = "Competitive ratio"
+    ratios_lines = "Comp. ratio"
     ratios = compute_ratio(sota_methods, proposed_methods, function_mins)
     sum_ratios = []
     for s_name in sota_names:
