@@ -10,6 +10,7 @@ class Rosenbrock(Function):
     def __init__(self) -> None:
         super().__init__()
         self.n = 0
+        self.min = 0
 
     def __call__(self, x: np.ndarray) -> float:
         self.n += 1

@@ -31,7 +31,7 @@ class AdaLIPO_E(Optimizer):
         self.max_slope = max_slope
 
     @staticmethod
-    def slope_stop_condition(last_nb_samples, size_slope, max_slope):
+    def slope_stop_condition(last_nb_samples, max_slope):
         """
         Check if the slope of the last `size_slope` points of the the nb_samples vs nb_evaluations curve
         is greater than max_slope.
@@ -111,9 +111,7 @@ class AdaLIPO_E(Optimizer):
                     if condition(X_tp1, values, k_hat, points, t):
                         points[t] = X_tp1
                         break
-                    elif self.slope_stop_condition(
-                        last_nb_samples, self.window_slope, self.max_slope
-                    ):
+                    elif self.slope_stop_condition(last_nb_samples, self.max_slope):
                         if verbose:
                             print(
                                 f"Exponential growth of the number of samples. Stopping the algorithm at iteration {t}."

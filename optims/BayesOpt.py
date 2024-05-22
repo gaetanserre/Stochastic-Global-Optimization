@@ -17,6 +17,7 @@ class BayesOpt(Optimizer):
             f=self.transform_function(function),
             pbounds=self.transform_domain(domain),
             verbose=0,
+            allow_duplicate_points=True,
         )
 
     @staticmethod
