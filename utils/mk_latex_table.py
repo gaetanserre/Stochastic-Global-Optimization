@@ -30,9 +30,26 @@ def transform_number(v):
         return "0"
 
 
-def mk_score_line(dict, method_name, f_name):
-    v = dict[method_name].get(f_name)
-    return f" ${transform_number(v)}$ &"
+def get_best_method(dict1, dict2, f_name):
+    best_score = np.inf
+    best_method = None
+    for method_name in dict1.keys():
+        if dict1[method_name][f_name] < best_score:
+            best_score = dict1[method_name][f_name]
+            best_method = method_name
+    for method_name in dict2.keys():
+        if dict2[method_name][f_name] < best_score:
+            best_score = dict2[method_name][f_name]
+            best_method = method_name
+    return best_method
+
+
+def mk_score_line(dict, method_name, f_name, bold=False):
+    v = dict[method_name][f_name]
+    if bold:
+        return " $\\mathbf{" + f"{transform_number(v)}" + "}$ &"
+    else:
+        return f" ${transform_number(v)}$ &"
 
 
 def get_best_score(dict, f_name):
@@ -80,10 +97,13 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
 
     for f_name in function_names:
         line = f"{f_name} &"
+        best_method = get_best_method(sota_methods, proposed_methods, f_name)
         for s_name in sota_names:
-            line += mk_score_line(sota_methods, s_name, f_name)
+            line += mk_score_line(sota_methods, s_name, f_name, s_name == best_method)
         for p_name in proposed_names:
-            line += mk_score_line(proposed_methods, p_name, f_name)
+            line += mk_score_line(
+                proposed_methods, p_name, f_name, p_name == best_method
+            )
         line = line[:-2]
         line += " \\\\"
         lines.append(line)
