@@ -85,7 +85,7 @@ class Simulation:
 
         return scenario
 
-    def __call__(self, x):
+    def __call__(self, x, get_all_results=False):
         parameters = {"cf1": x[0], "cf2": x[1], "cf3": x[2]}
         scenario = self.create_scenario(parameters)
 
@@ -93,6 +93,12 @@ class Simulation:
         results = self.model.run_simulation(
             scenario, self.initial_population_state, verbose=False
         )
+
+        if get_all_results:
+            s, j, y, h, w, r, d = self.model.get_all_states(
+                np.transpose(results[:, :, -1])
+            ).values()
+            return d
 
         res = score(self.model, results[:, :, -1], scenario)
 
