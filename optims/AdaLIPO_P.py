@@ -19,9 +19,9 @@ def Bernoulli(p: float):
         return 0
 
 
-class AdaLIPO_E(Optimizer):
+class AdaLIPO_P(Optimizer):
     """
-    This class implements the AdaLIPO_E algorithm for minimization of a function.
+    This class implements the AdaLIPO_P algorithm for minimization of a function.
     """
 
     def __init__(self, domain, max_evals, window_slope=5, max_slope=600):

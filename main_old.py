@@ -21,11 +21,11 @@ from benchmark.michalewicz import Michalewicz
 from benchmark.goldstein_price import Goldstein_Price
 from optims.extended_function import extended_function
 
-from benchmark.epidemio.simulation import Simulation
+from benchmark.epidemiology.simulation import Simulation
 
 # Optimizations algorithms
 from optims.PRS import PRS
-from optims.AdaLIPO_E import AdaLIPO_E
+from optims.AdaLIPO_P import AdaLIPO_P
 from optims.SBS import SBS
 from optims.SBS_particles import SBS_particles
 from optims.SBS_hybrid import SBS_hybrid
@@ -43,7 +43,7 @@ from utils.mk_latex_table import mk_table
 def match_optim(optim_cls, bounds, num_evals, is_sim=False):
     if optim_cls == PRS:
         return optim_cls(bounds, num_evals=num_evals)
-    elif optim_cls == AdaLIPO_E:
+    elif optim_cls == AdaLIPO_P:
         return optim_cls(bounds, max_evals=num_evals)
     elif optim_cls == SBS:
         return optim_cls(
@@ -152,7 +152,7 @@ if __name__ == "__main__":
         }
 
         optimizers_cls = [
-            AdaLIPO_E,
+            AdaLIPO_P,
             BayesOpt,
             Langevin,
             SBS,
