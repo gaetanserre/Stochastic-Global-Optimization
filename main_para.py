@@ -22,10 +22,11 @@ from benchmark.michalewicz import Michalewicz
 from benchmark.goldstein_price import Goldstein_Price
 from benchmark.camel import Camel
 from benchmark.levy import Levy
+from benchmark.epidemiology.simulation import Simulation
 
 # Optimizations algorithms
 from optims.PRS import PRS
-from optims.AdaLIPO_E import AdaLIPO_E
+from optims.AdaLIPO_P import AdaLIPO_P
 from optims.SBS import SBS
 from optims.SBS_particles import SBS_particles
 from optims.SBS_particles_hybrid import SBS_particles_hybrid
@@ -39,12 +40,16 @@ from optims.Simulated_Annealing import SimulatedAnnealing
 from utils.utils import *
 from utils.pretty_printer import pprint_results_get_rank, pprint_rank
 from utils.mk_latex_table import mk_table
+from utils.init_epidemiology import init_epidemiology
 
 
 def match_optim(optim_cls, bounds, num_evals, is_sim=False):
+    if is_sim:
+        init_epidemiology()
+
     if optim_cls == PRS:
         return optim_cls(bounds, num_evals=num_evals)
-    elif optim_cls == AdaLIPO_E:
+    elif optim_cls == AdaLIPO_P:
         return optim_cls(bounds, max_evals=num_evals)
     elif optim_cls == SBS:
         return optim_cls(
@@ -153,10 +158,8 @@ def run_optimizer(args):
         best_point, points, values = ret
         num_f_evals += function.n
 
-        best_point = (best_point[0], function(best_point[0]))
-
         times.append(time)
-        best_values.append(best_point[1])
+        best_values.append(function(best_point[0]))
 
     print_green(f"{optimizer_cls.__name__} done.")
 
@@ -210,10 +213,11 @@ if __name__ == "__main__":
             "Camel": [Camel(), create_bounds(-3, 3, 2)],
             "Levy": [Levy(), create_bounds(-10, 10, 2)],
             "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
+            "Epidemiology": [Simulation(), create_bounds(0, 1, 3)],
         }
 
         optimizers_cls = [
-            AdaLIPO_E,
+            AdaLIPO_P,
             BayesOpt,
             Langevin,
             SBS,
@@ -223,6 +227,7 @@ if __name__ == "__main__":
             CMA_ES,
             WOA,
         ]
+
         num_evals = [2000, 100, 800_000, 0, 0, 0, 0, 800_000, 800_000]
 
     # Number of core to use
