@@ -35,6 +35,8 @@ class Simulation:
         self.load_model()
         self.load_initial_population()
 
+        self.n = 0
+
     def load_model(self):
         # Reading parameters from the json file and creating the model
         json_path = os.path.join(DIR_PATH, "model/epidemiological_parameters.json")
@@ -94,6 +96,7 @@ class Simulation:
 
         res = score(self.model, results[:, :, -1], scenario)
 
+        self.n += 1
         return res
 
 
