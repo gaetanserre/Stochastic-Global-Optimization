@@ -30,15 +30,23 @@ def transform_number(v):
         return "0"
 
 
-def mk_score_line(dict, method_name, f_name):
+def mk_score_line(dict, method_name, f_name, best_score=False):
     v = dict[method_name].get(f_name)
-    return f" ${transform_number(v)}$ &"
+    if best_score:
+        return f" $\\mathbf{{{transform_number(v)}}}$ &"
+    else:
+        return f" ${transform_number(v)}$ &"
 
 
-def get_best_score(dict, f_name):
+def get_best_score(dict, f_name, return_name=False):
     best_score = np.inf
+    best_name = None
     for method_name in dict.keys():
-        best_score = min(best_score, dict[method_name][f_name])
+        if dict[method_name][f_name] < best_score:
+            best_name = method_name
+            best_score = dict[method_name][f_name]
+    if return_name:
+        return best_score, best_name
     return best_score
 
 
@@ -80,10 +88,20 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
 
     for f_name in function_names:
         line = f"{f_name} &"
+        sota_best = get_best_score(sota_methods, f_name, return_name=True)
+        proposed_best = get_best_score(proposed_methods, f_name, return_name=True)
+        bf_sota = sota_best[0] < proposed_best[0]
+
         for s_name in sota_names:
-            line += mk_score_line(sota_methods, s_name, f_name)
+            if s_name == sota_best[1] and bf_sota:
+                line += mk_score_line(sota_methods, s_name, f_name, best_score=True)
+            else:
+                line += mk_score_line(sota_methods, s_name, f_name)
         for p_name in proposed_names:
-            line += mk_score_line(proposed_methods, p_name, f_name)
+            if p_name == proposed_best[1] and not bf_sota:
+                line += mk_score_line(proposed_methods, p_name, f_name, best_score=True)
+            else:
+                line += mk_score_line(proposed_methods, p_name, f_name)
         line = line[:-2]
         line += " \\\\"
         lines.append(line)
