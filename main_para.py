@@ -102,7 +102,7 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
     elif optim_cls == Langevin:
         return optim_cls(bounds, n_particles=500, n_iter=150, kappa=10_000, init_lr=0.2)
     elif optim_cls == CBO:
-        return optim_cls(bounds, n_iter=800, n_particles=1000)
+        return optim_cls(bounds, n_iter=1600, n_particles=500)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
