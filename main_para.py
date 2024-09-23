@@ -36,6 +36,7 @@ from optims.N_CMA_ES import CMA_ES
 from optims.WOA import WOA
 from optims.Langevin import Langevin
 from optims.Simulated_Annealing import SimulatedAnnealing
+from optims.CBO import CBO
 
 from utils.utils import *
 from utils.pretty_printer import pprint_results_get_rank, pprint_rank
@@ -100,6 +101,8 @@ def match_optim(optim_cls, bounds, num_evals, is_sim=False):
         return optim_cls(bounds, num_evals)
     elif optim_cls == Langevin:
         return optim_cls(bounds, n_particles=500, n_iter=150, kappa=10_000, init_lr=0.2)
+    elif optim_cls == CBO:
+        return optim_cls(bounds, n_iter=800, n_particles=1000)
     else:
         raise NotImplementedError(f"{optim_cls} not implemented.")
 
@@ -213,7 +216,6 @@ if __name__ == "__main__":
             "Camel": [Camel(), create_bounds(-3, 3, 2)],
             "Levy": [Levy(), create_bounds(-10, 10, 2)],
             "Sphere": [Sphere(), create_bounds(-10, 10, 2)],
-            "Epidemiology": [Simulation(), create_bounds(0, 1, 3)],
         }
 
         optimizers_cls = [
@@ -226,9 +228,10 @@ if __name__ == "__main__":
             SBS_particles_hybrid,
             CMA_ES,
             WOA,
+            CBO,
         ]
 
-        num_evals = [2000, 100, 800_000, 0, 0, 0, 0, 800_000, 800_000]
+        num_evals = [2000, 100, 800_000, 0, 0, 0, 0, 800_000, 800_000, 0]
 
     # Number of core to use
     nb_core = min(cpu_count(), len(optimizers_cls))
