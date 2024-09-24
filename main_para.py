@@ -162,7 +162,7 @@ def run_optimizer(args):
         num_f_evals += function.n
 
         times.append(time)
-        best_values.append(function(best_point[0]))
+        best_values.append(abs(function(best_point[0]) - function.min))
 
     print_green(f"{optimizer_cls.__name__} done.")
 
