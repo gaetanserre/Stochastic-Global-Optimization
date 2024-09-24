@@ -199,7 +199,7 @@ if __name__ == "__main__":
             SBS_particles,
             SBS_hybrid,
             SBS_particles_hybrid,
-            CBO,
+            # CBO,
         ]
 
         num_evals = [8_000_000, 8_000_000, 8_000_000, 0, 0, 0, 0]
@@ -230,7 +230,7 @@ if __name__ == "__main__":
             SBS_particles_hybrid,
             CMA_ES,
             WOA,
-            CBO,
+            # CBO,
         ]
 
         num_evals = [2000, 100, 800_000, 0, 0, 0, 0, 800_000, 800_000, 0]
