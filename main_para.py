@@ -199,7 +199,9 @@ if __name__ == "__main__":
             SBS_particles,
             SBS_hybrid,
             SBS_particles_hybrid,
+            CBO,
         ]
+
         num_evals = [8_000_000, 8_000_000, 8_000_000, 0, 0, 0, 0]
     else:
         functions = {
