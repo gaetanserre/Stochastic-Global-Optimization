@@ -12,8 +12,8 @@ def pprint_results_get_rank(dict_optim_res):
     tab = PrettyTable(first_row)
 
     rows = []
-    for opt_name, values in dict_optim_res.items():
-        rows.append([opt_name] + values)
+    for opt_name, data in dict_optim_res.items():
+        rows.append([opt_name] + list(data.values()))
 
     key = lambda row: row[1]
     rows.sort(key=key)
@@ -21,7 +21,10 @@ def pprint_results_get_rank(dict_optim_res):
     rows_c = deepcopy(rows)
     for i in range(len(rows)):
         rows_c[i][0] = f"{i+1}. " + rows[i][0]
-
+        rows_c[i][1] = f"{rows[i][1]: .2f} ± {rows[i][2]: .2f}"
+        rows_c[i][2] = rows[i][3]
+        rows_c[i][3] = rows[i][4]
+        rows_c[i].pop()
     tab.add_rows(rows_c)
     print(tab)
 

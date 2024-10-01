@@ -166,11 +166,12 @@ def run_optimizer(args):
 
     print_green(f"{optimizer_cls.__name__} done.")
 
-    return [
-        np.mean(best_values),
-        f"{num_f_evals / num_exp:.2f}",
-        f"{np.mean(times):.4f}",
-    ]
+    return {
+        "mean": np.mean(best_values),
+        "std": np.std(best_values),
+        "eval": f"{num_f_evals / num_exp:.2f}",
+        "time": f"{np.mean(times):.4f}",
+    }
 
 
 if __name__ == "__main__":
@@ -280,23 +281,39 @@ if __name__ == "__main__":
         for m_name in opt_dict.keys():
             if "SBS" in m_name:
                 add_dict_entry(
-                    proposed_methods, m_name, {function_name: opt_dict[m_name][0]}
+                    proposed_methods,
+                    m_name,
+                    {
+                        function_name: {
+                            "mean": opt_dict[m_name]["mean"],
+                            "std": opt_dict[m_name]["std"],
+                        }
+                    },
                 )
             else:
                 add_dict_entry(
-                    sota_methods, m_name, {function_name: opt_dict[m_name][0]}
+                    sota_methods,
+                    m_name,
+                    {
+                        function_name: {
+                            "mean": opt_dict[m_name]["mean"],
+                            "std": opt_dict[m_name]["std"],
+                        }
+                    },
                 )
 
         if "SBS" in opt_dict and "SBS_particles" in opt_dict:
             sbs_pf_economy.append(
                 100
-                - float(opt_dict["SBS_particles"][1]) / float(opt_dict["SBS"][1]) * 100
+                - float(opt_dict["SBS_particles"]["eval"])
+                / float(opt_dict["SBS"]["eval"])
+                * 100
             )
         if "SBS_hybrid" in opt_dict and "SBS_particles_hybrid" in opt_dict:
             sbs_pf_hybrid_economy.append(
                 100
-                - float(opt_dict["SBS_particles_hybrid"][1])
-                / float(opt_dict["SBS_hybrid"][1])
+                - float(opt_dict["SBS_particles_hybrid"]["eval"])
+                / float(opt_dict["SBS_hybrid"]["eval"])
                 * 100
             )
 

@@ -18,12 +18,12 @@ def transform_power_of_ten(v):
     n = 0
     while np.abs(v * 10**n) <= 1:
         n += 1
-    return f"{int(v * 10**n)} \\times 10^{{-{n}}}"
+    return f"{int(v * 10**n)}e^{{-{n}}}"
 
 
 def transform_number(v):
     if np.abs(v) >= 0.001:
-        return f"{v:.3f}"
+        return f"{v:.1f}"
     elif 0 < np.abs(v):
         return f"{transform_power_of_ten(v)}"
     else:
@@ -31,20 +31,21 @@ def transform_number(v):
 
 
 def mk_score_line(dict, method_name, f_name, best_score=False):
-    v = dict[method_name].get(f_name)
+    v = transform_number(dict[method_name][f_name]["mean"])
+    std = transform_number(dict[method_name][f_name]["std"])
     if best_score:
-        return f" $\\mathbf{{{transform_number(v)}}}$ &"
+        return f" \\makecell{{$\\mathbf{{{v}}}$ \\\\ $\\mathbf{{\\pm {std}}}$}} &"
     else:
-        return f" ${transform_number(v)}$ &"
+        return f" \\makecell{{${v}$ \\\\ $\\pm {std}$}} &"
 
 
 def get_best_score(dict, f_name, return_name=False):
     best_score = np.inf
     best_name = None
     for method_name in dict.keys():
-        if dict[method_name][f_name] < best_score:
+        if dict[method_name][f_name]["mean"] < best_score:
             best_name = method_name
-            best_score = dict[method_name][f_name]
+            best_score = dict[method_name][f_name]["mean"]
     if return_name:
         return best_score, best_name
     return best_score
@@ -61,11 +62,13 @@ def compute_ratio(sota_methods, proposed_methods, function_mins):
 
         ratios[f_name] = {}
         for s_name in sota_methods.keys():
-            dist = np.abs(sota_methods[s_name][f_name] - function_mins[f_name])
+            dist = np.abs(sota_methods[s_name][f_name]["mean"] - function_mins[f_name])
             ratios[f_name][s_name] = min(100, (dist + 1e-10) / (best_dist + 1e-10))
 
         for p_name in proposed_methods.keys():
-            dist = np.abs(proposed_methods[p_name][f_name] - function_mins[f_name])
+            dist = np.abs(
+                proposed_methods[p_name][f_name]["mean"] - function_mins[f_name]
+            )
             ratios[f_name][p_name] = min(100, (dist + 1e-10) / (best_dist + 1e-10))
     return ratios
 
