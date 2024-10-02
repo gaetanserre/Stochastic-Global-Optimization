@@ -30,13 +30,19 @@ def transform_number(v):
         return "0"
 
 
-def mk_score_line(dict, method_name, f_name, best_score=False):
+def mk_score_line(dict, method_name, f_name, print_std, best_score=False):
     v = transform_number(dict[method_name][f_name]["mean"])
     std = transform_number(dict[method_name][f_name]["std"])
     if best_score:
-        return f" \\makecell{{$\\mathbf{{{v}}}$ \\\\ $\\mathbf{{\\pm {std}}}$}} &"
+        if print_std:
+            return f" \\makecell{{$\\mathbf{{{v}}}$ \\\\ $\\mathbf{{\\pm {std}}}$}} &"
+        else:
+            return f" \\makecell{{$\\mathbf{{{v}}}$}} &"
     else:
-        return f" \\makecell{{${v}$ \\\\ $\\pm {std}$}} &"
+        if print_std:
+            return f" \\makecell{{${v}$ \\\\ $\\pm {std}$}} &"
+        else:
+            return f" \\makecell{{${v}$}} &"
 
 
 def get_best_score(dict, f_name, return_name=False):
@@ -73,7 +79,7 @@ def compute_ratio(sota_methods, proposed_methods, function_mins):
     return ratios
 
 
-def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
+def mk_table(function_mins, sota_methods, proposed_methods, all_ranks, std):
     function_names = list(function_mins.keys())
     sota_names = sort_methods(list(sota_methods.keys()), all_ranks)
     proposed_names = sort_methods(list(proposed_methods.keys()), all_ranks)
@@ -97,14 +103,18 @@ def mk_table(function_mins, sota_methods, proposed_methods, all_ranks):
 
         for s_name in sota_names:
             if s_name == sota_best[1] and bf_sota:
-                line += mk_score_line(sota_methods, s_name, f_name, best_score=True)
+                line += mk_score_line(
+                    sota_methods, s_name, f_name, std, best_score=True
+                )
             else:
-                line += mk_score_line(sota_methods, s_name, f_name)
+                line += mk_score_line(sota_methods, s_name, f_name, std)
         for p_name in proposed_names:
             if p_name == proposed_best[1] and not bf_sota:
-                line += mk_score_line(proposed_methods, p_name, f_name, best_score=True)
+                line += mk_score_line(
+                    proposed_methods, p_name, f_name, std, best_score=True
+                )
             else:
-                line += mk_score_line(proposed_methods, p_name, f_name)
+                line += mk_score_line(proposed_methods, p_name, f_name, std)
         line = line[:-2]
         line += " \\\\"
         lines.append(line)

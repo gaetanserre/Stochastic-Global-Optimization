@@ -131,6 +131,13 @@ def cli():
         help="Print the LateX table associated with the benchmark.",
     )
 
+    parser.add_argument(
+        "--latex-std",
+        "-lt-std",
+        action="store_true",
+        help="Print the LateX table associated with the benchmark with std.",
+    )
+
     return parser.parse_args()
 
 
@@ -328,14 +335,17 @@ if __name__ == "__main__":
             f"Average economy of SBS_particles_hybrid over SBS_hybrid: {np.mean(sbs_pf_hybrid_economy):.2f}%."
         )
 
-    if args.latex:
+    if args.latex or args.latex_std:
         functions_mins = {}
         for f_name in functions.keys():
             functions_mins[f_name] = functions[f_name][0].min
-
-        mk_table(
-            functions_mins,
-            sota_methods,
-            proposed_methods,
-            all_ranks,
-        )
+        if args.latex:
+            mk_table(functions_mins, sota_methods, proposed_methods, all_ranks, False)
+        if args.latex_std:
+            mk_table(
+                functions_mins,
+                sota_methods,
+                proposed_methods,
+                all_ranks,
+                True,
+            )
