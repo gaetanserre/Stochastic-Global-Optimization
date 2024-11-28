@@ -18,7 +18,6 @@ from benchmark.cos import Cos
 from benchmark.branin import Branin
 from benchmark.eggholder import EggHolder
 from benchmark.drop_wave import Drop_Wave
-from benchmark.michalewicz import Michalewicz
 from benchmark.goldstein_price import Goldstein_Price
 from benchmark.camel import Camel
 from benchmark.levy import Levy
@@ -105,7 +104,7 @@ def cli():
         "--big-dimension",
         "-bd",
         action="store_true",
-        help="Run the big dimensions benchmark with",
+        help="Run the big dimensions benchmark.",
     )
 
     parser.add_argument(
@@ -178,7 +177,6 @@ if __name__ == "__main__":
     if args.big_dimension:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
-            "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 50)],
             "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
             "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
             "Levy": [Levy(), create_bounds(-10, 10, 50)],
@@ -204,7 +202,6 @@ if __name__ == "__main__":
             "Goldstein Price": [Goldstein_Price(), create_bounds(-2, 2, 2)],
             "Himmelblau": [Himmelblau(), create_bounds(-4, 4, 2)],
             "Holder Table": [Holder(), create_bounds(-10, 10, 2)],
-            "Michalewicz": [Michalewicz(), create_bounds(0, np.pi, 2)],
             "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 2)],
             "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 2)],
             "Camel": [Camel(), create_bounds(-3, 3, 2)],

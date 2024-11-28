@@ -129,7 +129,7 @@ class SBS(Optimizer):
 
         return np.clip(x, self.domain[:, 0], self.domain[:, 1])
 
-    def optimize(self, function, verbose=False):
+    def optimize(self, function, verbose=False, return_best_iter=False):
         kernel = lambda x: rbf(x, sigma=self.sigma)
 
         dim = self.domain.shape[0]
@@ -143,6 +143,7 @@ class SBS(Optimizer):
 
         all_points = [x.copy()]
         all_evals = []
+        best_per_iter = []
         for k in self.k_iter:
             optimizer = Adam(lr=self.lr)
             for i in range(self.svgd_iter):
@@ -162,6 +163,9 @@ class SBS(Optimizer):
                 # save all points
                 all_points.append(x.copy())
 
+                # best per iter
+                best_per_iter.append(np.min(fs))
+
         all_points = np.array(all_points).reshape(-1, dim)
         all_evals = np.array(all_evals).flatten()
         best_idx = np.argmin(all_evals)
@@ -170,4 +174,7 @@ class SBS(Optimizer):
         if verbose:
             print(f"Best particle found: {best_particle}. Eval at f(best): {min_eval}.")
 
-        return (best_particle, min_eval), all_points, all_evals
+        if return_best_iter:
+            return (best_particle, min_eval), all_points, all_evals, best_per_iter
+        else:
+            return (best_particle, min_eval), all_points, all_evals
