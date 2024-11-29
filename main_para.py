@@ -178,7 +178,7 @@ if __name__ == "__main__":
     if args.big_dimension:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
-            "Michalewicz": [Michalewicz(2), create_bounds(0, np.pi, 50)],
+            "Michalewicz": [Michalewicz(50), create_bounds(0, np.pi, 50)],
             "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
             "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
             "Levy": [Levy(), create_bounds(-10, 10, 50)],
