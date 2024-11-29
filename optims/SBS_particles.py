@@ -179,7 +179,7 @@ class SBS_particles(Optimizer):
         else:
             return x_new, np.ones(x_new.shape[0], dtype=bool)
 
-    def optimize(self, function, verbose=False):
+    def optimize(self, function, verbose=False, return_best_iter=False):
         kernel = lambda N: lambda x: rbf(x, sigma=self.sigma(N))
 
         dim = self.domain.shape[0]
@@ -198,6 +198,8 @@ class SBS_particles(Optimizer):
 
         all_points = [x.copy()]
         all_evals = []
+        best_per_iter = []
+        number_particles = []
         for k in self.k_iter:
             optimizer = Adam(lr=self.lr) if self.adam else Static_Optimizer(lr=self.lr)
             for i in range(self.svgd_iter):
@@ -225,6 +227,10 @@ class SBS_particles(Optimizer):
                 # save all points
                 all_points.append(x.copy())
 
+                # best per iter
+                best_per_iter.append(np.min(fs))
+                number_particles.append(n_particles)
+
         np_all_points = None
         for i, np_seq in enumerate(all_points):
             if i == 0:
@@ -245,4 +251,14 @@ class SBS_particles(Optimizer):
         if verbose:
             print(f"Best particle found: {best_particle}. Eval at f(best): {min_eval}.")
 
-        return (best_particle, min_eval), np_all_points, np_all_evals
+        if return_best_iter:
+            return (
+                (best_particle, min_eval),
+                all_points,
+                all_evals,
+                number_particles,
+                best_per_iter,
+            )
+
+        else:
+            return (best_particle, min_eval), np_all_points, np_all_evals

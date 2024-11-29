@@ -45,7 +45,7 @@ class AdaLIPO_E(Optimizer):
         best_idx = np.argmax(values)
         return (points[best_idx], -values[best_idx]), points, -values
 
-    def optimize(self, function, verbose=False):
+    def optimize(self, function, verbose=False, return_best_iter=False):
         t = 1
         alpha = 10e-2
         k_hat = 0
@@ -94,6 +94,7 @@ class AdaLIPO_E(Optimizer):
 
         # Main loop
         ratios = []
+        best_per_iter = []
         while t < self.max_evals:
             B_tp1 = Bernoulli(p(t))
             if B_tp1 == 1:
@@ -116,7 +117,10 @@ class AdaLIPO_E(Optimizer):
                             print(
                                 f"Exponential growth of the number of samples. Stopping the algorithm at iteration {t}."
                             )
-                        return self.return_process(points, values, t)
+                        if return_best_iter:
+                            return self.return_process(points, values, t), best_per_iter
+                        else:
+                            return self.return_process(points, values, t)
 
             value = -function(X_tp1)
             values[t] = value
@@ -135,5 +139,9 @@ class AdaLIPO_E(Optimizer):
                 print(
                     f"Iteration: {t} Lipschitz constant: {k_hat:.4f} Number of samples: {nb_samples}"
                 )
+            best_per_iter.append(-np.max(values[:t]))
 
-        return self.return_process(points, values, t)
+        if return_best_iter:
+            return self.return_process(points, values, t), best_per_iter
+        else:
+            return self.return_process(points, values, t)
