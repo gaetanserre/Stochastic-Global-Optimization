@@ -21,6 +21,7 @@ from benchmark.drop_wave import Drop_Wave
 from benchmark.goldstein_price import Goldstein_Price
 from benchmark.camel import Camel
 from benchmark.levy import Levy
+from benchmark.michalewicz import Michalewicz
 
 # Optimizations algorithms
 from optims.PRS import PRS
@@ -177,6 +178,7 @@ if __name__ == "__main__":
     if args.big_dimension:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 50)],
+            "Michalewicz": [Michalewicz(2), create_bounds(0, np.pi, 50)],
             "Rastrigin": [Rastrigin(), create_bounds(-5.12, 5.12, 50)],
             "Rosenbrock": [Rosenbrock(), create_bounds(-3, 3, 50)],
             "Levy": [Levy(), create_bounds(-10, 10, 50)],
@@ -196,6 +198,7 @@ if __name__ == "__main__":
     else:
         functions = {
             "Ackley": [Ackley(), create_bounds(-32.768, 32.768, 2)],
+            "Michalewicz": [Michalewicz(2), create_bounds(0, np.pi, 2)],
             "Branin": [Branin(), np.array([(-5, 10), (0, 15)])],
             "Drop Wave": [Drop_Wave(), create_bounds(-5.12, 5.12, 2)],
             "Egg Holder": [EggHolder(), create_bounds(-512, 512, 2)],
