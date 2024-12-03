@@ -1,0 +1,562 @@
+[32mUsing 5 core(s).
+[95mFunction: Ackley.
+[94mOptimizer: SBS_particles.
+[32mSBS_particles done.
+[94mOptimizer: CMA_ES.
+[32mCMA_ES done.
+[94mOptimizer: SBS.
+[32mSBS done.
++-------------------------+----------------+--------------+------------------+
+|        Algorithms       | Average value  | Average eval | Average time (s) |
++-------------------------+----------------+--------------+------------------+
+|          1. SBS         |  19.22 ±  0.06 | 15150000.00  |     156.9702     |
+|     2. SBS_particles    |  19.23 ±  0.06 |  435528.16   |      8.1992      |
+|        3. CMA_ES        |  19.44 ±  0.02 |   15877.64   |     49.8544      |
+|      4. SBS_hybrid      |  19.50 ±  0.10 | 20217008.88  |     216.4441     |
+| 5. SBS_particles_hybrid |  19.51 ±  0.09 | 50516950.40  |     382.0520     |
++-------------------------+----------------+--------------+------------------+
+[95mFunction: Michalewicz.
+[94mOptimizer: SBS_particles.
+[32mSBS_particles done.
+[94mOptimizer: SBS_particles_hybrid.
+PF - Best CMA-ES: -22.289322062799215. Best WOA: -18.036516120050326.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.640556212039726. Best WOA: -19.46076663937023.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.254677092832658. Best WOA: -17.591377398772416.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.799445624775327. Best WOA: -18.190921966704664.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.09048834493068. Best WOA: -19.838625896330058.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.883880836579237. Best WOA: -17.607331584072657.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.32012549581644. Best WOA: -20.151065929275312.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.373468521972207. Best WOA: -18.687652353598647.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.299807526899112. Best WOA: -17.341236018096243.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.598724568141296. Best WOA: -21.018383366541716.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.07362395788129. Best WOA: -21.984470788119292.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.542682318744077. Best WOA: -20.72687339897175.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.922614043275413. Best WOA: -19.03174258667956.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.530116759015044. Best WOA: -19.01680528663524.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.69543041355358. Best WOA: -17.927417659644494.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.31136196329553. Best WOA: -18.713825066134188.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.967331561782647. Best WOA: -19.863150222234907.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.045147305225033. Best WOA: -18.153137105311238.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.804140271841757. Best WOA: -18.630560422645157.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.997708140436544. Best WOA: -17.52291044747928.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.251622470097733. Best WOA: -17.563512334756297.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.803497746872562. Best WOA: -18.321493163076262.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.661146144374896. Best WOA: -19.87121204724501.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.265178565905934. Best WOA: -18.75191849720955.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.32370909440406. Best WOA: -19.651185608071774.
+PF - Initializing particles with CMA-ES.
+[32mSBS_particles_hybrid done.
+[94mOptimizer: SBS.
+[32mSBS done.
+[94mOptimizer: SBS_hybrid.
+PF - Best CMA-ES: -20.03112268935289. Best WOA: -16.976692460824065.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.374781212897087. Best WOA: -16.50126608464523.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.13630168098292. Best WOA: -17.62285566555633.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.04106767157632. Best WOA: -18.232744099113557.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.29976004443976. Best WOA: -19.568568296818032.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.03328183144549. Best WOA: -22.465607380682197.
+PF - Initializing particles with WOA.
+PF - Best CMA-ES: -23.064880166861393. Best WOA: -16.53309313426541.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.467225401360416. Best WOA: -17.76075479138412.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.993453895034413. Best WOA: -17.177855518318832.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.98512163424735. Best WOA: -16.844839470656744.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.367520595976224. Best WOA: -17.79925244437079.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.437158421521655. Best WOA: -18.823634619637424.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.789110841273228. Best WOA: -18.56773087199744.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.343129951243284. Best WOA: -16.602499799103548.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -19.499572925261294. Best WOA: -16.64937521168242.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.599647553968296. Best WOA: -17.808259770263806.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -23.289101987325996. Best WOA: -20.127800865013093.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.668069474142886. Best WOA: -17.07571403153075.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -23.537920257210015. Best WOA: -17.518077227102292.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.233556700488748. Best WOA: -20.63826689006072.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -19.74906828607712. Best WOA: -20.498613638192484.
+PF - Initializing particles with WOA.
+PF - Best CMA-ES: -22.201774479415317. Best WOA: -17.67254439260207.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -20.728996950721143. Best WOA: -16.51028405239741.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -22.548098390339547. Best WOA: -16.90484243554111.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: -21.734523872189197. Best WOA: -16.578985830667172.
+PF - Initializing particles with CMA-ES.
+[32mSBS_hybrid done.
++-------------------------+----------------+--------------+------------------+
+|        Algorithms       | Average value  | Average eval | Average time (s) |
++-------------------------+----------------+--------------+------------------+
+|          1. SBS         |  7.14 ±  0.94  | 15150000.00  |     260.6690     |
+|     2. SBS_particles    |  7.17 ±  1.02  |  378350.04   |      8.7910      |
+|      3. SBS_hybrid      |  29.70 ±  5.44 | 20218001.00  |     391.8530     |
+| 4. SBS_particles_hybrid |  31.37 ±  3.65 |  1145104.44  |     105.5074     |
+|        5. CMA_ES        |  44.07 ±  3.06 |  281548.88   |     407.4411     |
++-------------------------+----------------+--------------+------------------+
+[95mFunction: Rastrigin.
+[94mOptimizer: SBS_particles.
+[32mSBS_particles done.
+[94mOptimizer: CMA_ES.
+[32mCMA_ES done.
+[94mOptimizer: SBS.
+[32mSBS done.
+[94mOptimizer: SBS_hybrid.
+PF - Best CMA-ES: 272.62943157657025. Best WOA: 1579.3097094033565.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 259.68346492183923. Best WOA: 1586.325019128499.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 239.78448036830127. Best WOA: 1580.9820792606924.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 325.4394623350256. Best WOA: 1479.3820983498588.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 268.638129007903. Best WOA: 1570.2786092152503.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 229.83488168987742. Best WOA: 1618.0058897253411.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 244.75928546190892. Best WOA: 1602.9393979293102.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 292.51717006198965. Best WOA: 1602.9214365691741.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 232.81980430484032. Best WOA: 1543.225433266483.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 239.78436697399377. Best WOA: 1498.6935083944547.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 228.83998552993592. Best WOA: 1569.3853155624552.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 215.90558691856518. Best WOA: 1614.9726546955828.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 230.82997273700505. Best WOA: 1628.9061015234088.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 243.77205220418125. Best WOA: 1521.7011637812398.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 284.557571132549. Best WOA: 1604.999085538625.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 213.91567237202935. Best WOA: 1625.333708766613.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 345.24921995401417. Best WOA: 1505.4451793456728.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 218.89050716674717. Best WOA: 1616.7115196590867.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 266.64792537775224. Best WOA: 1520.2167101852579.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 249.73720919505183. Best WOA: 1603.0803925652326.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 303.4615025895167. Best WOA: 1588.5153814513283.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 242.77302899530525. Best WOA: 1607.1209470495553.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 338.28500953974526. Best WOA: 1626.2871336811681.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 280.5775295791009. Best WOA: 1569.41077754477.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 257.69356176005533. Best WOA: 1586.4053550363778.
+PF - Initializing particles with CMA-ES.
+[32mSBS_hybrid done.
++-------------------------+------------------+--------------+------------------+
+|        Algorithms       |  Average value   | Average eval | Average time (s) |
++-------------------------+------------------+--------------+------------------+
+|      1. SBS_hybrid      |  261.08 ±  36.24 | 20218001.00  |     205.8649     |
+| 2. SBS_particles_hybrid |  264.82 ±  35.08 | 11043161.00  |     175.9607     |
+|        3. CMA_ES        |  294.94 ±  39.16 |   26108.92   |     107.1374     |
+|          4. SBS         |  643.22 ±  27.22 | 15150000.00  |     169.5807     |
+|     5. SBS_particles    |  643.23 ±  27.22 |  397919.80   |      6.3386      |
++-------------------------+------------------+--------------+------------------+
+[95mFunction: Rosenbrock.
+[94mOptimizer: SBS_particles.
+[32mSBS_particles done.
+[94mOptimizer: SBS.
+[32mSBS done.
+[94mOptimizer: SBS_particles_hybrid.
+PF - Best CMA-ES: 91.95360461658386. Best WOA: 113313.47461143463.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 96.6519727278544. Best WOA: 117372.07346806086.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.39005867246311. Best WOA: 117183.03913297769.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.53677976878608. Best WOA: 121486.06097215466.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.56458325200354. Best WOA: 109414.06481756983.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.81397878186752. Best WOA: 101044.65943808218.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.35229326136862. Best WOA: 119613.53190593158.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 93.37537085577439. Best WOA: 107547.2175398716.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.08737444808402. Best WOA: 123571.97659483097.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 96.54287200050406. Best WOA: 114394.396585339.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.73440299680755. Best WOA: 117417.27106274676.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.27285924233452. Best WOA: 126854.57058594056.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.214161314215. Best WOA: 114242.44709426255.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.45628045606539. Best WOA: 111041.11603219793.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.91819574773668. Best WOA: 117717.83337301038.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 98.47246371791985. Best WOA: 102858.43303147254.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.71227597331874. Best WOA: 122849.66244413033.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 96.30895975786679. Best WOA: 108411.15491356411.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 97.30116445745686. Best WOA: 111775.83591759046.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 93.74611863367124. Best WOA: 127154.31367586511.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.36577256485758. Best WOA: 121694.36588840354.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.21704359251898. Best WOA: 115046.49368345442.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.20939390152863. Best WOA: 106206.98794768537.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.34761151889934. Best WOA: 119807.0492227748.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 95.52141237128126. Best WOA: 116792.0328668261.
+PF - Initializing particles with CMA-ES.
+[32mSBS_particles_hybrid done.
+[94mOptimizer: SBS_hybrid.
+PF - Best CMA-ES: 92.33055321167673. Best WOA: 128667.69339767641.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 93.51548740424047. Best WOA: 133289.65758406976.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 97.9112182708228. Best WOA: 125908.62263944608.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 98.58192882997758. Best WOA: 126897.38561798283.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 95.57064758387057. Best WOA: 117915.32096958063.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.88727403041979. Best WOA: 96575.24959538023.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.33065800797398. Best WOA: 127532.10652081478.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.08135109687238. Best WOA: 126842.84283417926.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.48357523135958. Best WOA: 118834.20385699232.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.15363598146838. Best WOA: 112923.86030888221.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 96.46203472648635. Best WOA: 133747.54722528163.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 91.28670030219179. Best WOA: 129136.53355222546.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 95.48662944274179. Best WOA: 133565.4060691811.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.87965921887529. Best WOA: 116001.0964356955.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 95.68283335079593. Best WOA: 136517.01412009014.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.22498046304993. Best WOA: 127498.2109263889.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.94906431945752. Best WOA: 120111.50308101361.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 142.80036396068334. Best WOA: 110886.73543259597.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.12801157116382. Best WOA: 124386.76276556909.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 93.35176270744921. Best WOA: 131920.7128432977.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 96.22525980246708. Best WOA: 133551.2106827351.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 96.08789651272696. Best WOA: 123798.76106305231.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 93.38501447794256. Best WOA: 135439.98449292037.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.50592565006544. Best WOA: 115567.7248497934.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 92.90439642784405. Best WOA: 130063.83625791754.
+PF - Initializing particles with CMA-ES.
+[32mSBS_hybrid done.
+[94mOptimizer: CMA_ES.
+[32mCMA_ES done.
++-------------------------+----------------+--------------+------------------+
+|        Algorithms       | Average value  | Average eval | Average time (s) |
++-------------------------+----------------+--------------+------------------+
+|        1. CMA_ES        |  0.16 ±  0.78  |  404023.68   |     352.5422     |
+|     2. SBS_particles    |  76.48 ±  2.46 |  472372.96   |      7.9117      |
+| 3. SBS_particles_hybrid |  81.12 ±  2.60 |  1109891.80  |     105.6801     |
+|      4. SBS_hybrid      |  83.91 ±  6.85 | 20218001.00  |     322.4630     |
+|          5. SBS         |  87.57 ±  2.25 | 15150000.00  |     203.0348     |
++-------------------------+----------------+--------------+------------------+
+[95mFunction: Levy.
+[94mOptimizer: SBS_particles.
+[32mSBS_particles done.
+[94mOptimizer: SBS_particles_hybrid.
+PF - Best CMA-ES: 147.588696691744. Best WOA: 914.7193438108774.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 124.30424199215783. Best WOA: 809.5652249659018.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 118.48518300277856. Best WOA: 834.236292703268.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 156.59090598982309. Best WOA: 829.7130071332701.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 201.93051428891138. Best WOA: 849.4909528264366.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 160.107081252552. Best WOA: 831.1538467311356.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 126.03522166418354. Best WOA: 851.5966307195571.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 160.71451680451287. Best WOA: 780.1983005455639.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 130.30326990598945. Best WOA: 772.1486837220947.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 56.060002844915054. Best WOA: 817.6002239727501.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 182.6060899684471. Best WOA: 843.025039158099.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 154.05979310603422. Best WOA: 852.4921753360111.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 160.1955184855915. Best WOA: 896.1625945775577.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 157.34831441258618. Best WOA: 861.062222738643.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 186.75078181634828. Best WOA: 831.2954856178768.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 136.71243707854978. Best WOA: 785.5723325514786.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 73.38955433875164. Best WOA: 891.1105447309378.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 123.59070234335147. Best WOA: 819.483205802402.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 117.64909519125888. Best WOA: 795.8557276819637.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 152.32274381969773. Best WOA: 864.7159508887019.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 138.87907835904082. Best WOA: 792.1850098668795.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 94.23277284920863. Best WOA: 862.5708271761364.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 147.15841489345937. Best WOA: 839.2058033724842.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 115.76559455007975. Best WOA: 796.840590670038.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 127.30442629859915. Best WOA: 721.1942236582388.
+PF - Initializing particles with CMA-ES.
+[32mSBS_particles_hybrid done.
+[94mOptimizer: CMA_ES.
+[32mCMA_ES done.
+[94mOptimizer: SBS.
+[32mSBS done.
+[94mOptimizer: SBS_hybrid.
+PF - Best CMA-ES: 84.85194958281735. Best WOA: 691.7875487399444.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 119.07557961552027. Best WOA: 794.7585506299904.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 164.41014481118555. Best WOA: 927.8507345518835.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 165.4576750871322. Best WOA: 930.00695746411.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 116.11413186607332. Best WOA: 877.074261085482.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 121.92769006710338. Best WOA: 811.5313438554462.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 100.11936671161442. Best WOA: 888.6791180160506.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 60.10907781761247. Best WOA: 930.7746837272875.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 144.52050485282214. Best WOA: 746.2394294109552.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 145.98833720309565. Best WOA: 851.2998622748756.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 165.26973926940906. Best WOA: 893.4240508535886.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 144.60088334301977. Best WOA: 914.6238031975137.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 132.63461378603068. Best WOA: 901.2094348998808.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 170.56756639280005. Best WOA: 899.800043228081.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 168.22239496625357. Best WOA: 848.1666730212822.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 169.50933771302078. Best WOA: 867.6567381410043.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 135.52963209974448. Best WOA: 886.4607524534963.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 129.2125703390412. Best WOA: 822.7954678761686.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 47.423432371213806. Best WOA: 928.9169398140106.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 123.12177790261448. Best WOA: 844.63240043333.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 138.34772864674883. Best WOA: 943.3655058239566.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 120.17319939742359. Best WOA: 906.3916895937634.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 112.19430901425751. Best WOA: 873.8468811060574.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 117.66837298637299. Best WOA: 856.507365197278.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 140.07689022810337. Best WOA: 812.350415360491.
+PF - Initializing particles with CMA-ES.
+[32mSBS_hybrid done.
++-------------------------+------------------+--------------+------------------+
+|        Algorithms       |  Average value   | Average eval | Average time (s) |
++-------------------------+------------------+--------------+------------------+
+|        1. CMA_ES        |  118.12 ±  18.87 |   59363.64   |     169.5103     |
+|      2. SBS_hybrid      |  129.25 ±  31.56 | 20218001.00  |     293.0814     |
+|          3. SBS         |  137.46 ±  4.60  | 15150000.00  |     238.7506     |
+| 4. SBS_particles_hybrid |  137.82 ±  32.32 |  1097388.00  |     103.0369     |
+|     5. SBS_particles    |  140.50 ±  5.31  |  448011.76   |     12.8695      |
++-------------------------+------------------+--------------+------------------+
+[95mFunction: Sphere.
+[94mOptimizer: SBS_particles.
+[32mSBS_particles done.
+[94mOptimizer: SBS_particles_hybrid.
+PF - Best CMA-ES: 1.7618124296061607e-13. Best WOA: 2505.629744534012.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 3.936980508416002e-13. Best WOA: 2534.780173619112.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 7.742424656304548e-13. Best WOA: 2318.488372099857.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 6.259447583765171e-13. Best WOA: 2557.5152359226963.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 4.049458991598053e-13. Best WOA: 2296.9841728102006.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 6.571144918845902e-13. Best WOA: 2316.0551487773623.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 4.2523837970660935e-13. Best WOA: 2402.0151431077593.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 5.5026584870333e-13. Best WOA: 2491.770639441882.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 3.8331604450270393e-13. Best WOA: 2588.242865426187.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 3.586964002810979e-13. Best WOA: 2437.4725676800704.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 2.655878130344853e-13. Best WOA: 2455.440305292111.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 4.770158903015914e-13. Best WOA: 2585.630485765676.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 5.530054103958544e-13. Best WOA: 2486.6591528427966.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 3.2358600326994265e-13. Best WOA: 2442.0645215294558.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 7.156402761333422e-13. Best WOA: 2521.740960388741.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 4.0682272309345227e-13. Best WOA: 2488.6060583602534.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 4.845138053478206e-13. Best WOA: 2388.1122158013286.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 6.093076211084466e-13. Best WOA: 2533.230126739232.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 2.089111955384479e-13. Best WOA: 2491.3486265514603.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 4.4291297514771876e-13. Best WOA: 2424.2993866177044.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 3.795721579995542e-13. Best WOA: 2465.4865080724726.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 4.401702428659608e-13. Best WOA: 2459.1939936428976.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 2.7598711297117934e-13. Best WOA: 2521.627073229659.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 3.3330327197729254e-13. Best WOA: 2439.996936874926.
+PF - Initializing particles with CMA-ES.
+PF - Best CMA-ES: 1.5430199982839287e-13. Best WOA: 2503.6623945276356.
+PF - Initializing particles with CMA-ES.
+[32mSBS_particles_hybrid done.
+[94mOptimizer: CMA_ES.
+[32mCMA_ES done.
++-------------------------+---------------+--------------+------------------+
+|        Algorithms       | Average value | Average eval | Average time (s) |
++-------------------------+---------------+--------------+------------------+
+|      1. SBS_hybrid      |  0.00 ±  0.00 | 20218001.00  |     152.3635     |
+| 2. SBS_particles_hybrid |  0.00 ±  0.00 |  1095157.92  |     118.1040     |
+|        3. CMA_ES        |  0.00 ±  0.00 |   18814.56   |     115.4901     |
+|          4. SBS         |  0.00 ±  0.00 | 15150000.00  |     132.4692     |
+|     5. SBS_particles    |  0.00 ±  0.00 |  476736.16   |      4.5541      |
++-------------------------+---------------+--------------+------------------+
++----------------------+------------+--------------+
+|      Algorithms      | Final rank | Average rank |
++----------------------+------------+--------------+
+|      SBS_hybrid      |     1      |    2.500     |
+|        CMA_ES        |     2      |    2.667     |
+|         SBS          |     3      |    3.000     |
+| SBS_particles_hybrid |     4      |    3.333     |
+|    SBS_particles     |     5      |    3.500     |
++----------------------+------------+--------------+
+Average economy of SBS_particles over SBS: 97.13%.
+Average economy of SBS_particles_hybrid over SBS_hybrid: 45.58%.
+
+
+
+functions & CMA_ES & SBS_particles & SBS_particles_hybrid & SBS & SBS_hybrid \\
+\midrule
+Ackley & \makecell{$19.4$} & \makecell{$19.2$} & \makecell{$19.5$} & \makecell{$\mathbf{19.2}$} & \makecell{$19.5$} \\
+Michalewicz & \makecell{$44.1$} & \makecell{$7.2$} & \makecell{$31.4$} & \makecell{$\mathbf{7.1}$} & \makecell{$29.7$} \\
+Rastrigin & \makecell{$294.9$} & \makecell{$643.2$} & \makecell{$264.8$} & \makecell{$643.2$} & \makecell{$\mathbf{261.1}$} \\
+Rosenbrock & \makecell{$\mathbf{0.2}$} & \makecell{$76.5$} & \makecell{$81.1$} & \makecell{$87.6$} & \makecell{$83.9$} \\
+Levy & \makecell{$\mathbf{118.1}$} & \makecell{$140.5$} & \makecell{$137.8$} & \makecell{$137.5$} & \makecell{$129.2$} \\
+Sphere & \makecell{$8e^{-15}$} & \makecell{$1e^{-4}$} & \makecell{$3e^{-18}$} & \makecell{$2e^{-10}$} & \makecell{$\mathbf{5e^{-20}}$} \\
+\midrule
+Comp. ratio & $\mathbf{1.2}$ & $34.3$ & $17.7$ & $18.2$ & $17.6$ \\
+\midrule
+Average rank & $2.67$ & $3.50$ & $3.33$ & $3.00$ & $\mathbf{2.50}$ \\
+\midrule
+Final rank & $2$ & $5$ & $4$ & $3$ & $\mathbf{1}$ \\
+\bottomrule
+
+
+
+
+
+
+functions & CMA_ES & SBS_particles & SBS_particles_hybrid & SBS & SBS_hybrid \\
+\midrule
+Ackley & \makecell{$19.4$ \\ $\pm 0.0$} & \makecell{$19.2$ \\ $\pm 0.1$} & \makecell{$19.5$ \\ $\pm 0.1$} & \makecell{$\mathbf{19.2}$ \\ $\mathbf{\pm 0.1}$} & \makecell{$19.5$ \\ $\pm 0.1$} \\
+Michalewicz & \makecell{$44.1$ \\ $\pm 3.1$} & \makecell{$7.2$ \\ $\pm 1.0$} & \makecell{$31.4$ \\ $\pm 3.6$} & \makecell{$\mathbf{7.1}$ \\ $\mathbf{\pm 0.9}$} & \makecell{$29.7$ \\ $\pm 5.4$} \\
+Rastrigin & \makecell{$294.9$ \\ $\pm 39.2$} & \makecell{$643.2$ \\ $\pm 27.2$} & \makecell{$264.8$ \\ $\pm 35.1$} & \makecell{$643.2$ \\ $\pm 27.2$} & \makecell{$\mathbf{261.1}$ \\ $\mathbf{\pm 36.2}$} \\
+Rosenbrock & \makecell{$\mathbf{0.2}$ \\ $\mathbf{\pm 0.8}$} & \makecell{$76.5$ \\ $\pm 2.5$} & \makecell{$81.1$ \\ $\pm 2.6$} & \makecell{$87.6$ \\ $\pm 2.3$} & \makecell{$83.9$ \\ $\pm 6.8$} \\
+Levy & \makecell{$\mathbf{118.1}$ \\ $\mathbf{\pm 18.9}$} & \makecell{$140.5$ \\ $\pm 5.3$} & \makecell{$137.8$ \\ $\pm 32.3$} & \makecell{$137.5$ \\ $\pm 4.6$} & \makecell{$129.2$ \\ $\pm 31.6$} \\
+Sphere & \makecell{$8e^{-15}$ \\ $\pm 2e^{-15}$} & \makecell{$1e^{-4}$ \\ $\pm 3e^{-6}$} & \makecell{$3e^{-18}$ \\ $\pm 1e^{-17}$} & \makecell{$2e^{-10}$ \\ $\pm 1e^{-11}$} & \makecell{$\mathbf{5e^{-20}}$ \\ $\mathbf{\pm 2e^{-20}}$} \\
+\midrule
+Comp. ratio & $\mathbf{1.2}$ & $34.3$ & $17.7$ & $18.2$ & $17.6$ \\
+\midrule
+Average rank & $2.67$ & $3.50$ & $3.33$ & $3.00$ & $\mathbf{2.50}$ \\
+\midrule
+Final rank & $2$ & $5$ & $4$ & $3$ & $\mathbf{1}$ \\
+\bottomrule
+
+
+
