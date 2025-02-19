@@ -4,6 +4,9 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+
+matplotlib.rcParams["text.usetex"] = True
 
 
 class FigGenerator:
@@ -42,7 +45,7 @@ class FigGenerator:
             )
 
         if path is not None:
-            plt.savefig(path)
+            plt.savefig(path, bbox_inches="tight")
         else:
             plt.show()
         plt.clf()
