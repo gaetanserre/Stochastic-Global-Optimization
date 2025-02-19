@@ -119,5 +119,5 @@ class FigGenerator:
 
         ax.set_xlabel("$x$", fontsize=15)
         ax.set_ylabel("$y$", fontsize=15)
-        ax.set_zlabel("$f(x, y)$", fontsize=15)
+        # ax.set_zlabel("$f(x, y)$", fontsize=15)
         ax.legend(fontsize=15)
