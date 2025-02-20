@@ -141,6 +141,8 @@ class SBS(Optimizer):
         else:
             x = self.initialize_particles(function)
 
+        x[0] = np.array([-10, 10])
+
         all_points = [x.copy()]
         all_evals = []
         for k in self.k_iter:
@@ -162,6 +164,13 @@ class SBS(Optimizer):
                 # save all points
                 all_points.append(x.copy())
 
+        fs = [0] * self.n_particles
+        for xi in x:
+            fs[i] = function(xi)
+        all_evals.append(fs)
+
+        all_points_step = all_points.copy()
+        all_evals_step = all_evals.copy()
         all_points = np.array(all_points).reshape(-1, dim)
         all_evals = np.array(all_evals).flatten()
         best_idx = np.argmin(all_evals)
@@ -170,4 +179,10 @@ class SBS(Optimizer):
         if verbose:
             print(f"Best particle found: {best_particle}. Eval at f(best): {min_eval}.")
 
-        return (best_particle, min_eval), all_points, all_evals
+        return (
+            (best_particle, min_eval),
+            all_points,
+            all_evals,
+            all_points_step,
+            all_evals_step,
+        )
